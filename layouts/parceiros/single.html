@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article class="single-page">
+  <div class="container">
+    <header class="page-header">
+      <span class="section-label">Produto de Parceiro</span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-description">{{ . }}</p>{{ end }}
+    </header>
+    <div class="product-specs">
+      {{ with .Params.concentracao }}
+      <div class="spec-item">
+        <span class="spec-label">Concentração</span>
+        <span class="spec-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.certificacoes }}
+      <div class="spec-item">
+        <span class="spec-label">Certificações</span>
+        <span class="spec-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.volume_minimo }}
+      <div class="spec-item">
+        <span class="spec-label">Volume Mínimo</span>
+        <span class="spec-value">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.estados }}
+      <div class="spec-item">
+        <span class="spec-label">Estados Atendidos</span>
+        <span class="spec-value">{{ delimit . ", " }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.prazo_entrega }}
+      <div class="spec-item">
+        <span class="spec-label">Prazo de Entrega</span>
+        <span class="spec-value">{{ . }}</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .Params.link_ml }}
+    <div class="product-cta">
+      <a href="{{ . }}" class="btn btn-primary" target="_blank" rel="noopener">Comprar no Mercado Livre</a>
+      <a href="/cotacao/" class="btn btn-secondary">Solicitar Cotação</a>
+    </div>
+    {{ else }}
+    <div class="product-cta">
+      <a href="/cotacao/" class="btn btn-primary">Solicitar Cotação</a>
+    </div>
+    {{ end }}
+    <div class="page-content">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

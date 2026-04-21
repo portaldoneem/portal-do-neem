@@ -1,0 +1,63 @@
+baseURL = "https://portaldoneem.com.br/"
+languageCode = "pt-BR"
+title = "Portal do Neem"
+paginate = 10
+
+[params]
+  description = "O maior hub de conhecimento e parcerias sobre Neem do Brasil"
+  author = "Portal do Neem"
+  whatsapp = "5511999999999"
+  email = "contato@portaldoneem.com.br"
+  tagline = "Cultivando conhecimento. Conectando quem produz a quem precisa."
+  em_construcao = true
+
+[menu]
+  [[menu.main]]
+    name = "Início"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "O que é o Neem"
+    url = "/o-que-e-o-neem/"
+    weight = 2
+  [[menu.main]]
+    name = "Como Aplicar"
+    url = "/como-aplicar/"
+    weight = 3
+  [[menu.main]]
+    name = "Pragas"
+    url = "/pragas/"
+    weight = 4
+  [[menu.main]]
+    name = "Culturas"
+    url = "/culturas/"
+    weight = 5
+  [[menu.main]]
+    name = "Parceiros"
+    url = "/parceiros/"
+    weight = 6
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 7
+  [[menu.main]]
+    name = "FAQ"
+    url = "/faq/"
+    weight = 8
+  [[menu.main]]
+    name = "Contato"
+    url = "/contato/"
+    weight = 9
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changeFreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
