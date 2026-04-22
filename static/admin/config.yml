@@ -9,120 +9,100 @@ media_folder: static/images
 public_folder: /images
 
 collections:
-  - name: paginas
-    label: "Páginas Institucionais"
-    label_singular: "Página"
-    folder: content
-    create: false
-    filter:
-      field: type
-      value: pagina
-    fields:
-      - { label: "Título", name: title, widget: string }
-      - { label: "Subtítulo", name: subtitle, widget: string, required: false }
-      - { label: "Descrição SEO", name: description, widget: text, hint: "Aparece no Google. Máximo 160 caracteres." }
-      - { label: "Conteúdo", name: body, widget: markdown }
-      - { label: "CTA WhatsApp", name: cta_whatsapp, widget: boolean, default: false, hint: "Mostrar botão de WhatsApp no final da página?" }
-
   - name: pragas
-    label: "Pragas"
-    label_singular: "Praga"
+    label: Pragas
+    label_singular: Praga
     folder: content/pragas
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nome da Praga", name: title, widget: string }
-      - { label: "Descrição SEO", name: description, widget: text, hint: "Resumo curto para o Google. Máximo 160 caracteres." }
-      - { label: "Imagem", name: image, widget: image, required: false }
-      - { label: "Rótulo da Seção", name: section_label, widget: hidden, default: "Controle por Praga" }
-      - { label: "CTA WhatsApp", name: cta_whatsapp, widget: boolean, default: true }
-      - label: "Conteúdo"
-        name: body
-        widget: markdown
-        hint: "Use títulos ## para cada seção: Identificação, Ciclo de Vida, Danos, Como o Neem Controla, Protocolo de Aplicação"
+      - { label: Nome da Praga, name: title, widget: string }
+      - { label: Descricao SEO, name: description, widget: text }
+      - { label: Imagem, name: image, widget: image, required: false }
+      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Controle por Praga" }
+      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
+      - { label: Conteudo, name: body, widget: markdown }
 
   - name: culturas
-    label: "Culturas"
-    label_singular: "Cultura"
+    label: Culturas
+    label_singular: Cultura
     folder: content/culturas
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nome da Cultura", name: title, widget: string }
-      - { label: "Descrição SEO", name: description, widget: text }
-      - { label: "Imagem", name: image, widget: image, required: false }
-      - { label: "Rótulo da Seção", name: section_label, widget: hidden, default: "Controle por Cultura" }
-      - { label: "CTA WhatsApp", name: cta_whatsapp, widget: boolean, default: true }
-      - label: "Conteúdo"
-        name: body
-        widget: markdown
-        hint: "Use títulos ## para cada seção: Pragas Principais, Calendário de Aplicação, Dosagem, Cuidados"
+      - { label: Nome da Cultura, name: title, widget: string }
+      - { label: Descricao SEO, name: description, widget: text }
+      - { label: Imagem, name: image, widget: image, required: false }
+      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Controle por Cultura" }
+      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
+      - { label: Conteudo, name: body, widget: markdown }
 
   - name: parceiros
-    label: "Produtos de Parceiros"
-    label_singular: "Produto"
+    label: Produtos de Parceiros
+    label_singular: Produto
     folder: content/parceiros
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nome do Produto", name: title, widget: string }
-      - { label: "Descrição SEO", name: description, widget: text }
-      - { label: "Imagem do Produto", name: image, widget: image, required: false }
-      - { label: "Concentração Azadiractina", name: concentracao, widget: string, hint: "Ex: 3000 ppm" }
-      - { label: "Certificações", name: certificacoes, widget: string, required: false, hint: "Ex: IBD, Ecocert, MAPA" }
-      - label: "Estados Atendidos"
+      - { label: Nome do Produto, name: title, widget: string }
+      - { label: Descricao SEO, name: description, widget: text }
+      - { label: Imagem do Produto, name: image, widget: image, required: false }
+      - { label: Concentracao Azadiractina, name: concentracao, widget: string }
+      - { label: Certificacoes, name: certificacoes, widget: string, required: false }
+      - label: Estados Atendidos
         name: estados
         widget: select
         multiple: true
-        options: ["SP", "MG", "RJ", "PR", "SC", "RS", "BA", "GO", "MT", "MS", "ES", "PA", "AM", "CE", "PE", "MA", "PI", "TO", "DF", "Todos"]
-      - { label: "Volume Mínimo", name: volume_minimo, widget: string, hint: "Ex: 1 litro, 5 litros, 20 litros" }
-      - { label: "Prazo Médio de Entrega", name: prazo_entrega, widget: string, required: false, hint: "Ex: 3-5 dias úteis" }
-      - { label: "Link Mercado Livre", name: link_ml, widget: string, required: false, hint: "URL do anúncio no Mercado Livre" }
-      - { label: "Rótulo da Seção", name: section_label, widget: hidden, default: "Produto de Parceiro" }
-      - { label: "CTA WhatsApp", name: cta_whatsapp, widget: boolean, default: true }
-      - label: "Ficha Técnica"
-        name: body
-        widget: markdown
-        hint: "Descrição detalhada do produto: formulação, modo de uso, culturas indicadas."
+        options:
+          - SP
+          - MG
+          - RJ
+          - PR
+          - SC
+          - RS
+          - BA
+          - GO
+          - MT
+          - MS
+          - ES
+          - PA
+          - AM
+          - CE
+          - PE
+          - MA
+          - PI
+          - TO
+          - DF
+          - Todos
+      - { label: Volume Minimo, name: volume_minimo, widget: string }
+      - { label: Prazo Medio de Entrega, name: prazo_entrega, widget: string, required: false }
+      - { label: Link Mercado Livre, name: link_ml, widget: string, required: false }
+      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Produto de Parceiro" }
+      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
+      - { label: Ficha Tecnica, name: body, widget: markdown }
 
   - name: blog
-    label: "Blog"
-    label_singular: "Artigo"
+    label: Blog
+    label_singular: Artigo
     folder: content/blog
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: title, widget: string }
-      - { label: "Data de Publicação", name: date, widget: datetime }
-      - { label: "Descrição SEO", name: description, widget: text }
-      - { label: "Imagem de Capa", name: image, widget: image, required: false }
-      - { label: "Autor", name: author, widget: string, default: "Portal do Neem" }
-      - label: "Tags"
-        name: tags
-        widget: list
-        required: false
-        hint: "Palavras-chave separadas por vírgula"
-      - { label: "Rascunho", name: draft, widget: boolean, default: false, hint: "Marque para salvar sem publicar." }
-      - { label: "Conteúdo", name: body, widget: markdown }
+      - { label: Titulo, name: title, widget: string }
+      - { label: Data de Publicacao, name: date, widget: datetime }
+      - { label: Descricao SEO, name: description, widget: text }
+      - { label: Imagem de Capa, name: image, widget: image, required: false }
+      - { label: Autor, name: author, widget: string, default: Portal do Neem }
+      - { label: Rascunho, name: draft, widget: boolean, default: false }
+      - { label: Conteudo, name: body, widget: markdown }
 
   - name: faq
-    label: "Perguntas Frequentes"
-    label_singular: "Pergunta"
+    label: Perguntas Frequentes
+    label_singular: Pergunta
     folder: content/faq
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Pergunta", name: title, widget: string }
-      - { label: "Ordem", name: weight, widget: number, default: 10, hint: "Número menor aparece primeiro." }
-      - { label: "Resposta", name: body, widget: markdown }
-
-  - name: config
-    label: "Configurações do Site"
-    files:
-      - label: "Informações Gerais"
-        name: general
-        file: data/config.json
-        fields:
-          - { label: "WhatsApp (com DDI)", name: whatsapp, widget: string, hint: "Ex: 5511999999999" }
-          - { label: "Email de Contato", name: email, widget: string }
-          - { label: "Frase do Rodapé", name: tagline, widget: string }
+      - { label: Pergunta, name: title, widget: string }
+      - { label: Ordem, name: weight, widget: number, default: 10 }
+      - { label: Resposta, name: body, widget: markdown }
