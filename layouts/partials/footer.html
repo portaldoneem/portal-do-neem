@@ -1,33 +1,68 @@
 <footer class="site-footer">
   <div class="container">
+
     <div class="footer-grid">
-      <div class="footer-col">
-        <h3>Portal do Neem</h3>
-        <p>{{ .Site.Params.tagline }}</p>
+
+      <!-- Coluna 1 — Marca -->
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Portal do Neem">
+          <span class="logo-icon" aria-hidden="true">🌿</span>
+          <span class="logo-text">Portal do <strong>Neem</strong></span>
+        </a>
+        <p>
+          O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.
+          Do dono de horta à grande propriedade rural.
+        </p>
+        <p style="margin-top:.5rem;">
+          <a href="https://wa.me/{{ .Site.Params.whatsapp }}" style="color:rgba(255,255,255,.45);font-size:.8rem;">
+            📱 WhatsApp: {{ .Site.Params.whatsapp_display | default .Site.Params.whatsapp }}
+          </a>
+        </p>
       </div>
+
+      <!-- Coluna 2 — Conteúdo -->
       <div class="footer-col">
-        <h3>Conteúdo</h3>
+        <h4>Aprenda</h4>
         <a href="/o-que-e-o-neem/">O que é o Neem</a>
         <a href="/como-aplicar/">Como Aplicar</a>
-        <a href="/pragas/">Pragas</a>
-        <a href="/culturas/">Culturas</a>
-        <a href="/blog/">Blog</a>
+        <a href="/pragas/">Controle por Praga</a>
+        <a href="/culturas/">Por Cultura</a>
+        <a href="/neem-vs-quimicos/">Neem vs Químicos</a>
+        <a href="/blog/">Blog &amp; Artigos</a>
       </div>
+
+      <!-- Coluna 3 — Produtos -->
       <div class="footer-col">
-        <h3>Parceiros</h3>
-        <a href="/parceiros/">Catálogo de Produtos</a>
+        <h4>Produtos</h4>
+        <a href="/produto/">Nosso Produto</a>
+        <a href="/parceiros/">Parceiros</a>
+        <a href="/para-empresas/">Para Empresas</a>
         <a href="/cotacao/">Solicitar Cotação</a>
-        <a href="/seja-parceiro/">Quero Ser Parceiro</a>
+        <a href="/materiais/">Materiais Gratuitos</a>
       </div>
+
+      <!-- Coluna 4 — Institucional -->
       <div class="footer-col">
-        <h3>Contato</h3>
-        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
-        <a href="https://wa.me/{{ .Site.Params.whatsapp }}" target="_blank">WhatsApp</a>
+        <h4>Portal</h4>
         <a href="/faq/">Perguntas Frequentes</a>
+        <a href="/contato/">Contato</a>
+        <a href="/seja-parceiro/">Seja Parceiro</a>
+        <a href="/sobre/">Sobre o Portal</a>
+        <a href="/privacidade/">Política de Privacidade</a>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {{ now.Year }} Portal do Neem &mdash;
+        Todos os direitos reservados.
+      </p>
+      <div class="footer-seal">
+        <span>🌱</span>
+        Conteúdo orgânico, sem agrotóxicos na informação
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; {{ now.Year }} {{ .Site.Title }}. Todos os direitos reservados.</p>
-    </div>
+
   </div>
 </footer>
