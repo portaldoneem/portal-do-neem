@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Portal do Neem favicon">
+  <defs>
+    <linearGradient id="bg-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d5e2a"/>
+      <stop offset="100%" stop-color="#1f3d20"/>
+    </linearGradient>
+    <linearGradient id="leaf-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8db87a"/>
+      <stop offset="100%" stop-color="#4a8c45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo arredondado -->
+  <rect width="32" height="32" rx="7" fill="url(#bg-g)"/>
+
+  <!-- Folha central -->
+  <path d="M16 4 C16 4 26 7 27 16 C27 16 21 26 13 28 C13 28 6 21 7 12 C7 12 10 4 16 4 Z"
+        fill="url(#leaf-g)" opacity="0.95"/>
+
+  <!-- Nervura -->
+  <path d="M16 6 C15 13 13 21 12 27"
+        fill="none" stroke="#d4eecc" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Nervuras laterais -->
+  <path d="M15 11 C13 10 10 12 9 14 M15 17 C13 17 11 19 10 21"
+        fill="none" stroke="#d4eecc" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Gota de óleo âmbar -->
+  <ellipse cx="14" cy="24" rx="2" ry="2.5" fill="#e8a824"/>
+  <path d="M14 21 L15.2 24 Q14 26 12.8 24 Z" fill="#e8a824"/>
+</svg>

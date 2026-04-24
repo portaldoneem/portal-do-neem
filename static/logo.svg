@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" role="img" aria-label="Portal do Neem">
+  <defs>
+    <linearGradient id="leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a8c45"/>
+      <stop offset="100%" stop-color="#2d5e2a"/>
+    </linearGradient>
+    <linearGradient id="leaf-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8db87a"/>
+      <stop offset="100%" stop-color="#4a8c45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ícone — folha estilizada -->
+  <g transform="translate(4, 6)">
+    <!-- Folha principal -->
+    <path d="M30 2 C30 2 52 8 54 30 C54 30 40 52 20 58 C20 58 6 42 8 22 C8 22 14 4 30 2 Z"
+          fill="url(#leaf-grad)" opacity="0.95"/>
+    <!-- Nervura central -->
+    <path d="M30 6 C28 20 22 38 18 56"
+          fill="none" stroke="#d4eecc" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+    <!-- Nervuras laterais -->
+    <path d="M27 16 C22 14 16 16 13 20 M28 24 C22 22 17 26 15 30 M27 32 C22 32 19 36 18 40"
+          fill="none" stroke="#d4eecc" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    <!-- Folhinha menor (detalhe) -->
+    <path d="M38 10 C38 10 50 12 50 22 C50 22 42 28 34 24 C34 24 30 16 38 10 Z"
+          fill="url(#leaf-grad-light)" opacity="0.75"/>
+    <!-- Gota de óleo -->
+    <ellipse cx="23" cy="50" rx="3.5" ry="4.5" fill="#e8a824" opacity="0.9"/>
+    <path d="M23 44 L25 50 Q23 53 21 50 Z" fill="#e8a824" opacity="0.9"/>
+  </g>
+
+  <!-- Texto — "Portal do" -->
+  <text x="74" y="34"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="15"
+        font-weight="400"
+        letter-spacing="1.5"
+        fill="#5a5650"
+        text-anchor="start">PORTAL DO</text>
+
+  <!-- Texto — "Neem" -->
+  <text x="72" y="58"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32"
+        font-weight="700"
+        letter-spacing="-0.5"
+        fill="#1f3d20"
+        text-anchor="start">Neem</text>
+
+  <!-- Acento âmbar no "N" -->
+  <rect x="72" y="62" width="32" height="2.5" rx="1.5" fill="#e8a824"/>
+</svg>
