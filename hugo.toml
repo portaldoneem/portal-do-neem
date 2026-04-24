@@ -4,7 +4,7 @@ title = "Portal do Neem"
 paginate = 10
 
 [params]
-  description = "O maior hub de conhecimento e parcerias sobre Neem do Brasil"
+  description = ""
   author = "Portal do Neem"
   whatsapp = "5511999999999"
   email = "contato@portaldoneem.com.br"
