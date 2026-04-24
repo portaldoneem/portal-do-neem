@@ -1,26 +1,174 @@
 {{ define "main" }}
-<article class="single-page">
+
+{{/* ── CABEÇALHO DA PÁGINA ─────────────────────────────────── */}}
+<div class="page-header">
   <div class="container">
-    <header class="page-header">
-      {{ with .Params.section_label }}<span class="section-label">{{ . }}</span>{{ end }}
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="page-description">{{ . }}</p>{{ end }}
-      {{ if .Date }}{{ if not .Date.IsZero }}
-      <time class="page-date" datetime="{{ .Date.Format "2006-01-02" }}">
-        {{ .Date.Format "02/01/2006" }}
-      </time>
-      {{ end }}{{ end }}
-    </header>
-    <div class="page-content">
-      {{ .Content }}
-    </div>
-    {{ if .Params.cta_whatsapp }}
-    <div class="cta-box">
-      <h3>Ficou com dúvida?</h3>
-      <p>Fale com nossa equipe pelo WhatsApp.</p>
-      <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn btn-primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+    {{/* Breadcrumb */}}
+    <nav class="breadcrumb" aria-label="Você está em">
+      <a href="/">Início</a>
+      {{ with .Parent }}
+        <span aria-hidden="true">›</span>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+
+    {{/* Badges de categoria / tags */}}
+    {{ with .Params.tags }}
+    <div style="margin-bottom:.75rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+      {{ range . }}
+        <span class="badge badge-green">{{ . }}</span>
+      {{ end }}
     </div>
     {{ end }}
+
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Description }}
+      <p class="lead">{{ . }}</p>
+    {{ end }}
+
+    {{/* Meta do artigo */}}
+    {{ if .IsPage }}
+    <div class="post-meta" style="margin-top:1rem;">
+      {{ if not .Date.IsZero }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          📅 {{ .Date.Format "02 de January de 2006" }}
+        </time>
+      {{ end }}
+      {{ with .Params.author }}
+        <span>✍️ {{ . }}</span>
+      {{ end }}
+      {{ with .ReadingTime }}
+        <span>⏱ {{ . }} min de leitura</span>
+      {{ end }}
+    </div>
+    {{ end }}
+
   </div>
-</article>
+</div>
+
+{{/* ── CORPO DA PÁGINA ──────────────────────────────────────── */}}
+<div class="page-body">
+  <div class="container">
+    <div class="page-layout">
+
+      {{/* Conteúdo principal */}}
+      <article class="page-content">
+        {{ .Content }}
+
+        {{/* Tags no rodapé do artigo */}}
+        {{ with .Params.tags }}
+        <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--palha);">
+          <span style="font-size:.8rem;font-weight:700;color:var(--grafite);letter-spacing:.05em;text-transform:uppercase;">Tags:</span>
+          <div style="display:inline-flex;gap:.4rem;flex-wrap:wrap;margin-left:.5rem;">
+            {{ range . }}
+              <a href="/tags/{{ . | urlize }}/" class="badge badge-green">{{ . }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{/* Navegação entre artigos (anterior / próximo) */}}
+        {{ if or .PrevInSection .NextInSection }}
+        <nav style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;" aria-label="Navegar entre artigos">
+          {{ with .PrevInSection }}
+          <a href="{{ .Permalink }}" class="card" style="text-decoration:none;">
+            <div style="font-size:.75rem;font-weight:700;color:var(--grafite);margin-bottom:.3rem;">← Anterior</div>
+            <div style="font-size:.9rem;color:var(--terra-900);font-weight:600;">{{ .Title }}</div>
+          </a>
+          {{ else }}<div></div>{{ end }}
+
+          {{ with .NextInSection }}
+          <a href="{{ .Permalink }}" class="card" style="text-align:right;text-decoration:none;">
+            <div style="font-size:.75rem;font-weight:700;color:var(--grafite);margin-bottom:.3rem;">Próximo →</div>
+            <div style="font-size:.9rem;color:var(--terra-900);font-weight:600;">{{ .Title }}</div>
+          </a>
+          {{ else }}<div></div>{{ end }}
+        </nav>
+        {{ end }}
+
+        {{/* CTA de conversão no rodapé do artigo */}}
+        <div class="cta-box" style="margin-top:3rem;">
+          <h3>Precisa de óleo de neem de qualidade?</h3>
+          <p>Conheça o produto que recomendamos e solicite uma cotação sem compromisso.</p>
+          <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="/produto/" class="btn btn-primary">Conhecer o produto</a>
+            {{ with $.Site.Params.whatsapp }}
+            <a href="https://wa.me/{{ . }}?text={{ $.Site.Params.whatsapp_msg | urlquery }}"
+               class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              📱 Falar no WhatsApp
+            </a>
+            {{ end }}
+          </div>
+        </div>
+
+      </article>
+
+      {{/* Sidebar */}}
+      <aside class="sidebar" aria-label="Conteúdo relacionado">
+
+        {{/* Widget: Artigos relacionados */}}
+        {{ $related := .Site.RegularPages.Related . | first 5 }}
+        {{ if $related }}
+        <div class="sidebar-widget">
+          <h4>📚 Leia também</h4>
+          <ul>
+            {{ range $related }}
+            <li>
+              <a href="{{ .Permalink }}" style="color:var(--musgo-700);font-weight:500;">
+                {{ .Title }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        {{/* Widget: Categorias / seções */}}
+        <div class="sidebar-widget">
+          <h4>🌿 Explorar</h4>
+          <ul>
+            <li><a href="/o-que-e-o-neem/">O que é o Neem</a></li>
+            <li><a href="/como-aplicar/">Como Aplicar</a></li>
+            <li><a href="/pragas/">Controle por Praga</a></li>
+            <li><a href="/culturas/">Por Cultura</a></li>
+            <li><a href="/neem-vs-quimicos/">Neem vs Químicos</a></li>
+            <li><a href="/faq/">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        {{/* Widget: CTA WhatsApp */}}
+        {{ with .Site.Params.whatsapp }}
+        <div class="sidebar-cta">
+          <h4>📱 Dúvidas?</h4>
+          <p>Fale com um especialista em neem pelo WhatsApp.</p>
+          <a href="https://wa.me/{{ . }}?text={{ $.Site.Params.whatsapp_msg | urlquery }}"
+             class="btn btn-primary btn-sm"
+             target="_blank" rel="noopener noreferrer"
+             style="width:100%;justify-content:center;">
+            Chamar no WhatsApp
+          </a>
+        </div>
+        {{ end }}
+
+        {{/* Widget: Materiais gratuitos */}}
+        <div class="sidebar-widget" style="background:var(--musgo-100);border-color:var(--musgo-300);">
+          <h4 style="color:var(--musgo-900);">📥 Materiais gratuitos</h4>
+          <p style="font-size:.82rem;color:var(--grafite);margin-bottom:.9rem;">
+            Baixe guias, tabelas de dosagem e calendários de aplicação.
+          </p>
+          <a href="/materiais/" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;">
+            Ver materiais
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
 {{ end }}

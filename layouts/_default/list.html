@@ -1,21 +1,184 @@
 {{ define "main" }}
-<section class="list-page">
+
+{{/* ── CABEÇALHO DA SEÇÃO ──────────────────────────────────── */}}
+<div class="page-header">
   <div class="container">
-    <header class="page-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="page-description">{{ . }}</p>{{ end }}
-    </header>
-    {{ with .Content }}
-    <div class="page-content">{{ . }}</div>
+
+    {{/* Breadcrumb */}}
+    {{ if not .IsHome }}
+    <nav class="breadcrumb" aria-label="Você está em">
+      <a href="/">Início</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
     {{ end }}
+
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Description }}
+      <p class="lead">{{ . }}</p>
+    {{ else }}
+      {{ with .Content }}
+        <p class="lead">{{ . | plainify | truncate 180 }}</p>
+      {{ end }}
+    {{ end }}
+
+    {{/* Contagem de itens */}}
+    {{ if .Pages }}
+    <p style="margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.45);">
+      {{ len .Pages }} {{ if eq (len .Pages) 1 }}artigo{{ else }}artigos{{ end }} disponíveis
+    </p>
+    {{ end }}
+
+  </div>
+</div>
+
+{{/* ── CONTEÚDO DA LISTAGEM ─────────────────────────────────── */}}
+<div class="list-page">
+  <div class="container">
+
+    {{/* Filtro por tags (se houver) */}}
+    {{ $allTags := slice }}
+    {{ range .Pages }}
+      {{ range .Params.tags }}
+        {{ $allTags = $allTags | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $allTags = $allTags | uniq }}
+
+    {{ if gt (len $allTags) 1 }}
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;align-items:center;">
+      <span style="font-size:.8rem;font-weight:700;color:var(--grafite);text-transform:uppercase;letter-spacing:.08em;">Filtrar:</span>
+      <a href="{{ .Permalink }}" class="badge badge-green">Todos</a>
+      {{ range $allTags }}
+        <a href="/tags/{{ . | urlize }}/" class="badge badge-gray">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Grid de artigos */}}
+    {{ if .Pages }}
     <div class="card-grid">
       {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="content-card">
-        <h3>{{ .Title }}</h3>
-        {{ with .Description }}<p>{{ . }}</p>{{ else }}<p>{{ .Summary }}</p>{{ end }}
+      <a href="{{ .Permalink }}" class="card" style="text-decoration:none;">
+
+        {{/* Tags do artigo */}}
+        {{ with .Params.tags }}
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem;">
+          {{ range first 2 . }}
+            <span class="badge badge-green">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <h3 style="margin:0 0 .5rem;">{{ .Title }}</h3>
+
+        <p style="font-size:.88rem;color:var(--grafite);margin:0 0 .75rem;line-height:1.6;">
+          {{ .Description | default (.Summary | truncate 120) }}
+        </p>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:.75rem;border-top:1px solid var(--palha);">
+          {{ if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}"
+                style="font-size:.78rem;color:var(--grafite);">
+            {{ .Date.Format "02/01/2006" }}
+          </time>
+          {{ end }}
+          {{ with .ReadingTime }}
+          <span style="font-size:.78rem;color:var(--grafite);">⏱ {{ . }} min</span>
+          {{ end }}
+        </div>
+
       </a>
       {{ end }}
     </div>
+
+    {{/* Paginação */}}
+    {{ template "pagination" . }}
+
+    {{ else }}
+
+    {{/* Estado vazio */}}
+    <div style="text-align:center;padding:4rem 0;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🌱</div>
+      <h3 style="color:var(--terra-900);">Conteúdo em breve</h3>
+      <p style="color:var(--grafite);max-width:400px;margin:.5rem auto 1.5rem;">
+        Estamos preparando artigos completos sobre esse tema. Volte em breve!
+      </p>
+      <a href="/" class="btn btn-secondary">Voltar ao início</a>
+    </div>
+
+    {{ end }}
+
   </div>
-</section>
+</div>
+
+{{/* ── CTA RODAPÉ DA LISTAGEM ──────────────────────────────── */}}
+{{ if .Pages }}
+<div style="background:var(--terra-100);padding:3rem 0;">
+  <div class="container">
+    <div class="lead-box">
+      <div>
+        <h3>Receba novos artigos por e-mail</h3>
+        <p>Dicas práticas de controle orgânico direto na sua caixa de entrada.</p>
+      </div>
+      <form
+        name="newsletter"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="lead-form"
+      >
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="hidden" name="bot-field">
+        <input
+          type="email"
+          name="email"
+          placeholder="Seu melhor e-mail"
+          required
+          aria-label="Seu e-mail para newsletter"
+        >
+        <button type="submit" class="btn btn-primary">Assinar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{/* ── TEMPLATE DE PAGINAÇÃO ───────────────────────────────── */}}
+{{ define "pagination" }}
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav
+  aria-label="Paginação"
+  style="display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:3rem;flex-wrap:wrap;"
+>
+  {{ if $paginator.HasPrev }}
+  <a href="{{ $paginator.Prev.URL }}"
+     class="btn btn-secondary btn-sm"
+     aria-label="Página anterior">
+    ← Anterior
+  </a>
+  {{ end }}
+
+  {{ range $paginator.Pagers }}
+  <a
+    href="{{ .URL }}"
+    class="btn btn-sm {{ if eq . $paginator }}btn-primary{{ else }}btn-secondary{{ end }}"
+    {{ if eq . $paginator }}aria-current="page"{{ end }}
+    aria-label="Página {{ .PageNumber }}"
+  >{{ .PageNumber }}</a>
+  {{ end }}
+
+  {{ if $paginator.HasNext }}
+  <a href="{{ $paginator.Next.URL }}"
+     class="btn btn-secondary btn-sm"
+     aria-label="Próxima página">
+    Próxima →
+  </a>
+  {{ end }}
+</nav>
+{{ end }}
+{{ end }}
+
 {{ end }}
