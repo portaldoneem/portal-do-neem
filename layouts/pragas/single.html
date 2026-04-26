@@ -1,0 +1,199 @@
+{{ define "main" }}
+
+{{/* ── CABEÇALHO ──────────────────────────────────────────── */}}
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está em">
+      <a href="/">Início</a>
+      <span aria-hidden="true">›</span>
+      <a href="/pragas/">Controle de Pragas</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem;">
+      <span class="badge badge-green">🐛 Praga</span>
+      {{ with .Params.nivel_dano }}
+        {{ if eq . "alto" }}<span class="badge badge-amber">⚠️ Dano Alto</span>
+        {{ else if eq . "medio" }}<span class="badge badge-gray">🔶 Dano Médio</span>
+        {{ else }}<span class="badge badge-green">✅ Dano Baixo</span>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.nome_cientifico }}
+      <p class="lead" style="font-style:italic;color:rgba(255,255,255,.6);">{{ . }}</p>
+    {{ end }}
+    {{ with .Description }}
+      <p class="lead">{{ . }}</p>
+    {{ end }}
+  </div>
+</div>
+
+{{/* ── CORPO ───────────────────────────────────────────────── */}}
+<div class="page-body">
+  <div class="container">
+    <div class="page-layout">
+
+      <article class="page-content">
+
+        {{/* Culturas afetadas */}}
+        {{ with .Params.culturas_afetadas }}
+        <div style="background:var(--ambar-50);border:1px solid var(--ambar-200);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:2rem;">
+          <strong style="font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ambar-800);">🌾 Culturas afetadas:</strong>
+          <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem;">
+            {{ range . }}
+              <span class="badge badge-amber">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{/* Conteúdo principal do arquivo .md */}}
+        {{ .Content }}
+
+        {{/* Protocolo de aplicação com neem */}}
+        {{ if or .Params.dose_preventiva .Params.dose_curativa }}
+        <div style="background:var(--musgo-100);border-left:4px solid var(--musgo-500);border-radius:0 var(--radius) var(--radius) 0;padding:1.25rem 1.5rem;margin:2rem 0;">
+          <h3 style="color:var(--musgo-900);margin-top:0;">🌿 Protocolo de aplicação com Neem</h3>
+          <table style="width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:0;">
+            <thead>
+              <tr>
+                <th style="background:var(--musgo-900);color:var(--musgo-100);padding:.5rem .75rem;text-align:left;font-family:var(--font-body);">Situação</th>
+                <th style="background:var(--musgo-900);color:var(--musgo-100);padding:.5rem .75rem;text-align:left;font-family:var(--font-body);">Dose</th>
+                <th style="background:var(--musgo-900);color:var(--musgo-100);padding:.5rem .75rem;text-align:left;font-family:var(--font-body);">Frequência</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{ with .Params.dose_preventiva }}
+              <tr>
+                <td style="padding:.5rem .75rem;border-bottom:1px solid var(--musgo-300);">Preventivo</td>
+                <td style="padding:.5rem .75rem;border-bottom:1px solid var(--musgo-300);">{{ . }}</td>
+                <td style="padding:.5rem .75rem;border-bottom:1px solid var(--musgo-300);">{{ $.Params.freq_preventiva | default "A cada 14 dias" }}</td>
+              </tr>
+              {{ end }}
+              {{ with .Params.dose_curativa }}
+              <tr>
+                <td style="padding:.5rem .75rem;">Curativo</td>
+                <td style="padding:.5rem .75rem;">{{ . }}</td>
+                <td style="padding:.5rem .75rem;">{{ $.Params.freq_curativa | default "A cada 7 dias" }}</td>
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+          {{ with .Params.dica_aplicacao }}
+          <p style="margin:1rem 0 0;font-size:.88rem;color:var(--musgo-700);">💡 <strong>Dica:</strong> {{ . }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Tags */}}
+        {{ with .Params.tags }}
+        <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--palha);">
+          <span style="font-size:.8rem;font-weight:700;color:var(--grafite);letter-spacing:.05em;text-transform:uppercase;">Tags:</span>
+          <div style="display:inline-flex;gap:.4rem;flex-wrap:wrap;margin-left:.5rem;">
+            {{ range . }}
+              <a href="/tags/{{ . | urlize }}/" class="badge badge-green">{{ . }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{/* Navegação anterior/próximo */}}
+        {{ if or .PrevInSection .NextInSection }}
+        <nav style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;">
+          {{ with .PrevInSection }}
+          <a href="{{ .Permalink }}" class="card" style="text-decoration:none;">
+            <div style="font-size:.75rem;font-weight:700;color:var(--grafite);margin-bottom:.3rem;">← Praga anterior</div>
+            <div style="font-size:.9rem;color:var(--terra-900);font-weight:600;">{{ .Title }}</div>
+          </a>
+          {{ else }}<div></div>{{ end }}
+          {{ with .NextInSection }}
+          <a href="{{ .Permalink }}" class="card" style="text-align:right;text-decoration:none;">
+            <div style="font-size:.75rem;font-weight:700;color:var(--grafite);margin-bottom:.3rem;">Próxima praga →</div>
+            <div style="font-size:.9rem;color:var(--terra-900);font-weight:600;">{{ .Title }}</div>
+          </a>
+          {{ else }}<div></div>{{ end }}
+        </nav>
+        {{ end }}
+
+        {{/* CTA */}}
+        <div class="cta-box" style="margin-top:3rem;">
+          <h3>Precisa de óleo de neem para controlar {{ .Title | lower }}?</h3>
+          <p>Conheça o produto que recomendamos e solicite uma cotação sem compromisso.</p>
+          <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="/produto/" class="btn btn-primary">Conhecer o produto</a>
+            {{ with $.Site.Params.whatsapp }}
+            <a href="https://wa.me/{{ . }}?text={{ printf "Olá! Preciso de ajuda com controle de %s com neem." $.Title | urlquery }}"
+               class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              📱 Falar no WhatsApp
+            </a>
+            {{ end }}
+          </div>
+        </div>
+
+      </article>
+
+      {{/* Sidebar */}}
+      <aside class="sidebar">
+
+        {{/* Ficha técnica */}}
+        <div class="sidebar-widget">
+          <h4>📋 Ficha da Praga</h4>
+          <ul style="list-style:none;padding:0;">
+            {{ with .Params.nome_cientifico }}
+            <li style="padding:.4rem 0;border-bottom:1px solid var(--palha);font-size:.85rem;">
+              <span style="font-weight:600;color:var(--tinta);display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;">Nome científico</span>
+              <em>{{ . }}</em>
+            </li>
+            {{ end }}
+            {{ with .Params.nivel_dano }}
+            <li style="padding:.4rem 0;border-bottom:1px solid var(--palha);font-size:.85rem;">
+              <span style="font-weight:600;color:var(--tinta);display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;">Nível de dano</span>
+              {{ if eq . "alto" }}⚠️ Alto{{ else if eq . "medio" }}🔶 Médio{{ else }}✅ Baixo{{ end }}
+            </li>
+            {{ end }}
+            {{ with .Params.fase_critica }}
+            <li style="padding:.4rem 0;font-size:.85rem;">
+              <span style="font-weight:600;color:var(--tinta);display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;">Fase crítica</span>
+              {{ . }}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        {{/* Outras pragas */}}
+        <div class="sidebar-widget">
+          <h4>🐛 Outras Pragas</h4>
+          <ul>
+            {{ range first 6 (where .Site.RegularPages "Section" "pragas") }}
+              {{ if ne .Title $.Title }}
+              <li><a href="{{ .Permalink }}" style="color:var(--musgo-700);font-weight:500;font-size:.88rem;">{{ .Title }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+          <a href="/pragas/" style="font-size:.82rem;color:var(--musgo-500);font-weight:700;display:block;margin-top:.75rem;">Ver todas as pragas →</a>
+        </div>
+
+        {{/* CTA WhatsApp */}}
+        {{ with .Site.Params.whatsapp }}
+        <div class="sidebar-cta">
+          <h4>📱 Dúvidas?</h4>
+          <p>Fale com um especialista em neem pelo WhatsApp.</p>
+          <a href="https://wa.me/{{ . }}?text={{ $.Site.Params.whatsapp_msg | urlquery }}"
+             class="btn btn-primary btn-sm"
+             target="_blank" rel="noopener noreferrer"
+             style="width:100%;justify-content:center;">
+            Chamar no WhatsApp
+          </a>
+        </div>
+        {{ end }}
+
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
