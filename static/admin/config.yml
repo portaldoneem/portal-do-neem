@@ -2,107 +2,231 @@ backend:
   name: github
   repo: portaldoneem/portal-do-neem
   branch: main
+  auth_scope: repo
 
 locale: pt
 
 media_folder: static/images
 public_folder: /images
 
+# ── COLEÇÕES ────────────────────────────────────────────────
+
 collections:
+
+  # ── PRAGAS ────────────────────────────────────────────────
   - name: pragas
-    label: Pragas
-    label_singular: Praga
+    label: "🐛 Pragas"
+    label_singular: "Praga"
     folder: content/pragas
     create: true
     slug: "{{slug}}"
+    path: "{{slug}}/index"
+    preview_path: "/pragas/{{slug}}/"
     fields:
-      - { label: Nome da Praga, name: title, widget: string }
-      - { label: Descricao SEO, name: description, widget: text }
-      - { label: Imagem, name: image, widget: image, required: false }
-      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Controle por Praga" }
-      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
-      - { label: Conteudo, name: body, widget: markdown }
+      - label: "Nome da Praga"
+        name: title
+        widget: string
+        hint: "Ex: Mosca Branca, Pulgão, Ácaro Rajado"
 
+      - label: "Descrição SEO"
+        name: description
+        widget: text
+        hint: "Resumo que aparece no Google. Máximo 160 caracteres."
+
+      - label: "Nome Científico"
+        name: nome_cientifico
+        widget: string
+        required: false
+        hint: "Ex: Bemisia tabaci"
+
+      - label: "Nível de Dano"
+        name: nivel_dano
+        widget: select
+        options:
+          - { label: "🟢 Baixo", value: "baixo" }
+          - { label: "🟡 Médio", value: "medio" }
+          - { label: "🔴 Alto", value: "alto" }
+        default: "medio"
+
+      - label: "Fase Crítica"
+        name: fase_critica
+        widget: string
+        required: false
+        hint: "Ex: Fase vegetativa e floração"
+
+      - label: "Culturas Afetadas"
+        name: culturas_afetadas
+        widget: list
+        hint: "Liste as culturas que esta praga ataca"
+        field:
+          label: "Cultura"
+          name: cultura
+          widget: string
+
+      - label: "Dose Preventiva"
+        name: dose_preventiva
+        widget: string
+        default: "5–10 ml/L"
+        hint: "Dose de óleo de neem por litro de água"
+
+      - label: "Frequência Preventiva"
+        name: freq_preventiva
+        widget: string
+        default: "A cada 14 dias"
+
+      - label: "Dose Curativa"
+        name: dose_curativa
+        widget: string
+        default: "10–15 ml/L"
+
+      - label: "Frequência Curativa"
+        name: freq_curativa
+        widget: string
+        default: "A cada 7 dias"
+
+      - label: "Dica de Aplicação"
+        name: dica_aplicacao
+        widget: string
+        required: false
+        hint: "Ex: Cobrir a face inferior das folhas"
+
+      - label: "Tags"
+        name: tags
+        widget: list
+        default: ["controle de pragas", "neem orgânico"]
+        field:
+          label: "Tag"
+          name: tag
+          widget: string
+
+      - label: "Conteúdo"
+        name: body
+        widget: markdown
+        hint: "Escreva sobre identificação, ciclo biológico e como o neem age"
+
+      - label: "Rascunho?"
+        name: draft
+        widget: boolean
+        default: false
+        hint: "Se marcado, a página não aparece no site"
+
+  # ── CULTURAS ──────────────────────────────────────────────
   - name: culturas
-    label: Culturas
-    label_singular: Cultura
+    label: "🌾 Culturas"
+    label_singular: "Cultura"
     folder: content/culturas
     create: true
     slug: "{{slug}}"
+    path: "{{slug}}/index"
+    preview_path: "/culturas/{{slug}}/"
     fields:
-      - { label: Nome da Cultura, name: title, widget: string }
-      - { label: Descricao SEO, name: description, widget: text }
-      - { label: Imagem, name: image, widget: image, required: false }
-      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Controle por Cultura" }
-      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
-      - { label: Conteudo, name: body, widget: markdown }
+      - label: "Nome da Cultura"
+        name: title
+        widget: string
+        hint: "Ex: Tomate, Soja, Café"
 
-  - name: parceiros
-    label: Produtos de Parceiros
-    label_singular: Produto
-    folder: content/parceiros
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Nome do Produto, name: title, widget: string }
-      - { label: Descricao SEO, name: description, widget: text }
-      - { label: Imagem do Produto, name: image, widget: image, required: false }
-      - { label: Concentracao Azadiractina, name: concentracao, widget: string }
-      - { label: Certificacoes, name: certificacoes, widget: string, required: false }
-      - label: Estados Atendidos
-        name: estados
-        widget: select
-        multiple: true
-        options:
-          - SP
-          - MG
-          - RJ
-          - PR
-          - SC
-          - RS
-          - BA
-          - GO
-          - MT
-          - MS
-          - ES
-          - PA
-          - AM
-          - CE
-          - PE
-          - MA
-          - PI
-          - TO
-          - DF
-          - Todos
-      - { label: Volume Minimo, name: volume_minimo, widget: string }
-      - { label: Prazo Medio de Entrega, name: prazo_entrega, widget: string, required: false }
-      - { label: Link Mercado Livre, name: link_ml, widget: string, required: false }
-      - { label: Rotulo da Secao, name: section_label, widget: hidden, default: "Produto de Parceiro" }
-      - { label: CTA WhatsApp, name: cta_whatsapp, widget: boolean, default: true }
-      - { label: Ficha Tecnica, name: body, widget: markdown }
+      - label: "Descrição SEO"
+        name: description
+        widget: text
+        hint: "Resumo que aparece no Google. Máximo 160 caracteres."
 
+      - label: "Nome Científico"
+        name: nome_cientifico
+        widget: string
+        required: false
+        hint: "Ex: Solanum lycopersicum"
+
+      - label: "Ciclo da Cultura"
+        name: ciclo
+        widget: string
+        required: false
+        hint: "Ex: 90–120 dias"
+
+      - label: "Fase Crítica"
+        name: fase_critica
+        widget: string
+        required: false
+        hint: "Ex: Floração e frutificação"
+
+      - label: "Pragas Principais"
+        name: pragas_principais
+        widget: list
+        hint: "Liste as principais pragas desta cultura"
+        field:
+          label: "Praga"
+          name: praga
+          widget: string
+
+      - label: "Dose Preventiva"
+        name: dose_preventiva
+        widget: string
+        default: "5–10 ml/L"
+
+      - label: "Frequência Preventiva"
+        name: freq_preventiva
+        widget: string
+        default: "A cada 14 dias"
+
+      - label: "Dose Curativa"
+        name: dose_curativa
+        widget: string
+        default: "10–15 ml/L"
+
+      - label: "Frequência Curativa"
+        name: freq_curativa
+        widget: string
+        default: "A cada 7 dias"
+
+      - label: "Dica de Aplicação"
+        name: dica_aplicacao
+        widget: string
+        required: false
+
+      - label: "Calendário de Aplicação"
+        name: calendario
+        widget: list
+        required: false
+        hint: "Adicione cada fase do ciclo da cultura"
+        fields:
+          - { label: "Fase", name: fase, widget: string }
+          - { label: "Momento", name: momento, widget: string }
+          - { label: "Ação Recomendada", name: acao, widget: string }
+
+      - label: "Tags"
+        name: tags
+        widget: list
+        default: ["neem orgânico"]
+        field:
+          label: "Tag"
+          name: tag
+          widget: string
+
+      - label: "Conteúdo"
+        name: body
+        widget: markdown
+        hint: "Escreva sobre as pragas da cultura e como o neem age"
+
+      - label: "Rascunho?"
+        name: draft
+        widget: boolean
+        default: false
+
+  # ── BLOG ──────────────────────────────────────────────────
   - name: blog
-    label: Blog
-    label_singular: Artigo
+    label: "📰 Blog"
+    label_singular: "Artigo"
     folder: content/blog
     create: true
     slug: "{{slug}}"
+    path: "{{slug}}/index"
+    preview_path: "/blog/{{slug}}/"
     fields:
-      - { label: Titulo, name: title, widget: string }
-      - { label: Data de Publicacao, name: date, widget: datetime }
-      - { label: Descricao SEO, name: description, widget: text }
-      - { label: Imagem de Capa, name: image, widget: image, required: false }
-      - { label: Autor, name: author, widget: string, default: Portal do Neem }
-      - { label: Rascunho, name: draft, widget: boolean, default: false }
-      - { label: Conteudo, name: body, widget: markdown }
-
-  - name: faq
-    label: Perguntas Frequentes
-    label_singular: Pergunta
-    folder: content/faq
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: Pergunta, name: title, widget: string }
-      - { label: Ordem, name: weight, widget: number, default: 10 }
-      - { label: Resposta, name: body, widget: markdown }
+      - { label: "Título", name: title, widget: string }
+      - { label: "Descrição SEO", name: description, widget: text }
+      - { label: "Data", name: date, widget: datetime, format: "YYYY-MM-DD" }
+      - label: "Tags"
+        name: tags
+        widget: list
+        field: { label: "Tag", name: tag, widget: string }
+      - { label: "Conteúdo", name: body, widget: markdown }
+      - { label: "Rascunho?", name: draft, widget: boolean, default: false }
