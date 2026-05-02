@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alface — Ficha Técnica | Portal do Neem</title>
+<!-- v9: Acordeões em todas as seções -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --m9:#1f3d20;--m7:#2d5e2a;--m5:#4a8c45;--m3:#8db87a;--m1:#d4eecc;
+    --t9:#3b2010;--t7:#6b3d1e;--t5:#9b6040;--t3:#dbb89a;--t1:#f5e8d8;
+    --a8:#7a4a08;--a6:#c4820e;--a4:#e8a824;--a2:#f5cc6a;--a0:#fdf2d4;
+    --ti:#1a1a18;--gr:#5a5650;--ar:#c8c0b0;--pa:#ede6d8;--cr:#faf6ee;
+    --fh:'Merriweather',Georgia,serif;
+    --fb:'Source Sans 3',sans-serif;
+    --sh:0 1px 4px rgba(59,32,16,.07);
+    --sh2:0 6px 20px rgba(59,32,16,.13);
+    --r:8px;--rl:14px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  body{font-family:var(--fb);background:var(--cr);color:var(--ti);line-height:1.7}
+  a{color:var(--m5);text-decoration:none}
+  a:hover{color:var(--m7);text-decoration:underline}
+
+  /* ── HEADER ── */
+  .site-header{background:var(--m9);border-bottom:3px solid var(--a4);
+    padding:0 2rem;display:flex;align-items:center;height:64px}
+  .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none!important}
+  .logo-icon{font-size:1.5rem}
+  .logo-text{font-family:var(--fh);font-size:1.05rem;color:var(--m1)}
+  .logo-text strong{color:var(--a2)}
+  .breadcrumb{background:var(--m7);padding:.5rem 2rem;font-size:.78rem;
+    color:rgba(255,255,255,.5);display:flex;gap:.4rem;align-items:center}
+  .breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+  .breadcrumb a:hover{color:var(--a2)}
+  .breadcrumb span{color:rgba(255,255,255,.2)}
+
+  /* ── HERO ── */
+  .hero{background:var(--m9);padding:2.5rem 2rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 55% 80% at 92% 50%,rgba(192,57,43,.13) 0%,transparent 65%),
+      radial-gradient(ellipse 35% 55% at 8% 85%,rgba(107,61,30,.18) 0%,transparent 55%)}
+  .hero-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1;
+    display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+  .badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem}
+  .badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;padding:3px 9px;border-radius:20px}
+  .bg-g{background:var(--m1);color:var(--m7)}
+  .bg-r{background:rgba(192,57,43,.2);color:#f5a89e;border:1px solid rgba(192,57,43,.3)}
+  .bg-a{background:rgba(232,168,36,.18);color:var(--a2);border:1px solid rgba(232,168,36,.3)}
+  .hero h1{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);
+    color:#fff;line-height:1.15;margin-bottom:.3rem}
+  .hero-sci{font-style:italic;color:rgba(255,255,255,.4);font-size:.9rem;margin-bottom:.6rem}
+  .hero-desc{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;line-height:1.6}
+  .hero-icon{width:90px;height:90px;border-radius:50%;
+    background:radial-gradient(circle at 40% 35%,rgba(192,57,43,.2),rgba(31,61,32,.5));
+    border:1px solid rgba(141,184,122,.18);
+    display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0}
+
+  /* ── LAYOUT ── */
+  .page{max-width:1040px;margin:0 auto;padding:2rem}
+
+  /* ── CARD GENÉRICO ── */
+  .card{background:#fff;border:1px solid var(--pa);border-radius:var(--rl);
+    box-shadow:var(--sh);margin-bottom:1.25rem;overflow:hidden}
+  .card-head{background:var(--m9);padding:.75rem 1.25rem;
+    display:flex;align-items:center;gap:.5rem}
+  .card-head h2{font-family:var(--fh);font-size:.9rem;font-weight:700;
+    color:var(--m1);margin:0}
+
+  /* ── FICHA TÉCNICA — GRID DE CARDS ── */
+  .ficha-grid{display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:8px;padding:1rem 1.25rem}
+  .fi{background:var(--cr);border:1px solid var(--pa);border-radius:var(--r);
+    padding:.65rem .85rem}
+  .fi-l{font-size:.68rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--gr);margin-bottom:.2rem}
+  .fi-v{font-size:.92rem;font-weight:600;color:var(--ti)}
+  .fi-v.ok{color:var(--m5)}
+  .fi-v.warn{color:#b03020}
+
+  /* Pragas na ficha */
+  .pragas-fi{padding:.65rem 1.25rem 1rem;border-top:1px solid var(--pa)}
+  .pragas-label{font-size:.75rem;font-weight:700;color:var(--gr);
+    text-transform:uppercase;letter-spacing:.07em;
+    display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
+  .info-btn{display:inline-flex;align-items:center;justify-content:center;
+    width:15px;height:15px;border-radius:50%;background:var(--m7);
+    color:#fff;font-size:.6rem;font-weight:700;cursor:pointer;
+    border:none;font-style:normal;flex-shrink:0;position:relative}
+  .tooltip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;
+    transform:translateX(-50%);background:#fff;border:1px solid var(--pa);
+    border-radius:var(--r);padding:.75rem 1rem;box-shadow:var(--sh2);
+    width:270px;z-index:200;font-size:.78rem;line-height:1.5;color:var(--ti);
+    text-align:left}
+  .tooltip-box.open{display:block}
+  .tooltip-box::after{content:'';position:absolute;top:100%;left:50%;
+    transform:translateX(-50%);border:6px solid transparent;
+    border-top-color:var(--pa)}
+  .tip-row{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.4rem}
+  .tip-row:last-child{margin-bottom:0}
+  .tip-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px}
+  .tip-dot.g{background:var(--m5)}
+  .tip-dot.r{background:#b03020}
+  .tag-list{display:flex;gap:.35rem;flex-wrap:wrap}
+  .tag{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;
+    display:inline-block;transition:opacity .15s}
+  .tag.tg{background:var(--m1);color:var(--m7)}
+  .tag.tr{background:rgba(192,57,43,.1);color:#8b2020}
+  .tag:hover{opacity:.8;text-decoration:none!important}
+
+  /* ── DUAS COLUNAS ── */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;
+    gap:1.25rem;margin-bottom:1.25rem}
+
+  /* ── MAPA ── */
+  .map-wrap{position:relative}
+  #brmap{width:100%;height:340px;display:block}
+  .map-tip{position:absolute;background:#fff;border:1px solid var(--pa);
+    border-radius:var(--r);padding:5px 10px;font-size:.78rem;
+    pointer-events:none;display:none;z-index:100;
+    box-shadow:var(--sh2);color:var(--ti);white-space:nowrap}
+  .grad-row{display:flex;align-items:center;gap:.6rem;
+    padding:.6rem 1.25rem;border-top:1px solid var(--pa);background:var(--cr)}
+  .grad-bar{flex:1;height:8px;border-radius:4px;
+    background:linear-gradient(to right,#c8e6b0,#1f3d20)}
+  .grad-l{font-size:.72rem;color:var(--gr)}
+
+  /* ── SAZONALIDADE ── */
+  .sazon-body{padding:1rem 1.25rem}
+  .rg-tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.9rem}
+  .rg{font-size:.74rem;font-weight:600;padding:.28rem .75rem;border-radius:20px;
+    border:1px solid var(--ar);background:var(--cr);cursor:pointer;
+    color:var(--gr);transition:all .15s}
+  .rg:hover{border-color:var(--m3);color:var(--m7)}
+  .rg.sel{background:var(--m7);color:#fff;border-color:var(--m7)}
+  .cal{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-bottom:.6rem}
+  .mes{border-radius:4px;padding:.42rem 0;text-align:center;font-size:.63rem;
+    font-weight:700;transition:transform .12s;cursor:default}
+  .mes:hover{transform:translateY(-2px)}
+  .mes.pl{background:var(--m1);color:var(--m7)}
+  .mes.co{background:var(--a0);color:var(--a8)}
+  .mes.bt{background:linear-gradient(135deg,var(--m1) 50%,var(--a0) 50%);color:var(--t9)}
+  .mes.of{background:var(--pa);color:var(--ar)}
+  .cal-leg{display:flex;gap:.8rem;flex-wrap:wrap;
+    font-size:.7rem;color:var(--gr);margin-bottom:.65rem}
+  .cl-i{display:flex;align-items:center;gap:.3rem}
+  .cl-d{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+  .rg-desc{font-size:.8rem;color:var(--gr);line-height:1.6;
+    padding-top:.6rem;border-top:1px solid var(--pa)}
+  .rg-desc strong{color:var(--t9)}
+
+  /* ── ACORDEÕES ── */
+  .acc{background:#fff;border:1px solid var(--pa);border-radius:var(--rl);
+    box-shadow:var(--sh);margin-bottom:1rem;overflow:hidden}
+  .acc-head{background:var(--m9);padding:.75rem 1.25rem;
+    display:flex;align-items:center;justify-content:space-between;
+    cursor:pointer;user-select:none}
+  .acc-head h2{font-family:var(--fh);font-size:.9rem;font-weight:700;
+    color:var(--m1);margin:0;display:flex;align-items:center;gap:.5rem}
+  .acc-arrow{font-size:1.1rem;color:var(--a2);
+    transition:transform .2s;font-weight:300;line-height:1}
+  .acc.closed .acc-arrow{transform:rotate(-90deg)}
+  .acc-body{padding:1.25rem}
+  .acc.closed .acc-body{display:none}
+
+  /* ── TABELA NEEM ── */
+  .neem-table{width:100%;border-collapse:collapse;font-size:.87rem;margin-bottom:1rem}
+  .neem-table th{background:var(--m9);color:var(--m1);padding:.5rem .85rem;
+    text-align:left;font-family:var(--fb);font-weight:600;font-size:.73rem;
+    letter-spacing:.05em;text-transform:uppercase}
+  .neem-table th:first-child{border-radius:6px 0 0 0}
+  .neem-table th:last-child{border-radius:0 6px 0 0}
+  .neem-table td{padding:.5rem .85rem;border-bottom:1px solid var(--pa);color:var(--ti)}
+  .neem-table tr:nth-child(even) td{background:var(--cr)}
+  .neem-table tr:last-child td{border-bottom:none}
+  .dica{background:var(--a0);border:1px solid rgba(232,168,36,.35);
+    border-radius:var(--r);padding:.65rem .9rem;font-size:.82rem;color:var(--a8)}
+
+  /* ── STEPS (boas práticas) ── */
+  .steps{display:flex;flex-direction:column;gap:.5rem}
+  .step{display:grid;grid-template-columns:28px 1fr;gap:.75rem;align-items:start;
+    padding:.6rem .75rem;background:var(--cr);border-radius:var(--r);
+    border:1px solid var(--pa)}
+  .step-n{width:28px;height:28px;border-radius:50%;background:var(--m9);
+    color:var(--a2);display:flex;align-items:center;justify-content:center;
+    font-size:.78rem;font-weight:700;flex-shrink:0;margin-top:1px}
+  .step-body{font-size:.87rem;color:var(--gr);line-height:1.5}
+  .step-body strong{color:var(--ti);font-weight:600}
+
+  /* ── CURIOSIDADES (cards) ── */
+  .curios{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.75rem}
+  .curio{background:var(--cr);border-radius:var(--r);
+    border:1px solid var(--pa);border-top:2px solid var(--a4);padding:.85rem}
+  .curio h4{font-family:var(--fh);font-size:.82rem;font-weight:700;
+    color:var(--t9);margin-bottom:.3rem}
+  .curio p{font-size:.79rem;color:var(--gr);line-height:1.5;margin:0}
+
+  /* ── POR QUE NEEM (cards genéricos) ── */
+  .neem-why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+  .nw{background:var(--cr);border:1px solid var(--pa);border-radius:var(--r);
+    padding:.85rem;border-left:3px solid var(--m5)}
+  .nw-icon{font-size:1.3rem;margin-bottom:.4rem;display:block}
+  .nw h4{font-family:var(--fh);font-size:.82rem;font-weight:700;color:var(--t9);margin-bottom:.3rem}
+  .nw p{font-size:.78rem;color:var(--gr);line-height:1.55;margin:0}
+
+  /* ── NEEM + CULTURA (argumentos específicos) ── */
+  .neem-args{display:flex;flex-direction:column;gap:.6rem}
+  .na{display:grid;grid-template-columns:36px 1fr;gap:.75rem;align-items:start;
+    padding:.7rem .85rem;background:var(--cr);border-radius:var(--r);
+    border:1px solid var(--pa)}
+  .na-icon{width:36px;height:36px;border-radius:50%;background:var(--m9);
+    color:var(--a2);display:flex;align-items:center;justify-content:center;
+    font-size:1rem;flex-shrink:0}
+  .na-body h4{font-family:var(--fh);font-size:.84rem;font-weight:700;
+    color:var(--t9);margin-bottom:.25rem}
+  .na-body p{font-size:.82rem;color:var(--gr);line-height:1.55;margin:0}
+
+  /* ── FOOTER ── */
+  .site-footer{background:var(--t9);padding:1.25rem 2rem;margin-top:2rem;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+  .site-footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
+  .site-footer a{color:rgba(255,255,255,.35);font-size:.75rem;text-decoration:none}
+  .site-footer a:hover{color:var(--a2)}
+
+  @media(max-width:700px){
+    .two-col{grid-template-columns:1fr}
+    .hero-inner{grid-template-columns:1fr}
+    .hero-icon{display:none}
+    .page{padding:1rem}
+    .tooltip-box{left:0;transform:none}
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo"><span class="logo-icon">🌿</span><span class="logo-text">Portal do <strong>Neem</strong></span></a>
+</header>
+<div class="breadcrumb">
+  <a href="/">Início</a><span>›</span><a href="/culturas/">Por Cultura</a><span>›</span><span style="color:rgba(255,255,255,.8)">Alface</span>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badges">
+        <span class="badge bg-g">Horticultura</span>
+        <span class="badge bg-a">Média pressão de pragas</span>
+        <span class="badge bg-a">Neem recomendado</span>
+      </div>
+      <h1>Alface</h1>
+      <div class="hero-sci">Lactuca sativa</div>
+      <div class="hero-desc">A folhosa mais consumida do Brasil — base da salada de norte a sul. O neem protege a alface de pulgões e tripes sem comprometer a qualidade das folhas.</div>
+    </div>
+    <div class="hero-icon">🥬</div>
+  </div>
+</div>
+<div class="page">
+  <div class="card">
+    <div class="card-head"><span>📋</span><h2>Ficha Técnica</h2></div>
+    <div class="ficha-grid">
+      <div class="fi"><div class="fi-l">Família</div><div class="fi-v">Asteraceae</div></div>
+      <div class="fi"><div class="fi-l">Origem</div><div class="fi-v">Mediterrâneo</div></div>
+      <div class="fi"><div class="fi-l">Ciclo médio</div><div class="fi-v">45–65 dias</div></div>
+      <div class="fi"><div class="fi-l">Espaçamento</div><div class="fi-v">0,25 × 0,30 m</div></div>
+      <div class="fi"><div class="fi-l">Temperatura ideal</div><div class="fi-v">15°C – 22°C</div></div>
+      <div class="fi"><div class="fi-l">Altitude ideal</div><div class="fi-v">400 – 1.200 m</div></div>
+      <div class="fi"><div class="fi-l">pH do solo</div><div class="fi-v">6,0 – 6,8</div></div>
+      <div class="fi"><div class="fi-l">Produtividade</div><div class="fi-v">20–40 t/ha</div></div>
+      <div class="fi"><div class="fi-l">Tipo de cultivo</div><div class="fi-v">Campo e hidroponia</div></div>
+      <div class="fi"><div class="fi-l">Pressão de pragas</div><div class="fi-v warn">Média</div></div>
+      <div class="fi"><div class="fi-l">Aceita orgânico</div><div class="fi-v ok">Sim ✓</div></div>
+      <div class="fi"><div class="fi-l">Fase crítica (neem)</div><div class="fi-v">Formação da cabeça</div></div>
+    </div>
+    <div class="pragas-fi">
+      <div class="pragas-label">Pragas principais
+        <button class="info-btn" id="praga-btn" aria-label="Entenda as cores" tabindex="0">ⓘ
+          <div class="tooltip-box" id="praga-tip" role="tooltip">
+            <div class="tip-row"><span class="tip-dot g"></span><span><strong>Verde (eficácia alta)</strong> — O neem controla efetivamente esta praga de forma isolada</span></div>
+            <div class="tip-row"><span class="tip-dot r"></span><span><strong>Vermelha (eficácia média/baixa)</strong> — Exige protocolo especial: dose mais alta e/ou combinação com outro biocontrole</span></div>
+          </div>
+        </button>
+      </div>
+      <div class="tag-list" id="pragas-tags"><span style="font-size:.78rem;color:var(--gr)">Carregando pragas...</span></div>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="card map-wrap" style="margin-bottom:0">
+      <div class="card-head"><span>🗺️</span><h2>Produção por estado — % nacional</h2></div>
+      <svg id="brmap" viewBox="0 0 600 540" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="map-tip" id="maptip"></div>
+      <div class="grad-row"><span class="grad-l">Menor</span><div class="grad-bar"></div><span class="grad-l">Maior</span></div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <div class="card-head"><span>📅</span><h2>Sazonalidade por região</h2></div>
+      <div class="sazon-body">
+        <div class="rg-tabs" id="rgBar"></div>
+        <div class="cal" id="calGrid"></div>
+        <div class="cal-leg">
+          <div class="cl-i"><div class="cl-d" style="background:var(--m1);border:1px solid var(--m3)"></div>Plantio</div>
+          <div class="cl-i"><div class="cl-d" style="background:var(--a0);border:1px solid var(--a2)"></div>Colheita</div>
+          <div class="cl-i"><div class="cl-d" style="background:linear-gradient(135deg,var(--m1) 50%,var(--a0) 50%)"></div>Ambos</div>
+          <div class="cl-i"><div class="cl-d" style="background:var(--pa)"></div>Fora de época</div>
+        </div>
+        <div class="rg-desc" id="rgDesc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUE ESCOLHER O NEEM? (genérico — acordeão) -->
+  <div class="acc">
+    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
+      <h2><span>🛡️</span> Por que escolher o Neem?</h2>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+    <div class="neem-why">
+      <div class="nw">
+        <span class="nw-icon">🔄</span>
+        <h4>Sem resistência de pragas</h4>
+        <p>Atua por 4 mecanismos simultâneos (antialimentar, regulador de crescimento, repelente e inibidor de oviposição). Essa ação múltipla torna praticamente impossível a praga desenvolver resistência.</p>
+      </div>
+      <div class="nw">
+        <span class="nw-icon">🐞</span>
+        <h4>Seletivo: protege os aliados</h4>
+        <p>Afeta pragas-alvo mas preserva joaninhas, vespas parasitoides e aranhas predadoras — os inimigos naturais que trabalham a favor do produtor.</p>
+      </div>
+      <div class="nw">
+        <span class="nw-icon">👨‍🌾</span>
+        <h4>Seguro para quem aplica</h4>
+        <p>Toxicidade muito baixa para mamíferos. Risco de intoxicação significativamente menor comparado a organofosforados e piretroides.</p>
+      </div>
+      <div class="nw">
+        <span class="nw-icon">✅</span>
+        <h4>Aceito na produção orgânica</h4>
+        <p>Insumo aprovado pelas principais certificadoras (IBD, Ecocert, MAPA). Permite acessar mercados com prêmio de preço sem mudar radicalmente o manejo.</p>
+      </div>
+      <div class="nw">
+        <span class="nw-icon">📋</span>
+        <h4>Tendência regulatória favorável</h4>
+        <p>ANVISA e MAPA restringem cada vez mais princípios ativos químicos. O neem é alternativa aprovada e em crescimento — quem adota agora se antecipa.</p>
+      </div>
+      <div class="nw">
+        <span class="nw-icon">🧪</span>
+        <h4>Compatível com manejo integrado</h4>
+        <p>Pode ser combinado com Bt, Trichoderma, Metarhizium e outros biológicos. Compatível com a maioria dos fertilizantes foliares.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- NEEM + ALFACE (acordeão) -->
+  <div class="acc">
+    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
+      <h2><span>🥬</span> Neem + Alface: por que faz sentido</h2>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+    <div class="neem-args">
+      <div class="na">
+        <div class="na-icon">💰</div>
+        <div class="na-body">
+          <h4>Ciclo curto, retorno rápido</h4>
+          <p>A alface tem ciclo de apenas 45–65 dias. Como o neem não exige carência longa, o produtor consegue proteger a cultura do plantio à colheita sem atrasos.</p>
+        </div>
+      </div>
+      <div class="na">
+        <div class="na-icon">🎯</div>
+        <div class="na-body">
+          <h4>Pulgão: praga nº 1 controlada pelo neem</h4>
+          <p>O pulgão-verde é a praga mais frequente da alface e responde muito bem ao neem em aplicação isolada. Eficácia alta com dosagem baixa (3 mL/L).</p>
+        </div>
+      </div>
+      <div class="na">
+        <div class="na-icon">🍃</div>
+        <div class="na-body">
+          <h4>Folhosa sem resíduo visível</h4>
+          <p>O consumidor come a alface crua, folha por folha. O neem não deixa resíduo visível, sabor ou odor nas folhas.</p>
+        </div>
+      </div>
+      <div class="na">
+        <div class="na-icon">🏪</div>
+        <div class="na-body">
+          <h4>Alface orgânica tem demanda garantida</h4>
+          <p>A alface é a folhosa orgânica mais procurada em feiras e supermercados. O prêmio de preço chega a 2–3× o convencional.</p>
+        </div>
+      </div>
+      <div class="na">
+        <div class="na-icon">💧</div>
+        <div class="na-body">
+          <h4>Compatível com hidroponia</h4>
+          <p>O neem pode ser utilizado em sistemas hidropônicos com aplicação foliar, protegendo a alface sem contaminar a solução nutritiva.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
+      <h2><span>🌿</span> Como usar o neem no alface</h2>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <table class="neem-table">
+        <thead><tr><th>Fase do ciclo</th><th>Situação</th><th>Dose de neem</th><th>Emulsificante</th><th>Frequência</th></tr></thead>
+        <tbody>
+          <tr><td>Mudas / Bandejas</td><td>Preventivo</td><td>3 mL/L</td><td>1,5 mL/L</td><td>A cada 7 dias</td></tr>
+          <tr><td>Pós-transplante</td><td>Manutenção</td><td>3–5 mL/L</td><td>1,5–2,5 mL/L</td><td>A cada 7–10 dias</td></tr>
+          <tr><td>Formação da cabeça</td><td>Preventivo</td><td>3 mL/L</td><td>1,5 mL/L</td><td>A cada 10 dias</td></tr>
+          <tr><td>Pré-colheita</td><td>Manutenção</td><td>3 mL/L</td><td>1,5 mL/L</td><td>A cada 10 dias</td></tr>
+        </tbody>
+      </table>
+      <div class="dica">💡 <strong>Alface crespa vs. lisa:</strong> a crespa acumula mais produto entre as folhas — usar menor volume de calda. <strong>Hidroponia:</strong> aplicar somente por via foliar, nunca na solução nutritiva. <strong>Pulgão:</strong> focar a pulverização na face inferior das folhas externas.</div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
+      <h2><span>✅</span> Boas práticas no cultivo do alface com neem</h2>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Monitore a face inferior das folhas</strong> — Os pulgões se instalam embaixo das folhas, onde ficam protegidos. Inspecione 10 plantas aleatórias por canteiro a cada 3 dias.</div></div>
+        <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Aplique ao entardecer</strong> — Evite aplicar sob sol forte — a alface é sensível e o neem pode causar fitotoxicidade em folhas molhadas sob radiação intensa.</div></div>
+        <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Use bico leque com baixa pressão</strong> — Para folhosas, bico leque (80.02 ou 80.03) com pressão de 2 bar garante cobertura sem danificar as folhas.</div></div>
+        <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Rotação com brássicas</strong> — Evite plantar alface no mesmo canteiro por mais de 3 ciclos seguidos. Alterne com couve, rúcula ou rabanete.</div></div>
+        <div class="step"><div class="step-n">5</div><div class="step-body"><strong>Cobertura morta reduz pragas</strong> — Palha ou casca de arroz ao redor das mudas reduz respingos de solo, preserva umidade e dificulta lesmas e lagartas.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="acc">
+    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
+      <h2><span>💡</span> Curiosidades sobre o alface</h2>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <div class="curios">
+        <div class="curio"><h4>4 mil anos de história</h4><p>A alface é cultivada desde o antigo Egito. Os romanos já a consumiam como entrada — o nome vem do latim 'lactuca' (leite), pela seiva leitosa.</p></div>
+        <div class="curio"><h4>Mais de 100 variedades</h4><p>Crespa, lisa, americana, mimosa, romana, roxa... o Brasil cultiva dezenas de variedades adaptadas a cada região e clima.</p></div>
+        <div class="curio"><h4>SP produz 28% do total</h4><p>O cinturão verde de São Paulo (Mogi das Cruzes, Ibiúna, Suzano) é o maior polo produtor de alface do Brasil.</p></div>
+        <div class="curio"><h4>Hidroponia em alta</h4><p>Cerca de 30% da alface brasileira já é produzida em hidroponia — sistema que consome 90% menos água que o cultivo convencional.</p></div>
+        <div class="curio"><h4>Calmante natural</h4><p>A lactucina presente na seiva da alface tem propriedades sedativas leves. Chá de talo de alface é remédio popular para insônia.</p></div>
+        <div class="curio"><h4>Neem na hidroponia</h4><p>Produtores hidropônicos usam neem foliar como única linha de defesa contra pulgões — sem contato com raízes, sem risco para a solução.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <p>© 2026 Portal do Neem — Todos os direitos reservados.</p>
+  <a href="/contato/">Fale conosco</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+(async function() {
+  var sb = supabase.createClient('https://yhbqkpcsatgskshhykbv.supabase.co', 'sb_publishable_quIpJfFBXJ7I8d-ClDtgHQ__TU5WSd7');
+  var container = document.getElementById('pragas-tags');
+  try {
+    var cultura = await sb.from('culturas').select('id').eq('slug', 'alface').single();
+    if (cultura.error) throw cultura.error;
+    var relacoes = await sb.from('cultura_praga').select('nivel_eficacia, dosagem_ml_litro, frequencia_dias, observacoes, praga_id').eq('cultura_id', cultura.data.id);
+    if (relacoes.error) throw relacoes.error;
+    var pragaIds = relacoes.data.map(function(r) { return r.praga_id; });
+    var pragas = await sb.from('pragas').select('id, nome, slug, pagina_url').in('id', pragaIds);
+    if (pragas.error) throw pragas.error;
+    var pragaMap = {};
+    pragas.data.forEach(function(p) { pragaMap[p.id] = p; });
+    if (relacoes.data.length === 0) { container.innerHTML = '<span style="font-size:.78rem;color:var(--gr)">Nenhuma praga cadastrada.</span>'; return; }
+    container.innerHTML = '';
+    relacoes.data.forEach(function(rel) {
+      var praga = pragaMap[rel.praga_id]; if (!praga) return;
+      var tag = document.createElement('a');
+      tag.href = praga.pagina_url || '/pragas/' + praga.slug + '/';
+      tag.className = 'tag ' + (rel.nivel_eficacia === 'alta' ? 'tg' : 'tr');
+      tag.textContent = praga.nome;
+      tag.title = 'Eficácia: ' + rel.nivel_eficacia + (rel.dosagem_ml_litro ? ' | Dosagem: ' + rel.dosagem_ml_litro + ' mL/L' : '') + (rel.frequencia_dias ? ' | Freq: a cada ' + rel.frequencia_dias + ' dias' : '') + (rel.observacoes ? ' | ' + rel.observacoes : '');
+      container.appendChild(tag);
+    });
+  } catch (e) { console.error('Erro:', e); container.innerHTML = '<span style="font-size:.78rem;color:#b03020">Erro ao carregar pragas.</span>'; }
+})();
+</script>
+<script>
+var pb=document.getElementById('praga-btn'),pt=document.getElementById('praga-tip');
+pb.addEventListener('click',function(e){e.stopPropagation();pt.classList.toggle('open')});
+document.addEventListener('click',function(){pt.classList.remove('open')});
+</script>
+<script>
+var regioes={
+  'Centro-Oeste': {
+    meses: ['pl', 'pl', 'of', 'of', 'pl', 'pl', 'pl', 'pl', 'of', 'of', 'pl', 'pl'],
+    desc: '<strong>Centro-Oeste</strong> — Cultivo concentrado nos meses mais amenos (maio–agosto) e no início das chuvas.'
+  },
+  'Nordeste': {
+    meses: ['of', 'of', 'pl', 'pl', 'pl', 'co', 'co', 'of', 'of', 'of', 'of', 'of'],
+    desc: '<strong>Nordeste</strong> — Produção em regiões serranas e irrigadas. Calor excessivo causa pendoamento precoce.'
+  },
+  'Norte': {
+    meses: ['pl', 'pl', 'pl', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'pl', 'pl'],
+    desc: '<strong>Norte</strong> — Cultivo em estufas e hidroponia predomina devido ao calor e umidade elevados.'
+  },
+  'Sudeste': {
+    meses: ['co', 'of', 'of', 'pl', 'pl', 'pl', 'pl', 'co', 'co', 'co', 'co', 'co'],
+    desc: '<strong>Sudeste</strong> — Maior produtor. SP e cinturão verde abastecem o ano todo. Período mais favorável: abril–setembro.'
+  },
+  'Sul': {
+    meses: ['co', 'co', 'of', 'of', 'pl', 'pl', 'pl', 'pl', 'co', 'co', 'co', 'co'],
+    desc: '<strong>Sul</strong> — Cultivo de março a novembro. Qualidade superior nos meses frescos.'
+  },
+};
+var mN=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+var selRg='Norte';
+function buildSazon(){
+  var bar=document.getElementById('rgBar');bar.innerHTML='';
+  Object.keys(regioes).sort().forEach(function(r){
+    var b=document.createElement('button');b.className='rg'+(r===selRg?' sel':'');b.textContent=r;
+    b.onclick=function(){selRg=r;buildSazon();};bar.appendChild(b);
+  });
+  var grid=document.getElementById('calGrid');grid.innerHTML='';
+  regioes[selRg].meses.forEach(function(t,i){
+    var d=document.createElement('div');d.className='mes '+t;d.textContent=mN[i].slice(0,3);grid.appendChild(d);
+  });
+  document.getElementById('rgDesc').innerHTML=regioes[selRg].desc;
+}
+buildSazon();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+var prod={"São Paulo": 28, "Minas Gerais": 15, "Rio de Janeiro": 10, "Paraná": 8, "Goiás": 7, "Bahia": 5, "Santa Catarina": 4, "Rio Grande do Sul": 4, "Distrito Federal": 3, "Espírito Santo": 3, "Ceará": 2, "Pernambuco": 2, "Mato Grosso": 2, "Pará": 1};var maxVal=28;
+var colorScale=d3.scaleSequential([0,maxVal],d3.interpolateRgb('#c8e6b0','#1f3d20'));
+var svg=d3.select('#brmap');var maptip=document.getElementById('maptip');var mapWrap=document.querySelector('.map-wrap');
+var proj=d3.geoMercator().center([-54,-14]).scale(600).translate([300,280]);var pathGen=d3.geoPath(proj);
+d3.json('https://cdn.jsdelivr.net/npm/datamaps@0.5.10/src/js/data/bra.topo.json').then(function(topo){
+  var key=Object.keys(topo.objects)[0];var features=topojson.feature(topo,topo.objects[key]).features;
+  svg.selectAll('path').data(features).join('path').attr('d',pathGen).attr('stroke','#fff').attr('stroke-width',0.6)
+    .attr('fill',function(d){var n=d.properties.name||d.properties.NAME||'';return colorScale(prod[n]||0)})
+    .on('mousemove',function(e,d){var n=d.properties.name||d.properties.NAME||'';var v=prod[n]||0;var rect=mapWrap.getBoundingClientRect();
+      maptip.style.display='block';maptip.style.left=(e.clientX-rect.left+14)+'px';maptip.style.top=(e.clientY-rect.top-36)+'px';
+      maptip.innerHTML='<strong>'+n+'</strong>'+(v?' — '+v+'% da produção':'');})
+    .on('mouseleave',function(){maptip.style.display='none'});
+  svg.selectAll('text.pct').data(features.filter(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]>=8}))
+    .join('text').attr('class','pct').attr('transform',function(d){return 'translate('+pathGen.centroid(d)+')'})
+    .attr('text-anchor','middle').attr('font-size',9).attr('font-family','sans-serif').attr('fill','rgba(255,255,255,.9)').attr('pointer-events','none')
+    .text(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]?prod[n]+'%':''});
+}).catch(function(){svg.append('text').attr('x',300).attr('y',270).attr('text-anchor','middle').attr('fill','#888').attr('font-size',13).text('Mapa não disponível')});
+</script>
+</body>
+</html>
