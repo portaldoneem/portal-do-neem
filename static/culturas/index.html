@@ -1,285 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neem por Cultura — Portal do Neem</title>
-<meta name="description" content="Ficha técnica, pragas, dosagem e calendário de aplicação do neem para 20 culturas agrícolas brasileiras.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
-<style>
-/* ── TILES CULTURAS (complemento ao style.css) ── */
-.cat-section{margin-bottom:2.5rem}
-.cat-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;padding-bottom:.6rem;border-bottom:2px solid var(--musgo-100)}
-.cat-header-icon{font-size:1.2rem}
-.cat-header-name{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--terra-900);flex:1}
-.cat-header-count{font-size:.72rem;font-weight:700;color:var(--musgo-700);background:var(--musgo-100);padding:.2rem .7rem;border-radius:20px}
-
-.tile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.6rem}
-.tile{display:flex;align-items:center;gap:.65rem;padding:.75rem .9rem;background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);transition:all .15s;text-decoration:none;color:var(--color-text)}
-.tile:hover{border-color:var(--musgo-500);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
-.tile-emoji{font-size:1.3rem;flex-shrink:0}
-.tile-info{flex:1;min-width:0}
-.tile-name{font-size:.82rem;font-weight:700;color:var(--terra-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tile-sub{font-size:.7rem;color:var(--color-text-lighter);margin-top:1px}
-.tile-arrow{font-size:.8rem;color:var(--argila);flex-shrink:0;transition:transform .15s}
-.tile:hover .tile-arrow{transform:translateX(2px);color:var(--musgo-500)}
-
-.bp{font-size:.58rem;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle;margin-left:3px}
-.bp-a{background:rgba(155,96,64,.1);color:var(--terra-700)}
-.bp-m{background:var(--ambar-50);color:var(--ambar-800)}
-
-.tile.soon{opacity:.35;pointer-events:none}
-.tile.soon .tile-name{color:var(--color-text-lighter)}
-
-.stats-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
-.stat{font-size:.85rem;color:var(--grafite)}
-.stat strong{color:var(--musgo-700);font-weight:700}
-
-.legend-row{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;font-size:.72rem;color:var(--color-text-lighter);padding:1.25rem 0 0;border-top:1px solid var(--palha);margin:2rem 0 0}
-.legend-dot{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:4px;vertical-align:middle}
-</style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="logo">
-      <span class="logo-icon">🌿</span>
-      <span class="logo-text">Portal do <strong>Neem</strong></span>
-    </a>
-    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-menu').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-menu">
-      <a href="/">Início</a>
-      <a href="/o-que-e-o-neem/">O que é o Neem</a>
-      <a href="/como-aplicar/">Como Aplicar</a>
-      <a href="/pragas/">Pragas</a>
-      <a href="/culturas/" class="active">Culturas</a>
-      <a href="/parceiros/">Parceiros</a>
-      <a href="/blog/">Blog</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/contato/">Contato</a>
-      <a href="/produto/" class="nav-cta">Adquira o Produto</a>
-    </nav>
-  </div>
-</header>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="container">
-    <a href="/">Início</a>
-    <span>›</span>
-    <strong style="color:var(--tinta)">Neem por Cultura</strong>
-  </div>
-</div>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="container">
-    <span class="hero-badge">🌱 Pilar Educativo</span>
-    <h1>Neem por Cultura</h1>
-    <p class="lead">Ficha técnica, pragas controladas, dosagem e calendário de aplicação do neem — do dono de horta à grande propriedade rural.</p>
-    <div class="stats-row" style="justify-content:flex-start">
-      <span class="stat" style="color:rgba(255,255,255,.6)"><strong style="color:var(--ambar-200)">20</strong> culturas</span>
-      <span class="stat" style="color:rgba(255,255,255,.6)"><strong style="color:var(--ambar-200)">26</strong> pragas mapeadas</span>
-      <span class="stat" style="color:rgba(255,255,255,.6)"><strong style="color:var(--ambar-200)">57</strong> relações praga × cultura</span>
-    </div>
-  </div>
-</div>
-
-<!-- CONTEÚDO -->
-<div class="section">
-  <div class="container">
-
-    <!-- HORTALIÇAS -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <span class="cat-header-icon">🥬</span>
-        <span class="cat-header-name">Hortaliças</span>
-        <span class="cat-header-count">7 culturas</span>
-      </div>
-      <div class="tile-grid">
-        <a href="/culturas/tomate/" class="tile">
-          <span class="tile-emoji">🍅</span>
-          <div class="tile-info"><div class="tile-name">Tomate <span class="bp bp-a">alta</span></div><div class="tile-sub">5 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/alface/" class="tile">
-          <span class="tile-emoji">🥬</span>
-          <div class="tile-info"><div class="tile-name">Alface <span class="bp bp-m">média</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/pimentao/" class="tile">
-          <span class="tile-emoji">🫑</span>
-          <div class="tile-info"><div class="tile-name">Pimentão <span class="bp bp-a">alta</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/pepino/" class="tile">
-          <span class="tile-emoji">🥒</span>
-          <div class="tile-info"><div class="tile-name">Pepino <span class="bp bp-m">média</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/repolho/" class="tile">
-          <span class="tile-emoji">🥬</span>
-          <div class="tile-info"><div class="tile-name">Repolho <span class="bp bp-a">alta</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/couve/" class="tile">
-          <span class="tile-emoji">🥗</span>
-          <div class="tile-info"><div class="tile-name">Couve <span class="bp bp-m">média</span></div><div class="tile-sub">2 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/morango/" class="tile">
-          <span class="tile-emoji">🍓</span>
-          <div class="tile-info"><div class="tile-name">Morango <span class="bp bp-a">alta</span></div><div class="tile-sub">2 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- GRÃOS E CEREAIS -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <span class="cat-header-icon">🌾</span>
-        <span class="cat-header-name">Grãos e cereais</span>
-        <span class="cat-header-count">4 culturas</span>
-      </div>
-      <div class="tile-grid">
-        <a href="/culturas/soja/" class="tile">
-          <span class="tile-emoji">🫘</span>
-          <div class="tile-info"><div class="tile-name">Soja <span class="bp bp-a">alta</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/milho/" class="tile">
-          <span class="tile-emoji">🌽</span>
-          <div class="tile-info"><div class="tile-name">Milho <span class="bp bp-a">alta</span></div><div class="tile-sub">2 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/feijao/" class="tile">
-          <span class="tile-emoji">🫘</span>
-          <div class="tile-info"><div class="tile-name">Feijão <span class="bp bp-a">alta</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-        <a href="/culturas/arroz/" class="tile">
-          <span class="tile-emoji">🌾</span>
-          <div class="tile-info"><div class="tile-name">Arroz <span class="bp bp-m">média</span></div><div class="tile-sub">3 pragas mapeadas</div></div>
-          <span class="tile-arrow">›</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- FRUTICULTURA -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <span class="cat-header-icon">🍊</span>
-        <span class="cat-header-name">Fruticultura</span>
-        <span class="cat-header-count">4 culturas</span>
-      </div>
-      <div class="tile-grid">
-        <a class="tile soon"><span class="tile-emoji">🍊</span><div class="tile-info"><div class="tile-name">Citros</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🥭</span><div class="tile-info"><div class="tile-name">Manga</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🍌</span><div class="tile-info"><div class="tile-name">Banana</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🍈</span><div class="tile-info"><div class="tile-name">Mamão</div><div class="tile-sub">em breve</div></div></a>
-      </div>
-    </div>
-
-    <!-- OUTRAS CULTURAS -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <span class="cat-header-icon">☕</span>
-        <span class="cat-header-name">Outras culturas</span>
-        <span class="cat-header-count">4 culturas</span>
-      </div>
-      <div class="tile-grid">
-        <a class="tile soon"><span class="tile-emoji">☕</span><div class="tile-info"><div class="tile-name">Café</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🧶</span><div class="tile-info"><div class="tile-name">Algodão</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🌿</span><div class="tile-info"><div class="tile-name">Cana-de-açúcar</div><div class="tile-sub">em breve</div></div></a>
-        <a class="tile soon"><span class="tile-emoji">🥔</span><div class="tile-info"><div class="tile-name">Batata</div><div class="tile-sub">em breve</div></div></a>
-      </div>
-    </div>
-
-    <!-- HORTA DOMÉSTICA -->
-    <div class="cat-section">
-      <div class="cat-header">
-        <span class="cat-header-icon">🏡</span>
-        <span class="cat-header-name">Horta doméstica</span>
-        <span class="cat-header-count">1 guia</span>
-      </div>
-      <div class="tile-grid">
-        <a class="tile soon"><span class="tile-emoji">🌱</span><div class="tile-info"><div class="tile-name">Horta em Casa</div><div class="tile-sub">em breve</div></div></a>
-      </div>
-    </div>
-
-    <!-- LEGENDA -->
-    <div class="legend-row">
-      <span><span class="legend-dot" style="background:rgba(155,96,64,.12);border:1px solid var(--terra-500)"></span> Pressão de pragas alta</span>
-      <span><span class="legend-dot" style="background:var(--ambar-50);border:1px solid var(--ambar-600)"></span> Pressão média</span>
-      <span><span class="legend-dot" style="background:var(--palha);border:1px solid var(--argila)"></span> Em breve</span>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-box">
-      <h3>Não encontrou sua cultura?</h3>
-      <p>Preparamos um protocolo personalizado para o seu caso.</p>
-      <a href="/contato/" class="btn btn-primary">Fale conosco</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo">
-          <span class="logo-icon">🌿</span>
-          <span class="logo-text">Portal do <strong>Neem</strong></span>
-        </a>
-        <p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil. Do dono de horta à grande propriedade rural.</p>
-        <p><a href="https://wa.me/5511999999999" style="color:var(--ambar-200)">📱 WhatsApp: (11) 99999-9999</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Aprenda</h4>
-        <a href="/o-que-e-o-neem/">O que é o Neem</a>
-        <a href="/como-aplicar/">Como Aplicar</a>
-        <a href="/pragas/">Controle por Praga</a>
-        <a href="/culturas/">Por Cultura</a>
-        <a href="/neem-vs-quimicos/">Neem vs Químicos</a>
-        <a href="/blog/">Blog & Artigos</a>
-      </div>
-      <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="/produto/">Nosso Produto</a>
-        <a href="/parceiros/">Parceiros</a>
-        <a href="/para-empresas/">Para Empresas</a>
-        <a href="/cotacao/">Solicitar Cotação</a>
-        <a href="/materiais/">Materiais Gratuitos</a>
-      </div>
-      <div class="footer-col">
-        <h4>Portal</h4>
-        <a href="/faq/">Perguntas Frequentes</a>
-        <a href="/contato/">Contato</a>
-        <a href="/seja-parceiro/">Seja Parceiro</a>
-        <a href="/sobre/">Sobre o Portal</a>
-        <a href="/privacidade/">Política de Privacidade</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Portal do Neem — Todos os direitos reservados.</p>
-      <div class="footer-seal"><span>🌱</span> Conteúdo orgânico, sem agrotóxicos na informação</div>
-    </div>
-  </div>
-</footer>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20Portal%20do%20Neem." class="whatsapp-float" data-tip="Fale conosco" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-</body>
-</html>
+<!doctype html><html lang=pt-BR><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Neem por Cultura — Portal do Neem</title><meta name=description content="Ficha técnica, pragas controladas, dosagem e calendário de aplicação do neem para 20 culturas agrícolas brasileiras. Da horta doméstica à lavoura comercial."><meta name=author content="Portal do Neem"><link rel=canonical href=https://portaldoneem.com.br/culturas/><meta property="og:title" content="Neem por Cultura"><meta property="og:description" content="Ficha técnica, pragas controladas, dosagem e calendário de aplicação do neem para 20 culturas agrícolas brasileiras."><meta property="og:url" content="https://portaldoneem.com.br/culturas/"><meta property="og:site_name" content="Portal do Neem"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:image" content="https://portaldoneem.com.br/og-image.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Neem por Cultura"><meta name=twitter:description content="Ficha técnica, pragas controladas, dosagem e calendário de aplicação do neem para 20 culturas agrícolas brasileiras."><link rel=icon href=/favicon.ico sizes=any><link rel=icon href=/favicon.svg type=image/svg+xml><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/style.css><style>.cat-section{margin-bottom:2.25rem}.cat-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem;padding-bottom:.5rem;border-bottom:2px solid var(--musgo-100)}.cat-header-icon{font-size:1.1rem}.cat-header-name{font-family:var(--font-heading);font-size:.95rem;font-weight:700;color:var(--terra-900);flex:1}.cat-header-count{font-size:.7rem;font-weight:700;color:var(--musgo-700);background:var(--musgo-100);padding:.15rem .6rem;border-radius:20px}.cat-desc{font-size:.84rem;color:var(--grafite);margin:0 0 .7rem;line-height:1.5}.tile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}.tile{display:flex;align-items:center;gap:.55rem;padding:.65rem .75rem;background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);transition:all .15s;text-decoration:none;color:var(--color-text)}.tile:hover{border-color:var(--musgo-500);box-shadow:var(--shadow-sm);transform:translateY(-1px)}.tile-emoji{font-size:1.15rem;flex-shrink:0}.tile-name{font-size:.8rem;font-weight:600;color:var(--terra-900);flex:1}.tile-arrow{font-size:.75rem;color:var(--argila);flex-shrink:0;transition:transform .15s}.tile:hover .tile-arrow{transform:translateX(2px);color:var(--musgo-500)}.bp{font-size:.55rem;font-weight:700;padding:1px 4px;border-radius:3px;text-transform:uppercase;letter-spacing:.03em;vertical-align:middle;margin-left:2px}.bp-a{background:rgba(155,96,64,.1);color:var(--terra-700)}.bp-m{background:var(--ambar-50);color:var(--ambar-800)}.tile.soon{opacity:.35;pointer-events:none}.tile.soon .tile-name{color:var(--color-text-lighter)}.legend-row{display:flex;gap:1rem;flex-wrap:wrap;font-size:.7rem;color:var(--color-text-lighter);padding:1rem 0 0;border-top:1px solid var(--palha);margin:1.5rem 0 0}.legend-dot{width:7px;height:7px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:middle}</style></head><body><header class=site-header><div class=container><a href=/ class=logo aria-label="Portal do Neem — página inicial"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span>
+</a><button class=menu-toggle aria-label="Abrir menu" aria-expanded=false aria-controls=nav-menu onclick=toggleMenu(this)>
+<span></span>
+<span></span>
+<span></span></button><nav id=nav-menu class=nav-menu aria-label="Menu principal"><a href=/>Início</a>
+<a href=/o-que-e-o-neem/>O que é o Neem</a>
+<a href=/como-aplicar/>Como Aplicar</a>
+<a href=/pragas/>Pragas</a>
+<a href=/culturas/>Culturas</a>
+<a href=/parceiros/>Parceiros</a>
+<a href=/blog/>Blog</a>
+<a href=/faq/>FAQ</a>
+<a href=/contato/>Contato</a>
+<a href=/produto/ class=nav-cta>Adquira o Produto</a></nav></div></header><script>function toggleMenu(e){var n=document.getElementById("nav-menu"),t=n.classList.toggle("open");e.setAttribute("aria-expanded",t),e.setAttribute("aria-label",t?"Fechar menu":"Abrir menu"),document.body.style.overflow=t?"hidden":""}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("#nav-menu a").forEach(function(e){e.addEventListener("click",function(){var e=document.getElementById("nav-menu"),t=document.querySelector(".menu-toggle");e.classList.contains("open")&&(e.classList.remove("open"),t.setAttribute("aria-expanded","false"),t.setAttribute("aria-label","Abrir menu"),document.body.style.overflow="")})})})</script><main id=conteudo-principal><div class=page-header><div class=container><nav class=breadcrumb aria-label="Você está em"><a href=/>Início</a>
+<span aria-hidden=true>›</span>
+<a href=https://portaldoneem.com.br/>Portal do Neem</a>
+<span aria-hidden=true>›</span>
+<span aria-current=page>Neem por Cultura</span></nav><div style=margin-bottom:.75rem;display:flex;gap:.5rem;flex-wrap:wrap><span class="badge badge-green">por cultura</span>
+<span class="badge badge-green">ficha técnica</span>
+<span class="badge badge-green">dosagem</span>
+<span class="badge badge-green">manejo integrado</span></div><h1>Neem por Cultura</h1><p class=lead>Ficha técnica, pragas controladas, dosagem e calendário de aplicação do neem — do dono de horta à grande propriedade rural.</p></div></div><div class=page-body><div class=container><div class=page-layout><article class=page-content><p>Cada cultura tem um ecossistema de pragas próprio — e o neem age de forma diferente em cada uma. O tomate sofre com mosca branca e traça, enquanto o café enfrenta o bicho-mineiro e a broca. A dosagem, a frequência e o momento de aplicação mudam conforme a cultura, a fase do ciclo e até a região do Brasil.</p><p>Nas fichas abaixo, você encontra para cada cultura: ficha técnica com 12 dados agronômicos, lista de pragas com nível de eficácia do neem (verde = controla sozinho, vermelha = precisa de protocolo combinado), mapa de produção por estado, calendário de sazonalidade por região, tabela de dosagem por fase do ciclo e boas práticas de aplicação.</p><p>Se você não sabe por onde começar: produtores de <strong>hortaliças e morango</strong> têm os melhores resultados com o neem como produto principal. Para <strong>grãos e grandes lavouras</strong>, o neem funciona melhor como parte do manejo integrado (MIP). Clique na sua cultura para ver o protocolo completo.</p><div class=cat-section id=hortalicas><div class=cat-header><span class=cat-header-icon>🥬</span><span class=cat-header-name>Hortaliças</span><span class=cat-header-count>7 culturas</span></div><p class=cat-desc>Maior pressão de pragas e maior resposta ao neem. Ideal para quem busca substituir ou reduzir químicos.</p><div class=tile-grid><a href=/culturas/tomate/ class=tile><span class=tile-emoji>🍅</span><span class=tile-name>Tomate <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/alface/ class=tile><span class=tile-emoji>🥬</span><span class=tile-name>Alface <span class="bp bp-m">média</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/pimentao/ class=tile><span class=tile-emoji>🫑</span><span class=tile-name>Pimentão <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/pepino/ class=tile><span class=tile-emoji>🥒</span><span class=tile-name>Pepino <span class="bp bp-m">média</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/repolho/ class=tile><span class=tile-emoji>🥬</span><span class=tile-name>Repolho <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/couve/ class=tile><span class=tile-emoji>🥗</span><span class=tile-name>Couve <span class="bp bp-m">média</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/morango/ class=tile><span class=tile-emoji>🍓</span><span class=tile-name>Morango <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a></div></div><div class=cat-section id=graos><div class=cat-header><span class=cat-header-icon>🌾</span><span class=cat-header-name>Grãos e cereais</span><span class=cat-header-count>4 culturas</span></div><p class=cat-desc>Neem como ferramenta no MIP — bordaduras, áreas de refúgio e redução de resistência a químicos.</p><div class=tile-grid><a href=/culturas/soja/ class=tile><span class=tile-emoji>🫘</span><span class=tile-name>Soja <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/milho/ class=tile><span class=tile-emoji>🌽</span><span class=tile-name>Milho <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/feijao/ class=tile><span class=tile-emoji>🫘</span><span class=tile-name>Feijão <span class="bp bp-a">alta</span></span><span class=tile-arrow>›</span></a>
+<a href=/culturas/arroz/ class=tile><span class=tile-emoji>🌾</span><span class=tile-name>Arroz <span class="bp bp-m">média</span></span><span class=tile-arrow>›</span></a></div></div><div class=cat-section id=fruticultura><div class=cat-header><span class=cat-header-icon>🍊</span><span class=cat-header-name>Fruticultura</span><span class=cat-header-count>4 culturas</span></div><p class=cat-desc>Ácaros, cochonilhas e mosca-das-frutas — pragas de alto impacto onde o neem atua como aliado no manejo.</p><div class=tile-grid><a class="tile soon"><span class=tile-emoji>🍊</span><span class=tile-name>Citros</span></a>
+<a class="tile soon"><span class=tile-emoji>🥭</span><span class=tile-name>Manga</span></a>
+<a class="tile soon"><span class=tile-emoji>🍌</span><span class=tile-name>Banana</span></a>
+<a class="tile soon"><span class=tile-emoji>🍈</span><span class=tile-name>Mamão</span></a></div></div><div class=cat-section id=outras><div class=cat-header><span class=cat-header-icon>☕</span><span class=cat-header-name>Outras culturas</span><span class=cat-header-count>4 culturas</span></div><p class=cat-desc>Café, algodão, cana e batata — culturas de grande relevância econômica com pragas responsivas ao neem.</p><div class=tile-grid><a class="tile soon"><span class=tile-emoji>☕</span><span class=tile-name>Café</span></a>
+<a class="tile soon"><span class=tile-emoji>🧶</span><span class=tile-name>Algodão</span></a>
+<a class="tile soon"><span class=tile-emoji>🌿</span><span class=tile-name>Cana-de-açúcar</span></a>
+<a class="tile soon"><span class=tile-emoji>🥔</span><span class=tile-name>Batata</span></a></div></div><div class=cat-section id=horta><div class=cat-header><span class=cat-header-icon>🏡</span><span class=cat-header-name>Horta doméstica</span><span class=cat-header-count>1 guia</span></div><p class=cat-desc>Para quem cultiva em casa: vasos, canteiros e jardineiras. Neem no borrifador, sem complicação.</p><div class=tile-grid><a class="tile soon"><span class=tile-emoji>🌱</span><span class=tile-name>Horta em Casa</span></a></div></div><div class=legend-row><span><span class=legend-dot style=background:rgba(155,96,64,.12);border:1px solid var(--terra-500)></span> Pressão alta</span>
+<span><span class=legend-dot style=background:var(--ambar-50);border:1px solid var(--ambar-600)></span> Pressão média</span>
+<span><span class=legend-dot style=background:var(--palha);border:1px solid var(--argila)></span> Em breve</span></div><div class=cta-box style=margin-top:3rem><h3>Não encontrou sua cultura?</h3><p>Preparamos um protocolo personalizado para o seu caso.</p><div style=display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap><a href=/contato/ class="btn btn-primary">Fale conosco</a>
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-ghost" target=_blank rel="noopener noreferrer">📱 Falar no WhatsApp</a></div></div></article><aside class=sidebar aria-label="Conteúdo relacionado"><div class=sidebar-widget><h4>🌱 Por Categoria</h4><ul><li><a href=#hortalicas>Hortaliças (7)</a></li><li><a href=#graos>Grãos e Cereais (4)</a></li><li><a href=#fruticultura>Fruticultura (4)</a></li><li><a href=#outras>Outras Culturas (4)</a></li><li><a href=#horta>Horta Doméstica (1)</a></li></ul></div><div class=sidebar-widget><h4>🌿 Explorar</h4><ul><li><a href=/o-que-e-o-neem/>O que é o Neem</a></li><li><a href=/como-aplicar/>Como Aplicar</a></li><li><a href=/pragas/>Controle por Praga</a></li><li><a href=/neem-vs-quimicos/>Neem vs Químicos</a></li><li><a href=/faq/>Perguntas Frequentes</a></li></ul></div><div class=sidebar-cta><h4>💰 Precisa de neem?</h4><p>Solicite uma cotação com nossos parceiros validados.</p><a href=/cotacao/ class="btn btn-primary btn-sm" style=width:100%;justify-content:center>Solicitar Cotação</a></div><div class=sidebar-cta><h4>📱 Dúvidas?</h4><p>Fale com um especialista em neem pelo WhatsApp.</p><a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-primary btn-sm" target=_blank rel="noopener noreferrer" style=width:100%;justify-content:center>Chamar no WhatsApp</a></div></aside></div></div></div></main><footer class=site-footer><div class=container><div class=footer-grid><div class=footer-brand><a href=/ class=logo aria-label="Portal do Neem"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span></a><p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.
+Do dono de horta à grande propriedade rural.</p><p style=margin-top:.5rem><a href=https://wa.me/5511999999999 style=color:rgba(255,255,255,.45);font-size:.8rem>📱 WhatsApp: (11) 99999-9999</a></p></div><div class=footer-col><h4>Aprenda</h4><a href=/o-que-e-o-neem/>O que é o Neem</a>
+<a href=/como-aplicar/>Como Aplicar</a>
+<a href=/pragas/>Controle por Praga</a>
+<a href=/culturas/>Por Cultura</a>
+<a href=/neem-vs-quimicos/>Neem vs Químicos</a>
+<a href=/blog/>Blog & Artigos</a></div><div class=footer-col><h4>Produtos</h4><a href=/produto/>Nosso Produto</a>
+<a href=/parceiros/>Parceiros</a>
+<a href=/para-empresas/>Para Empresas</a>
+<a href=/cotacao/>Solicitar Cotação</a>
+<a href=/materiais/>Materiais Gratuitos</a></div><div class=footer-col><h4>Portal</h4><a href=/faq/>Perguntas Frequentes</a>
+<a href=/contato/>Contato</a>
+<a href=/seja-parceiro/>Seja Parceiro</a>
+<a href=/sobre/>Sobre o Portal</a>
+<a href=/privacidade/>Política de Privacidade</a></div></div><div class=footer-bottom><p>&copy; 2026 Portal do Neem &mdash;
+Todos os direitos reservados.</p><div class=footer-seal><span>🌱</span>
+Conteúdo orgânico, sem agrotóxicos na informação</div></div></div></footer><a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class=whatsapp-float target=_blank rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg></a></body></html>
