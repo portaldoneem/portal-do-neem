@@ -1,0 +1,263 @@
+<!doctype html><html lang=pt-BR><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Banana — Ficha Técnica e Controle com Neem | Portal do Neem</title><meta name=description content="Ficha técnica do banana: 12 dados agronômicos, pragas com eficácia do neem, mapa de produção, sazonalidade por região, dosagem por fase do ciclo e boas práticas."><meta name=author content="Portal do Neem"><link rel=canonical href=https://portaldoneem.com.br/culturas/banana/><meta property="og:title" content="Banana — Ficha Técnica e Controle com Neem"><meta property="og:description" content="Ficha técnica do banana: pragas, dosagem do neem por fase do ciclo, mapa de produção e boas práticas."><meta property="og:url" content="https://portaldoneem.com.br/culturas/banana/"><meta property="og:site_name" content="Portal do Neem"><meta property="og:type" content="article"><meta property="og:locale" content="pt_BR"><meta property="og:image" content="https://portaldoneem.com.br/og-image.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Banana — Ficha Técnica e Controle com Neem"><meta name=twitter:description content="Ficha técnica do banana: pragas, dosagem do neem por fase do ciclo, mapa de produção e boas práticas."><link rel=icon href=/favicon.ico sizes=any><link rel=icon href=/favicon.svg type=image/svg+xml><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/style.css>
+<style>
+/* ── CSS específico da ficha de cultura (complementa style.css) ── */
+.cultura-hero{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.cultura-icon{width:52px;height:52px;border-radius:50%;background:var(--musgo-100);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:2px solid var(--musgo-300)}
+.cultura-sci{font-style:italic;color:rgba(255,255,255,.45);font-size:.85rem;margin-top:-.25rem}
+.ficha-card{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1.25rem}
+.ficha-card-head{background:var(--musgo-900);padding:.65rem 1.1rem;display:flex;align-items:center;gap:.5rem}
+.ficha-card-head h2{font-family:var(--font-heading);font-size:.88rem;font-weight:700;color:var(--musgo-100);margin:0}
+.ficha-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;padding:.85rem 1.1rem}
+.fi{background:var(--palha-light,#faf6ee);border:1px solid var(--palha);border-radius:var(--radius);padding:.55rem .75rem}
+.fi-l{font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--grafite);margin-bottom:.15rem}
+.fi-v{font-size:.88rem;font-weight:600;color:var(--terra-900)}
+.fi-v.ok{color:var(--musgo-500)}
+.fi-v.warn{color:#b03020}
+.pragas-fi{padding:.6rem 1.1rem .85rem;border-top:1px solid var(--palha)}
+.pragas-label{font-size:.72rem;font-weight:700;color:var(--grafite);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:.4rem;margin-bottom:.45rem}
+.info-btn{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--musgo-700);color:#fff;font-size:.6rem;font-weight:700;cursor:pointer;border:none;position:relative}
+.tooltip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--palha);border-radius:var(--radius);padding:.65rem .85rem;box-shadow:var(--shadow-md);width:260px;z-index:200;font-size:.76rem;line-height:1.5;color:var(--terra-900);text-align:left}
+.tooltip-box.open{display:block}
+.tooltip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--palha)}
+.tip-row{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.35rem}
+.tip-row:last-child{margin-bottom:0}
+.tip-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.tip-dot.g{background:var(--musgo-500)}
+.tip-dot.r{background:#b03020}
+.tag-list{display:flex;gap:.3rem;flex-wrap:wrap}
+.tag{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;transition:opacity .15s;text-decoration:none}
+.tag.tg{background:var(--musgo-100);color:var(--musgo-700)}
+.tag.tr{background:rgba(176,48,32,.1);color:#8b2020}
+.tag:hover{opacity:.8;text-decoration:none!important}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
+.map-wrap{position:relative;background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden}
+.map-wrap .ficha-card-head{margin:0}
+#brmap{width:100%;height:300px;display:block}
+.map-tip{position:absolute;background:#fff;border:1px solid var(--palha);border-radius:var(--radius);padding:4px 9px;font-size:.75rem;pointer-events:none;display:none;z-index:100;box-shadow:var(--shadow-md);white-space:nowrap}
+.grad-row{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;border-top:1px solid var(--palha);background:var(--palha-light,#faf6ee)}
+.grad-bar{flex:1;height:7px;border-radius:4px;background:linear-gradient(to right,#c8e6b0,#1f3d20)}
+.grad-l{font-size:.68rem;color:var(--grafite)}
+.sazon-card{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden}
+.sazon-body{padding:.85rem 1.1rem}
+.rg-tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.75rem}
+.rg{font-size:.7rem;font-weight:600;padding:.22rem .65rem;border-radius:20px;border:1px solid var(--argila);background:var(--palha-light,#faf6ee);cursor:pointer;color:var(--grafite);transition:all .15s}
+.rg:hover{border-color:var(--musgo-300);color:var(--musgo-700)}
+.rg.sel{background:var(--musgo-700);color:#fff;border-color:var(--musgo-700)}
+.cal{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin-bottom:.5rem}
+.mes{border-radius:3px;padding:.35rem 0;text-align:center;font-size:.6rem;font-weight:700;transition:transform .12s;cursor:default}
+.mes:hover{transform:translateY(-2px)}
+.mes.pl{background:var(--musgo-100);color:var(--musgo-700)}
+.mes.co{background:var(--ambar-50);color:var(--ambar-800)}
+.mes.bt{background:linear-gradient(135deg,var(--musgo-100) 50%,var(--ambar-50) 50%);color:var(--terra-900)}
+.mes.of{background:var(--palha);color:var(--argila)}
+.cal-leg{display:flex;gap:.7rem;flex-wrap:wrap;font-size:.66rem;color:var(--grafite);margin-bottom:.55rem}
+.cl-i{display:flex;align-items:center;gap:.25rem}
+.cl-d{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.rg-desc{font-size:.78rem;color:var(--grafite);line-height:1.55;padding-top:.5rem;border-top:1px solid var(--palha)}
+.rg-desc strong{color:var(--terra-900)}
+.acc{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-bottom:.9rem;overflow:hidden}
+.acc-head{background:var(--musgo-900);padding:.65rem 1.1rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.acc-head h2{font-family:var(--font-heading);font-size:.88rem;font-weight:700;color:var(--musgo-100);margin:0;display:flex;align-items:center;gap:.45rem}
+.acc-arrow{font-size:1rem;color:var(--ambar-200);transition:transform .2s;font-weight:300;line-height:1}
+.acc.closed .acc-arrow{transform:rotate(-90deg)}
+.acc-body{padding:1.1rem}
+.acc.closed .acc-body{display:none}
+.neem-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:.85rem}
+.neem-table th{background:var(--musgo-900);color:var(--musgo-100);padding:.45rem .75rem;text-align:left;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
+.neem-table th:first-child{border-radius:5px 0 0 0}
+.neem-table th:last-child{border-radius:0 5px 0 0}
+.neem-table td{padding:.45rem .75rem;border-bottom:1px solid var(--palha)}
+.neem-table tr:nth-child(even) td{background:var(--palha-light,#faf6ee)}
+.neem-table tr:last-child td{border-bottom:none}
+.dica{background:var(--ambar-50);border:1px solid rgba(232,168,36,.3);border-radius:var(--radius);padding:.6rem .8rem;font-size:.8rem;color:var(--ambar-800)}
+.steps{display:flex;flex-direction:column;gap:.45rem}
+.step{display:grid;grid-template-columns:26px 1fr;gap:.65rem;align-items:start;padding:.55rem .7rem;background:var(--palha-light,#faf6ee);border-radius:var(--radius);border:1px solid var(--palha)}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--musgo-900);color:var(--ambar-200);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step-body{font-size:.82rem;color:var(--grafite);line-height:1.5}
+.step-body strong{color:var(--terra-900);font-weight:600}
+.curios{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:.65rem}
+.curio{background:var(--palha-light,#faf6ee);border-radius:var(--radius);border:1px solid var(--palha);border-top:2px solid var(--ambar-400);padding:.75rem}
+.curio h4{font-family:var(--font-heading);font-size:.8rem;font-weight:700;color:var(--terra-900);margin-bottom:.25rem}
+.curio p{font-size:.76rem;color:var(--grafite);line-height:1.5;margin:0}
+.neem-why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.nw{background:var(--palha-light,#faf6ee);border:1px solid var(--palha);border-radius:var(--radius);padding:.75rem}
+.nw-icon{font-size:1.3rem;display:block;margin-bottom:.35rem}
+.nw h4{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.2rem}
+.nw p{font-size:.76rem;color:var(--grafite);line-height:1.45;margin:0}
+.neem-args{display:flex;flex-direction:column;gap:.65rem}
+.na{display:grid;grid-template-columns:36px 1fr;gap:.65rem;align-items:start;background:var(--palha-light,#faf6ee);border:1px solid var(--palha);border-radius:var(--radius);padding:.7rem}
+.na-icon{font-size:1.4rem;line-height:1;text-align:center}
+.na-body h4{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.15rem}
+.na-body p{font-size:.78rem;color:var(--grafite);line-height:1.45;margin:0}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}.info-btn .tooltip-box{left:0;transform:none}}
+</style>
+</head>
+<body>
+<header class=site-header><div class=container><a href=/ class=logo aria-label="Portal do Neem — página inicial"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span></a><button class=menu-toggle aria-label="Abrir menu" aria-expanded=false aria-controls=nav-menu onclick="toggleMenu(this)"><span></span><span></span><span></span></button><nav id=nav-menu class=nav-menu aria-label="Menu principal"><a href=/>Início</a><a href=/o-que-e-o-neem/>O que é o Neem</a><a href=/como-aplicar/>Como Aplicar</a><a href=/pragas/>Pragas</a><a href=/culturas/ class=active aria-current=page>Culturas</a><a href=/parceiros/>Parceiros</a><a href=/blog/>Blog</a><a href=/faq/>FAQ</a><a href=/contato/>Contato</a><a href=/produto/ class=nav-cta>Adquira o Produto</a></nav></div></header>
+
+<main id=conteudo-principal>
+<div class=page-header><div class=container>
+<nav class=breadcrumb aria-label="Você está em"><a href=/>Início</a><span aria-hidden=true>›</span><a href=/culturas/>Por Cultura</a><span aria-hidden=true>›</span><span aria-current=page>Banana</span></nav>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem">
+<span class="badge badge-green">Fruticultura perene</span>
+<span class="badge badge-amber">Alta pressão de pragas</span>
+<span class="badge badge-amber">neem altamente recomendado</span></div>
+<div class=cultura-hero><div class=cultura-icon>🍌</div><div><h1 style=margin-bottom:0>Banana</h1><p class=cultura-sci>Musa spp. (nanica, prata, maçã, pacovan)</p></div></div>
+<p class=lead>A fruta mais consumida do Brasil — mais de 28 kg per capita por ano. Cultura perene de alta produtividade que se beneficia enormemente do neem, especialmente no controle da broca-do-rizoma e do tripes-da-bananeira.</p> — e o citros é uma das culturas que mais se beneficia do neem, especialmente no controle de cochonilha, ácaro-da-ferrugem e mosca-das-frutas.</p>
+</div></div>
+
+<div class=page-body><div class=container><div class=page-layout><article class=page-content>
+
+<div class=ficha-card><div class=ficha-card-head><span>📋</span><h2>Ficha Técnica</h2></div><div class=ficha-grid>
+<div class=fi><div class=fi-l>Família</div><div class=fi-v>Musaceae</div></div>
+<div class=fi><div class=fi-l>Origem</div><div class=fi-v>Sudeste Asiático</div></div>
+<div class=fi><div class=fi-l>Ciclo produtivo</div><div class=fi-v>Perene — 9–18 meses 1ª colheita</div></div>
+<div class=fi><div class=fi-l>Espaçamento</div><div class=fi-v>2,0 × 2,0–3,0 m</div></div>
+<div class=fi><div class=fi-l>Temperatura ideal</div><div class=fi-v>18°C – 35°C</div></div>
+<div class=fi><div class=fi-l>Altitude ideal</div><div class=fi-v>0 – 800 m</div></div>
+<div class=fi><div class=fi-l>pH do solo</div><div class=fi-v>5,5 – 7,0</div></div>
+<div class=fi><div class=fi-l>Produtividade</div><div class=fi-v>15–40 t/ha/ano</div></div>
+<div class=fi><div class=fi-l>Tipo de cultivo</div><div class=fi-v>Perene — campo</div></div>
+<div class=fi><div class=fi-l>Pressão de pragas</div><div class="fi-v warn">Moderada–Alta</div></div>
+<div class=fi><div class=fi-l>Aceita orgânico</div><div class="fi-v ok">Sim ✓</div></div>
+<div class=fi><div class=fi-l>Fase crítica (neem)</div><div class=fi-v>Florescimento / engaço</div></div>
+</div>
+<div class=pragas-fi><div class=pragas-label>Pragas principais <button class=info-btn id=praga-btn aria-label="Entenda as cores" tabindex=0>ⓘ<div class=tooltip-box id=praga-tip role=tooltip><div class=tip-row><span class="tip-dot g"></span><span><strong>Verde (eficácia alta)</strong> — Neem controla de forma isolada</span></div><div class=tip-row><span class="tip-dot r"></span><span><strong>Vermelha (eficácia média/baixa)</strong> — Exige protocolo especial ou combinação</span></div></div></button></div>
+<div class=tag-list id=pragas-tags><span style=font-size:.76rem;color:var(--grafite)>Carregando pragas...</span></div>
+</div></div>
+
+<div class=two-col><div class=map-wrap><div class=ficha-card-head><span>🗺️</span><h2>Produção por estado — % nacional</h2></div><svg id=brmap viewBox="0 0 600 540" preserveAspectRatio="xMidYMid meet"></svg><div class=map-tip id=maptip></div><div class=grad-row><span class=grad-l>Menor</span><div class=grad-bar></div><span class=grad-l>Maior</span></div></div><div class=sazon-card><div class=ficha-card-head><span>📅</span><h2>Sazonalidade por região</h2></div><div class=sazon-body><div class=rg-tabs id=rgBar></div><div class=cal id=calGrid></div><div class=cal-leg><div class=cl-i><div class=cl-d style=background:var(--musgo-100);border:1px+solid+var(--musgo-300)></div>Florescimento / plantio</div><div class=cl-i><div class=cl-d style=background:var(--ambar-50);border:1px+solid+var(--ambar-200)></div>Colheita</div><div class=cl-i><div class=cl-d style="background:linear-gradient(135deg,var(--musgo-100) 50%,var(--ambar-50) 50%)"></div>Ambos</div><div class=cl-i><div class=cl-d style=background:var(--palha)></div>Fora de época principal</div></div><div class=rg-desc id=rgDesc></div></div></div></div>
+
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🛡️</span> Por que escolher o Neem?</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=neem-why><div class=nw><span class=nw-icon>🔄</span><h4>Sem resistência de pragas</h4><p>Atua por 4 mecanismos simultâneos (antialimentar, regulador de crescimento, repelente e inibidor de oviposição). Ação múltipla torna praticamente impossível a praga desenvolver resistência.</p></div><div class=nw><span class=nw-icon>🐞</span><h4>Seletivo: protege os aliados</h4><p>Afeta pragas-alvo mas preserva joaninhas, vespas parasitoides e aranhas predadoras — os inimigos naturais que trabalham a favor do produtor.</p></div><div class=nw><span class=nw-icon>👨‍🌾</span><h4>Seguro para quem aplica</h4><p>Toxicidade muito baixa para mamíferos. Risco de intoxicação significativamente menor comparado a organofosforados e piretroides.</p></div><div class=nw><span class=nw-icon>✅</span><h4>Aceito na produção orgânica</h4><p>Insumo aprovado pelas principais certificadoras (IBD, Ecocert, MAPA). Permite acessar mercados com prêmio de preço.</p></div><div class=nw><span class=nw-icon>📋</span><h4>Tendência regulatória favorável</h4><p>ANVISA e MAPA restringem cada vez mais princípios ativos químicos. O neem é alternativa aprovada e em crescimento.</p></div><div class=nw><span class=nw-icon>🧪</span><h4>Compatível com manejo integrado</h4><p>Pode ser combinado com Bt, Trichoderma, Metarhizium e outros biológicos. Compatível com a maioria dos fertilizantes foliares.</p></div></div></div></div>
+
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🍌</span> Neem + Banana: por que faz sentido</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=neem-args>
+<div class=na><div class=na-icon>🏆</div><div class=na-body><h4>Fruta mais consumida do Brasil</h4><p>O Brasil produz ~7 milhões de t/ano e praticamente toda a produção é consumida internamente. SP lidera com 28%, seguido da BA com 18%. Somos o maior produtor da América do Sul e 5° no mundo.</p></div></div>
+<div class=na><div class=na-icon>🐛</div><div class=na-body><h4>Broca-do-rizoma: o neem age no solo</h4><p>A broca-do-rizoma (<em>Cosmopolites sordidus</em>) é a praga mais devastadora da banana. O neem via drench no rizoma inibe a postura do adulto e prejudica o desenvolvimento larval — eficácia comprovada como complemento às armadilhas de isca.</p></div></div>
+<div class=na><div class=na-icon>🌸</div><div class=na-body><h4>Engaço: janela crítica do tripes</h4><p>Na emergência do engaço (cacho de flores), o tripes-da-bananeira ataca flores e frutos jovens causando manchas que desvalorizam o produto. O neem aplicado no engaço ao entardecer é a estratégia preventiva mais eficaz.</p></div></div>
+<div class=na><div class=na-icon>🌱</div><div class=na-body><h4>Torta de neem: adubo + controle</h4><p>A torta de neem (resíduo da extração do óleo) é um insumo duplo para a banana: melhora a CTC do solo, repele nematoides e reduz populações de larvas. Aplicação de 200–300 g por planta a cada 6 meses traz retorno agronômico e financeiro.</p></div></div>
+<div class=na><div class=na-icon>🔁</div><div class=na-body><h4>Cultura perene — protocolo de longo prazo</h4><p>Uma bananeira bem manejada produz por 20–30 anos emitindo filhotes. O neem preventivo aplicado continuamente ao longo dos anos reduz progressivamente a pressão de pragas no bananal, tornando-se cada vez mais eficaz com o tempo.</p></div></div>
+</div></div></div>
+
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🌿</span> Como usar o neem no banana</h2><span class=acc-arrow>▾</span></div><div class=acc-body><table class=neem-table><thead><tr><th>Fase / Situação</th><th>Objetivo</th><th>Dose de neem</th><th>Emulsificante</th><th>Frequência</th></tr></thead><tbody>
+<tr><td>Mudas / implantação</td><td>Preventivo foliar</td><td>5 ml/L</td><td>2,5 ml/L</td><td>A cada 21 dias</td></tr>
+<tr><td>Crescimento vegetativo</td><td>Manutenção foliar</td><td>5–10 ml/L</td><td>2,5–5 ml/L</td><td>A cada 14–21 dias</td></tr>
+<tr><td>Florescimento / engaço</td><td>Preventivo intensivo</td><td>10 ml/L</td><td>5 ml/L</td><td>A cada 10–14 dias</td></tr>
+<tr><td>Tripes / ácaro ativos</td><td>Curativo foliar</td><td>10–15 ml/L</td><td>5–7,5 ml/L</td><td>A cada 7–10 dias</td></tr>
+<tr><td>Broca-do-rizoma (solo)</td><td>Drench no rizoma</td><td>20 ml/L</td><td>10 ml/L</td><td>A cada 30 dias</td></tr>
+</tbody></table>
+<div class=dica>💡 <strong>Engaço:</strong> dirija a pulverização especialmente para a região das flores e o eixo central do engaço — onde o tripes se concentra. <strong>Broca-do-rizoma:</strong> aplique o drench em círculo de 30 cm ao redor do pseudocaule. <strong>Torta de neem:</strong> complemente com 200–300 g de torta por planta a cada 6 meses.</div>
+</div></div>
+
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>✅</span> Boas práticas no banana com neem</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=steps>
+<div class=step><div class=step-n>1</div><div class=step-body><strong>Tratamento de mudas antes do plantio</strong> — mergulhe os rizomas em solução de neem (20 ml/L) por 30 minutos antes do plantio. Reduz drasticamente a infestação inicial de broca-do-rizoma.</div></div>
+<div class=step><div class=step-n>2</div><div class=step-body><strong>Monitore o engaço semanalmente</strong> — na emergência do engaço, inspecione em busca de tripes e cochonilha. Essa é a fase mais vulnerável do fruto — dano aqui é irreversível.</div></div>
+<div class=step><div class=step-n>3</div><div class=step-body><strong>Aplique no engaço e flores ao entardecer</strong> — dirija a pulverização para o engaço e flores abertas após as 17h para não prejudicar polinizadores. O tripes se esconde nas flores.</div></div>
+<div class=step><div class=step-n>4</div><div class=step-body><strong>Combine neem com armadilhas para broca</strong> — armadilhas de pseudocaule (colmos cortados) capturam adultos. O drench de neem no solo complementa eliminando larvas. Use as duas estratégias simultaneamente.</div></div>
+<div class=step><div class=step-n>5</div><div class=step-body><strong>Descarte correto de resíduos</strong> — folhas velhas e pseudocaules cortados são criadouros da broca. Triture ou enterre imediatamente. Não deixe material vegetal em decomposição espalhado pelo bananal.</div></div>
+<div class=step><div class=step-n>6</div><div class=step-body><strong>Aplique torta de neem no solo</strong> — 200–300 g de torta de neem por planta a cada 6 meses melhora a estrutura do solo, repele nematoides e reduz larvas de pragas de solo — investimento com retorno duplo.</div></div>
+</div></div></div>
+
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>💡</span> Curiosidades sobre o banana</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=curios>
+<div class=curio><h4>Não é uma árvore!</h4><p>A bananeira não é uma árvore — é uma herbácea gigante. O "tronco" (pseudocaule) é formado pela sobreposição de bainhas das folhas, não por madeira verdadeira.</p></div>
+<div class=curio><h4>Fruta mais consumida</h4><p>A banana é a fruta mais consumida pelos brasileiros — mais de 28 kg por pessoa por ano. É também a base alimentar de populações inteiras em países tropicais da África e Ásia.</p></div>
+<div class=curio><h4>5° produtor mundial</h4><p>O Brasil produz ~7 milhões de t/ano. SP lidera com 28% da produção nacional, seguido da BA. Somos o 5° maior produtor mundial, mas praticamente toda produção é consumida internamente.</p></div>
+<div class=curio><h4>Potássio e energia</h4><p>Uma banana média tem ~422 mg de potássio — 12% da necessidade diária. Também é rica em vitamina B6, magnésio e fibras. É o lanche pré-exercício mais popular do mundo.</p></div>
+<div class=curio><h4>Produção perene contínua</h4><p>Uma bananeira produz por 20–30 anos emitindo filhotes (rebrolhos) que substituem a planta-mãe. O manejo correto dos filhotes é tão importante quanto o controle de pragas para garantir produtividade contínua.</p></div>
+<div class=curio><h4>Torta de neem: insumo duplo</h4><p>A torta de neem repele nematoides, melhora a CTC do solo e libera nitrogênio gradualmente — três funções em um único insumo, tornando-a especialmente vantajosa para culturas perenes como a banana.</p></div>
+</div></div></div>
+
+<div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--palha)"><span style=font-size:.8rem;font-weight:700;color:var(--grafite);letter-spacing:.05em;text-transform:uppercase>Tags:</span><div style=display:inline-flex;gap:.4rem;flex-wrap:wrap;margin-left:.5rem>
+<a href=/tags/banana/ class="badge badge-green">banana</a>
+<a href=/tags/fruticultura/ class="badge badge-green">fruticultura</a>
+<a href=/tags/broca-do-rizoma/ class="badge badge-green">broca do rizoma</a>
+<a href=/tags/neem/ class="badge badge-green">neem</a>
+</div></div>
+
+<div class=cta-box style=margin-top:3rem><h3>Precisa de neem para seu bananal?</h3><p>Solicite uma cotação com parceiros validados — sem compromisso.</p><div style=display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap>
+<a href=/cotacao/ class="btn btn-primary">Solicitar Cotação</a>
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+neem+para+banana." class="btn btn-ghost" target=_blank rel="noopener noreferrer">📱 Falar no WhatsApp</a>
+</div></div>
+
+</article><aside class=sidebar aria-label="Conteúdo relacionado">
+<div class=sidebar-widget><h4>← Voltar</h4><ul><li><a href=/culturas/><strong>← Todas as culturas</strong></a></li></ul></div>
+<div class=sidebar-widget><h4>🍌 Fruticultura</h4><ul>
+<li><a href=/culturas/citros/>Citros</a></li>
+<li><a href=/culturas/manga/>Manga</a></li>
+<li><strong>Banana</strong></li>
+<li><a href=/culturas/mamao/>Mamão</a></li>
+</ul></div>
+<div class=sidebar-widget><h4>🌿 Explorar</h4><ul>
+<li><a href=/o-que-e-o-neem/>O que é o Neem</a></li>
+<li><a href=/como-aplicar/>Como Aplicar</a></li>
+<li><a href=/pragas/>Controle por Praga</a></li>
+<li><a href=/neem-vs-quimicos/>Neem vs Químicos</a></li>
+<li><a href=/faq/>Perguntas Frequentes</a></li>
+</ul></div>
+<div class=sidebar-cta><h4>💰 Precisa de neem?</h4><p>Solicite uma cotação com nossos parceiros validados.</p><a href=/cotacao/ class="btn btn-primary btn-sm" style=width:100%;justify-content:center>Solicitar Cotação</a></div>
+<div class=sidebar-cta><h4>📱 Dúvidas?</h4><p>Fale com um especialista em neem pelo WhatsApp.</p><a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-primary btn-sm" target=_blank rel="noopener noreferrer" style=width:100%;justify-content:center>Chamar no WhatsApp</a></div>
+</aside></div></div></div></main>
+
+<footer class=site-footer><div class=container><div class=footer-grid><div class=footer-brand><a href=/ class=logo aria-label="Portal do Neem"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span></a><p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.
+Do dono de horta à grande propriedade rural.</p><p style=margin-top:.5rem><a href=https://wa.me/5511999999999 style=color:rgba(255,255,255,.45);font-size:.8rem>📱 WhatsApp: (11) 99999-9999</a></p></div><div class=footer-col><h4>Aprenda</h4><a href=/o-que-e-o-neem/>O que é o Neem</a>
+<a href=/como-aplicar/>Como Aplicar</a>
+<a href=/pragas/>Controle por Praga</a>
+<a href=/culturas/>Por Cultura</a>
+<a href=/neem-vs-quimicos/>Neem vs Químicos</a>
+<a href=/blog/>Blog & Artigos</a></div><div class=footer-col><h4>Produtos</h4><a href=/produto/>Nosso Produto</a>
+<a href=/parceiros/>Parceiros</a>
+<a href=/para-empresas/>Para Empresas</a>
+<a href=/cotacao/>Solicitar Cotação</a>
+<a href=/materiais/>Materiais Gratuitos</a></div><div class=footer-col><h4>Portal</h4><a href=/faq/>Perguntas Frequentes</a>
+<a href=/contato/>Contato</a>
+<a href=/seja-parceiro/>Seja Parceiro</a>
+<a href=/sobre/>Sobre o Portal</a>
+<a href=/privacidade/>Política de Privacidade</a></div></div><div class=footer-bottom><p>&copy; 2026 Portal do Neem &mdash;
+Todos os direitos reservados.</p><div class=footer-seal><span>🌱</span>
+Conteúdo orgânico, sem agrotóxicos na informação</div></div></div></footer>
+
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class=whatsapp-float target=_blank rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg></a>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+(async function(){var sb=supabase.createClient('https://yhbqkpcsatgskshhykbv.supabase.co','sb_publishable_quIpJfFBXJ7I8d-ClDtgHQ__TU5WSd7');var ct=document.getElementById('pragas-tags');
+try{var cu=await sb.from('culturas').select('id').eq('slug','banana').single();if(cu.error)throw cu.error;
+var rl=await sb.from('cultura_praga').select('nivel_eficacia,dosagem_ml_litro,frequencia_dias,observacoes,praga_id').eq('cultura_id',cu.data.id);if(rl.error)throw rl.error;
+var ids=rl.data.map(function(r){return r.praga_id});var pr=await sb.from('pragas').select('id,nome,slug,pagina_url').in('id',ids);if(pr.error)throw pr.error;
+var pm={};pr.data.forEach(function(p){pm[p.id]=p});if(rl.data.length===0){ct.innerHTML='<span style="font-size:.76rem;color:var(--grafite)">Nenhuma praga cadastrada.</span>';return}
+ct.innerHTML='';rl.data.forEach(function(r){var p=pm[r.praga_id];if(!p)return;var t=document.createElement('a');t.href=p.pagina_url||'/pragas/'+p.slug+'/';
+t.className='tag '+(r.nivel_eficacia==='alta'?'tg':'tr');t.textContent=p.nome;
+t.title='Eficácia: '+r.nivel_eficacia+(r.dosagem_ml_litro?' | Dosagem: '+r.dosagem_ml_litro+' mL/L':'')+(r.frequencia_dias?' | Freq: a cada '+r.frequencia_dias+' dias':'')+(r.observacoes?' | '+r.observacoes:'');
+ct.appendChild(t)})}catch(e){console.error(e);ct.innerHTML='<span style="font-size:.76rem;color:#b03020">Erro ao carregar pragas.</span>'}})();
+</script>
+<script>var pb=document.getElementById('praga-btn'),pt=document.getElementById('praga-tip');pb.addEventListener('click',function(e){e.stopPropagation();pt.classList.toggle('open')});document.addEventListener('click',function(){pt.classList.remove('open')});</script>
+<script>
+var regioes={
+  'Centro-Oeste':{meses:['bt','bt','bt','co','co','co','co','bt','bt','bt','bt','bt'],desc:'<strong>Centro-Oeste</strong> — Produção em GO e MT. A banana produz o ano todo em clima tropical, com pico de colheita no período seco (abril–agosto).'},
+  'Nordeste':{meses:['bt','bt','bt','bt','bt','bt','co','co','co','bt','bt','bt'],desc:'<strong>Nordeste</strong> — BA (Litoral Sul) lidera a região. Produção praticamente o ano todo. Colheita concentrada na segunda metade do ano. Irrigação necessária no semiárido.'},
+  'Norte':{meses:['bt','bt','bt','bt','bt','bt','bt','bt','bt','bt','bt','bt'],desc:'<strong>Norte</strong> — PA e AM produzem banana o ano todo graças ao clima quente e úmido. Pressão de pragas mais intensa — neem é especialmente importante.'},
+  'Sudeste':{meses:['co','co','co','co','bt','bt','bt','bt','bt','bt','co','co'],desc:'<strong>Sudeste</strong> — SP lidera com 28% da produção nacional. Vale do Ribeira e Litoral Norte são os polos principais. Pico de produção no primeiro semestre.'},
+  'Sul':{meses:['co','co','co','of','of','of','of','of','pl','pl','pl','co'],desc:'<strong>Sul</strong> — SC (Vale do Itajaí) e PR têm produção relevante. Inverno limita a produtividade. Plantio no fim do ano, colheita de janeiro a abril.'}
+};
+var mN=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];var selRg='Sudeste';
+function buildSazon(){var bar=document.getElementById('rgBar');bar.innerHTML='';Object.keys(regioes).sort().forEach(function(r){var b=document.createElement('button');b.className='rg'+(r===selRg?' sel':'');b.textContent=r;b.onclick=function(){selRg=r;buildSazon()};bar.appendChild(b)});
+var grid=document.getElementById('calGrid');grid.innerHTML='';regioes[selRg].meses.forEach(function(t,i){var d=document.createElement('div');d.className='mes '+t;d.textContent=mN[i].slice(0,3);grid.appendChild(d)});document.getElementById('rgDesc').innerHTML=regioes[selRg].desc}buildSazon();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+var prod={'São Paulo':28,'Bahia':18,'Minas Gerais':10,'Santa Catarina':9,'Pará':7,'Espírito Santo':5,'Paraná':4,'Rio Grande do Norte':4,'Ceará':3,'Pernambuco':3,'Goiás':2,'Rondônia':2,'Rio de Janeiro':2,'Amazonas':1,'Paraíba':1,'Piauí':1};
+var cs=d3.scaleSequential([0,28],d3.interpolateRgb('#c8e6b0','#1f3d20'));var svg=d3.select('#brmap');var mt=document.getElementById('maptip');var mw=document.querySelector('.map-wrap');
+var pj=d3.geoMercator().center([-54,-14]).scale(600).translate([300,280]);var pg=d3.geoPath(pj);
+d3.json('https://cdn.jsdelivr.net/npm/datamaps@0.5.10/src/js/data/bra.topo.json').then(function(t){var k=Object.keys(t.objects)[0];var f=topojson.feature(t,t.objects[k]).features;
+svg.selectAll('path').data(f).join('path').attr('d',pg).attr('stroke','#fff').attr('stroke-width',0.6).attr('fill',function(d){var n=d.properties.name||d.properties.NAME||'';return cs(prod[n]||0)})
+.on('mousemove',function(e,d){var n=d.properties.name||d.properties.NAME||'';var v=prod[n]||0;var r=mw.getBoundingClientRect();mt.style.display='block';mt.style.left=(e.clientX-r.left+14)+'px';mt.style.top=(e.clientY-r.top-36)+'px';mt.innerHTML='<strong>'+n+'</strong>'+(v?' — '+v+'%':'')}).on('mouseleave',function(){mt.style.display='none'});
+svg.selectAll('text.pct').data(f.filter(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]>=18})).join('text').attr('class','pct').attr('transform',function(d){return 'translate('+pg.centroid(d)+')'}).attr('text-anchor','middle').attr('font-size',9).attr('font-family','sans-serif').attr('fill','rgba(255,255,255,.9)').attr('pointer-events','none').text(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]?prod[n]+'%':''});
+}).catch(function(){svg.append('text').attr('x',300).attr('y',270).attr('text-anchor','middle').attr('fill','#888').attr('font-size',13).text('Mapa não disponível')});
+</script>
+<script>
+function toggleMenu(btn){var nav=document.getElementById('nav-menu');var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');document.body.style.overflow=open?'hidden':'';}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('#nav-menu a').forEach(function(link){link.addEventListener('click',function(){var nav=document.getElementById('nav-menu');var btn=document.querySelector('.menu-toggle');if(nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Abrir menu');document.body.style.overflow=''}})})});
+</script>
+</body></html>
