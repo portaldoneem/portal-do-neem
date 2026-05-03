@@ -1,374 +1,164 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arroz — Ficha Técnica | Portal do Neem</title>
-<!-- v9: Acordeões em todas as seções -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!doctype html><html lang=pt-BR><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Arroz — Ficha Técnica e Controle com Neem | Portal do Neem</title><meta name=description content="Ficha técnica do arroz: pragas, dosagem do neem por fase do ciclo, mapa de produção por estado e boas práticas."><meta name=author content="Portal do Neem"><link rel=canonical href=https://portaldoneem.com.br/culturas/arroz/><meta property="og:title" content="Arroz — Ficha Técnica e Controle com Neem"><meta property="og:description" content="Ficha técnica do arroz: pragas, dosagem do neem, mapa de produção e boas práticas."><meta property="og:url" content="https://portaldoneem.com.br/culturas/arroz/"><meta property="og:site_name" content="Portal do Neem"><meta property="og:type" content="article"><meta property="og:locale" content="pt_BR"><meta property="og:image" content="https://portaldoneem.com.br/og-image.png"><link rel=icon href=/favicon.ico sizes=any><link rel=icon href=/favicon.svg type=image/svg+xml><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/style.css>
 <style>
-  :root {
-    --m9:#1f3d20;--m7:#2d5e2a;--m5:#4a8c45;--m3:#8db87a;--m1:#d4eecc;
-    --t9:#3b2010;--t7:#6b3d1e;--t5:#9b6040;--t3:#dbb89a;--t1:#f5e8d8;
-    --a8:#7a4a08;--a6:#c4820e;--a4:#e8a824;--a2:#f5cc6a;--a0:#fdf2d4;
-    --ti:#1a1a18;--gr:#5a5650;--ar:#c8c0b0;--pa:#ede6d8;--cr:#faf6ee;
-    --fh:'Merriweather',Georgia,serif;
-    --fb:'Source Sans 3',sans-serif;
-    --sh:0 1px 4px rgba(59,32,16,.07);
-    --sh2:0 6px 20px rgba(59,32,16,.13);
-    --r:8px;--rl:14px;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-  body{font-family:var(--fb);background:var(--cr);color:var(--ti);line-height:1.7}
-  a{color:var(--m5);text-decoration:none}
-  a:hover{color:var(--m7);text-decoration:underline}
-
-  /* ── HEADER ── */
-  .site-header{background:var(--m9);border-bottom:3px solid var(--a4);
-    padding:0 2rem;display:flex;align-items:center;height:64px}
-  .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none!important}
-  .logo-icon{font-size:1.5rem}
-  .logo-text{font-family:var(--fh);font-size:1.05rem;color:var(--m1)}
-  .logo-text strong{color:var(--a2)}
-  .breadcrumb{background:var(--m7);padding:.5rem 2rem;font-size:.78rem;
-    color:rgba(255,255,255,.5);display:flex;gap:.4rem;align-items:center}
-  .breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
-  .breadcrumb a:hover{color:var(--a2)}
-  .breadcrumb span{color:rgba(255,255,255,.2)}
-
-  /* ── HERO ── */
-  .hero{background:var(--m9);padding:2.5rem 2rem;position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;inset:0;
-    background:
-      radial-gradient(ellipse 55% 80% at 92% 50%,rgba(192,57,43,.13) 0%,transparent 65%),
-      radial-gradient(ellipse 35% 55% at 8% 85%,rgba(107,61,30,.18) 0%,transparent 55%)}
-  .hero-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1;
-    display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
-  .badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem}
-  .badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;
-    text-transform:uppercase;padding:3px 9px;border-radius:20px}
-  .bg-g{background:var(--m1);color:var(--m7)}
-  .bg-r{background:rgba(192,57,43,.2);color:#f5a89e;border:1px solid rgba(192,57,43,.3)}
-  .bg-a{background:rgba(232,168,36,.18);color:var(--a2);border:1px solid rgba(232,168,36,.3)}
-  .hero h1{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);
-    color:#fff;line-height:1.15;margin-bottom:.3rem}
-  .hero-sci{font-style:italic;color:rgba(255,255,255,.4);font-size:.9rem;margin-bottom:.6rem}
-  .hero-desc{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;line-height:1.6}
-  .hero-icon{width:90px;height:90px;border-radius:50%;
-    background:radial-gradient(circle at 40% 35%,rgba(192,57,43,.2),rgba(31,61,32,.5));
-    border:1px solid rgba(141,184,122,.18);
-    display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0}
-
-  /* ── LAYOUT ── */
-  .page{max-width:1040px;margin:0 auto;padding:2rem}
-
-  /* ── CARD GENÉRICO ── */
-  .card{background:#fff;border:1px solid var(--pa);border-radius:var(--rl);
-    box-shadow:var(--sh);margin-bottom:1.25rem;overflow:hidden}
-  .card-head{background:var(--m9);padding:.75rem 1.25rem;
-    display:flex;align-items:center;gap:.5rem}
-  .card-head h2{font-family:var(--fh);font-size:.9rem;font-weight:700;
-    color:var(--m1);margin:0}
-
-  /* ── FICHA TÉCNICA — GRID DE CARDS ── */
-  .ficha-grid{display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:8px;padding:1rem 1.25rem}
-  .fi{background:var(--cr);border:1px solid var(--pa);border-radius:var(--r);
-    padding:.65rem .85rem}
-  .fi-l{font-size:.68rem;font-weight:700;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--gr);margin-bottom:.2rem}
-  .fi-v{font-size:.92rem;font-weight:600;color:var(--ti)}
-  .fi-v.ok{color:var(--m5)}
-  .fi-v.warn{color:#b03020}
-
-  /* Pragas na ficha */
-  .pragas-fi{padding:.65rem 1.25rem 1rem;border-top:1px solid var(--pa)}
-  .pragas-label{font-size:.75rem;font-weight:700;color:var(--gr);
-    text-transform:uppercase;letter-spacing:.07em;
-    display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
-  .info-btn{display:inline-flex;align-items:center;justify-content:center;
-    width:15px;height:15px;border-radius:50%;background:var(--m7);
-    color:#fff;font-size:.6rem;font-weight:700;cursor:pointer;
-    border:none;font-style:normal;flex-shrink:0;position:relative}
-  .tooltip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;
-    transform:translateX(-50%);background:#fff;border:1px solid var(--pa);
-    border-radius:var(--r);padding:.75rem 1rem;box-shadow:var(--sh2);
-    width:270px;z-index:200;font-size:.78rem;line-height:1.5;color:var(--ti);
-    text-align:left}
-  .tooltip-box.open{display:block}
-  .tooltip-box::after{content:'';position:absolute;top:100%;left:50%;
-    transform:translateX(-50%);border:6px solid transparent;
-    border-top-color:var(--pa)}
-  .tip-row{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.4rem}
-  .tip-row:last-child{margin-bottom:0}
-  .tip-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px}
-  .tip-dot.g{background:var(--m5)}
-  .tip-dot.r{background:#b03020}
-  .tag-list{display:flex;gap:.35rem;flex-wrap:wrap}
-  .tag{font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px;
-    display:inline-block;transition:opacity .15s}
-  .tag.tg{background:var(--m1);color:var(--m7)}
-  .tag.tr{background:rgba(192,57,43,.1);color:#8b2020}
-  .tag:hover{opacity:.8;text-decoration:none!important}
-
-  /* ── DUAS COLUNAS ── */
-  .two-col{display:grid;grid-template-columns:1fr 1fr;
-    gap:1.25rem;margin-bottom:1.25rem}
-
-  /* ── MAPA ── */
-  .map-wrap{position:relative}
-  #brmap{width:100%;height:340px;display:block}
-  .map-tip{position:absolute;background:#fff;border:1px solid var(--pa);
-    border-radius:var(--r);padding:5px 10px;font-size:.78rem;
-    pointer-events:none;display:none;z-index:100;
-    box-shadow:var(--sh2);color:var(--ti);white-space:nowrap}
-  .grad-row{display:flex;align-items:center;gap:.6rem;
-    padding:.6rem 1.25rem;border-top:1px solid var(--pa);background:var(--cr)}
-  .grad-bar{flex:1;height:8px;border-radius:4px;
-    background:linear-gradient(to right,#c8e6b0,#1f3d20)}
-  .grad-l{font-size:.72rem;color:var(--gr)}
-
-  /* ── SAZONALIDADE ── */
-  .sazon-body{padding:1rem 1.25rem}
-  .rg-tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.9rem}
-  .rg{font-size:.74rem;font-weight:600;padding:.28rem .75rem;border-radius:20px;
-    border:1px solid var(--ar);background:var(--cr);cursor:pointer;
-    color:var(--gr);transition:all .15s}
-  .rg:hover{border-color:var(--m3);color:var(--m7)}
-  .rg.sel{background:var(--m7);color:#fff;border-color:var(--m7)}
-  .cal{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-bottom:.6rem}
-  .mes{border-radius:4px;padding:.42rem 0;text-align:center;font-size:.63rem;
-    font-weight:700;transition:transform .12s;cursor:default}
-  .mes:hover{transform:translateY(-2px)}
-  .mes.pl{background:var(--m1);color:var(--m7)}
-  .mes.co{background:var(--a0);color:var(--a8)}
-  .mes.bt{background:linear-gradient(135deg,var(--m1) 50%,var(--a0) 50%);color:var(--t9)}
-  .mes.of{background:var(--pa);color:var(--ar)}
-  .cal-leg{display:flex;gap:.8rem;flex-wrap:wrap;
-    font-size:.7rem;color:var(--gr);margin-bottom:.65rem}
-  .cl-i{display:flex;align-items:center;gap:.3rem}
-  .cl-d{width:9px;height:9px;border-radius:2px;flex-shrink:0}
-  .rg-desc{font-size:.8rem;color:var(--gr);line-height:1.6;
-    padding-top:.6rem;border-top:1px solid var(--pa)}
-  .rg-desc strong{color:var(--t9)}
-
-  /* ── ACORDEÕES ── */
-  .acc{background:#fff;border:1px solid var(--pa);border-radius:var(--rl);
-    box-shadow:var(--sh);margin-bottom:1rem;overflow:hidden}
-  .acc-head{background:var(--m9);padding:.75rem 1.25rem;
-    display:flex;align-items:center;justify-content:space-between;
-    cursor:pointer;user-select:none}
-  .acc-head h2{font-family:var(--fh);font-size:.9rem;font-weight:700;
-    color:var(--m1);margin:0;display:flex;align-items:center;gap:.5rem}
-  .acc-arrow{font-size:1.1rem;color:var(--a2);
-    transition:transform .2s;font-weight:300;line-height:1}
-  .acc.closed .acc-arrow{transform:rotate(-90deg)}
-  .acc-body{padding:1.25rem}
-  .acc.closed .acc-body{display:none}
-
-  /* ── TABELA NEEM ── */
-  .neem-table{width:100%;border-collapse:collapse;font-size:.87rem;margin-bottom:1rem}
-  .neem-table th{background:var(--m9);color:var(--m1);padding:.5rem .85rem;
-    text-align:left;font-family:var(--fb);font-weight:600;font-size:.73rem;
-    letter-spacing:.05em;text-transform:uppercase}
-  .neem-table th:first-child{border-radius:6px 0 0 0}
-  .neem-table th:last-child{border-radius:0 6px 0 0}
-  .neem-table td{padding:.5rem .85rem;border-bottom:1px solid var(--pa);color:var(--ti)}
-  .neem-table tr:nth-child(even) td{background:var(--cr)}
-  .neem-table tr:last-child td{border-bottom:none}
-  .dica{background:var(--a0);border:1px solid rgba(232,168,36,.35);
-    border-radius:var(--r);padding:.65rem .9rem;font-size:.82rem;color:var(--a8)}
-
-  /* ── STEPS (boas práticas) ── */
-  .steps{display:flex;flex-direction:column;gap:.5rem}
-  .step{display:grid;grid-template-columns:28px 1fr;gap:.75rem;align-items:start;
-    padding:.6rem .75rem;background:var(--cr);border-radius:var(--r);
-    border:1px solid var(--pa)}
-  .step-n{width:28px;height:28px;border-radius:50%;background:var(--m9);
-    color:var(--a2);display:flex;align-items:center;justify-content:center;
-    font-size:.78rem;font-weight:700;flex-shrink:0;margin-top:1px}
-  .step-body{font-size:.87rem;color:var(--gr);line-height:1.5}
-  .step-body strong{color:var(--ti);font-weight:600}
-
-  /* ── CURIOSIDADES (cards) ── */
-  .curios{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.75rem}
-  .curio{background:var(--cr);border-radius:var(--r);
-    border:1px solid var(--pa);border-top:2px solid var(--a4);padding:.85rem}
-  .curio h4{font-family:var(--fh);font-size:.82rem;font-weight:700;
-    color:var(--t9);margin-bottom:.3rem}
-  .curio p{font-size:.79rem;color:var(--gr);line-height:1.5;margin:0}
-
-  /* ── POR QUE NEEM (cards genéricos) ── */
-  .neem-why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
-  .nw{background:var(--cr);border:1px solid var(--pa);border-radius:var(--r);
-    padding:.85rem;border-left:3px solid var(--m5)}
-  .nw-icon{font-size:1.3rem;margin-bottom:.4rem;display:block}
-  .nw h4{font-family:var(--fh);font-size:.82rem;font-weight:700;color:var(--t9);margin-bottom:.3rem}
-  .nw p{font-size:.78rem;color:var(--gr);line-height:1.55;margin:0}
-
-  /* ── NEEM + CULTURA (argumentos específicos) ── */
-  .neem-args{display:flex;flex-direction:column;gap:.6rem}
-  .na{display:grid;grid-template-columns:36px 1fr;gap:.75rem;align-items:start;
-    padding:.7rem .85rem;background:var(--cr);border-radius:var(--r);
-    border:1px solid var(--pa)}
-  .na-icon{width:36px;height:36px;border-radius:50%;background:var(--m9);
-    color:var(--a2);display:flex;align-items:center;justify-content:center;
-    font-size:1rem;flex-shrink:0}
-  .na-body h4{font-family:var(--fh);font-size:.84rem;font-weight:700;
-    color:var(--t9);margin-bottom:.25rem}
-  .na-body p{font-size:.82rem;color:var(--gr);line-height:1.55;margin:0}
-
-  /* ── FOOTER ── */
-  .site-footer{background:var(--t9);padding:1.25rem 2rem;margin-top:2rem;
-    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-  .site-footer p{font-size:.75rem;color:rgba(255,255,255,.3)}
-  .site-footer a{color:rgba(255,255,255,.35);font-size:.75rem;text-decoration:none}
-  .site-footer a:hover{color:var(--a2)}
-
-  @media(max-width:700px){
-    .two-col{grid-template-columns:1fr}
-    .hero-inner{grid-template-columns:1fr}
-    .hero-icon{display:none}
-    .page{padding:1rem}
-    .tooltip-box{left:0;transform:none}
-  }
-</style>
-</head>
-<body>
-<header class="site-header"><a href="/" class="logo"><span class="logo-icon">🌿</span><span class="logo-text">Portal do <strong>Neem</strong></span></a></header>
-<div class="breadcrumb"><a href="/">Início</a><span>›</span><a href="/culturas/">Por Cultura</a><span>›</span><span style="color:rgba(255,255,255,.8)">Arroz</span></div>
-<div class="hero"><div class="hero-inner"><div>
-  <div class="badges"><span class="badge bg-g">Grãos e Cereais</span><span class="badge bg-a">Média pressão de pragas</span><span class="badge bg-a">Neem como complemento</span></div>
-  <h1>Arroz</h1><div class="hero-sci">Oryza sativa</div><div class="hero-desc">Base da alimentação brasileira ao lado do feijão. O arroz irrigado no Sul e o de sequeiro no Centro-Oeste enfrentam percevejos e lagartas — o neem atua como complemento no manejo integrado.</div>
-</div><div class="hero-icon">🌾</div></div></div>
-<div class="page">
-  <div class="card"><div class="card-head"><span>📋</span><h2>Ficha Técnica</h2></div>
-    <div class="ficha-grid">      <div class="fi"><div class="fi-l">Família</div><div class="fi-v">Poaceae</div></div>
-      <div class="fi"><div class="fi-l">Origem</div><div class="fi-v">Ásia (China / Índia)</div></div>
-      <div class="fi"><div class="fi-l">Ciclo médio</div><div class="fi-v">100–150 dias</div></div>
-      <div class="fi"><div class="fi-l">Espaçamento</div><div class="fi-v">Lanço ou 0,17 × 0,17 m</div></div>
-      <div class="fi"><div class="fi-l">Temperatura ideal</div><div class="fi-v">20°C – 35°C</div></div>
-      <div class="fi"><div class="fi-l">Altitude ideal</div><div class="fi-v">0 – 900 m</div></div>
-      <div class="fi"><div class="fi-l">pH do solo</div><div class="fi-v">5,0 – 6,5</div></div>
-      <div class="fi"><div class="fi-l">Produtividade</div><div class="fi-v">5,0 – 8,0 t/ha (irrigado)</div></div>
-      <div class="fi"><div class="fi-l">Tipo de cultivo</div><div class="fi-v">Irrigado (várzea) e sequeiro</div></div>
-      <div class="fi"><div class="fi-l">Pressão de pragas</div><div class="fi-v warn">Média</div></div>
-      <div class="fi"><div class="fi-l">Aceita orgânico</div><div class="fi-v ok">Sim ✓</div></div>
-      <div class="fi"><div class="fi-l">Fase crítica (neem)</div><div class="fi-v">Emissão da panícula</div></div>
-    </div>
-    <div class="pragas-fi"><div class="pragas-label">Pragas principais
-      <button class="info-btn" id="praga-btn" aria-label="Entenda as cores" tabindex="0">ⓘ
-        <div class="tooltip-box" id="praga-tip" role="tooltip">
-          <div class="tip-row"><span class="tip-dot g"></span><span><strong>Verde (eficácia alta)</strong> — Neem controla de forma isolada</span></div>
-          <div class="tip-row"><span class="tip-dot r"></span><span><strong>Vermelha (eficácia média/baixa)</strong> — Exige protocolo especial ou combinação</span></div>
-        </div></button></div>
-      <div class="tag-list" id="pragas-tags"><span style="font-size:.78rem;color:var(--gr)">Carregando pragas...</span></div>
-    </div></div>
-  <div class="two-col">
-    <div class="card map-wrap" style="margin-bottom:0"><div class="card-head"><span>🗺️</span><h2>Produção por estado — % nacional</h2></div>
-      <svg id="brmap" viewBox="0 0 600 540" preserveAspectRatio="xMidYMid meet"></svg><div class="map-tip" id="maptip"></div>
-      <div class="grad-row"><span class="grad-l">Menor</span><div class="grad-bar"></div><span class="grad-l">Maior</span></div></div>
-    <div class="card" style="margin-bottom:0"><div class="card-head"><span>📅</span><h2>Sazonalidade por região</h2></div>
-      <div class="sazon-body"><div class="rg-tabs" id="rgBar"></div><div class="cal" id="calGrid"></div>
-        <div class="cal-leg">
-          <div class="cl-i"><div class="cl-d" style="background:var(--m1);border:1px solid var(--m3)"></div>Plantio</div>
-          <div class="cl-i"><div class="cl-d" style="background:var(--a0);border:1px solid var(--a2)"></div>Colheita</div>
-          <div class="cl-i"><div class="cl-d" style="background:linear-gradient(135deg,var(--m1) 50%,var(--a0) 50%)"></div>Ambos</div>
-          <div class="cl-i"><div class="cl-d" style="background:var(--pa)"></div>Fora de época</div>
-        </div><div class="rg-desc" id="rgDesc"></div></div></div>
-  </div>
-
-  <div class="acc">
-    <div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
-      <h2><span>🛡️</span> Por que escolher o Neem?</h2>
-      <span class="acc-arrow">▾</span>
-    </div>
-    <div class="acc-body">
-    <div class="neem-why">
-      <div class="nw"><span class="nw-icon">🔄</span><h4>Sem resistência de pragas</h4><p>Atua por 4 mecanismos simultâneos (antialimentar, regulador de crescimento, repelente e inibidor de oviposição). Ação múltipla torna praticamente impossível a praga desenvolver resistência.</p></div>
-      <div class="nw"><span class="nw-icon">🐞</span><h4>Seletivo: protege os aliados</h4><p>Afeta pragas-alvo mas preserva joaninhas, vespas parasitoides e aranhas predadoras — os inimigos naturais que trabalham a favor do produtor.</p></div>
-      <div class="nw"><span class="nw-icon">👨‍🌾</span><h4>Seguro para quem aplica</h4><p>Toxicidade muito baixa para mamíferos. Risco de intoxicação significativamente menor comparado a organofosforados e piretroides.</p></div>
-      <div class="nw"><span class="nw-icon">✅</span><h4>Aceito na produção orgânica</h4><p>Insumo aprovado pelas principais certificadoras (IBD, Ecocert, MAPA). Permite acessar mercados com prêmio de preço.</p></div>
-      <div class="nw"><span class="nw-icon">📋</span><h4>Tendência regulatória favorável</h4><p>ANVISA e MAPA restringem cada vez mais princípios ativos químicos. O neem é alternativa aprovada e em crescimento.</p></div>
-      <div class="nw"><span class="nw-icon">🧪</span><h4>Compatível com manejo integrado</h4><p>Pode ser combinado com Bt, Trichoderma, Metarhizium e outros biológicos. Compatível com a maioria dos fertilizantes foliares.</p></div>
-    </div>
-    </div>
-  </div>
-
-  <div class="acc"><div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
-    <h2><span>🌾</span> Neem + Arroz: por que faz sentido</h2><span class="acc-arrow">▾</span></div>
-    <div class="acc-body"><div class="neem-args">      <div class="na"><div class="na-icon">🎯</div><div class="na-body"><h4>Percevejo-do-arroz: efeito repelente</h4><p>O Oebalus poecilus suga grãos em maturação. O neem tem efeito antialimentar e repelente que reduz a população alimentando-se nas panículas — usado como complemento ao controle químico.</p></div></div>
-      <div class="na"><div class="na-icon">🐞</div><div class="na-body"><h4>Preserva fauna benéfica da várzea</h4><p>Os arrozais irrigados abrigam ecossistema rico: aranhas, libélulas e microcrustáceos. O neem preserva essa biodiversidade, diferente de inseticidas de amplo espectro.</p></div></div>
-      <div class="na"><div class="na-icon">🌱</div><div class="na-body"><h4>Arroz orgânico: mercado premium</h4><p>O arroz orgânico, especialmente integral e parboilizado, alcança preços 2–3× superiores. O RS já tem polos consolidados de produção orgânica.</p></div></div>
-      <div class="na"><div class="na-icon">💧</div><div class="na-body"><h4>Compatível com irrigação por inundação</h4><p>O neem aplicado via foliar não contamina a lâmina de água quando usado nas doses recomendadas — fundamental para o ecossistema aquático dos arrozais.</p></div></div>
-      <div class="na"><div class="na-icon">📊</div><div class="na-body"><h4>Complemento, não substituto</h4><p>No arroz, o neem funciona melhor como parte do MIP — reduzindo a população de percevejos e lagartas para abaixo do nível de dano, diminuindo a necessidade de aplicações químicas.</p></div></div>
-    </div></div></div>
-  <div class="acc"><div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
-    <h2><span>🌿</span> Como usar o neem no arroz</h2><span class="acc-arrow">▾</span></div>
-    <div class="acc-body"><table class="neem-table"><thead><tr><th>Fase do ciclo</th><th>Situação</th><th>Dose de neem</th><th>Emulsificante</th><th>Frequência</th></tr></thead>
-      <tbody>          <tr><td>Perfilhamento</td><td>Preventivo</td><td>3–5 mL/L</td><td>1,5–2,5 mL/L</td><td>A cada 14 dias</td></tr>
-          <tr><td>Elongação</td><td>Manutenção</td><td>5 mL/L</td><td>2,5 mL/L</td><td>A cada 10 dias</td></tr>
-          <tr><td>Emissão da panícula</td><td>Intensivo — fase crítica</td><td>7 mL/L</td><td>3,5 mL/L</td><td>A cada 7 dias</td></tr>
-          <tr><td>Maturação</td><td>Manutenção</td><td>5 mL/L</td><td>2,5 mL/L</td><td>A cada 10 dias</td></tr>
-      </tbody></table><div class="dica">💡 <strong>Percevejos:</strong> monitorar a partir da emissão das panículas — é quando chegam para sugar os grãos. <strong>Irrigado:</strong> aplicar com lâmina de água rebaixada para melhor cobertura foliar. <strong>Gorgulho-aquático:</strong> o neem tem eficácia limitada contra larvas subaquáticas — focar no controle dos adultos.</div></div></div>
-  <div class="acc"><div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
-    <h2><span>✅</span> Boas práticas no cultivo do arroz com neem</h2><span class="acc-arrow">▾</span></div>
-    <div class="acc-body"><div class="steps">        <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Monitore panículas 2×/semana</strong> — A partir da emissão, inspecione 10 panículas por ponto amostral. 5+ percevejos por panícula = nível de ação.</div></div>
-        <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Rebaixe a lâmina para aplicar</strong> — Em arroz irrigado, rebaixe a lâmina de água 24h antes da aplicação para expor mais área foliar ao neem.</div></div>
-        <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Preserve as taipas com vegetação</strong> — Taipas vegetadas abrigam inimigos naturais (aranhas, vespinhas). Não aplique neem nas taipas — são reservatório de aliados.</div></div>
-        <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Rotação com soja ou feijão</strong> — Após arroz, alterne com leguminosas. Fixam nitrogênio, quebram ciclo de pragas e melhoram a estrutura do solo.</div></div>
-        <div class="step"><div class="step-n">5</div><div class="step-body"><strong>Atenção ao gorgulho-aquático</strong> — O neem tem eficácia limitada contra larvas subaquáticas do Oryzophagus. Para essa praga, o controle principal é manejo de água e inseticida específico.</div></div>
-      </div></div></div>
-  <div class="acc"><div class="acc-head" onclick="this.closest('.acc').classList.toggle('closed')">
-    <h2><span>💡</span> Curiosidades sobre o arroz</h2><span class="acc-arrow">▾</span></div>
-    <div class="acc-body"><div class="curios">        <div class="curio"><h4>RS: 70% da produção nacional</h4><p>O Rio Grande do Sul é disparado o maior produtor, com destaque para a Campanha Gaúcha e a Depressão Central.</p></div>
-        <div class="curio"><h4>Arroz irrigado vs. sequeiro</h4><p>O irrigado (várzea alagada) produz 70% do arroz brasileiro. O sequeiro (terras altas) é cultivado no Centro-Oeste sem lâmina de água.</p></div>
-        <div class="curio"><h4>Alimento de 3,5 bilhões de pessoas</h4><p>O arroz é a base alimentar de metade da humanidade. No Brasil, o consumo per capita é de ~25 kg/ano.</p></div>
-        <div class="curio"><h4>Arroz integral e parboilizado</h4><p>O integral mantém a película nutritiva. O parboilizado passa por pré-cocção que preserva vitaminas. Ambos têm preço premium.</p></div>
-        <div class="curio"><h4>Metano dos arrozais</h4><p>Arrozais irrigados emitem metano (gás de efeito estufa). O manejo intermitente de água reduz emissões em até 50%.</p></div>
-        <div class="curio"><h4>Arroz orgânico gaúcho</h4><p>O RS tem o maior polo de arroz orgânico do Brasil, com certificação internacional e exportação para Europa e Japão.</p></div>
-      </div></div></div>
-</div>
-<footer class="site-footer"><p>© 2026 Portal do Neem</p><a href="/contato/">Fale conosco</a></footer>
+/* ── CSS específico da ficha de cultura (complementa style.css) ── */
+.cultura-hero{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.cultura-icon{width:52px;height:52px;border-radius:50%;background:var(--musgo-100);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:2px solid var(--musgo-300)}
+.cultura-sci{font-style:italic;color:rgba(255,255,255,.45);font-size:.85rem;margin-top:-.25rem}
+.ficha-card{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1.25rem}
+.ficha-card-head{background:var(--musgo-900);padding:.65rem 1.1rem;display:flex;align-items:center;gap:.5rem}
+.ficha-card-head h2{font-family:var(--font-heading);font-size:.88rem;font-weight:700;color:var(--musgo-100);margin:0}
+.ficha-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;padding:.85rem 1.1rem}
+.fi{background:var(--palha-light,#faf6ee);border:1px solid var(--palha);border-radius:var(--radius);padding:.55rem .75rem}
+.fi-l{font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--grafite);margin-bottom:.15rem}
+.fi-v{font-size:.88rem;font-weight:600;color:var(--terra-900)}
+.fi-v.ok{color:var(--musgo-500)}
+.fi-v.warn{color:#b03020}
+.pragas-fi{padding:.6rem 1.1rem .85rem;border-top:1px solid var(--palha)}
+.pragas-label{font-size:.72rem;font-weight:700;color:var(--grafite);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:.4rem;margin-bottom:.45rem}
+.info-btn{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--musgo-700);color:#fff;font-size:.6rem;font-weight:700;cursor:pointer;border:none;position:relative}
+.tooltip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--palha);border-radius:var(--radius);padding:.65rem .85rem;box-shadow:var(--shadow-md);width:260px;z-index:200;font-size:.76rem;line-height:1.5;color:var(--terra-900);text-align:left}
+.tooltip-box.open{display:block}
+.tooltip-box::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--palha)}
+.tip-row{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.35rem}
+.tip-row:last-child{margin-bottom:0}
+.tip-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.tip-dot.g{background:var(--musgo-500)}
+.tip-dot.r{background:#b03020}
+.tag-list{display:flex;gap:.3rem;flex-wrap:wrap}
+.tag{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;transition:opacity .15s;text-decoration:none}
+.tag.tg{background:var(--musgo-100);color:var(--musgo-700)}
+.tag.tr{background:rgba(176,48,32,.1);color:#8b2020}
+.tag:hover{opacity:.8;text-decoration:none!important}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
+.map-wrap{position:relative;background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden}
+.map-wrap .ficha-card-head{margin:0}
+#brmap{width:100%;height:300px;display:block}
+.map-tip{position:absolute;background:#fff;border:1px solid var(--palha);border-radius:var(--radius);padding:4px 9px;font-size:.75rem;pointer-events:none;display:none;z-index:100;box-shadow:var(--shadow-md);white-space:nowrap}
+.grad-row{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;border-top:1px solid var(--palha);background:var(--palha-light,#faf6ee)}
+.grad-bar{flex:1;height:7px;border-radius:4px;background:linear-gradient(to right,#c8e6b0,#1f3d20)}
+.grad-l{font-size:.68rem;color:var(--grafite)}
+.sazon-card{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);overflow:hidden}
+.sazon-body{padding:.85rem 1.1rem}
+.rg-tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.75rem}
+.rg{font-size:.7rem;font-weight:600;padding:.22rem .65rem;border-radius:20px;border:1px solid var(--argila);background:var(--palha-light,#faf6ee);cursor:pointer;color:var(--grafite);transition:all .15s}
+.rg:hover{border-color:var(--musgo-300);color:var(--musgo-700)}
+.rg.sel{background:var(--musgo-700);color:#fff;border-color:var(--musgo-700)}
+.cal{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin-bottom:.5rem}
+.mes{border-radius:3px;padding:.35rem 0;text-align:center;font-size:.6rem;font-weight:700;transition:transform .12s;cursor:default}
+.mes:hover{transform:translateY(-2px)}
+.mes.pl{background:var(--musgo-100);color:var(--musgo-700)}
+.mes.co{background:var(--ambar-50);color:var(--ambar-800)}
+.mes.bt{background:linear-gradient(135deg,var(--musgo-100) 50%,var(--ambar-50) 50%);color:var(--terra-900)}
+.mes.of{background:var(--palha);color:var(--argila)}
+.cal-leg{display:flex;gap:.7rem;flex-wrap:wrap;font-size:.66rem;color:var(--grafite);margin-bottom:.55rem}
+.cl-i{display:flex;align-items:center;gap:.25rem}
+.cl-d{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.rg-desc{font-size:.78rem;color:var(--grafite);line-height:1.55;padding-top:.5rem;border-top:1px solid var(--palha)}
+.rg-desc strong{color:var(--terra-900)}
+.acc{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-bottom:.9rem;overflow:hidden}
+.acc-head{background:var(--musgo-900);padding:.65rem 1.1rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.acc-head h2{font-family:var(--font-heading);font-size:.88rem;font-weight:700;color:var(--musgo-100);margin:0;display:flex;align-items:center;gap:.45rem}
+.acc-arrow{font-size:1rem;color:var(--ambar-200);transition:transform .2s;font-weight:300;line-height:1}
+.acc.closed .acc-arrow{transform:rotate(-90deg)}
+.acc-body{padding:1.1rem}
+.acc.closed .acc-body{display:none}
+.neem-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:.85rem}
+.neem-table th{background:var(--musgo-900);color:var(--musgo-100);padding:.45rem .75rem;text-align:left;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
+.neem-table th:first-child{border-radius:5px 0 0 0}
+.neem-table th:last-child{border-radius:0 5px 0 0}
+.neem-table td{padding:.45rem .75rem;border-bottom:1px solid var(--palha)}
+.neem-table tr:nth-child(even) td{background:var(--palha-light,#faf6ee)}
+.neem-table tr:last-child td{border-bottom:none}
+.dica{background:var(--ambar-50);border:1px solid rgba(232,168,36,.3);border-radius:var(--radius);padding:.6rem .8rem;font-size:.8rem;color:var(--ambar-800)}
+.steps{display:flex;flex-direction:column;gap:.45rem}
+.step{display:grid;grid-template-columns:26px 1fr;gap:.65rem;align-items:start;padding:.55rem .7rem;background:var(--palha-light,#faf6ee);border-radius:var(--radius);border:1px solid var(--palha)}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--musgo-900);color:var(--ambar-200);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.step-body{font-size:.84rem;color:var(--grafite);line-height:1.5}
+.step-body strong{color:var(--terra-900);font-weight:600}
+.curios{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.65rem}
+.curio{background:var(--palha-light,#faf6ee);border-radius:var(--radius);border:1px solid var(--palha);border-top:2px solid var(--ambar-400);padding:.75rem}
+.curio h4{font-family:var(--font-heading);font-size:.8rem;font-weight:700;color:var(--terra-900);margin-bottom:.25rem}
+.curio p{font-size:.76rem;color:var(--grafite);line-height:1.5;margin:0}
+.neem-why{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.65rem}
+.nw{background:var(--palha-light,#faf6ee);border:1px solid var(--palha);border-radius:var(--radius);padding:.75rem;border-left:3px solid var(--musgo-500)}
+.nw-icon{font-size:1.2rem;margin-bottom:.3rem;display:block}
+.nw h4{font-family:var(--font-heading);font-size:.8rem;font-weight:700;color:var(--terra-900);margin-bottom:.25rem}
+.nw p{font-size:.76rem;color:var(--grafite);line-height:1.5;margin:0}
+.neem-args{display:flex;flex-direction:column;gap:.5rem}
+.na{display:grid;grid-template-columns:34px 1fr;gap:.65rem;align-items:start;padding:.6rem .75rem;background:var(--palha-light,#faf6ee);border-radius:var(--radius);border:1px solid var(--palha)}
+.na-icon{width:34px;height:34px;border-radius:50%;background:var(--musgo-900);color:var(--ambar-200);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.na-body h4{font-family:var(--font-heading);font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.2rem}
+.na-body p{font-size:.8rem;color:var(--grafite);line-height:1.5;margin:0}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}.tooltip-box{left:0;transform:none}}
+</style></head><body><header class=site-header><div class=container><a href=/ class=logo aria-label="Portal do Neem — página inicial"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span>
+</a><button class=menu-toggle aria-label="Abrir menu" aria-expanded=false aria-controls=nav-menu onclick=toggleMenu(this)>
+<span></span>
+<span></span>
+<span></span></button><nav id=nav-menu class=nav-menu aria-label="Menu principal"><a href=/>Início</a>
+<a href=/o-que-e-o-neem/>O que é o Neem</a>
+<a href=/como-aplicar/>Como Aplicar</a>
+<a href=/pragas/>Pragas</a>
+<a href=/culturas/>Culturas</a>
+<a href=/parceiros/>Parceiros</a>
+<a href=/blog/>Blog</a>
+<a href=/faq/>FAQ</a>
+<a href=/contato/>Contato</a>
+<a href=/produto/ class=nav-cta>Adquira o Produto</a></nav></div></header><script>function toggleMenu(e){var n=document.getElementById("nav-menu"),t=n.classList.toggle("open");e.setAttribute("aria-expanded",t),e.setAttribute("aria-label",t?"Fechar menu":"Abrir menu"),document.body.style.overflow=t?"hidden":""}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("#nav-menu a").forEach(function(e){e.addEventListener("click",function(){var e=document.getElementById("nav-menu"),t=document.querySelector(".menu-toggle");e.classList.contains("open")&&(e.classList.remove("open"),t.setAttribute("aria-expanded","false"),t.setAttribute("aria-label","Abrir menu"),document.body.style.overflow="")})})})</script><main id=conteudo-principal><div class=page-header><div class=container><nav class=breadcrumb aria-label="Você está em"><a href=/>Início</a>
+<span aria-hidden=true>›</span><a href=/culturas/>Neem por Cultura</a>
+<span aria-hidden=true>›</span><span aria-current=page>Arroz</span></nav><div style=margin-bottom:.75rem;display:flex;gap:.5rem;flex-wrap:wrap><span class="badge badge-green">grãos e cereais</span>
+<span class="badge badge-red">média pressão de pragas</span>
+<span class="badge badge-amber">neem como complemento</span></div><div class=cultura-hero><div class=cultura-icon>🌾</div><div><h1 style=margin-bottom:0>Arroz</h1><p class=cultura-sci>Oryza sativa</p></div></div><p class=lead>Base da alimentação brasileira ao lado do feijão. O arroz irrigado no Sul e o de sequeiro no Centro-Oeste enfrentam percevejos e lagartas — o neem atua como complemento no manejo integrado.</p></div></div><div class=page-body><div class=container><div class=page-layout><article class=page-content>
+<div class=ficha-card><div class=ficha-card-head><span>📋</span><h2>Ficha Técnica</h2></div><div class=ficha-grid><div class=fi><div class=fi-l>Família</div><div class="fi-v">Poaceae</div></div><div class=fi><div class=fi-l>Origem</div><div class="fi-v">Ásia (China / Índia)</div></div><div class=fi><div class=fi-l>Ciclo médio</div><div class="fi-v">100–150 dias</div></div><div class=fi><div class=fi-l>Espaçamento</div><div class="fi-v">Lanço ou 0,17 × 0,17 m</div></div><div class=fi><div class=fi-l>Temperatura ideal</div><div class="fi-v">20°C – 35°C</div></div><div class=fi><div class=fi-l>Altitude ideal</div><div class="fi-v">0 – 900 m</div></div><div class=fi><div class=fi-l>pH do solo</div><div class="fi-v">5,0 – 6,5</div></div><div class=fi><div class=fi-l>Produtividade</div><div class="fi-v">5,0 – 8,0 t/ha (irrigado)</div></div><div class=fi><div class=fi-l>Tipo de cultivo</div><div class="fi-v">Irrigado (várzea) e sequeiro</div></div><div class=fi><div class=fi-l>Pressão de pragas</div><div class="fi-v warn">Média</div></div><div class=fi><div class=fi-l>Aceita orgânico</div><div class="fi-v ok">Sim ✓</div></div><div class=fi><div class=fi-l>Fase crítica (neem)</div><div class="fi-v">Emissão da panícula</div></div></div><div class=pragas-fi><div class=pragas-label>Pragas principais <button class=info-btn id=praga-btn aria-label="Entenda as cores" tabindex=0>ⓘ<div class=tooltip-box id=praga-tip role=tooltip><div class=tip-row><span class="tip-dot g"></span><span><strong>Verde (eficácia alta)</strong> — Neem controla de forma isolada</span></div><div class=tip-row><span class="tip-dot r"></span><span><strong>Vermelha (eficácia média/baixa)</strong> — Exige protocolo especial ou combinação</span></div></div></button></div><div class=tag-list id=pragas-tags><span style=font-size:.76rem;color:var(--grafite)>Carregando pragas...</span></div></div></div>
+<div class=two-col><div class=map-wrap><div class=ficha-card-head><span>🗺️</span><h2>Produção por estado — % nacional</h2></div><svg id=brmap viewBox="0 0 600 540" preserveAspectRatio="xMidYMid meet"></svg><div class=map-tip id=maptip></div><div class=grad-row><span class=grad-l>Menor</span><div class=grad-bar></div><span class=grad-l>Maior</span></div></div><div class=sazon-card><div class=ficha-card-head><span>📅</span><h2>Sazonalidade por região</h2></div><div class=sazon-body><div class=rg-tabs id=rgBar></div><div class=cal id=calGrid></div><div class=cal-leg><div class=cl-i><div class=cl-d style=background:var(--musgo-100);border:1px+solid+var(--musgo-300)></div>Plantio</div><div class=cl-i><div class=cl-d style=background:var(--ambar-50);border:1px+solid+var(--ambar-200)></div>Colheita</div><div class=cl-i><div class=cl-d style="background:linear-gradient(135deg,var(--musgo-100) 50%,var(--ambar-50) 50%)"></div>Ambos</div><div class=cl-i><div class=cl-d style=background:var(--palha)></div>Fora de época</div></div><div class=rg-desc id=rgDesc></div></div></div></div>
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🛡️</span> Por que escolher o Neem?</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=neem-why><div class=nw><span class=nw-icon>🔄</span><h4>Sem resistência de pragas</h4><p>Atua por 4 mecanismos simultâneos. Ação múltipla torna praticamente impossível a praga desenvolver resistência.</p></div><div class=nw><span class=nw-icon>🐞</span><h4>Seletivo: protege os aliados</h4><p>Afeta pragas-alvo mas preserva joaninhas, vespas parasitoides e aranhas predadoras.</p></div><div class=nw><span class=nw-icon>👨‍🌾</span><h4>Seguro para quem aplica</h4><p>Toxicidade muito baixa para mamíferos. Risco significativamente menor que organofosforados e piretroides.</p></div><div class=nw><span class=nw-icon>✅</span><h4>Aceito na produção orgânica</h4><p>Aprovado pelas principais certificadoras (IBD, Ecocert, MAPA).</p></div><div class=nw><span class=nw-icon>📋</span><h4>Tendência regulatória favorável</h4><p>ANVISA e MAPA restringem cada vez mais químicos. Neem é alternativa aprovada e em crescimento.</p></div><div class=nw><span class=nw-icon>🧪</span><h4>Compatível com manejo integrado</h4><p>Combina com Bt, Trichoderma, Metarhizium e fertilizantes foliares.</p></div></div></div></div>
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🌾</span> Neem + Arroz: por que faz sentido</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=neem-args><div class=na><div class=na-icon>🎯</div><div class=na-body><h4>Percevejo-do-arroz: efeito repelente</h4><p>Oebalus poecilus suga grãos em maturação. Neem reduz a população nas panículas como complemento.</p></div></div><div class=na><div class=na-icon>🐞</div><div class=na-body><h4>Preserva fauna da várzea</h4><p>Arrozais irrigados abrigam ecossistema rico. Neem preserva essa biodiversidade.</p></div></div><div class=na><div class=na-icon>🌱</div><div class=na-body><h4>Arroz orgânico: mercado premium</h4><p>Orgânico integral e parboilizado alcança 2–3× superior. RS tem polos consolidados.</p></div></div><div class=na><div class=na-icon>💧</div><div class=na-body><h4>Compatível com irrigação por inundação</h4><p>Neem foliar não contamina a lâmina de água nas doses recomendadas.</p></div></div><div class=na><div class=na-icon>📊</div><div class=na-body><h4>Complemento, não substituto</h4><p>No arroz, neem funciona melhor como parte do MIP — reduzindo necessidade de químicos.</p></div></div></div></div></div>
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>🌿</span> Como usar o neem no arroz</h2><span class=acc-arrow>▾</span></div><div class=acc-body><table class=neem-table><thead><tr><th>Fase do ciclo</th><th>Situação</th><th>Dose de neem</th><th>Emulsificante</th><th>Frequência</th></tr></thead><tbody><tr><td>Perfilhamento</td><td>Preventivo</td><td>3–5 mL/L</td><td>1,5–2,5 mL/L</td><td>A cada 14 dias</td></tr><tr><td>Elongação</td><td>Manutenção</td><td>5 mL/L</td><td>2,5 mL/L</td><td>A cada 10 dias</td></tr><tr><td>Emissão da panícula</td><td>Intensivo — fase crítica</td><td>7 mL/L</td><td>3,5 mL/L</td><td>A cada 7 dias</td></tr><tr><td>Maturação</td><td>Manutenção</td><td>5 mL/L</td><td>2,5 mL/L</td><td>A cada 10 dias</td></tr></tbody></table><div class=dica>💡 <strong>Percevejos:</strong> monitorar a partir da emissão das panículas. <strong>Irrigado:</strong> aplicar com lâmina rebaixada. <strong>Gorgulho-aquático:</strong> eficácia limitada contra larvas subaquáticas — focar nos adultos.</div></div></div>
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>✅</span> Boas práticas no cultivo do arroz com neem</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=steps><div class=step><div class=step-n>1</div><div class=step-body><strong>Monitore panículas 2×/semana</strong> — 5+ percevejos por panícula = nível de ação.</div></div><div class=step><div class=step-n>2</div><div class=step-body><strong>Rebaixe a lâmina para aplicar</strong> — Em irrigado, rebaixe 24h antes para expor mais área foliar.</div></div><div class=step><div class=step-n>3</div><div class=step-body><strong>Preserve taipas com vegetação</strong> — Taipas vegetadas abrigam inimigos naturais. Não aplique neem nelas.</div></div><div class=step><div class=step-n>4</div><div class=step-body><strong>Rotação com leguminosas</strong> — Após arroz, alterne com soja ou feijão. Fixam nitrogênio e quebram ciclo.</div></div><div class=step><div class=step-n>5</div><div class=step-body><strong>Atenção ao gorgulho-aquático</strong> — Neem tem eficácia limitada contra larvas subaquáticas. Controle principal: manejo de água.</div></div></div></div></div>
+<div class=acc><div class=acc-head onclick="this.closest('.acc').classList.toggle('closed')"><h2><span>💡</span> Curiosidades sobre o arroz</h2><span class=acc-arrow>▾</span></div><div class=acc-body><div class=curios><div class=curio><h4>RS: 70% da produção</h4><p>Rio Grande do Sul é disparado o maior produtor brasileiro.</p></div><div class=curio><h4>Irrigado vs. sequeiro</h4><p>Irrigado (várzea) produz 70% do arroz. Sequeiro é cultivado sem lâmina de água.</p></div><div class=curio><h4>Alimento de 3,5 bilhões</h4><p>Base alimentar de metade da humanidade. Consumo per capita brasileiro: ~25 kg/ano.</p></div><div class=curio><h4>Integral e parboilizado</h4><p>Integral mantém a película nutritiva. Parboilizado preserva vitaminas. Ambos com preço premium.</p></div><div class=curio><h4>Metano dos arrozais</h4><p>Arrozais irrigados emitem metano. Manejo intermitente reduz emissões em até 50%.</p></div><div class=curio><h4>Arroz orgânico gaúcho</h4><p>RS tem o maior polo de arroz orgânico do Brasil, com exportação para Europa e Japão.</p></div></div></div></div>
+<div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--palha)"><span style=font-size:.8rem;font-weight:700;color:var(--grafite);letter-spacing:.05em;text-transform:uppercase>Tags:</span><div style=display:inline-flex;gap:.4rem;flex-wrap:wrap;margin-left:.5rem><a href=/tags/arroz/ class="badge badge-green">arroz</a>
+<a href=/tags/grãos/ class="badge badge-green">grãos</a>
+<a href=/tags/percevejo/ class="badge badge-green">percevejo</a>
+<a href=/tags/irrigado/ class="badge badge-green">irrigado</a>
+<a href=/tags/neem/ class="badge badge-green">neem</a>
+</div></div>
+<div class=cta-box style=margin-top:3rem><h3>Precisa de neem para arroz?</h3><p>Solicite uma cotação com parceiros validados — sem compromisso.</p><div style=display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap><a href=/cotacao/ class="btn btn-primary">Solicitar Cotação</a>
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+informa%C3%A7%C3%B5es+sobre+neem+para+arroz." class="btn btn-ghost" target=_blank rel="noopener noreferrer">📱 Falar no WhatsApp</a></div></div>
+</article><aside class=sidebar aria-label="Conteúdo relacionado"><div class=sidebar-widget><h4>← Voltar</h4><ul><li><a href=/culturas/><strong>← Todas as culturas</strong></a></li></ul></div><div class=sidebar-widget><h4>🌾 Grãos e Cereais</h4><ul><li><a href=/culturas/soja/>Soja</a></li><li><a href=/culturas/milho/>Milho</a></li><li><a href=/culturas/feijao/>Feijão</a></li><li><strong>Arroz</strong></li></ul></div><div class=sidebar-widget><h4>🌿 Explorar</h4><ul><li><a href=/o-que-e-o-neem/>O que é o Neem</a></li><li><a href=/como-aplicar/>Como Aplicar</a></li><li><a href=/pragas/>Controle por Praga</a></li><li><a href=/neem-vs-quimicos/>Neem vs Químicos</a></li><li><a href=/faq/>Perguntas Frequentes</a></li></ul></div><div class=sidebar-cta><h4>💰 Precisa de neem?</h4><p>Solicite uma cotação com nossos parceiros validados.</p><a href=/cotacao/ class="btn btn-primary btn-sm" style=width:100%;justify-content:center>Solicitar Cotação</a></div><div class=sidebar-cta><h4>📱 Dúvidas?</h4><p>Fale com um especialista pelo WhatsApp.</p><a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem." class="btn btn-primary btn-sm" target=_blank rel="noopener noreferrer" style=width:100%;justify-content:center>Chamar no WhatsApp</a></div></aside></div></div></div></main><footer class=site-footer><div class=container><div class=footer-grid><div class=footer-brand><a href=/ class=logo aria-label="Portal do Neem"><span class=logo-icon aria-hidden=true>🌿</span>
+<span class=logo-text>Portal do <strong>Neem</strong></span></a><p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.
+Do dono de horta à grande propriedade rural.</p><p style=margin-top:.5rem><a href=https://wa.me/5511999999999 style=color:rgba(255,255,255,.45);font-size:.8rem>📱 WhatsApp: (11) 99999-9999</a></p></div><div class=footer-col><h4>Aprenda</h4><a href=/o-que-e-o-neem/>O que é o Neem</a>
+<a href=/como-aplicar/>Como Aplicar</a>
+<a href=/pragas/>Controle por Praga</a>
+<a href=/culturas/>Por Cultura</a>
+<a href=/neem-vs-quimicos/>Neem vs Químicos</a>
+<a href=/blog/>Blog & Artigos</a></div><div class=footer-col><h4>Produtos</h4><a href=/produto/>Nosso Produto</a>
+<a href=/parceiros/>Parceiros</a>
+<a href=/para-empresas/>Para Empresas</a>
+<a href=/cotacao/>Solicitar Cotação</a>
+<a href=/materiais/>Materiais Gratuitos</a></div><div class=footer-col><h4>Portal</h4><a href=/faq/>Perguntas Frequentes</a>
+<a href=/contato/>Contato</a>
+<a href=/seja-parceiro/>Seja Parceiro</a>
+<a href=/sobre/>Sobre o Portal</a>
+<a href=/privacidade/>Política de Privacidade</a></div></div><div class=footer-bottom><p>&copy; 2026 Portal do Neem &mdash;
+Todos os direitos reservados.</p><div class=footer-seal><span>🌱</span>
+Conteúdo orgânico, sem agrotóxicos na informação</div></div></div></footer><a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class=whatsapp-float target=_blank rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198.0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479.0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87.0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86.0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64.0 5.122 1.03 6.988 2.898a9.825 9.825.0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815.0 0012.05.0C5.495.0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882.0 005.683 1.448h.005c6.554.0 11.89-5.335 11.893-11.893a11.821 11.821.0 00-3.48-8.413z"/></svg></a>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 (async function(){var sb=supabase.createClient('https://yhbqkpcsatgskshhykbv.supabase.co','sb_publishable_quIpJfFBXJ7I8d-ClDtgHQ__TU5WSd7');var ct=document.getElementById('pragas-tags');
 try{var cu=await sb.from('culturas').select('id').eq('slug','arroz').single();if(cu.error)throw cu.error;
 var rl=await sb.from('cultura_praga').select('nivel_eficacia,dosagem_ml_litro,frequencia_dias,observacoes,praga_id').eq('cultura_id',cu.data.id);if(rl.error)throw rl.error;
 var ids=rl.data.map(function(r){return r.praga_id});var pr=await sb.from('pragas').select('id,nome,slug,pagina_url').in('id',ids);if(pr.error)throw pr.error;
-var pm={};pr.data.forEach(function(p){pm[p.id]=p});if(rl.data.length===0){ct.innerHTML='<span style="font-size:.78rem;color:var(--gr)">Nenhuma praga cadastrada.</span>';return}
-ct.innerHTML='';rl.data.forEach(function(r){var p=pm[r.praga_id];if(!p)return;var t=document.createElement('a');
-t.href=p.pagina_url||'/pragas/'+p.slug+'/';t.className='tag '+(r.nivel_eficacia==='alta'?'tg':'tr');t.textContent=p.nome;
+var pm={};pr.data.forEach(function(p){pm[p.id]=p});if(rl.data.length===0){ct.innerHTML='<span style="font-size:.76rem;color:var(--grafite)">Nenhuma praga cadastrada.</span>';return}
+ct.innerHTML='';rl.data.forEach(function(r){var p=pm[r.praga_id];if(!p)return;var t=document.createElement('a');t.href=p.pagina_url||'/pragas/'+p.slug+'/';
+t.className='tag '+(r.nivel_eficacia==='alta'?'tg':'tr');t.textContent=p.nome;
 t.title='Eficácia: '+r.nivel_eficacia+(r.dosagem_ml_litro?' | Dosagem: '+r.dosagem_ml_litro+' mL/L':'')+(r.frequencia_dias?' | Freq: a cada '+r.frequencia_dias+' dias':'')+(r.observacoes?' | '+r.observacoes:'');
-ct.appendChild(t)})}catch(e){console.error(e);ct.innerHTML='<span style="font-size:.78rem;color:#b03020">Erro ao carregar pragas.</span>'}})();
+ct.appendChild(t)})}catch(e){console.error(e);ct.innerHTML='<span style="font-size:.76rem;color:#b03020">Erro ao carregar pragas.</span>'}})();
 </script>
 <script>var pb=document.getElementById('praga-btn'),pt=document.getElementById('praga-tip');pb.addEventListener('click',function(e){e.stopPropagation();pt.classList.toggle('open')});document.addEventListener('click',function(){pt.classList.remove('open')});</script>
-<script>var regioes={
-  'Centro-Oeste': {
-    meses: ['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],
-    desc: '<strong>Centro-Oeste</strong> — Arroz de sequeiro (terras altas). Plantio de outubro a dezembro, colheita em março–abril. MT e GO lideram.'
-  },
-  'Nordeste': {
-    meses: ['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],
-    desc: '<strong>Nordeste</strong> — MA com produção de sequeiro em expansão. Plantio na estação chuvosa (out–dez).'
-  },
-  'Norte': {
-    meses: ['bt', 'co', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],
-    desc: '<strong>Norte</strong> — TO é destaque, com arroz irrigado e de sequeiro. PA tem produção tradicional.'
-  },
-  'Sudeste': {
-    meses: ['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],
-    desc: '<strong>Sudeste</strong> — MG com produção de sequeiro. SP tem áreas irrigadas no Vale do Paraíba.'
-  },
-  'Sul': {
-    meses: ['bt', 'bt', 'co', 'co', 'co', 'of', 'of', 'of', 'pl', 'pl', 'bt', 'bt'],
-    desc: '<strong>Sul</strong> — RS produz 70% do arroz brasileiro, todo irrigado em várzeas. Plantio de setembro a novembro, colheita de fevereiro a abril.'
-  },
-};var mN=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];var selRg='Norte';
+<script>var regioes={'Centro-Oeste':{meses:['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],desc:'<strong>Centro-Oeste</strong> — Sequeiro (terras altas). Plantio outubro–dezembro. MT e GO lideram.'},'Nordeste':{meses:['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],desc:'<strong>Nordeste</strong> — MA com sequeiro em expansão. Plantio na estação chuvosa.'},'Norte':{meses:['bt', 'co', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],desc:'<strong>Norte</strong> — TO é destaque. PA tem produção tradicional.'},'Sudeste':{meses:['bt', 'co', 'co', 'of', 'of', 'of', 'of', 'of', 'of', 'pl', 'pl', 'bt'],desc:'<strong>Sudeste</strong> — MG com sequeiro. SP tem áreas irrigadas.'},'Sul':{meses:['bt', 'bt', 'co', 'co', 'co', 'of', 'of', 'of', 'pl', 'pl', 'bt', 'bt'],desc:'<strong>Sul</strong> — RS produz 70% do arroz brasileiro, todo irrigado em várzeas.'},};var mN=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];var selRg='Norte';
 function buildSazon(){var bar=document.getElementById('rgBar');bar.innerHTML='';Object.keys(regioes).sort().forEach(function(r){var b=document.createElement('button');b.className='rg'+(r===selRg?' sel':'');b.textContent=r;b.onclick=function(){selRg=r;buildSazon()};bar.appendChild(b)});
-var grid=document.getElementById('calGrid');grid.innerHTML='';regioes[selRg].meses.forEach(function(t,i){var d=document.createElement('div');d.className='mes '+t;d.textContent=mN[i].slice(0,3);grid.appendChild(d)});document.getElementById('rgDesc').innerHTML=regioes[selRg].desc}buildSazon();</script>
+var grid=document.getElementById('calGrid');grid.innerHTML='';regioes[selRg].meses.forEach(function(t,i){var d=document.createElement('div');d.className='mes '+t;d.textContent=mN[i].slice(0,3);grid.appendChild(d)});document.getElementById('rgDesc').innerHTML=regioes[selRg].desc}buildSazon();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script>var prod={"Rio Grande do Sul": 70, "Santa Catarina": 8, "Tocantins": 5, "Mato Grosso": 4, "Maranhão": 3, "Goiás": 2, "Minas Gerais": 2, "Pará": 2, "Mato Grosso do Sul": 1, "Roraima": 1};var mx=70;var cs=d3.scaleSequential([0,mx],d3.interpolateRgb('#c8e6b0','#1f3d20'));var svg=d3.select('#brmap');var mt=document.getElementById('maptip');var mw=document.querySelector('.map-wrap');
 var pj=d3.geoMercator().center([-54,-14]).scale(600).translate([300,280]);var pg=d3.geoPath(pj);
@@ -376,5 +166,5 @@ d3.json('https://cdn.jsdelivr.net/npm/datamaps@0.5.10/src/js/data/bra.topo.json'
 svg.selectAll('path').data(f).join('path').attr('d',pg).attr('stroke','#fff').attr('stroke-width',0.6).attr('fill',function(d){var n=d.properties.name||d.properties.NAME||'';return cs(prod[n]||0)})
 .on('mousemove',function(e,d){var n=d.properties.name||d.properties.NAME||'';var v=prod[n]||0;var r=mw.getBoundingClientRect();mt.style.display='block';mt.style.left=(e.clientX-r.left+14)+'px';mt.style.top=(e.clientY-r.top-36)+'px';mt.innerHTML='<strong>'+n+'</strong>'+(v?' — '+v+'%':'');}).on('mouseleave',function(){mt.style.display='none'});
 svg.selectAll('text.pct').data(f.filter(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]>=8})).join('text').attr('class','pct').attr('transform',function(d){return 'translate('+pg.centroid(d)+')'}).attr('text-anchor','middle').attr('font-size',9).attr('font-family','sans-serif').attr('fill','rgba(255,255,255,.9)').attr('pointer-events','none').text(function(d){var n=d.properties.name||d.properties.NAME||'';return prod[n]?prod[n]+'%':''});
-}).catch(function(){svg.append('text').attr('x',300).attr('y',270).attr('text-anchor','middle').attr('fill','#888').attr('font-size',13).text('Mapa não disponível')});</script>
-</body></html>
+}).catch(function(){svg.append('text').attr('x',300).attr('y',270).attr('text-anchor','middle').attr('fill','#888').attr('font-size',13).text('Mapa não disponível')});
+</script></body></html>
