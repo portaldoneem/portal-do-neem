@@ -350,6 +350,96 @@
       border-radius: 10px;
     }
 
+    /* ── Busca de pragas (sidebar + mobile) ──────────────── */
+    .busca-wrap {
+      position: relative;
+      margin-bottom: .75rem;
+    }
+    .busca-input {
+      width: 100%;
+      padding: .5rem 2rem .5rem .75rem;
+      border: 1.5px solid var(--color-border-light);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: .84rem;
+      color: var(--color-text);
+      background: var(--color-surface);
+      transition: border-color .15s;
+      outline: none;
+    }
+    .busca-input:focus { border-color: var(--musgo-500); }
+    .busca-input::placeholder { color: var(--argila); }
+    .busca-limpar {
+      position: absolute;
+      right: .5rem; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none;
+      cursor: pointer; font-size: .9rem;
+      color: var(--argila); line-height: 1;
+      display: none; padding: .1rem;
+    }
+    .busca-limpar.visivel { display: block; }
+
+    /* Lista compacta de pragas no sidebar */
+    .busca-lista { list-style: none; max-height: 340px; overflow-y: auto; }
+    .busca-lista::-webkit-scrollbar { width: 4px; }
+    .busca-lista::-webkit-scrollbar-thumb { background: var(--musgo-100); border-radius: 4px; }
+    .busca-item {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .35rem .4rem;
+      border-radius: var(--radius-sm, 4px);
+      transition: background .12s;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-text);
+    }
+    .busca-item:hover { background: var(--musgo-100); text-decoration: none; }
+    .busca-item.oculto { display: none; }
+    .bi-emoji { font-size: 1rem; flex-shrink: 0; }
+    .bi-nome {
+      font-size: .81rem;
+      font-weight: 600;
+      color: var(--terra-900);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bi-risco {
+      font-size: .6rem;
+      font-weight: 700;
+      padding: .1rem .4rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .bi-risco-alto  { background: rgba(170,30,30,.1); color: #8b1a1a; }
+    .bi-risco-medio { background: var(--ambar-50); color: var(--ambar-800); }
+    .bi-seta { font-size: .7rem; color: var(--argila); flex-shrink: 0; }
+
+    .busca-nenhum {
+      display: none;
+      font-size: .8rem;
+      color: var(--grafite);
+      text-align: center;
+      padding: .75rem .5rem;
+    }
+
+    /* Highlight animado no card após scroll */
+    @keyframes pulso-card {
+      0%   { box-shadow: 0 0 0 3px rgba(74,140,92,.5); }
+      70%  { box-shadow: 0 0 0 8px rgba(74,140,92,.0); }
+      100% { box-shadow: none; }
+    }
+    .praga-card.destaque { animation: pulso-card .7s ease-out; }
+
+    /* Campo de busca espelhado no mobile (acima dos filtros) */
+    .busca-mobile { display: none; margin-bottom: .9rem; }
+    @media (max-width: 900px) { .busca-mobile { display: block; } }
+
     /* ── Responsivo ──────────────────────────────────────── */
     @media (max-width: 640px) {
       .mec-grid { grid-template-columns: 1fr; }
@@ -393,29 +483,7 @@
   </div>
 </header>
 
-<script>
-function toggleMenu(e) {
-  var n = document.getElementById("nav-menu"),
-      t = n.classList.toggle("open");
-  e.setAttribute("aria-expanded", t);
-  e.setAttribute("aria-label", t ? "Fechar menu" : "Abrir menu");
-  document.body.style.overflow = t ? "hidden" : "";
-}
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("#nav-menu a").forEach(function (e) {
-    e.addEventListener("click", function () {
-      var n = document.getElementById("nav-menu"),
-          t = document.querySelector(".menu-toggle");
-      if (n.classList.contains("open")) {
-        n.classList.remove("open");
-        t.setAttribute("aria-expanded", "false");
-        t.setAttribute("aria-label", "Abrir menu");
-        document.body.style.overflow = "";
-      }
-    });
-  });
-});
-</script>
+
 
 <!-- ══════════════ CONTEÚDO PRINCIPAL ══════════════════════ -->
 <main id="conteudo-principal">
@@ -531,6 +599,19 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- Filtros + grid de pragas -->
           <div class="sec-label">Pragas cadastradas</div>
 
+          <!-- Busca mobile — visível só abaixo de 900px -->
+          <div class="busca-mobile">
+            <div class="busca-wrap">
+              <input class="busca-input" id="busca-mobile-input"
+                     type="search" autocomplete="off"
+                     placeholder="🔍  Buscar praga... ex: mosca branca"
+                     oninput="sincronizarBusca(this)">
+              <button class="busca-limpar" id="busca-mobile-limpar"
+                      aria-label="Limpar busca"
+                      onclick="limparBusca()">✕</button>
+            </div>
+          </div>
+
           <div class="filtros-bar">
             <button class="filtro-btn ativo" onclick="filtrar('todos', this)">Todas</button>
             <button class="filtro-btn" onclick="filtrar('alto', this)">🔴 Risco Alto</button>
@@ -552,12 +633,12 @@ document.addEventListener("DOMContentLoaded", function () {
               .order('nome')
 
             Renderizar cada item como .praga-card com os campos correspondentes.
-            Os atributos data-grupo e data-risco alimentam o filtro client-side.
+            Os atributos data-grupo, data-risco e data-slug alimentam o filtro e a busca.
           -->
           <div class="pragas-grid" id="pragas-grid">
 
             <!-- MOSCA BRANCA -->
-            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto" data-slug="mosca-branca">
               <div class="praga-foto">
                 <div class="praga-foto-ph" id="ph-mosca-branca">
                   <span class="praga-foto-ph-emoji">🦟</span>
@@ -593,7 +674,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- PULGÃO -->
-            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto" data-slug="pulgao">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🐝</span>
@@ -629,7 +710,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- ÁCARO-RAJADO -->
-            <div class="praga-card" data-grupo="acarina" data-risco="medio">
+            <div class="praga-card" data-grupo="acarina" data-risco="medio" data-slug="acaro-rajado">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🕷️</span>
@@ -665,7 +746,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- TRIPES -->
-            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto" data-slug="tripes">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🦗</span>
@@ -701,7 +782,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- TRAÇA DO TOMATEIRO -->
-            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto">
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto" data-slug="traca-tomateiro">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🐛</span>
@@ -736,7 +817,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- LAGARTA DO CARTUCHO -->
-            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto">
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto" data-slug="lagarta-cartucho">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🐛</span>
@@ -772,7 +853,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- COCHONILHA -->
-            <div class="praga-card" data-grupo="hemiptera" data-risco="medio">
+            <div class="praga-card" data-grupo="hemiptera" data-risco="medio" data-slug="cochonilha">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🐞</span>
@@ -808,7 +889,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- CIGARRINHA-VERDE -->
-            <div class="praga-card" data-grupo="hemiptera" data-risco="medio">
+            <div class="praga-card" data-grupo="hemiptera" data-risco="medio" data-slug="cigarrinha">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🦗</span>
@@ -844,7 +925,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- FALSA-MEDIDEIRA -->
-            <div class="praga-card" data-grupo="lepidoptera" data-risco="medio">
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="medio" data-slug="falsa-medideira">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🦋</span>
@@ -879,7 +960,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- ÁCARO BRANCO -->
-            <div class="praga-card" data-grupo="acarina" data-risco="medio">
+            <div class="praga-card" data-grupo="acarina" data-risco="medio" data-slug="acaro-branco">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🕷️</span>
@@ -915,7 +996,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- MINADOR DAS FOLHAS -->
-            <div class="praga-card" data-grupo="outros" data-risco="medio">
+            <div class="praga-card" data-grupo="outros" data-risco="medio" data-slug="minador-folhas">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🪲</span>
@@ -951,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <!-- BROCA DO CAFÉ -->
-            <div class="praga-card" data-grupo="outros" data-risco="medio">
+            <div class="praga-card" data-grupo="outros" data-risco="medio" data-slug="broca-cafe">
               <div class="praga-foto">
                 <div class="praga-foto-ph">
                   <span class="praga-foto-ph-emoji">🪲</span>
@@ -1001,25 +1082,36 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- ══ SIDEBAR ══════════════════════════════════════ -->
         <aside class="sidebar" aria-label="Filtros e links relacionados">
 
+          <!-- ── BUSCA + LISTA COMPACTA ────────────────────── -->
           <div class="sidebar-widget">
-            <h4>🔍 Por Grupo</h4>
-            <ul class="sb-filtros">
-              <li><a href="#" onclick="filtrarSb('todos',event)">Todas as pragas <span class="sb-count" id="sb-count-todos">12</span></a></li>
-              <li><a href="#" onclick="filtrarSb('hemiptera',event)">🦟 Sugadores <span class="sb-count">5</span></a></li>
-              <li><a href="#" onclick="filtrarSb('lepidoptera',event)">🐛 Lagartas <span class="sb-count">3</span></a></li>
-              <li><a href="#" onclick="filtrarSb('acarina',event)">🕷️ Ácaros <span class="sb-count">2</span></a></li>
-              <li><a href="#" onclick="filtrarSb('outros',event)">🪲 Minadores &amp; Outros <span class="sb-count">2</span></a></li>
+            <h4>🔍 Buscar praga</h4>
+            <div class="busca-wrap">
+              <input class="busca-input" id="busca-sb-input"
+                     type="search" autocomplete="off"
+                     placeholder="Digite o nome... ex: pulgão"
+                     oninput="sincronizarBusca(this)">
+              <button class="busca-limpar" id="busca-sb-limpar"
+                      aria-label="Limpar busca"
+                      onclick="limparBusca()">✕</button>
+            </div>
+            <ul class="busca-lista" id="busca-lista" role="list">
+              <li><a class="busca-item" href="/pragas/mosca-branca/"    data-slug="mosca-branca"    data-nome="Mosca Branca"            data-termos="bemisia tabaci mosca branca sugador hortaliça"><span class="bi-emoji">🦟</span><span class="bi-nome">Mosca Branca</span><span class="bi-risco bi-risco-alto">Alto</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/pulgao/"          data-slug="pulgao"          data-nome="Pulgão"                  data-termos="myzus pulgao afideo broto sugador"><span class="bi-emoji">🐝</span><span class="bi-nome">Pulgão</span><span class="bi-risco bi-risco-alto">Alto</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/tripes/"          data-slug="tripes"          data-nome="Tripes"                  data-termos="frankliniella tripes flor fruto sugador"><span class="bi-emoji">🦗</span><span class="bi-nome">Tripes</span><span class="bi-risco bi-risco-alto">Alto</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/traca-tomateiro/" data-slug="traca-tomateiro" data-nome="Traça do Tomateiro"      data-termos="tuta absoluta traca tomateiro minador folha"><span class="bi-emoji">🐛</span><span class="bi-nome">Traça do Tomateiro</span><span class="bi-risco bi-risco-alto">Alto</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/lagarta-cartucho/" data-slug="lagarta-cartucho" data-nome="Lagarta do Cartucho"   data-termos="spodoptera lagarta cartucho milho lagarta"><span class="bi-emoji">🐛</span><span class="bi-nome">Lagarta do Cartucho</span><span class="bi-risco bi-risco-alto">Alto</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/acaro-rajado/"    data-slug="acaro-rajado"    data-nome="Ácaro-Rajado"            data-termos="tetranychus acaro rajado teia aranha"><span class="bi-emoji">🕷️</span><span class="bi-nome">Ácaro-Rajado</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/cochonilha/"      data-slug="cochonilha"      data-nome="Cochonilha"              data-termos="planococcus cochonilha cera citros cafe"><span class="bi-emoji">🐞</span><span class="bi-nome">Cochonilha</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/cigarrinha/"      data-slug="cigarrinha"      data-nome="Cigarrinha-Verde"        data-termos="empoasca cigarrinha verde hopperburn feijao"><span class="bi-emoji">🦗</span><span class="bi-nome">Cigarrinha-Verde</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/falsa-medideira/" data-slug="falsa-medideira" data-nome="Lagarta Falsa-Medideira" data-termos="chrysodeixis medideira lagarta soja algodao"><span class="bi-emoji">🦋</span><span class="bi-nome">Lagarta Falsa-Medideira</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/acaro-branco/"    data-slug="acaro-branco"    data-nome="Ácaro Branco"            data-termos="polyphagotarsonemus acaro branco bronzeamento pimentao mamao"><span class="bi-emoji">🕷️</span><span class="bi-nome">Ácaro Branco</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/minador-folhas/"  data-slug="minador-folhas"  data-nome="Minador das Folhas"      data-termos="liriomyza minador folhas galeria alface"><span class="bi-emoji">🪲</span><span class="bi-nome">Minador das Folhas</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
+              <li><a class="busca-item" href="/pragas/broca-cafe/"      data-slug="broca-cafe"      data-nome="Broca do Café"           data-termos="hypothenemus broca cafe fruto perfura"><span class="bi-emoji">🪲</span><span class="bi-nome">Broca do Café</span><span class="bi-risco bi-risco-medio">Médio</span><span class="bi-seta">›</span></a></li>
             </ul>
+            <p class="busca-nenhum" id="busca-nenhum">Nenhuma praga encontrada.<br><a href="/contato/">Solicitar nova ficha →</a></p>
           </div>
 
-          <div class="sidebar-widget">
-            <h4>⚠️ Por Nível de Risco</h4>
-            <ul class="sb-filtros">
-              <li><a href="#" onclick="filtrarSb('alto',event)">🔴 Risco Alto <span class="sb-count">5</span></a></li>
-              <li><a href="#" onclick="filtrarSb('medio',event)">🟡 Risco Médio <span class="sb-count">7</span></a></li>
-            </ul>
-          </div>
-
+          <!-- ── EXPLORAR ───────────────────────────────────── -->
           <div class="sidebar-widget">
             <h4>🌿 Explorar</h4>
             <ul>
@@ -1110,6 +1202,10 @@ document.addEventListener("DOMContentLoaded", function () {
 </a>
 
 <script>
+  /* ═══════════════════════════════════════════════════════
+     PORTAL DO NEEM — Pragas index: busca + filtros
+     ═══════════════════════════════════════════════════════ */
+
   /* ── Exibe foto quando carregada com sucesso ──────────── */
   function showFoto(img) {
     img.style.display = "block";
@@ -1117,14 +1213,133 @@ document.addEventListener("DOMContentLoaded", function () {
     if (ph) ph.style.display = "none";
   }
 
-  /* ── Filtro dos cards (botões inline) ─────────────────── */
+  /* ── Normaliza texto para busca sem acento ────────────── */
+  function norm(str) {
+    return (str || "").toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[-_]/g, " ");
+  }
+
+  /* ── Estado global ────────────────────────────────────── */
+  var estadoBusca = "";   /* termo atual */
+  var estadoFiltro = "todos"; /* grupo/risco atual */
+
+  /* ── Busca principal: filtra lista sidebar + grid ─────── */
+  function buscar(termo) {
+    estadoBusca = termo.trim();
+    var q = norm(estadoBusca);
+
+    /* Se há texto, ignora filtro de grupo/risco */
+    var usaBusca = q.length > 0;
+
+    /* 1. Itens da lista no sidebar */
+    var itens = document.querySelectorAll(".busca-item");
+    var algumVisivelSb = false;
+    itens.forEach(function(item) {
+      var campos = norm(item.dataset.nome) + " " + norm(item.dataset.termos);
+      var bate = !usaBusca || campos.includes(q);
+      item.classList.toggle("oculto", !bate);
+      if (bate) algumVisivelSb = true;
+    });
+    var nenhum = document.getElementById("busca-nenhum");
+    if (nenhum) nenhum.style.display = algumVisivelSb ? "none" : "block";
+
+    /* 2. Cards do grid */
+    var cards = document.querySelectorAll(".praga-card");
+    var n = 0;
+    cards.forEach(function(card) {
+      var nomeEl = card.querySelector(".praga-nome");
+      var cientEl = card.querySelector(".praga-cientifico");
+      var descEl  = card.querySelector(".praga-desc");
+      var campos  = norm((nomeEl  ? nomeEl.textContent  : "") + " " +
+                         (cientEl ? cientEl.textContent : "") + " " +
+                         (descEl  ? descEl.textContent  : "") + " " +
+                         norm(card.dataset.slug || ""));
+      var passaBusca  = !usaBusca || campos.includes(q);
+      var passaFiltro = usaBusca  /* busca suspende filtro */
+        || estadoFiltro === "todos"
+        || card.dataset.grupo === estadoFiltro
+        || card.dataset.risco === estadoFiltro;
+      var mostra = passaBusca && passaFiltro;
+      card.style.display = mostra ? "" : "none";
+      if (mostra) n++;
+    });
+
+    /* 3. Contador */
+    var el = document.getElementById("filtros-count");
+    if (el) el.textContent = n + (n === 1 ? " praga" : " pragas");
+
+    /* 4. Reseta visual dos filtro-btn quando busca está ativa */
+    if (usaBusca) {
+      document.querySelectorAll(".filtro-btn").forEach(function(b) {
+        b.classList.remove("ativo");
+      });
+    }
+  }
+
+  /* ── Sincroniza os dois inputs (sidebar ↔ mobile) ─────── */
+  function sincronizarBusca(origem) {
+    var val = origem.value;
+    /* espelha no outro input */
+    var outro = origem.id === "busca-sb-input"
+      ? document.getElementById("busca-mobile-input")
+      : document.getElementById("busca-sb-input");
+    if (outro) outro.value = val;
+
+    /* mostra/oculta botão limpar em ambos */
+    ["busca-sb-limpar", "busca-mobile-limpar"].forEach(function(id) {
+      var btn = document.getElementById(id);
+      if (btn) btn.classList.toggle("visivel", val.length > 0);
+    });
+
+    buscar(val);
+  }
+
+  /* ── Limpa a busca ────────────────────────────────────── */
+  function limparBusca() {
+    ["busca-sb-input", "busca-mobile-input"].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = "";
+    });
+    ["busca-sb-limpar", "busca-mobile-limpar"].forEach(function(id) {
+      var btn = document.getElementById(id);
+      if (btn) btn.classList.remove("visivel");
+    });
+    buscar("");
+    /* restaura filtro ativo visualmente */
+    document.querySelectorAll(".filtro-btn").forEach(function(b) {
+      b.classList.toggle("ativo", b.textContent.trim() === "Todas");
+    });
+    estadoFiltro = "todos";
+  }
+
+  /* ── Filtro por grupo/risco (botões na barra) ─────────── */
   function filtrar(tipo, btn) {
+    estadoFiltro = tipo;
+    estadoBusca  = "";
+    /* limpa campo de busca */
+    ["busca-sb-input", "busca-mobile-input"].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = "";
+    });
+    ["busca-sb-limpar", "busca-mobile-limpar"].forEach(function(id) {
+      var btn2 = document.getElementById(id);
+      if (btn2) btn2.classList.remove("visivel");
+    });
+    /* restaura todos os itens da lista sidebar */
+    document.querySelectorAll(".busca-item").forEach(function(i) {
+      i.classList.remove("oculto");
+    });
+    var nenhum = document.getElementById("busca-nenhum");
+    if (nenhum) nenhum.style.display = "none";
+    /* atualiza botão ativo */
     if (btn) {
       document.querySelectorAll(".filtro-btn").forEach(function(b) {
         b.classList.remove("ativo");
       });
       btn.classList.add("ativo");
     }
+    /* aplica filtro nos cards */
     var cards = document.querySelectorAll(".praga-card");
     var n = 0;
     cards.forEach(function(card) {
@@ -1138,21 +1353,51 @@ document.addEventListener("DOMContentLoaded", function () {
     if (el) el.textContent = n + (n === 1 ? " praga" : " pragas");
   }
 
-  /* ── Filtro acionado pela sidebar ─────────────────────── */
-  function filtrarSb(tipo, evt) {
-    evt.preventDefault();
-    /* rola até o grid */
-    document.getElementById("pragas-grid").scrollIntoView({ behavior: "smooth", block: "start" });
-    /* aciona o mesmo filtro dos botões inline */
-    filtrar(tipo, null);
-    /* sincroniza o botão ativo na barra de filtros */
-    document.querySelectorAll(".filtro-btn").forEach(function(b) {
-      var mapa = { todos:"Todas", alto:"Risco Alto", medio:"Risco Médio",
-                   hemiptera:"Sugadores", lepidoptera:"Lagartas",
-                   acarina:"Ácaros", outros:"Minadores" };
-      b.classList.toggle("ativo", b.textContent.trim().includes(mapa[tipo] || tipo));
+  /* ── Clique na lista sidebar: scroll + highlight ──────── */
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".busca-item").forEach(function(item) {
+      item.addEventListener("click", function(e) {
+        var slug = this.dataset.slug;
+        var card = document.querySelector('.praga-card[data-slug="' + slug + '"]');
+        if (!card) return; /* deixa o link navegar normalmente */
+        e.preventDefault();
+        /* garante que o card está visível */
+        card.style.display = "";
+        /* scroll suave */
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        /* pulso de destaque */
+        card.classList.remove("destaque");
+        void card.offsetWidth; /* força reflow para reiniciar animação */
+        card.classList.add("destaque");
+        card.addEventListener("animationend", function() {
+          card.classList.remove("destaque");
+        }, { once: true });
+      });
     });
+  });
+
+  /* ── Menu mobile ──────────────────────────────────────── */
+  function toggleMenu(e) {
+    var n = document.getElementById("nav-menu"),
+        t = n.classList.toggle("open");
+    e.setAttribute("aria-expanded", t);
+    e.setAttribute("aria-label", t ? "Fechar menu" : "Abrir menu");
+    document.body.style.overflow = t ? "hidden" : "";
   }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("#nav-menu a").forEach(function(e) {
+      e.addEventListener("click", function() {
+        var n = document.getElementById("nav-menu"),
+            t = document.querySelector(".menu-toggle");
+        if (n.classList.contains("open")) {
+          n.classList.remove("open");
+          t.setAttribute("aria-expanded", "false");
+          t.setAttribute("aria-label", "Abrir menu");
+          document.body.style.overflow = "";
+        }
+      });
+    });
+  });
 </script>
 
 </body>
