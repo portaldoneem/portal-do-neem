@@ -449,98 +449,132 @@
     .ef-alta  { background: var(--musgo-100); color: var(--musgo-700); }
     .ef-media { background: var(--ambar-100, #fdf2d4); color: var(--ambar-800); }
 
+    /* CORREÇÃO GLOBAL: grid filho sem min-width:0 expande até o
+       conteúdo mais largo (ciclo-track 580px) e arrasta tudo junto */
+    .page-content { min-width: 0; }
+    .sec { min-width: 0; }
+
     /* ── Tablet (≤ 900px) ───────────────────────────────────── */
     @media (max-width: 900px) {
-      /* Hero: empilha texto + foto */
       .hero-inner { grid-template-columns: 1fr; gap: 1rem; }
       .hero-img-wrap { aspect-ratio: 16 / 8; }
-
-      /* Grids de 3 → 2 colunas */
-      .mec-grid  { grid-template-columns: 1fr 1fr; }
-      .pq-grid   { grid-template-columns: 1fr 1fr; }
+      .mec-grid   { grid-template-columns: 1fr 1fr; }
+      .pq-grid    { grid-template-columns: 1fr 1fr; }
       .danos-grid { grid-template-columns: 1fr; }
-      .mon-grid  { grid-template-columns: 1fr 1fr; }
+      .mon-grid   { grid-template-columns: 1fr 1fr; }
     }
 
     /* ── Mobile (≤ 600px) ───────────────────────────────────── */
     @media (max-width: 600px) {
-      /* CORREÇÃO PRINCIPAL: overflow:hidden no .sec impede o scroll
-         interno da tabela e do ciclo. overflow:clip mantém o corte
-         visual das bordas arredondadas sem bloquear filhos roláveis. */
+
+      /* Trava scroll horizontal na raiz para qualquer vazamento
+         residual (não interfere com sticky header) */
+      html { overflow-x: hidden; }
+
+      /* Contém todo o conteúdo dentro do viewport */
+      .page-content,
+      .sec,
+      .sec-head,
+      .sec-body { max-width: 100%; box-sizing: border-box; }
+
+      /* Seções — borda arredondada preservada sem bloquear scroll filho */
       .sec { overflow: clip; }
 
-      /* Espaçamentos internos reduzidos */
+      /* Espaçamentos menores */
+      .page-header { padding: 24px 0 30px; }
       .sec-head { padding: .7rem .85rem; }
-      .sec-body { padding: .85rem .85rem 1rem; }
+      .sec-body { padding: .8rem .85rem 1rem; }
 
-      /* Hero */
-      .page-header { padding: 24px 0 32px; }
+      /* ── Hero ──────────────────────────────────────────────── */
       .hero-img-wrap { aspect-ratio: 16 / 9; max-height: 200px; }
       .hero-lead { font-size: .85rem; margin-bottom: 1rem; }
 
-      /* Stats bar: 2×2 em vez de 4 em linha */
+      /* Stats: grade 2×2 */
       .hero-stats { flex-wrap: wrap; }
-      .hero-stat { flex: 1 1 50%; min-width: 0; }
+      .hero-stat  { flex: 1 1 50%; min-width: 0; }
       .hero-stat:nth-child(2) { border-right: none; }
       .hero-stat:nth-child(3),
       .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); }
       .hero-stat:nth-child(4) { border-right: none; }
 
-      /* Ficha técnica */
-      .fi-grid { grid-template-columns: 1fr 1fr; gap: .45rem; }
-      .fi-card { padding: .6rem .7rem; }
+      /* ── Ficha técnica ─────────────────────────────────────── */
+      .fi-grid {
+        /* auto-fill com mínimo menor para caber em telas estreitas */
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: .4rem;
+      }
+      .fi-card { padding: .55rem .65rem; }
 
-      /* Identificação */
+      /* Pills de culturas: quebra normal, fonte menor */
+      .cultura-pill { font-size: .7rem; padding: .2rem .55rem; }
+
+      /* ── Identificação ─────────────────────────────────────── */
       .id-grid { grid-template-columns: 1fr; }
 
-      /* Monitoramento */
+      /* ── Monitoramento ─────────────────────────────────────── */
       .mon-grid { grid-template-columns: 1fr; }
 
-      /* Ciclo de vida: compacta bolhas, oculta notas longas */
+      /* ── Ciclo de vida ─────────────────────────────────────── */
+      /* O min-width:580px no .ciclo-track força o wrapper a rolar;
+         o wrapper precisa de largura explicitamente limitada */
+      .ciclo-wrap {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
       .ciclo-bubble { width: 46px; height: 46px; font-size: .9rem; }
-      .ciclo-nome { font-size: .65rem; }
-      .ciclo-dias { font-size: .6rem; }
+      .ciclo-estagio { padding: 0 4px; }
+      .ciclo-nome { font-size: .63rem; }
+      .ciclo-dias { font-size: .58rem; }
       .ciclo-ef   { font-size: .55rem; padding: 1px 5px; }
-      .ciclo-nota { display: none; }
-      .ciclo-legenda { font-size: .72rem; gap: .75rem; }
+      .ciclo-nota { display: none; } /* texto longo oculto — legenda abaixo resume */
+      .ciclo-legenda { font-size: .72rem; gap: .65rem; }
 
-      /* Danos */
+      /* ── Danos ─────────────────────────────────────────────── */
       .danos-grid { grid-template-columns: 1fr; }
 
-      /* Mecanismos */
+      /* ── Mecanismos ────────────────────────────────────────── */
       .mec-grid { grid-template-columns: 1fr; }
 
-      /* Protocolo por cultura: oculta coluna Observação,
-         deixa as demais rolar suavemente no eixo X */
-      .proto-table-wrap { -webkit-overflow-scrolling: touch; }
+      /* ── Protocolo por cultura ─────────────────────────────── */
+      .proto-table-wrap {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Oculta coluna Observação — conteúdo mais importante cabe na tela */
       .proto-table th:last-child,
       .proto-table td:last-child { display: none; }
-      .proto-table { font-size: .78rem; }
+      .proto-table { font-size: .76rem; min-width: 340px; }
       .proto-table th,
-      .proto-table td { padding: .4rem .55rem; white-space: nowrap; }
-      .proto-table td:first-child { white-space: normal; }
+      .proto-table td { padding: .4rem .5rem; white-space: nowrap; }
+      .proto-table td:first-child { white-space: normal; min-width: 90px; }
 
-      /* Boas práticas */
+      /* ── Boas práticas ─────────────────────────────────────── */
       .bp-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+      .bp-card { padding: .75rem; }
 
-      /* Por que Neem */
-      .pq-sec { padding: 1.1rem .85rem; }
+      /* ── Por que Neem ──────────────────────────────────────── */
+      .pq-sec  { padding: 1rem .85rem; }
       .pq-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+      .pq-card { padding: .75rem; }
 
-      /* Acordeão */
+      /* ── Acordeão ──────────────────────────────────────────── */
       .acc-q     { font-size: .82rem; }
       .acc-panel { padding: 0 0 .75rem 1.5rem; }
+
+      /* ── Sidebar específico ────────────────────────────────── */
+      .nav-pragas { gap: .25rem; }
     }
 
     /* ── Celulares muito pequenos (≤ 390px) ─────────────────── */
     @media (max-width: 390px) {
-      .fi-grid  { grid-template-columns: 1fr; }
-      .bp-grid  { grid-template-columns: 1fr; }
-      .pq-grid  { grid-template-columns: 1fr; }
-      .hero-stat { flex: 1 1 100%; border-right: none; }
-      .hero-stat:nth-child(2) { border-right: none; }
-      .hero-stat:nth-child(3),
-      .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); border-right: none; }
+      .fi-grid { grid-template-columns: 1fr 1fr; }
+      .bp-grid,
+      .pq-grid { grid-template-columns: 1fr; }
+      /* Stats: coluna única */
+      .hero-stat { flex: 1 1 100%; border-right: none !important; }
+      .hero-stat:nth-child(n+2) { border-top: 1px solid rgba(255,255,255,.1); }
     }
   </style>
 </head>
