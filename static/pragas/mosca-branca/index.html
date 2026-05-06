@@ -231,6 +231,29 @@
     }
     .tip-box strong { color: var(--terra-900); }
 
+    /* Monitoramento dentro de Como Identificar */
+    .mon-divider {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .7rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--musgo-700);
+      margin: 1.1rem 0 .6rem;
+    }
+    .mon-divider::before,
+    .mon-divider::after { content: ''; flex: 1; height: 1px; background: var(--color-border-light); }
+    .mon-intro {
+      font-size: .82rem; color: var(--grafite);
+      line-height: 1.75; margin-bottom: .75rem;
+    }
+    .mon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin-bottom: .75rem; }
+    .mon-card {
+      background: var(--color-bg, #faf6ee);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius); padding: .85rem;
+    }
+    .mon-card-icon { font-size: 1.2rem; margin-bottom: .35rem; }
+    .mon-card-title { font-size: .82rem; font-weight: 700; color: var(--terra-900); margin-bottom: .3rem; }
+    .mon-card-text { font-size: .78rem; color: var(--grafite); line-height: 1.65; }
+
     /* Ciclo de vida */
     .ciclo-wrap { overflow-x: auto; padding-bottom: 6px; }
     .ciclo-track {
@@ -505,23 +528,26 @@
           </div>
         </div>
 
-        <!-- Foto -->
-        <div class="hero-img-wrap">
           <!--
-            Substituir o bloco .hero-img-ph pela tag abaixo quando a foto estiver disponível:
+            Quando a foto estiver disponível, basta colocar os arquivos em:
+              /pragas/img/mosca-branca.webp  (principal)
+              /pragas/img/mosca-branca.jpg   (fallback)
+            O código abaixo já trata a exibição automaticamente.
+          -->
+          <div class="hero-img-wrap">
+            <div class="hero-img-ph" id="hero-img-ph">
+              <span class="hero-img-ph-icon">🦟</span>
+              <span class="hero-img-ph-label">mosca-branca.webp · 800 × 600 px</span>
+            </div>
             <picture>
               <source srcset="/pragas/img/mosca-branca.webp" type="image/webp">
               <img src="/pragas/img/mosca-branca.jpg"
                    alt="Mosca Branca (Bemisia tabaci) em folha de hortaliça"
-                   onload="this.style.display='block'; this.closest('.hero-img-wrap').querySelector('.hero-img-ph').style.display='none'">
+                   style="display:none; width:100%; height:100%; object-fit:cover; object-position:center"
+                   onload="this.style.display='block'; document.getElementById('hero-img-ph').style.display='none'"
+                   onerror="this.closest('picture').remove()">
             </picture>
-            <span class="hero-img-credit">Foto: [Crédito]</span>
-          -->
-          <div class="hero-img-ph">
-            <span class="hero-img-ph-icon">🦟</span>
-            <span class="hero-img-ph-label">800 × 600 px · mosca-branca.webp</span>
           </div>
-        </div>
       </div>
 
     </div>
@@ -555,7 +581,7 @@
                 <div class="fi-card"><div class="fi-l">Ciclo de vida</div><div class="fi-v">18–25 dias a 25°C</div></div>
                 <div class="fi-card"><div class="fi-l">Gerações/ano</div><div class="fi-v">10 a 15</div></div>
                 <div class="fi-card"><div class="fi-l">Cond. favoráveis</div><div class="fi-v">25–35°C · baixa umidade</div></div>
-                <div class="fi-card"><div class="fi-l">Monitoramento</div><div class="fi-v">Armadilhas amarelas cromotrópicas</div></div>
+                <div class="fi-card"><div class="fi-l">Monitoramento</div><div class="fi-v">Armadilha amarela adesiva — ver seção "Como Identificar"</div></div>
                 <div class="fi-card"><div class="fi-l">Estágio crítico</div><div class="fi-v">Ninfa 1º e 2º instar</div></div>
                 <div class="fi-card"><div class="fi-l">Risco resistência</div><div class="fi-v">Baixo ao neem · Alto a neonicotinóides</div></div>
               </div>
@@ -608,6 +634,24 @@
               </ul>
               <div class="tip-box">
                 <strong>Como diferenciar as duas espécies:</strong> <em>Bemisia tabaci</em> (biótipo B) descansa com as asas fechadas em "V". <em>Trialeurodes vaporariorum</em> descansa com asas horizontais, planas. Na prática, o manejo com neem é igual para ambas.
+              </div>
+
+              <div class="mon-divider">Como monitorar a presença na lavoura</div>
+              <p class="mon-intro">Identificar o inseto visualmente é suficiente em hortas pequenas — basta virar a folha e olhar. Em lavouras maiores, onde inspecionar planta por planta é inviável, usa-se a <strong>armadilha amarela adesiva</strong>: uma plaquinha amarela coberta de cola, pendurada na altura das plantas. A mosca branca tem atração natural pela cor amarela — ao se aproximar, pousa e fica presa. Você conta os insetos colados uma vez por semana e decide se é hora de agir.</p>
+              <div class="mon-grid">
+                <div class="mon-card">
+                  <div class="mon-card-icon">📌</div>
+                  <div class="mon-card-title">Como usar</div>
+                  <div class="mon-card-text">Pendure 1 plaquinha a cada 1.000 m² de lavoura, na altura das plantas. Vistorie semanalmente contando os insetos presos. Encontra em lojas agropecuárias como "armadilha adesiva amarela".</div>
+                </div>
+                <div class="mon-card">
+                  <div class="mon-card-icon">⚡</div>
+                  <div class="mon-card-title">Quando aplicar o neem</div>
+                  <div class="mon-card-text">Ao encontrar <strong>1 adulto por folha</strong> ou ao ver os primeiros ovos na face inferior das folhas — não espere a população aumentar.</div>
+                </div>
+              </div>
+              <div class="tip-box">
+                <strong>O neem não substitui o monitoramento.</strong> A armadilha diz <em>se</em> a praga chegou e <em>em que quantidade</em>. O neem é o tratamento. Sem monitorar, você aplica sem saber se é necessário, se a dose está certa ou se o programa está funcionando.
               </div>
             </div>
           </div>
@@ -965,7 +1009,7 @@
 
           <div class="sidebar-alerta">
             <h5>🔴 Praga de risco alto</h5>
-            <p>Monitore semanalmente com armadilhas amarelas. Iniciar aplicação preventiva ao detectar os primeiros adultos.</p>
+            <p>Vistorie semanalmente. Use cartões adesivos amarelos (placas com cola) para detectar adultos antes que a população exploda. Inicie o neem ao encontrar os primeiros insetos.</p>
           </div>
 
           <div class="sidebar-widget">
@@ -978,33 +1022,10 @@
             </div>
           </div>
 
-          <div class="sidebar-widget">
-            <h4>🌾 Culturas afetadas</h4>
-            <ul class="cult-list">
-              <li><a href="/culturas/tomate/">🍅 Tomate <span class="cult-ef ef-alta">Alta</span></a></li>
-              <li><a href="/culturas/pepino/">🥒 Pepino <span class="cult-ef ef-alta">Alta</span></a></li>
-              <li><a href="/culturas/pimentao/">🫑 Pimentão <span class="cult-ef ef-alta">Alta</span></a></li>
-              <li><a href="/culturas/alface/">🥬 Alface <span class="cult-ef ef-media">Média</span></a></li>
-              <li><a href="/culturas/soja/">🫘 Soja <span class="cult-ef ef-media">Média</span></a></li>
-              <li><a href="/culturas/feijao/">🫘 Feijão <span class="cult-ef ef-media">Média</span></a></li>
-              <li><a href="/culturas/mandioca/">🌾 Mandioca <span class="cult-ef ef-media">Média</span></a></li>
-              <li><a href="/culturas/ornamentais/">🌸 Ornamentais <span class="cult-ef ef-alta">Alta</span></a></li>
-            </ul>
-          </div>
-
           <div class="sidebar-cta">
             <h4>💰 Precisa de neem?</h4>
             <p>Solicite cotação com nossos parceiros validados.</p>
             <a href="/cotacao/" class="btn btn-primary btn-sm" style="width:100%; justify-content:center">Solicitar Cotação</a>
-          </div>
-
-          <div class="sidebar-widget">
-            <h4>📍 Monitoramento</h4>
-            <ul>
-              <li><strong>Frequência:</strong> Semanal</li>
-              <li style="margin-top:.35rem"><strong>Ferramenta:</strong> Armadilhas amarelas (1/1.000 m²)</li>
-              <li style="margin-top:.35rem"><strong>Limiar de ação:</strong> 1 adulto/folha ou primeiros ovos na face inferior</li>
-            </ul>
           </div>
 
           <div class="sidebar-cta">
