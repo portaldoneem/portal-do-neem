@@ -449,17 +449,98 @@
     .ef-alta  { background: var(--musgo-100); color: var(--musgo-700); }
     .ef-media { background: var(--ambar-100, #fdf2d4); color: var(--ambar-800); }
 
-    /* ── Responsivo ──────────────────────────────────────── */
+    /* ── Tablet (≤ 900px) ───────────────────────────────────── */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 1.25rem; }
-      .hero-img-wrap { aspect-ratio: 16 / 7; }
-      .mec-grid, .pq-grid { grid-template-columns: 1fr 1fr; }
+      /* Hero: empilha texto + foto */
+      .hero-inner { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-img-wrap { aspect-ratio: 16 / 8; }
+
+      /* Grids de 3 → 2 colunas */
+      .mec-grid  { grid-template-columns: 1fr 1fr; }
+      .pq-grid   { grid-template-columns: 1fr 1fr; }
       .danos-grid { grid-template-columns: 1fr; }
+      .mon-grid  { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── Mobile (≤ 600px) ───────────────────────────────────── */
     @media (max-width: 600px) {
-      .id-grid, .mec-grid, .pq-grid, .bp-grid { grid-template-columns: 1fr; }
-      .fi-grid { grid-template-columns: repeat(2,1fr); }
+      /* CORREÇÃO PRINCIPAL: overflow:hidden no .sec impede o scroll
+         interno da tabela e do ciclo. overflow:clip mantém o corte
+         visual das bordas arredondadas sem bloquear filhos roláveis. */
+      .sec { overflow: clip; }
+
+      /* Espaçamentos internos reduzidos */
+      .sec-head { padding: .7rem .85rem; }
+      .sec-body { padding: .85rem .85rem 1rem; }
+
+      /* Hero */
+      .page-header { padding: 24px 0 32px; }
+      .hero-img-wrap { aspect-ratio: 16 / 9; max-height: 200px; }
+      .hero-lead { font-size: .85rem; margin-bottom: 1rem; }
+
+      /* Stats bar: 2×2 em vez de 4 em linha */
       .hero-stats { flex-wrap: wrap; }
+      .hero-stat { flex: 1 1 50%; min-width: 0; }
+      .hero-stat:nth-child(2) { border-right: none; }
+      .hero-stat:nth-child(3),
+      .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); }
+      .hero-stat:nth-child(4) { border-right: none; }
+
+      /* Ficha técnica */
+      .fi-grid { grid-template-columns: 1fr 1fr; gap: .45rem; }
+      .fi-card { padding: .6rem .7rem; }
+
+      /* Identificação */
+      .id-grid { grid-template-columns: 1fr; }
+
+      /* Monitoramento */
+      .mon-grid { grid-template-columns: 1fr; }
+
+      /* Ciclo de vida: compacta bolhas, oculta notas longas */
+      .ciclo-bubble { width: 46px; height: 46px; font-size: .9rem; }
+      .ciclo-nome { font-size: .65rem; }
+      .ciclo-dias { font-size: .6rem; }
+      .ciclo-ef   { font-size: .55rem; padding: 1px 5px; }
+      .ciclo-nota { display: none; }
+      .ciclo-legenda { font-size: .72rem; gap: .75rem; }
+
+      /* Danos */
+      .danos-grid { grid-template-columns: 1fr; }
+
+      /* Mecanismos */
+      .mec-grid { grid-template-columns: 1fr; }
+
+      /* Protocolo por cultura: oculta coluna Observação,
+         deixa as demais rolar suavemente no eixo X */
+      .proto-table-wrap { -webkit-overflow-scrolling: touch; }
+      .proto-table th:last-child,
+      .proto-table td:last-child { display: none; }
+      .proto-table { font-size: .78rem; }
+      .proto-table th,
+      .proto-table td { padding: .4rem .55rem; white-space: nowrap; }
+      .proto-table td:first-child { white-space: normal; }
+
+      /* Boas práticas */
+      .bp-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+
+      /* Por que Neem */
+      .pq-sec { padding: 1.1rem .85rem; }
+      .pq-grid { grid-template-columns: 1fr 1fr; gap: .5rem; }
+
+      /* Acordeão */
+      .acc-q     { font-size: .82rem; }
+      .acc-panel { padding: 0 0 .75rem 1.5rem; }
+    }
+
+    /* ── Celulares muito pequenos (≤ 390px) ─────────────────── */
+    @media (max-width: 390px) {
+      .fi-grid  { grid-template-columns: 1fr; }
+      .bp-grid  { grid-template-columns: 1fr; }
+      .pq-grid  { grid-template-columns: 1fr; }
+      .hero-stat { flex: 1 1 100%; border-right: none; }
+      .hero-stat:nth-child(2) { border-right: none; }
+      .hero-stat:nth-child(3),
+      .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,.1); border-right: none; }
     }
   </style>
 </head>
