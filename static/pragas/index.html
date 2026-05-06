@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neem por Praga — Portal do Neem</title>
+  <meta name="description" content="Guias técnicos de controle de pragas com óleo de neem: mosca branca, pulgão, ácaro, tripes, lagarta e mais. Protocolos de dosagem, ciclo de vida e mecanismo de ação da azadiractina.">
+  <meta name="author" content="Portal do Neem">
+  <link rel="canonical" href="https://portaldoneem.com.br/pragas/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Neem por Praga">
+  <meta property="og:description" content="Guias técnicos de controle de pragas com óleo de neem: mosca branca, pulgão, ácaro, tripes, lagarta e mais.">
+  <meta property="og:url" content="https://portaldoneem.com.br/pragas/">
+  <meta property="og:site_name" content="Portal do Neem">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://portaldoneem.com.br/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neem por Praga">
+  <meta name="twitter:description" content="Guias técnicos de controle de pragas com óleo de neem.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS global do portal -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Estilos específicos desta página -->
+  <style>
+    /* ── Mecanismos de ação ──────────────────────────────── */
+    .mec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0 1.75rem;
+    }
+    .mec-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-top: 3px solid var(--musgo-500);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+    }
+    .mec-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--musgo-100);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+    .mec-icon { font-size: 1.3rem; margin-bottom: .4rem; }
+    .mec-title {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--terra-900);
+      margin-bottom: .4rem;
+    }
+    .mec-text {
+      font-size: .82rem;
+      color: var(--grafite);
+      line-height: 1.6;
+    }
+    .mec-tag {
+      display: inline-block;
+      margin-top: .6rem;
+      padding: .15rem .55rem;
+      border-radius: 10px;
+      background: var(--musgo-100);
+      color: var(--musgo-700);
+      font-size: .7rem;
+      font-weight: 700;
+    }
+
+    /* ── Callout de seletividade ─────────────────────────── */
+    .selet-callout {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--musgo-100);
+      border-left: 3px solid var(--musgo-500);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.1rem;
+      margin-bottom: 2rem;
+      font-size: .86rem;
+      color: var(--grafite);
+      line-height: 1.65;
+    }
+    .selet-callout-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .1rem; }
+    .selet-callout strong { color: var(--terra-900); }
+
+    /* ── Grupos biológicos ───────────────────────────────── */
+    .grupos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .65rem;
+      margin: 1rem 0 2.25rem;
+    }
+    .grupo-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius);
+      padding: .9rem 1rem;
+    }
+    .grupo-card-header {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .35rem;
+    }
+    .grupo-card-icon { font-size: 1.1rem; }
+    .grupo-card-nome {
+      font-family: var(--font-heading);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--terra-900);
+      flex: 1;
+    }
+    .grupo-card-count {
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--musgo-700);
+      background: var(--musgo-100);
+      padding: .1rem .5rem;
+      border-radius: 20px;
+    }
+    .grupo-card-ordem {
+      font-size: .72rem;
+      color: var(--musgo-700);
+      font-style: italic;
+      margin-bottom: .4rem;
+    }
+    .grupo-card-lista {
+      font-size: .78rem;
+      color: var(--grafite);
+      line-height: 1.8;
+    }
+
+    /* ── Filtros ─────────────────────────────────────────── */
+    .filtros-bar {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+      padding-bottom: .9rem;
+      border-bottom: 1px solid var(--palha);
+    }
+    .filtro-btn {
+      padding: .3rem .85rem;
+      border-radius: 20px;
+      border: 1.5px solid var(--color-border-light);
+      background: var(--color-surface);
+      font-family: var(--font-body, inherit);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--grafite);
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .filtro-btn:hover {
+      border-color: var(--musgo-500);
+      color: var(--musgo-700);
+    }
+    .filtro-btn.ativo {
+      background: var(--musgo-700);
+      border-color: var(--musgo-700);
+      color: #fff;
+    }
+    .filtros-count {
+      margin-left: auto;
+      font-size: .75rem;
+      color: var(--color-text-lighter);
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    /* ── Cards de pragas ─────────────────────────────────── */
+    .pragas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: .9rem;
+      margin-bottom: 2rem;
+    }
+    .praga-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .praga-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Foto */
+    .praga-foto {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--musgo-900, #1a3a2a);
+      overflow: hidden;
+    }
+    .praga-foto-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: none; /* oculto até confirmar carregamento */
+    }
+    .praga-foto-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+    }
+    .praga-foto-ph-emoji { font-size: 2.2rem; opacity: .65; }
+    .praga-foto-ph-label {
+      font-size: .65rem;
+      color: rgba(255,255,255,.3);
+      font-family: var(--font-mono, monospace);
+      letter-spacing: .04em;
+    }
+
+    /* Badges sobre a foto */
+    .foto-badge {
+      position: absolute;
+      top: .5rem;
+      padding: .2rem .6rem;
+      border-radius: 10px;
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .foto-badge-risco { left: .5rem; }
+    .rb-alto  { background: rgba(170,30,30,.85); color: #fff; }
+    .rb-medio { background: rgba(170,110,8,.85); color: #fff; }
+    .foto-badge-grupo {
+      right: .5rem;
+      background: rgba(0,0,0,.5);
+      color: rgba(255,255,255,.85);
+    }
+
+    /* Corpo do card */
+    .praga-body {
+      padding: .9rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .praga-nome {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--terra-900);
+      margin-bottom: .1rem;
+    }
+    .praga-cientifico {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: .75rem;
+      color: var(--grafite);
+      margin-bottom: .55rem;
+    }
+    .praga-desc {
+      font-size: .81rem;
+      color: var(--grafite);
+      line-height: 1.6;
+      margin-bottom: .75rem;
+      flex: 1;
+    }
+    .praga-meta {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-bottom: .65rem;
+      font-size: .75rem;
+      color: var(--grafite);
+    }
+    .praga-culturas {
+      display: flex;
+      gap: .3rem;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+    .cult-mini {
+      padding: .1rem .5rem;
+      border-radius: 6px;
+      background: var(--color-bg, var(--palha));
+      border: 1px solid var(--color-border-light);
+      font-size: .72rem;
+      color: var(--grafite);
+    }
+
+    /* Seção separadora */
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--musgo-700);
+      margin: 2rem 0 .6rem;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border-light, var(--palha));
+    }
+
+    /* Sidebar: filtro rápido por grupo ──────────────────── */
+    .sb-filtros { list-style: none; }
+    .sb-filtros li { padding: .2rem 0; }
+    .sb-filtros a {
+      font-size: .84rem;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .3rem .4rem;
+      border-radius: var(--radius-sm, 4px);
+      transition: background .12s;
+    }
+    .sb-filtros a:hover {
+      background: var(--musgo-100);
+      text-decoration: none;
+    }
+    .sb-count {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--musgo-700);
+      background: var(--musgo-100);
+      padding: .1rem .45rem;
+      border-radius: 10px;
+    }
+
+    /* ── Responsivo ──────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .mec-grid { grid-template-columns: 1fr; }
+      .grupos-grid { grid-template-columns: 1fr; }
+      .pragas-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .mec-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════ HEADER ══════════════════════════════════ -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo" aria-label="Portal do Neem — página inicial">
+      <span class="logo-icon" aria-hidden="true">🌿</span>
+      <span class="logo-text">Portal do <strong>Neem</strong></span>
+    </a>
+    <button class="menu-toggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" aria-label="Menu principal">
+      <a href="/">Início</a>
+      <a href="/o-que-e-o-neem/">O que é o Neem</a>
+      <a href="/como-aplicar/">Como Aplicar</a>
+      <a href="/pragas/" aria-current="page">Pragas</a>
+      <a href="/culturas/">Culturas</a>
+      <a href="/parceiros/">Parceiros</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contato/">Contato</a>
+      <a href="/produto/" class="nav-cta">Adquira o Produto</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function toggleMenu(e) {
+  var n = document.getElementById("nav-menu"),
+      t = n.classList.toggle("open");
+  e.setAttribute("aria-expanded", t);
+  e.setAttribute("aria-label", t ? "Fechar menu" : "Abrir menu");
+  document.body.style.overflow = t ? "hidden" : "";
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("#nav-menu a").forEach(function (e) {
+    e.addEventListener("click", function () {
+      var n = document.getElementById("nav-menu"),
+          t = document.querySelector(".menu-toggle");
+      if (n.classList.contains("open")) {
+        n.classList.remove("open");
+        t.setAttribute("aria-expanded", "false");
+        t.setAttribute("aria-label", "Abrir menu");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+});
+</script>
+
+<!-- ══════════════ CONTEÚDO PRINCIPAL ══════════════════════ -->
+<main id="conteudo-principal">
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Você está em">
+        <a href="/">Início</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Neem por Praga</span>
+      </nav>
+      <div style="margin-bottom:.75rem; display:flex; gap:.5rem; flex-wrap:wrap">
+        <span class="badge badge-green">por praga</span>
+        <span class="badge badge-green">mecanismo de ação</span>
+        <span class="badge badge-green">dosagem e protocolo</span>
+        <span class="badge badge-green">manejo integrado</span>
+      </div>
+      <h1>Neem por Praga</h1>
+      <p class="lead">Protocolos técnicos de controle com óleo de neem para as principais pragas da agricultura brasileira — do mecanismo de ação à dosagem por cultura.</p>
+    </div>
+  </div>
+
+  <!-- Page body -->
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+
+        <!-- ══ CONTEÚDO PRINCIPAL ══════════════════════════ -->
+        <article class="page-content">
+
+          <!-- Introdução editorial -->
+          <p>Cada praga tem um ciclo de vida próprio — e o neem age de forma diferente em cada estágio. A mosca branca é mais vulnerável como ninfa de 1º instar; a lagarta do cartucho, nos primeiros três instares dentro do cartucho do milho; o ácaro-rajado, na fase de ovo e ninfa jovem. Conhecer essa janela de eficácia é o que separa um programa preventivo bem-sucedido de uma aplicação tardia e ineficaz.</p>
+          <p>Nas fichas abaixo, você encontra para cada praga: classificação biológica, como identificar (adulto, ninfa, sintomas na planta), ciclo de vida com indicação de eficácia do neem em cada estágio, danos diretos e viroses transmitidas, protocolo de aplicação por cultura com dosagem e frequência, e boas práticas de manejo.</p>
+          <p>Se você não sabe por onde começar: produtores de <strong>hortaliças</strong> têm os maiores problemas com mosca branca, pulgão e tripes — e o neem funciona como produto principal nessas pragas. Para <strong>lavouras de grãos</strong>, a lagarta do cartucho e a falsa-medideira respondem bem ao neem quando tratadas nos instares jovens como parte do MIP.</p>
+
+          <!-- Como o neem age -->
+          <div class="sec-label">Mecanismo de ação</div>
+          <p style="font-size:.86rem; color:var(--grafite); line-height:1.7; margin-bottom:1rem">A azadiractina interfere no sistema endócrino dos insetos por três vias simultâneas — o que explica a ausência de resistência documentada após mais de quatro décadas de uso.</p>
+
+          <div class="mec-grid">
+            <div class="mec-card">
+              <div class="mec-num">01</div>
+              <div class="mec-icon">🔬</div>
+              <div class="mec-title">Inibição de muda</div>
+              <div class="mec-text">Bloqueia a ecdisona, hormônio da metamorfose. Larvas e ninfas morrem presas no instar atual sem completar o desenvolvimento. Eficácia máxima em estágios jovens.</div>
+              <span class="mec-tag">IGR — Regulador de Crescimento</span>
+            </div>
+            <div class="mec-card">
+              <div class="mec-num">02</div>
+              <div class="mec-icon">🚫</div>
+              <div class="mec-title">Deterrência alimentar</div>
+              <div class="mec-text">Adultos em contato com folhas tratadas reduzem ou cessam a sucção de seiva. Crítico em pragas vetoras de vírus (mosca branca, pulgão) — interrompe a transmissão mesmo sem matar o inseto.</div>
+              <span class="mec-tag">Antialimentar</span>
+            </div>
+            <div class="mec-card">
+              <div class="mec-num">03</div>
+              <div class="mec-icon">🥚</div>
+              <div class="mec-title">Antioviposição</div>
+              <div class="mec-text">Fêmeas evitam depositar ovos em plantas tratadas. A próxima geração começa menor antes de eclodir. Quebra o ciclo reprodutivo preventivamente, não apenas reage a surtos.</div>
+              <span class="mec-tag">Regulador Reprodutivo</span>
+            </div>
+          </div>
+
+          <div class="selet-callout">
+            <span class="selet-callout-icon">🐝</span>
+            <span><strong>Seletividade:</strong> aplicado no horário correto (início da manhã ou final da tarde, fora do voo das abelhas), o neem preserva parasitóides como <em>Encarsia formosa</em>, joaninhas e outros inimigos naturais — aliados que inseticidas de amplo espectro eliminam. Isso faz o neem funcionar <strong>com</strong> o biocontrole natural, não contra ele.</span>
+          </div>
+
+          <!-- Classificação biológica -->
+          <div class="sec-label">Classificação biológica</div>
+          <p style="font-size:.86rem; color:var(--grafite); line-height:1.7; margin-bottom:.75rem">As pragas são agrupadas por ordem biológica — o que determina o ciclo de vida, o comportamento e, portanto, a estratégia de controle mais eficaz com o neem.</p>
+
+          <div class="grupos-grid">
+            <div class="grupo-card">
+              <div class="grupo-card-header">
+                <span class="grupo-card-icon">🦟</span>
+                <span class="grupo-card-nome">Sugadores</span>
+                <span class="grupo-card-count">5 pragas</span>
+              </div>
+              <div class="grupo-card-ordem">Hemiptera &amp; Thysanoptera</div>
+              <div class="grupo-card-lista">Mosca Branca · Pulgão · Cochonilha<br>Cigarrinha-Verde · Tripes</div>
+            </div>
+            <div class="grupo-card">
+              <div class="grupo-card-header">
+                <span class="grupo-card-icon">🐛</span>
+                <span class="grupo-card-nome">Lagartas</span>
+                <span class="grupo-card-count">3 pragas</span>
+              </div>
+              <div class="grupo-card-ordem">Lepidoptera</div>
+              <div class="grupo-card-lista">Lagarta do Cartucho · Traça do Tomateiro<br>Lagarta Falsa-Medideira</div>
+            </div>
+            <div class="grupo-card">
+              <div class="grupo-card-header">
+                <span class="grupo-card-icon">🕷️</span>
+                <span class="grupo-card-nome">Ácaros</span>
+                <span class="grupo-card-count">2 pragas</span>
+              </div>
+              <div class="grupo-card-ordem">Acarina</div>
+              <div class="grupo-card-lista">Ácaro-Rajado · Ácaro Branco</div>
+            </div>
+            <div class="grupo-card">
+              <div class="grupo-card-header">
+                <span class="grupo-card-icon">🪲</span>
+                <span class="grupo-card-nome">Minadores &amp; Outros</span>
+                <span class="grupo-card-count">2 pragas</span>
+              </div>
+              <div class="grupo-card-ordem">Diptera &amp; Coleoptera</div>
+              <div class="grupo-card-lista">Minador das Folhas · Broca do Café</div>
+            </div>
+          </div>
+
+          <!-- Filtros + grid de pragas -->
+          <div class="sec-label">Pragas cadastradas</div>
+
+          <div class="filtros-bar">
+            <button class="filtro-btn ativo" onclick="filtrar('todos', this)">Todas</button>
+            <button class="filtro-btn" onclick="filtrar('alto', this)">🔴 Risco Alto</button>
+            <button class="filtro-btn" onclick="filtrar('medio', this)">🟡 Risco Médio</button>
+            <button class="filtro-btn" onclick="filtrar('hemiptera', this)">Sugadores</button>
+            <button class="filtro-btn" onclick="filtrar('lepidoptera', this)">Lagartas</button>
+            <button class="filtro-btn" onclick="filtrar('acarina', this)">Ácaros</button>
+            <button class="filtro-btn" onclick="filtrar('outros', this)">Minadores &amp; Outros</button>
+            <span class="filtros-count" id="filtros-count">12 pragas</span>
+          </div>
+
+          <!--
+            INTEGRAÇÃO SUPABASE — substituir cards abaixo por dados dinâmicos:
+
+            const { data } = await supabase
+              .from('pragas')
+              .select('*, cultura_praga(count)')
+              .eq('publicado', true)
+              .order('nome')
+
+            Renderizar cada item como .praga-card com os campos correspondentes.
+            Os atributos data-grupo e data-risco alimentam o filtro client-side.
+          -->
+          <div class="pragas-grid" id="pragas-grid">
+
+            <!-- MOSCA BRANCA -->
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+              <div class="praga-foto">
+                <div class="praga-foto-ph" id="ph-mosca-branca">
+                  <span class="praga-foto-ph-emoji">🦟</span>
+                  <span class="praga-foto-ph-label">mosca-branca.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/mosca-branca.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/mosca-branca.jpg"
+                       alt="Mosca Branca (Bemisia tabaci) em folha de hortaliça"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-alto">Risco Alto</span>
+                <span class="foto-badge foto-badge-grupo">Hemiptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Mosca Branca</div>
+                <div class="praga-cientifico">Bemisia tabaci / T. vaporariorum</div>
+                <div class="praga-desc">Principal vetor de viroses em hortaliças. Ninfas na face inferior das folhas; adultos voam em nuvem branca ao serem perturbados.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Alta</strong></span>
+                  <span>🌾 <strong>8</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Tomate</span>
+                  <span class="cult-mini">Pepino</span>
+                  <span class="cult-mini">Soja</span>
+                  <span class="cult-mini">+5</span>
+                </div>
+                <a href="/pragas/mosca-branca/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- PULGÃO -->
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🐝</span>
+                  <span class="praga-foto-ph-label">pulgao.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/pulgao.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/pulgao.jpg"
+                       alt="Pulgão (Myzus persicae) em colônia sobre broto"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-alto">Risco Alto</span>
+                <span class="foto-badge foto-badge-grupo">Hemiptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Pulgão</div>
+                <div class="praga-cientifico">Myzus persicae / Aphis gossypii</div>
+                <div class="praga-desc">Sugador de seiva e vetor de vírus. Coloniza brotos novos em colônias densas, frequentemente associado a formigas pastoreando.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Alta</strong></span>
+                  <span>🌾 <strong>+15</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Tomate</span>
+                  <span class="cult-mini">Alface</span>
+                  <span class="cult-mini">Citros</span>
+                  <span class="cult-mini">+12</span>
+                </div>
+                <a href="/pragas/pulgao/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- ÁCARO-RAJADO -->
+            <div class="praga-card" data-grupo="acarina" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🕷️</span>
+                  <span class="praga-foto-ph-label">acaro-rajado.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/acaro-rajado.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/acaro-rajado.jpg"
+                       alt="Ácaro-Rajado (Tetranychus urticae) e teia em folha"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Acarina</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Ácaro-Rajado</div>
+                <div class="praga-cientifico">Tetranychus urticae</div>
+                <div class="praga-desc">Forma teia na face inferior das folhas. Multiplica-se explosivamente em clima seco e quente. Alta resistência a acaricidas convencionais.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média-Alta</strong></span>
+                  <span>🌾 <strong>12</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Morango</span>
+                  <span class="cult-mini">Feijão</span>
+                  <span class="cult-mini">Soja</span>
+                  <span class="cult-mini">+9</span>
+                </div>
+                <a href="/pragas/acaro-rajado/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- TRIPES -->
+            <div class="praga-card" data-grupo="hemiptera" data-risco="alto">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🦗</span>
+                  <span class="praga-foto-ph-label">tripes.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/tripes.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/tripes.jpg"
+                       alt="Tripes (Frankliniella occidentalis) em flor"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-alto">Risco Alto</span>
+                <span class="foto-badge foto-badge-grupo">Thysanoptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Tripes</div>
+                <div class="praga-cientifico">Frankliniella occidentalis</div>
+                <div class="praga-desc">Causa deformações em flores e frutos. Transmite Tospovírus (TSWV), responsável por grandes perdas em pimentão e tomate.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média</strong></span>
+                  <span>🌾 <strong>10</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Pimentão</span>
+                  <span class="cult-mini">Tomate</span>
+                  <span class="cult-mini">Rosa</span>
+                  <span class="cult-mini">+7</span>
+                </div>
+                <a href="/pragas/tripes/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- TRAÇA DO TOMATEIRO -->
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🐛</span>
+                  <span class="praga-foto-ph-label">traca-tomateiro.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/traca-tomateiro.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/traca-tomateiro.jpg"
+                       alt="Traça do Tomateiro (Tuta absoluta) e galeria em folha"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-alto">Risco Alto</span>
+                <span class="foto-badge foto-badge-grupo">Lepidoptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Traça do Tomateiro</div>
+                <div class="praga-cientifico">Tuta absoluta</div>
+                <div class="praga-desc">Minadora de folhas e frutos. Pode destruir 100% da produção. Lagartas penetram no tecido logo após a eclosão — controle preventivo é essencial.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Alta (preventivo)</strong></span>
+                  <span>🌾 <strong>3</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Tomate</span>
+                  <span class="cult-mini">Batata</span>
+                  <span class="cult-mini">Pimentão</span>
+                </div>
+                <a href="/pragas/traca-tomateiro/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- LAGARTA DO CARTUCHO -->
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="alto">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🐛</span>
+                  <span class="praga-foto-ph-label">lagarta-cartucho.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/lagarta-cartucho.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/lagarta-cartucho.jpg"
+                       alt="Lagarta do Cartucho (Spodoptera frugiperda) em milho"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-alto">Risco Alto</span>
+                <span class="foto-badge foto-badge-grupo">Lepidoptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Lagarta do Cartucho</div>
+                <div class="praga-cientifico">Spodoptera frugiperda</div>
+                <div class="praga-desc">Praga-chave do milho no Brasil. Alimenta-se dentro do cartucho. Lagartas jovens (1º–3º instar) são altamente vulneráveis ao neem.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Alta (jovens)</strong></span>
+                  <span>🌾 <strong>6</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Milho</span>
+                  <span class="cult-mini">Arroz</span>
+                  <span class="cult-mini">Sorgo</span>
+                  <span class="cult-mini">+3</span>
+                </div>
+                <a href="/pragas/lagarta-cartucho/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- COCHONILHA -->
+            <div class="praga-card" data-grupo="hemiptera" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🐞</span>
+                  <span class="praga-foto-ph-label">cochonilha.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/cochonilha.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/cochonilha.jpg"
+                       alt="Cochonilha farinosa (Planococcus citri) em ramo cítrico"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Hemiptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Cochonilha</div>
+                <div class="praga-cientifico">Planococcus citri / Pseudococcus spp.</div>
+                <div class="praga-desc">Comuns em citros, videira e café. Cera protetora dificulta penetração de produtos. Ninfas jovens antes da cera são altamente vulneráveis.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média</strong></span>
+                  <span>🌾 <strong>7</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Citros</span>
+                  <span class="cult-mini">Uva</span>
+                  <span class="cult-mini">Café</span>
+                  <span class="cult-mini">+4</span>
+                </div>
+                <a href="/pragas/cochonilha/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- CIGARRINHA-VERDE -->
+            <div class="praga-card" data-grupo="hemiptera" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🦗</span>
+                  <span class="praga-foto-ph-label">cigarrinha.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/cigarrinha.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/cigarrinha.jpg"
+                       alt="Cigarrinha-Verde (Empoasca kraemeri) em folha de feijão"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Hemiptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Cigarrinha-Verde</div>
+                <div class="praga-cientifico">Empoasca kraemeri</div>
+                <div class="praga-desc">Injeta toxinas durante a alimentação causando queima das bordas das folhas (hopperburn). Importante em feijão e soja nos períodos de seca.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média</strong></span>
+                  <span>🌾 <strong>5</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Feijão</span>
+                  <span class="cult-mini">Soja</span>
+                  <span class="cult-mini">Algodão</span>
+                  <span class="cult-mini">+2</span>
+                </div>
+                <a href="/pragas/cigarrinha/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- FALSA-MEDIDEIRA -->
+            <div class="praga-card" data-grupo="lepidoptera" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🦋</span>
+                  <span class="praga-foto-ph-label">falsa-medideira.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/falsa-medideira.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/falsa-medideira.jpg"
+                       alt="Lagarta Falsa-Medideira (Chrysodeixis includens) em soja"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Lepidoptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Lagarta Falsa-Medideira</div>
+                <div class="praga-cientifico">Chrysodeixis includens</div>
+                <div class="praga-desc">Desfolhadora de soja e algodão. Eficácia do neem máxima em lagartas de até 1,5 cm — após esse tamanho a resposta reduz significativamente.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Alta (jovens)</strong></span>
+                  <span>🌾 <strong>4</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Soja</span>
+                  <span class="cult-mini">Algodão</span>
+                  <span class="cult-mini">Feijão</span>
+                </div>
+                <a href="/pragas/falsa-medideira/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- ÁCARO BRANCO -->
+            <div class="praga-card" data-grupo="acarina" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🕷️</span>
+                  <span class="praga-foto-ph-label">acaro-branco.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/acaro-branco.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/acaro-branco.jpg"
+                       alt="Ácaro Branco (Polyphagotarsonemus latus) — dano em broto"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Acarina</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Ácaro Branco</div>
+                <div class="praga-cientifico">Polyphagotarsonemus latus</div>
+                <div class="praga-desc">Microscópico, invisível a olho nu. Causa bronzeamento e endurecimento severo de brotos novos. Frequente em pimentão, mamão e algodão.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média</strong></span>
+                  <span>🌾 <strong>6</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Pimentão</span>
+                  <span class="cult-mini">Mamão</span>
+                  <span class="cult-mini">Algodão</span>
+                  <span class="cult-mini">+3</span>
+                </div>
+                <a href="/pragas/acaro-branco/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- MINADOR DAS FOLHAS -->
+            <div class="praga-card" data-grupo="outros" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🪲</span>
+                  <span class="praga-foto-ph-label">minador-folhas.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/minador-folhas.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/minador-folhas.jpg"
+                       alt="Minador das Folhas (Liriomyza spp.) — galerias em folha"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Diptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Minador das Folhas</div>
+                <div class="praga-cientifico">Liriomyza spp.</div>
+                <div class="praga-desc">Larvas abrem galerias sinuosas dentro do tecido foliar. O neem atua sobre ovos e larvas jovens antes da penetração — controle preventivo.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média (preventivo)</strong></span>
+                  <span>🌾 <strong>8</strong> culturas</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Alface</span>
+                  <span class="cult-mini">Tomate</span>
+                  <span class="cult-mini">Feijão</span>
+                  <span class="cult-mini">+5</span>
+                </div>
+                <a href="/pragas/minador-folhas/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+            <!-- BROCA DO CAFÉ -->
+            <div class="praga-card" data-grupo="outros" data-risco="medio">
+              <div class="praga-foto">
+                <div class="praga-foto-ph">
+                  <span class="praga-foto-ph-emoji">🪲</span>
+                  <span class="praga-foto-ph-label">broca-cafe.webp</span>
+                </div>
+                <picture>
+                  <source srcset="/pragas/img/broca-cafe.webp" type="image/webp">
+                  <img class="praga-foto-img"
+                       src="/pragas/img/broca-cafe.jpg"
+                       alt="Broca do Café (Hypothenemus hampei) — furo no fruto"
+                       onload="showFoto(this)"
+                       onerror="this.closest('picture').remove()">
+                </picture>
+                <span class="foto-badge foto-badge-risco rb-medio">Risco Médio</span>
+                <span class="foto-badge foto-badge-grupo">Coleoptera</span>
+              </div>
+              <div class="praga-body">
+                <div class="praga-nome">Broca do Café</div>
+                <div class="praga-cientifico">Hypothenemus hampei</div>
+                <div class="praga-desc">Principal praga do café no Brasil. A fêmea perfura e oviposita dentro do fruto. Neem age como deterrente da oviposição e sobre larvas em frutos jovens.</div>
+                <div class="praga-meta">
+                  <span>🌿 Eficácia: <strong>Média</strong></span>
+                  <span>🌾 <strong>1</strong> cultura</span>
+                </div>
+                <div class="praga-culturas">
+                  <span class="cult-mini">Café</span>
+                </div>
+                <a href="/pragas/broca-cafe/" class="btn btn-primary btn-sm">Ver ficha completa →</a>
+              </div>
+            </div>
+
+          </div><!-- /pragas-grid -->
+
+          <!-- CTA final -->
+          <div class="cta-box" style="margin-top:2rem">
+            <h3>Não encontrou a praga que procura?</h3>
+            <p>O banco de dados está em expansão contínua. Novas fichas são publicadas regularmente — entre em contato para priorizar uma praga específica.</p>
+            <div style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap">
+              <a href="/contato/" class="btn btn-primary">Solicitar nova ficha</a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+                 class="btn btn-ghost" target="_blank" rel="noopener noreferrer">📱 Falar no WhatsApp</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- ══ SIDEBAR ══════════════════════════════════════ -->
+        <aside class="sidebar" aria-label="Filtros e links relacionados">
+
+          <div class="sidebar-widget">
+            <h4>🔍 Por Grupo</h4>
+            <ul class="sb-filtros">
+              <li><a href="#" onclick="filtrarSb('todos',event)">Todas as pragas <span class="sb-count" id="sb-count-todos">12</span></a></li>
+              <li><a href="#" onclick="filtrarSb('hemiptera',event)">🦟 Sugadores <span class="sb-count">5</span></a></li>
+              <li><a href="#" onclick="filtrarSb('lepidoptera',event)">🐛 Lagartas <span class="sb-count">3</span></a></li>
+              <li><a href="#" onclick="filtrarSb('acarina',event)">🕷️ Ácaros <span class="sb-count">2</span></a></li>
+              <li><a href="#" onclick="filtrarSb('outros',event)">🪲 Minadores &amp; Outros <span class="sb-count">2</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>⚠️ Por Nível de Risco</h4>
+            <ul class="sb-filtros">
+              <li><a href="#" onclick="filtrarSb('alto',event)">🔴 Risco Alto <span class="sb-count">5</span></a></li>
+              <li><a href="#" onclick="filtrarSb('medio',event)">🟡 Risco Médio <span class="sb-count">7</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>🌿 Explorar</h4>
+            <ul>
+              <li><a href="/o-que-e-o-neem/">O que é o Neem</a></li>
+              <li><a href="/como-aplicar/">Como Aplicar</a></li>
+              <li><a href="/culturas/">Neem por Cultura</a></li>
+              <li><a href="/neem-vs-quimicos/">Neem vs Químicos</a></li>
+              <li><a href="/faq/">Perguntas Frequentes</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-cta">
+            <h4>💰 Precisa de neem?</h4>
+            <p>Solicite uma cotação com nossos parceiros validados.</p>
+            <a href="/cotacao/" class="btn btn-primary btn-sm" style="width:100%; justify-content:center">Solicitar Cotação</a>
+          </div>
+
+          <div class="sidebar-cta">
+            <h4>📱 Dúvidas?</h4>
+            <p>Fale com um especialista em neem pelo WhatsApp.</p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+               class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer"
+               style="width:100%; justify-content:center">Chamar no WhatsApp</a>
+          </div>
+
+        </aside>
+
+      </div><!-- /page-layout -->
+    </div><!-- /container -->
+  </div><!-- /page-body -->
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Portal do Neem">
+          <span class="logo-icon" aria-hidden="true">🌿</span>
+          <span class="logo-text">Portal do <strong>Neem</strong></span>
+        </a>
+        <p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.<br>Do dono de horta à grande propriedade rural.</p>
+        <p style="margin-top:.5rem"><a href="https://wa.me/5511999999999" style="color:rgba(255,255,255,.45); font-size:.8rem">📱 WhatsApp: (11) 99999-9999</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Aprenda</h4>
+        <a href="/o-que-e-o-neem/">O que é o Neem</a>
+        <a href="/como-aplicar/">Como Aplicar</a>
+        <a href="/pragas/">Controle por Praga</a>
+        <a href="/culturas/">Por Cultura</a>
+        <a href="/neem-vs-quimicos/">Neem vs Químicos</a>
+        <a href="/blog/">Blog &amp; Artigos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="/produto/">Nosso Produto</a>
+        <a href="/parceiros/">Parceiros</a>
+        <a href="/para-empresas/">Para Empresas</a>
+        <a href="/cotacao/">Solicitar Cotação</a>
+        <a href="/materiais/">Materiais Gratuitos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <a href="/faq/">Perguntas Frequentes</a>
+        <a href="/contato/">Contato</a>
+        <a href="/seja-parceiro/">Seja Parceiro</a>
+        <a href="/sobre/">Sobre o Portal</a>
+        <a href="/privacidade/">Política de Privacidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Portal do Neem &mdash; Todos os direitos reservados.</p>
+      <div class="footer-seal">
+        <span>🌱</span> Conteúdo orgânico, sem agrotóxicos na informação
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  /* ── Exibe foto quando carregada com sucesso ──────────── */
+  function showFoto(img) {
+    img.style.display = "block";
+    var ph = img.closest(".praga-foto").querySelector(".praga-foto-ph");
+    if (ph) ph.style.display = "none";
+  }
+
+  /* ── Filtro dos cards (botões inline) ─────────────────── */
+  function filtrar(tipo, btn) {
+    if (btn) {
+      document.querySelectorAll(".filtro-btn").forEach(function(b) {
+        b.classList.remove("ativo");
+      });
+      btn.classList.add("ativo");
+    }
+    var cards = document.querySelectorAll(".praga-card");
+    var n = 0;
+    cards.forEach(function(card) {
+      var mostra = tipo === "todos"
+        || card.dataset.grupo === tipo
+        || card.dataset.risco === tipo;
+      card.style.display = mostra ? "" : "none";
+      if (mostra) n++;
+    });
+    var el = document.getElementById("filtros-count");
+    if (el) el.textContent = n + (n === 1 ? " praga" : " pragas");
+  }
+
+  /* ── Filtro acionado pela sidebar ─────────────────────── */
+  function filtrarSb(tipo, evt) {
+    evt.preventDefault();
+    /* rola até o grid */
+    document.getElementById("pragas-grid").scrollIntoView({ behavior: "smooth", block: "start" });
+    /* aciona o mesmo filtro dos botões inline */
+    filtrar(tipo, null);
+    /* sincroniza o botão ativo na barra de filtros */
+    document.querySelectorAll(".filtro-btn").forEach(function(b) {
+      var mapa = { todos:"Todas", alto:"Risco Alto", medio:"Risco Médio",
+                   hemiptera:"Sugadores", lepidoptera:"Lagartas",
+                   acarina:"Ácaros", outros:"Minadores" };
+      b.classList.toggle("ativo", b.textContent.trim().includes(mapa[tipo] || tipo));
+    });
+  }
+</script>
+
+</body>
+</html>
