@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tripes — Identificação, Danos e Controle com Neem | Portal do Neem</title>
+  <meta name="description" content="Guia completo sobre Tripes (Frankliniella occidentalis): como identificar, ciclo de vida, danos e transmissão do Tospovírus. Protocolo de controle com neem.">
+  <meta name="author" content="Portal do Neem">
+  <link rel="canonical" href="https://portaldoneem.com.br/pragas/tripes/">
+  <meta property="og:title" content="Tripes — Controle com Neem">
+  <meta property="og:description" content="Guia completo sobre Tripes (Frankliniella occidentalis): como identificar, ciclo de vida, danos e transmissão do Tospovírus. Protocolo de controle com neem.">
+  <meta property="og:url" content="https://portaldoneem.com.br/pragas/tripes/">
+  <meta property="og:site_name" content="Portal do Neem">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://portaldoneem.com.br/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* CORREÇÃO GLOBAL */
+    .page-content { min-width: 0; }
+    .sec { min-width: 0; }
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    .page-header {
+      background: linear-gradient(135deg, var(--musgo-900) 0%, #0d2e1a 100%);
+      padding: 40px 0 48px; position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content:''; position:absolute; top:-60px; right:-60px;
+      width:320px; height:320px; border-radius:50%; pointer-events:none;
+      background:radial-gradient(circle,rgba(74,140,92,.18) 0%,transparent 70%);
+    }
+    .page-header .container { position:relative; z-index:1; }
+    .hero-inner { display:grid; grid-template-columns:1fr 360px; gap:36px; align-items:center; margin-top:20px; }
+    .hero-text { min-width:0; }
+    .hero-badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+    .badge-risco {
+      display:inline-flex; align-items:center; gap:5px; padding:3px 11px; border-radius:20px;
+      font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+      background:rgba(200,40,40,.22); color:#ffaaaa; border:1px solid rgba(200,40,40,.3);
+    }
+    .badge-ordem {
+      display:inline-flex; align-items:center; gap:5px; padding:3px 11px; border-radius:20px;
+      font-size:.7rem; font-weight:600; background:rgba(255,255,255,.1);
+      color:rgba(255,255,255,.7); border:1px solid rgba(255,255,255,.15);
+    }
+    .page-header h1 { font-size:clamp(1.8rem,4vw,2.8rem); color:#fff; line-height:1.1; margin-bottom:.2rem; }
+    .hero-cientifico { font-family:var(--font-heading); font-style:italic; font-size:.9rem; color:var(--musgo-300); margin-bottom:1rem; }
+    .hero-lead { font-size:.92rem; color:rgba(255,255,255,.7); line-height:1.8; margin-bottom:1.5rem; }
+    .hero-stats { display:flex; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); overflow:hidden; }
+    .hero-stat { flex:1; text-align:center; padding:11px 10px; border-right:1px solid rgba(255,255,255,.1); }
+    .hero-stat:last-child { border-right:none; }
+    .hs-val { font-family:var(--font-heading); font-size:1.2rem; font-weight:700; color:#e8a824; line-height:1; margin-bottom:3px; }
+    .hs-lbl { font-size:.62rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.05em; }
+    .hero-img-wrap { position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:4/3; box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 32px rgba(0,0,0,.45); }
+    .hero-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:center; display:none; }
+    .hero-img-ph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:linear-gradient(135deg,rgba(26,58,42,.9) 0%,rgba(13,46,26,.95) 100%); border:2px dashed rgba(141,184,122,.3); }
+    .hero-img-ph-icon { font-size:3rem; opacity:.6; }
+    .hero-img-ph-label { font-size:.7rem; color:rgba(255,255,255,.3); letter-spacing:.05em; }
+    .hero-img-credit { position:absolute; bottom:6px; right:8px; font-size:.65rem; color:rgba(255,255,255,.45); }
+
+    /* ── Seções ───────────────────────────────────────────── */
+    .sec { background:var(--color-surface); border:1px solid var(--color-border-light); border-radius:var(--radius); overflow:hidden; margin-bottom:1.25rem; }
+    .sec-head { padding:.9rem 1.2rem; border-bottom:1px solid var(--color-border-light); display:flex; align-items:center; gap:.6rem; }
+    .sec-num { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; flex-shrink:0; }
+    .sn-verde { background:var(--musgo-100); color:var(--musgo-700); }
+    .sn-ambar { background:var(--ambar-100,#fdf2d4); color:var(--ambar-800); }
+    .sn-risco { background:#fff4f4; color:#8b1a1a; }
+    .sec-title { font-family:var(--font-heading); font-size:1rem; font-weight:700; color:var(--terra-900); }
+    .sec-subtitle { font-size:.75rem; color:var(--grafite); margin-top:1px; }
+    .sec-body { padding:1.1rem 1.2rem 1.3rem; }
+
+    /* Ficha técnica */
+    .fi-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.6rem; margin-bottom:1.1rem; }
+    .fi-card { background:var(--color-bg,#faf6ee); border:1px solid var(--color-border-light); border-radius:var(--radius); padding:.75rem .85rem; }
+    .fi-l { font-size:.65rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--grafite); margin-bottom:.25rem; }
+    .fi-v { font-size:.82rem; font-weight:600; color:var(--terra-900); line-height:1.4; }
+    .culturas-pill-label { font-size:.68rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--grafite); margin-bottom:.5rem; }
+    .culturas-pills { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .cultura-pill { display:inline-flex; align-items:center; gap:5px; padding:.25rem .7rem; border-radius:20px; font-size:.75rem; font-weight:600; border:1.5px solid; text-decoration:none; transition:transform .12s; }
+    .cultura-pill:hover { transform:translateY(-1px); text-decoration:none; }
+    .cp-alta { background:var(--musgo-100); color:var(--musgo-700); border-color:var(--musgo-300); }
+    .cp-media { background:var(--ambar-100,#fdf2d4); color:var(--ambar-800); border-color:#f5cc6a; }
+    .cp-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+    .cp-alta .cp-dot { background:var(--musgo-500); }
+    .cp-media .cp-dot { background:#e8a824; }
+
+    /* Identificação */
+    .id-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-bottom:1rem; }
+    .id-card { background:var(--color-bg,#faf6ee); border:1px solid var(--color-border-light); border-radius:var(--radius); padding:.85rem; }
+    .id-icon { font-size:1.4rem; margin-bottom:.4rem; }
+    .id-title { font-size:.82rem; font-weight:700; color:var(--terra-900); margin-bottom:.4rem; }
+    .id-text { font-size:.78rem; color:var(--grafite); line-height:1.65; }
+    .sintomas-list { list-style:none; }
+    .sintomas-list li { display:flex; gap:7px; align-items:flex-start; font-size:.82rem; color:var(--grafite); padding:5px 0; border-bottom:1px solid var(--color-border-light); line-height:1.55; }
+    .sintomas-list li:last-child { border-bottom:none; }
+    .sintomas-list li::before { content:'⚠'; font-size:.75rem; color:#e8a824; flex-shrink:0; margin-top:2px; }
+    .tip-box { background:var(--ambar-100,#fdf2d4); border-left:3px solid #e8a824; border-radius:0 var(--radius) var(--radius) 0; padding:.65rem .9rem; font-size:.81rem; color:var(--ambar-800); line-height:1.6; margin-top:.9rem; }
+    .tip-box strong { color:var(--terra-900); }
+
+    /* Monitoramento */
+    .mon-divider { display:flex; align-items:center; gap:.6rem; font-size:.7rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--musgo-700); margin:1.1rem 0 .6rem; }
+    .mon-divider::before,.mon-divider::after { content:''; flex:1; height:1px; background:var(--color-border-light); }
+    .mon-intro { font-size:.82rem; color:var(--grafite); line-height:1.75; margin-bottom:.75rem; }
+    .mon-grid { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; margin-bottom:.75rem; }
+    .mon-card { background:var(--color-bg,#faf6ee); border:1px solid var(--color-border-light); border-radius:var(--radius); padding:.85rem; }
+    .mon-card-icon { font-size:1.2rem; margin-bottom:.35rem; }
+    .mon-card-title { font-size:.82rem; font-weight:700; color:var(--terra-900); margin-bottom:.3rem; }
+    .mon-card-text { font-size:.78rem; color:var(--grafite); line-height:1.65; }
+
+    /* Ciclo */
+    .ciclo-wrap { overflow-x:auto; padding-bottom:6px; }
+    .ciclo-track { display:flex; min-width:580px; position:relative; }
+    .ciclo-track::before { content:''; position:absolute; top:30px; left:0; right:0; height:2px; background:var(--color-border-light); z-index:0; }
+    .ciclo-estagio { flex:1; text-align:center; padding:0 6px; position:relative; z-index:1; }
+    .ciclo-bubble { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 8px; border:2px solid; position:relative; z-index:2; font-size:1.2rem; }
+    .cb-alta { background:var(--musgo-100); border-color:var(--musgo-300); }
+    .cb-media { background:var(--ambar-100,#fdf2d4); border-color:#f5cc6a; }
+    .cb-baixa { background:#f5f5f5; border-color:#ddd; }
+    .ciclo-nome { font-size:.7rem; font-weight:700; color:var(--terra-900); margin-bottom:2px; }
+    .ciclo-dias { font-size:.6rem; color:var(--grafite); margin-bottom:4px; }
+    .ciclo-ef { display:inline-block; padding:1px 7px; border-radius:8px; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+    .ce-alta { background:var(--musgo-100); color:var(--musgo-700); }
+    .ce-media { background:var(--ambar-100,#fdf2d4); color:var(--ambar-800); }
+    .ce-baixa { background:#eee; color:#888; }
+    .ciclo-nota { font-size:.7rem; color:var(--grafite); margin-top:5px; line-height:1.5; }
+    .ciclo-legenda { display:flex; gap:1.2rem; flex-wrap:wrap; margin-top:1rem; padding:.65rem .85rem; background:var(--color-bg,#faf6ee); border-radius:var(--radius); font-size:.75rem; }
+    .cl-item { display:flex; align-items:center; gap:5px; }
+    .cl-dot { width:9px; height:9px; border-radius:50%; }
+    .cl-dot-alta { background:var(--musgo-500); }
+    .cl-dot-media { background:#e8a824; }
+    .cl-dot-baixa { background:#bbb; }
+
+    /* Danos */
+    .danos-grid { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; margin-bottom:1rem; }
+    .dano-col { background:var(--color-bg,#faf6ee); border-radius:var(--radius); padding:.9rem; }
+    .dano-col-title { font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--grafite); margin-bottom:.65rem; display:flex; align-items:center; gap:6px; }
+    .dano-list { list-style:none; }
+    .dano-list li { font-size:.81rem; color:var(--grafite); padding:4px 0; border-bottom:1px solid var(--color-border-light); line-height:1.55; display:flex; gap:6px; align-items:flex-start; }
+    .dano-list li:last-child { border-bottom:none; }
+    .dano-list li::before { content:'–'; color:var(--musgo-300); flex-shrink:0; }
+    .dano-alerta { background:#fff4f4; border:1px solid #f5c0c0; border-radius:var(--radius); padding:.75rem .9rem; font-size:.81rem; color:#8b1a1a; line-height:1.65; }
+
+    /* Mecanismos */
+    .mec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-bottom:1rem; }
+    .mec-card { background:var(--musgo-100); border:1px solid var(--musgo-300,#8db87a); border-radius:var(--radius); padding:1rem; }
+    .mec-icon { font-size:1.4rem; margin-bottom:.5rem; }
+    .mec-title { font-size:.84rem; font-weight:700; color:var(--musgo-900); margin-bottom:.35rem; }
+    .mec-text { font-size:.78rem; color:var(--grafite); line-height:1.65; }
+    .selet-box { background:var(--musgo-100); border:1.5px solid var(--musgo-300,#8db87a); border-radius:var(--radius); padding:.85rem 1rem; display:flex; gap:.75rem; align-items:flex-start; }
+    .selet-icon { font-size:1.5rem; flex-shrink:0; }
+    .selet-title { font-size:.82rem; font-weight:700; color:var(--musgo-700); margin-bottom:.25rem; }
+    .selet-text { font-size:.81rem; color:var(--grafite); line-height:1.65; }
+
+    /* Protocolo */
+    .proto-intro { background:var(--ambar-100,#fdf2d4); border-radius:var(--radius); padding:.75rem .9rem; margin-bottom:1rem; font-size:.81rem; color:var(--ambar-800); line-height:1.65; }
+    .proto-intro strong { color:var(--terra-900); }
+    .proto-table-wrap { overflow-x:auto; }
+    .proto-table { width:100%; border-collapse:collapse; font-size:.8rem; }
+    .proto-table th { text-align:left; padding:.5rem .75rem; font-size:.65rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--grafite); background:var(--color-bg,#faf6ee); border-bottom:2px solid var(--color-border-light); }
+    .proto-table td { padding:.55rem .75rem; border-bottom:1px solid var(--color-border-light); vertical-align:top; }
+    .proto-table tr:last-child td { border-bottom:none; }
+    .proto-table tr:hover td { background:var(--color-bg,#faf6ee); }
+    .ef-badge { display:inline-block; padding:1px 8px; border-radius:8px; font-size:.72rem; font-weight:600; }
+    .ef-alta { background:var(--musgo-100); color:var(--musgo-700); }
+    .ef-media { background:var(--ambar-100,#fdf2d4); color:var(--ambar-800); }
+    .proto-obs { font-size:.72rem; color:var(--grafite); line-height:1.5; }
+
+    /* Boas práticas */
+    .bp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.65rem; }
+    .bp-card { background:var(--color-bg,#faf6ee); border:1px solid var(--color-border-light); border-radius:var(--radius); padding:.85rem; }
+    .bp-icon { font-size:1.2rem; margin-bottom:.4rem; }
+    .bp-title { font-size:.82rem; font-weight:700; color:var(--terra-900); margin-bottom:.25rem; }
+    .bp-text { font-size:.76rem; color:var(--grafite); line-height:1.6; }
+
+    /* Por que neem */
+    .pq-sec { background:var(--musgo-900); border-radius:var(--radius); padding:1.5rem 1.2rem; margin-bottom:1.25rem; }
+    .pq-head { text-align:center; margin-bottom:1.1rem; }
+    .pq-head h2 { font-size:1.1rem; color:#fff; margin-bottom:.3rem; }
+    .pq-head p { font-size:.78rem; color:rgba(255,255,255,.55); }
+    .pq-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.65rem; }
+    .pq-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:.85rem; }
+    .pq-icon { font-size:1.2rem; margin-bottom:.4rem; }
+    .pq-title { font-size:.82rem; font-weight:700; color:#fff; margin-bottom:.25rem; }
+    .pq-text { font-size:.75rem; color:rgba(255,255,255,.6); line-height:1.6; }
+
+    /* Acordeão */
+    .acc-item { border-bottom:1px solid var(--color-border-light); }
+    .acc-item:last-child { border-bottom:none; }
+    .acc-btn { width:100%; background:none; border:none; display:flex; align-items:center; gap:.65rem; padding:.85rem 0; cursor:pointer; text-align:left; }
+    .acc-num { width:26px; height:26px; border-radius:50%; background:var(--musgo-100); color:var(--musgo-700); font-size:.75rem; font-weight:700; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .acc-q { font-size:.86rem; font-weight:600; color:var(--terra-900); flex:1; }
+    .acc-arrow { font-size:.75rem; color:var(--grafite); transition:transform .2s; }
+    .acc-btn[aria-expanded="true"] .acc-arrow { transform:rotate(180deg); }
+    .acc-panel { display:none; padding:0 0 .85rem 2.2rem; }
+    .acc-panel.open { display:block; }
+    .acc-panel p { font-size:.84rem; color:var(--grafite); line-height:1.75; }
+
+    /* Sidebar */
+    .sidebar-alerta { background:#fff4f4; border:1px solid #f5c0c0; border-radius:var(--radius); padding:.85rem 1rem; margin-bottom:.85rem; }
+    .sidebar-alerta h5 { font-size:.78rem; font-weight:700; color:#8b1a1a; margin-bottom:.3rem; }
+    .sidebar-alerta p { font-size:.78rem; color:#a03030; line-height:1.6; }
+    .nav-pragas { display:flex; flex-direction:column; gap:.3rem; }
+    .nav-praga-link { display:flex; align-items:center; gap:.5rem; padding:.5rem .65rem; border-radius:var(--radius-sm,4px); background:var(--color-bg,#faf6ee); color:var(--musgo-700); font-size:.8rem; font-weight:600; border:1px solid var(--color-border-light); text-decoration:none; transition:background .15s; }
+    .nav-praga-link:hover { background:var(--musgo-100); text-decoration:none; }
+    .nav-praga-link .dir { margin-left:auto; color:var(--grafite); font-size:.65rem; }
+
+    /* ── Tablet (<=900px) ─────────────────────────────────── */
+    @media (max-width:900px) {
+      .hero-inner { grid-template-columns:1fr; gap:1rem; }
+      .hero-img-wrap { aspect-ratio:16/8; }
+      .mec-grid { grid-template-columns:1fr 1fr; }
+      .pq-grid { grid-template-columns:1fr 1fr; }
+      .danos-grid { grid-template-columns:1fr; }
+      .mon-grid { grid-template-columns:1fr 1fr; }
+    }
+
+    /* ── Mobile (<=600px) ─────────────────────────────────── */
+    @media (max-width:600px) {
+      html { overflow-x:hidden; }
+      .page-content,.sec,.sec-head,.sec-body { max-width:100%; box-sizing:border-box; }
+      .sec { overflow:clip; }
+      .page-header { padding:24px 0 30px; }
+      .sec-head { padding:.7rem .85rem; }
+      .sec-body { padding:.8rem .85rem 1rem; }
+      .hero-img-wrap { aspect-ratio:16/9; max-height:200px; }
+      .hero-lead { font-size:.85rem; margin-bottom:1rem; }
+      .hero-stats { flex-wrap:wrap; }
+      .hero-stat { flex:1 1 50%; min-width:0; }
+      .hero-stat:nth-child(2) { border-right:none; }
+      .hero-stat:nth-child(3),.hero-stat:nth-child(4) { border-top:1px solid rgba(255,255,255,.1); }
+      .hero-stat:nth-child(4) { border-right:none; }
+      .fi-grid { grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:.4rem; }
+      .fi-card { padding:.55rem .65rem; }
+      .cultura-pill { font-size:.7rem; padding:.2rem .55rem; }
+      .id-grid { grid-template-columns:1fr; }
+      .mon-grid { grid-template-columns:1fr; }
+      .ciclo-wrap { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      .ciclo-bubble { width:46px; height:46px; font-size:.9rem; }
+      .ciclo-estagio { padding:0 4px; }
+      .ciclo-nome { font-size:.63rem; }
+      .ciclo-dias { font-size:.58rem; }
+      .ciclo-ef { font-size:.55rem; padding:1px 5px; }
+      .ciclo-nota { display:none; }
+      .ciclo-legenda { font-size:.72rem; gap:.65rem; }
+      .danos-grid { grid-template-columns:1fr; }
+      .mec-grid { grid-template-columns:1fr; }
+      .proto-table-wrap { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      .proto-table th:last-child,.proto-table td:last-child { display:none; }
+      .proto-table { font-size:.76rem; min-width:340px; }
+      .proto-table th,.proto-table td { padding:.4rem .5rem; white-space:nowrap; }
+      .proto-table td:first-child { white-space:normal; min-width:90px; }
+      .bp-grid { grid-template-columns:1fr 1fr; gap:.5rem; }
+      .bp-card { padding:.75rem; }
+      .pq-sec { padding:1rem .85rem; }
+      .pq-grid { grid-template-columns:1fr 1fr; gap:.5rem; }
+      .pq-card { padding:.75rem; }
+      .acc-q { font-size:.82rem; }
+      .acc-panel { padding:0 0 .75rem 1.5rem; }
+    }
+
+    /* ── Muito pequeno (<=390px) ──────────────────────────── */
+    @media (max-width:390px) {
+      .fi-grid { grid-template-columns:1fr 1fr; }
+      .bp-grid,.pq-grid { grid-template-columns:1fr; }
+      .hero-stat { flex:1 1 100%; border-right:none !important; }
+      .hero-stat:nth-child(n+2) { border-top:1px solid rgba(255,255,255,.1); }
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo" aria-label="Portal do Neem — página inicial">
+      <span class="logo-icon" aria-hidden="true">&#127807;</span>
+      <span class="logo-text">Portal do <strong>Neem</strong></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" aria-label="Menu principal">
+      <a href="/">Início</a>
+      <a href="/o-que-e-o-neem/">O que é o Neem</a>
+      <a href="/como-aplicar/">Como Aplicar</a>
+      <a href="/pragas/" aria-current="page">Pragas</a>
+      <a href="/culturas/">Culturas</a>
+      <a href="/parceiros/">Parceiros</a>
+      <a href="/blog/">Blog</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contato/">Contato</a>
+      <a href="/produto/" class="nav-cta">Adquira o Produto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Você está em">
+        <a href="/">Início</a>
+        <span aria-hidden="true">›</span>
+        <a href="/pragas/">Pragas</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Tripes</span>
+      </nav>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badges">
+            <span class="badge-risco">🔴 Risco Alto</span>
+            <span class="badge-ordem">Thysanoptera · Thripidae</span>
+          </div>
+          <h1>Tripes</h1>
+          <p class="hero-cientifico">Frankliniella occidentalis / Thrips tabaci</p>
+          <p class="hero-lead">Minúsculo e altamente móvel, o tripes raspa a superfície das flores e folhas para sugar o conteúdo celular. Transmite o Tospovírus (TSWV) — uma das viroses mais destrutivas de pimentão e tomate, sem cura após a infecção.</p>
+          <div class="hero-stats"><div class="hero-stat"><div class="hs-val">+200</div><div class="hs-lbl">espécies hospedeiras</div></div>
+<div class="hero-stat"><div class="hs-val">14–20 d</div><div class="hs-lbl">ciclo completo</div></div>
+<div class="hero-stat"><div class="hs-val">10–15</div><div class="hs-lbl">gerações por ano</div></div>
+<div class="hero-stat"><div class="hs-val">Alto</div><div class="hs-lbl">risco de viroses</div></div>
+</div>
+        </div>
+        <div class="hero-img-wrap">
+          <div class="hero-img-ph" id="hero-img-ph">
+            <span class="hero-img-ph-icon">&#128025;</span>
+            <span class="hero-img-ph-label">tripes.webp · 800 × 600 px</span>
+          </div>
+          <picture>
+            <source srcset="/pragas/img/tripes.webp" type="image/webp">
+            <img src="/pragas/img/tripes.jpg"
+                 alt="Tripes (Frankliniella occidentalis / Thrips tabaci) em planta"
+                 style="display:none;width:100%;height:100%;object-fit:cover;object-position:center"
+                 onload="this.style.display='block';document.getElementById('hero-img-ph').style.display='none'"
+                 onerror="this.closest('picture').remove()">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+
+        <article class="page-content">
+
+          <!-- 1. FICHA TÉCNICA -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-verde">1</span>
+              <div><div class="sec-title">Ficha Técnica</div><div class="sec-subtitle">Classificação e características biológicas</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="fi-grid"><div class="fi-card"><div class="fi-l">Ordem</div><div class="fi-v">Thysanoptera</div></div>
+<div class="fi-card"><div class="fi-l">Família</div><div class="fi-v">Thripidae</div></div>
+<div class="fi-card"><div class="fi-l">Espécies no BR</div><div class="fi-v">F. occidentalis · T. tabaci</div></div>
+<div class="fi-card"><div class="fi-l">Tamanho adulto</div><div class="fi-v">1–2 mm</div></div>
+<div class="fi-card"><div class="fi-l">Modo de dano</div><div class="fi-v">Raspador-sugador + vetor de vírus</div></div>
+<div class="fi-card"><div class="fi-l">Hospedeiros</div><div class="fi-v">+200 espécies vegetais</div></div>
+<div class="fi-card"><div class="fi-l">Ciclo de vida</div><div class="fi-v">14–20 dias a 25°C</div></div>
+<div class="fi-card"><div class="fi-l">Gerações/ano</div><div class="fi-v">10–15</div></div>
+<div class="fi-card"><div class="fi-l">Cond. favoráveis</div><div class="fi-v">25–30°C · baixa umidade</div></div>
+<div class="fi-card"><div class="fi-l">Monitoramento</div><div class="fi-v">Armadilha azul adesiva + inspeção de flores</div></div>
+<div class="fi-card"><div class="fi-l">Estágio crítico</div><div class="fi-v">Ninfa 1º e 2º instar</div></div>
+<div class="fi-card"><div class="fi-l">Risco resistência</div><div class="fi-v">Médio ao neem · Alto a piretroides</div></div>
+</div>
+              <div class="culturas-pill-label">Culturas afetadas e eficácia do neem</div>
+              <div class="culturas-pills"><a href="/culturas/pimentao/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Pimentão</a>
+<a href="/culturas/tomate/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Tomate</a>
+<a href="/culturas/ornamentais/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Rosa</a>
+<a href="/culturas/cebola/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Cebola</a>
+<a href="/culturas/alface/" class="cultura-pill cp-media"><span class="cp-dot"></span>Alface</a>
+<a href="/culturas/morango/" class="cultura-pill cp-media"><span class="cp-dot"></span>Morango</a>
+<a href="/culturas/pepino/" class="cultura-pill cp-media"><span class="cp-dot"></span>Pepino</a>
+<a href="/culturas/alho/" class="cultura-pill cp-media"><span class="cp-dot"></span>Alho</a>
+</div>
+            </div>
+          </div>
+
+          <!-- 2. COMO IDENTIFICAR -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-verde">2</span>
+              <div><div class="sec-title">Como Identificar</div><div class="sec-subtitle">Adultos, ninfas/lagartas e sintomas na planta</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="id-grid"><div class="id-card"><div class="id-icon">🔬</div><div class="id-title">Adulto</div><div class="id-text">1–2 mm, corpo alongado e estreito com asas franjadas (filamentos longos nas asas). Coloração amarela a marrom-escura. Visível apenas com lupa — a olho nu aparece como um ponto movendo-se nas pétalas.</div></div>
+<div class="id-card"><div class="id-icon">🌸</div><div class="id-title">Ninfa</div><div class="id-text">Semelhante ao adulto, sem asas, coloração amarelo-creme. Concentrada em flores e pontos de crescimento. Pré-pupa e pupa ocorrem no solo — não na planta.</div></div>
+<div class="id-card"><div class="id-icon">🌿</div><div class="id-title">Sintomas</div><div class="id-text">Ponteado prateado nas folhas (células raspadas), manchas claras irregulares e faixas de coloração alterada. Flores deformadas ou com bronzeamento. Frutos com manchas prateadas ou rugosidade superficial.</div></div>
+</div>
+              <ul class="sintomas-list"><li>Ponteado prateado ou esbranquiçado nas folhas — sinal de células raspadas pelo inseto</li>
+<li>Flores deformadas, com pétalas manchadas ou bronzeadas — inspecionar com lupa</li>
+<li>Frutos com estrias ou manchas prateadas superficiais — dano estético e de qualidade</li>
+<li>Mosaico, bronzeamento ou necrose foliar — suspeitar de transmissão de Tospovírus (TSWV)</li>
+</ul>
+              <div class="tip-box"><strong>Armadilha azul para monitoramento:</strong> diferente de outras pragas que preferem amarelo, o tripes tem atração natural pela cor <strong>azul</strong>. Use armadilhas azuis adesivas para detecção precoce — são muito mais eficazes que as amarelas para esta praga.</div>
+              <div class="mon-divider">Como monitorar a presença na lavoura</div>
+              <p class="mon-intro">Inspecionar flores e brotos com lupa é o método mais preciso. Para monitoramento em escala, use <strong>armadilhas azuis adesivas</strong> — plaquinhas azuis cobertas de cola, penduradas na altura das flores. O tripes tem atração natural pela cor azul e fica preso ao pousar. Vistorie semanalmente.</p>
+              <div class="mon-grid"><div class="mon-card"><div class="mon-card-icon">📌</div><div class="mon-card-title">Como usar</div><div class="mon-card-text">Pendure 1 plaquinha azul adesiva a cada 1.000 m², na altura das flores e brotos. Disponível em lojas agropecuárias. Inspecione com lupa para confirmar a praga nas armadilhas.</div></div>
+<div class="mon-card"><div class="mon-card-icon">⚡</div><div class="mon-card-title">Quando aplicar o neem</div><div class="mon-card-text">Ao encontrar qualquer adulto nas armadilhas ou os primeiros sintomas de ponteado prateado nas folhas — o ciclo é curto e a população cresce rápido.</div></div>
+</div>
+              <div class="tip-box"><strong>Tripes pupa no solo — não só na planta.</strong> Parte do ciclo ocorre no solo ou em restos vegetais. Complementar as aplicações foliares com rega da base das plantas com calda de neem (drench) aumenta o controle das pupas.</div>
+            </div>
+          </div>
+
+          <!-- 3. CICLO DE VIDA -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-verde">3</span>
+              <div><div class="sec-title">Ciclo de Vida</div><div class="sec-subtitle">Onde e quando o neem é mais eficaz em cada estágio</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="ciclo-wrap">
+                <div class="ciclo-track"><div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-baixa">🥚</div>
+  <div class="ciclo-nome">Ovo</div>
+  <div class="ciclo-dias">3–5 dias</div>
+  <span class="ciclo-ef ce-baixa">Neem: Baixa</span>
+  <div class="ciclo-nota">Depositado dentro do tecido vegetal (endofítico) — protegido da ação direta do neem</div>
+</div>
+<div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-alta">🟢</div>
+  <div class="ciclo-nome">Ninfa 1º</div>
+  <div class="ciclo-dias">2–3 dias</div>
+  <span class="ciclo-ef ce-alta">Neem: Alta</span>
+  <div class="ciclo-nota">Ainda na superfície foliar e floral — janela de máxima eficácia do neem</div>
+</div>
+<div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-alta">🟡</div>
+  <div class="ciclo-nome">Ninfa 2º</div>
+  <div class="ciclo-dias">2–3 dias</div>
+  <span class="ciclo-ef ce-alta">Neem: Alta</span>
+  <div class="ciclo-nota">Inibição de ecdisona impede progressão — ninfa morre antes de pupificar</div>
+</div>
+<div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-media">🟠</div>
+  <div class="ciclo-nome">Pré-pupa</div>
+  <div class="ciclo-dias">1–2 dias</div>
+  <span class="ciclo-ef ce-media">Neem: Média</span>
+  <div class="ciclo-nota">Cai no solo ou em restos vegetais. Aplicação de neem no solo (drench) atinge este estágio</div>
+</div>
+<div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-media">⚫</div>
+  <div class="ciclo-nome">Pupa</div>
+  <div class="ciclo-dias">3–5 dias</div>
+  <span class="ciclo-ef ce-media">Neem: Média</span>
+  <div class="ciclo-nota">No solo — neem aplicado em drench na base das plantas atinge pupas</div>
+</div>
+<div class="ciclo-estagio">
+  <div class="ciclo-bubble cb-media">🦋</div>
+  <div class="ciclo-nome">Adulto</div>
+  <div class="ciclo-dias">30–45 dias</div>
+  <span class="ciclo-ef ce-media">Neem: Média</span>
+  <div class="ciclo-nota">Deterrência alimentar reduz o dano e a transmissão de vírus durante a visita às flores</div>
+</div>
+</div>
+              </div>
+              <div class="ciclo-legenda">
+                <div class="cl-item"><div class="cl-dot cl-dot-alta"></div><span><strong>Alta</strong> — janela preventiva principal</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-media"></div><span><strong>Média</strong> — manter para conter dano</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-baixa"></div><span><strong>Baixa</strong> — sem resposta relevante</span></div>
+              </div>
+              <div class="tip-box" style="margin-top:.75rem"><strong>O ovo fica protegido dentro do tecido vegetal.</strong> A fêmea usa o ovipositor para inserir os ovos dentro da epiderme foliar ou petal — onde o neem não alcança. Por isso a eficácia é máxima nas ninfas de 1º e 2º instar, nos primeiros dias após a eclosão, quando ainda estão na superfície.</div>
+            </div>
+          </div>
+
+          <!-- 4. DANOS -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-risco">4</span>
+              <div><div class="sec-title">Danos e Impacto Econômico</div><div class="sec-subtitle">Prejuízos diretos e indiretos</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="danos-grid">
+                <div class="dano-col">
+                  <div class="dano-col-title"><span>&#127807;</span> Danos Diretos</div>
+                  <ul class="dano-list"><li>Raspagem de células epidérmicas — ponteado prateado característico</li>
+<li>Deformação de flores, pétalas e frutos jovens</li>
+<li>Manchas e estrias superficiais que reduzem valor comercial</li>
+<li>Queda de flores em infestações severas</li>
+</ul>
+                </div>
+                <div class="dano-col">
+                  <div class="dano-col-title"><span>&#9888;&#65039;</span> Danos Indiretos</div>
+                  <ul class="dano-list"><li>Transmissão de TSWV (Tospovírus) — sem cura após infecção</li>
+<li>Bronzeamento e necrose em pimentão e tomate</li>
+<li>INSV (vírus da mancha necrótica do impatiens) em ornamentais</li>
+<li>Plantas infectadas devem ser removidas — não há tratamento curativo</li>
+</ul>
+                </div>
+              </div>
+              <div class="dano-alerta"><strong>🚨 TSWV não tem cura:</strong> o Tospovírus transmitido pelo tripes causa bronzeamento, necrose e morte de plantas de pimentão e tomate. Uma vez infectada, a planta não se recupera. A prevenção com neem é a <strong>única estratégia eficaz</strong> — tratamento curativo não existe.</div>
+            </div>
+          </div>
+
+          <!-- 5. COMO O NEEM CONTROLA -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-verde">5</span>
+              <div><div class="sec-title">Como o Neem Controla</div><div class="sec-subtitle">Mecanismos de ação da azadiractina nesta praga</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="mec-grid"><div class="mec-card"><div class="mec-icon">🔬</div><div class="mec-title">Inibição de muda</div><div class="mec-text">Ninfas de 1º e 2º instar, ainda na superfície das flores e folhas, não conseguem completar a metamorfose quando em contato com a azadiractina. Morrem antes de pupificar.</div></div>
+<div class="mec-card"><div class="mec-icon">🚫</div><div class="mec-title">Deterrência alimentar</div><div class="mec-text">Adultos nas flores tratadas reduzem ou param a raspagem da superfície celular — o que diminui diretamente a transmissão do TSWV, que ocorre durante a alimentação.</div></div>
+<div class="mec-card"><div class="mec-icon">🏡</div><div class="mec-title">Ação no solo</div><div class="mec-text">Aplicação de calda de neem no solo (drench) atinge pré-pupas e pupas que completam o ciclo fora da planta — complementando o controle foliar.</div></div>
+</div>
+              <div class="selet-box" style="margin-top:.75rem">
+                <span class="selet-icon">&#128029;</span>
+                <div>
+                  <div class="selet-title">Preserva predadores naturais de tripes</div>
+                  <div class="selet-text"><em>Amblyseius cucumeris</em> e <em>Neoseiulus cucumeris</em> (ácaros predadores) e <em>Orius insidiosus</em> (percevejo predador) são os principais inimigos naturais do tripes em cultivos protegidos. O neem, aplicado fora dos horários de liberação desses agentes, não afeta significativamente esses aliados — diferente de inseticidas convencionais que os eliminam.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. PROTOCOLO -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-ambar">6</span>
+              <div><div class="sec-title">Protocolo por Cultura</div><div class="sec-subtitle">Dosagem, frequência e observações</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="proto-intro">Produto com 1.000 ppm de azadiractina: <strong>5 mL/L</strong> foliar + <strong>5 mL/L</strong> drench no solo. Frequência mais curta (5 dias) devido ao ciclo rápido da praga. Adicionar <strong>espalhante adesivo (0,5 mL/L)</strong>. Aplicar preferencialmente no final da tarde.</div>
+              <div class="proto-table-wrap">
+                <table class="proto-table">
+                  <thead><tr><th>Cultura</th><th>Dosagem</th><th>Frequência</th><th>Eficácia</th><th>Observação</th></tr></thead>
+                  <tbody><tr>
+  <td><a href="/culturas/pimentao/">🫑 Pimentão</a></td>
+  <td>5 mL/L</td><td>5 dias</td>
+  <td><span class="ef-badge ef-alta">Alta</span></td>
+  <td class="proto-obs">Flores e face inferior das folhas + drench no solo</td>
+</tr>
+<tr>
+  <td><a href="/culturas/tomate/">🍅 Tomate</a></td>
+  <td>5 mL/L</td><td>5 dias</td>
+  <td><span class="ef-badge ef-alta">Alta</span></td>
+  <td class="proto-obs">Flores e brotos — vetor do TSWV crítico</td>
+</tr>
+<tr>
+  <td><a href="/culturas/ornamentais/">🌹 Rosa</a></td>
+  <td>4 mL/L</td><td>7 dias</td>
+  <td><span class="ef-badge ef-alta">Alta</span></td>
+  <td class="proto-obs">Pétalas em formação — dano estético severo</td>
+</tr>
+<tr>
+  <td><a href="/culturas/cebola/">🧅 Cebola</a></td>
+  <td>5 mL/L</td><td>5 dias</td>
+  <td><span class="ef-badge ef-alta">Alta</span></td>
+  <td class="proto-obs">Folhas + drench (pupas no solo)</td>
+</tr>
+<tr>
+  <td><a href="/culturas/alface/">🥬 Alface</a></td>
+  <td>3 mL/L</td><td>7 dias</td>
+  <td><span class="ef-badge ef-media">Média</span></td>
+  <td class="proto-obs">Roseta central — inspecionar periodicamente</td>
+</tr>
+<tr>
+  <td><a href="/culturas/morango/">🍓 Morango</a></td>
+  <td>4 mL/L</td><td>7 dias</td>
+  <td><span class="ef-badge ef-media">Média</span></td>
+  <td class="proto-obs">Flores e frutos em desenvolvimento</td>
+</tr>
+</tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num sn-verde">7</span>
+    <div>
+      <div class="sec-title">Boas Práticas de Aplicação</div>
+      <div class="sec-subtitle">O que faz a diferença na eficácia do programa</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="bp-grid">
+      <div class="bp-card"><div class="bp-icon">&#9200;</div><div class="bp-title">Horário certo</div><div class="bp-text">Final da tarde (16h–18h) ou início da manhã (6h–8h). A azadiractina degrada em até 6h de luz UV direta.</div></div>
+      <div class="bp-card"><div class="bp-icon">&#127811;</div><div class="bp-title">Face inferior</div><div class="bp-text">A maioria das pragas se concentra na face inferior das folhas. Aplicar só na face superior elimina a eficácia do produto.</div></div>
+      <div class="bp-card"><div class="bp-icon">&#129380;</div><div class="bp-title">Espalhante adesivo</div><div class="bp-text">Sempre 0,5 mL/L. A superfície cerosa das folhas repele caldas sem surfactante — o produto escorre sem contato eficaz.</div></div>
+      <div class="bp-card"><div class="bp-icon">&#128197;</div><div class="bp-title">Preventivo, não curativo</div><div class="bp-text">Esperar a infestação explodir é tarde demais. Iniciar na fase vegetativa inicial intercepta os estágios mais vulneráveis.</div></div>
+      <div class="bp-card"><div class="bp-icon">&#128260;</div><div class="bp-title">Alterne produtos</div><div class="bp-text">A cada 3 aplicações de neem, 1 de sabão potássico (1%). Sinergismo e prevenção de adaptação comportamental da praga.</div></div>
+      <div class="bp-card"><div class="bp-icon">&#128029;</div><div class="bp-title">Preserve os aliados</div><div class="bp-text">Aplique fora do horário de voo das abelhas e dos principais predadores naturais da praga em questão.</div></div>
+    </div>
+  </div>
+</div>
+          
+<div class="pq-sec">
+  <div class="pq-head">
+    <h2>Por que escolher o Neem?</h2>
+    <p>6 razões que valem para qualquer praga e qualquer cultura</p>
+  </div>
+  <div class="pq-grid">
+    <div class="pq-card"><div class="pq-icon">&#128260;</div><div class="pq-title">Sem resistência</div><div class="pq-text">Mais de 40 anos de uso sem relatos documentados. Age por múltiplos mecanismos simultâneos.</div></div>
+    <div class="pq-card"><div class="pq-icon">&#128029;</div><div class="pq-title">Seletivo</div><div class="pq-text">Preserva polinizadores, parasitóides e predadores naturais quando aplicado corretamente.</div></div>
+    <div class="pq-card"><div class="pq-icon">&#128737;</div><div class="pq-title">Seguro</div><div class="pq-text">Baixa toxicidade para mamíferos. Sem carência relevante. EPI simplificado.</div></div>
+    <div class="pq-card"><div class="pq-icon">&#9989;</div><div class="pq-title">Aceito no orgânico</div><div class="pq-text">Aprovado pelo MAPA para produção orgânica certificada. Não compromete a certificação.</div></div>
+    <div class="pq-card"><div class="pq-icon">&#128200;</div><div class="pq-title">Tendência regulatória</div><div class="pq-text">Restrições crescentes a neonicotinóides no Brasil e Europa. O neem é a alternativa regulamentada.</div></div>
+    <div class="pq-card"><div class="pq-icon">&#128279;</div><div class="pq-title">Compatível com MIP</div><div class="pq-text">Integra com controle biológico, armadilhas e feromônios. Pilar do Manejo Integrado de Pragas.</div></div>
+  </div>
+</div>
+
+          <!-- 9. CURIOSIDADES -->
+          <div class="sec">
+            <div class="sec-head">
+              <span class="sec-num sn-verde">9</span>
+              <div><div class="sec-title">Curiosidades</div><div class="sec-subtitle">O que poucos sabem sobre tripes</div></div>
+            </div>
+            <div class="sec-body"><div class="acc-item">
+  <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+    <span class="acc-num">1</span>
+    <span class="acc-q">Raspa antes de sugar</span>
+    <span class="acc-arrow">&#9662;</span>
+  </button>
+  <div class="acc-panel"><p>Diferente do pulgão que perfura o tecido com estilete, o tripes raspa a superfície epidérmica com mandíbulas assimétricas e absorve o conteúdo celular liberado. As "pratas" nas folhas são exatamente as células esvaziadas e oxidadas — uma assinatura diagnóstica única da praga.</p></div>
+</div>
+<div class="acc-item">
+  <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+    <span class="acc-num">2</span>
+    <span class="acc-q">A armadilha certa é azul, não amarela</span>
+    <span class="acc-arrow">&#9662;</span>
+  </button>
+  <div class="acc-panel"><p>Para monitoramento de tripes, armadilhas azuis adesivas capturam de 3 a 5 vezes mais adultos do que as amarelas. O tripes tem receptores visuais com sensibilidade preferencial ao comprimento de onda do azul — uma característica evolutiva relacionada à busca de flores.</p></div>
+</div>
+<div class="acc-item">
+  <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+    <span class="acc-num">3</span>
+    <span class="acc-q">Pupa no solo — ciclo bifásico</span>
+    <span class="acc-arrow">&#9662;</span>
+  </button>
+  <div class="acc-panel"><p>Ao completar o 2º instar, a ninfa do tripes cai da planta e pupa no solo ou em restos vegetais — um comportamento incomum entre insetos de pequeno porte. Isso torna o controle exclusivamente foliar insuficiente em lavouras com alta pressão de infestação.</p></div>
+</div>
+<div class="acc-item">
+  <button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+    <span class="acc-num">4</span>
+    <span class="acc-q">TSWV não tem cura</span>
+    <span class="acc-arrow">&#9662;</span>
+  </button>
+  <div class="acc-panel"><p>O Tospovírus transmitido pelo tripes é sistêmico — uma vez dentro da planta, se move pelos vasos e não pode ser eliminado por nenhum produto. Plantas infectadas devem ser removidas imediatamente para evitar que sirvam como reservatório. A prevenção com neem (reduzindo a população de vetores) é a única estratégia eficaz disponível.</p></div>
+</div>
+</div>
+          </div>
+
+          <div class="cta-box">
+            <h3>Precisa de neem para controle de Tripes?</h3>
+            <p>Conectamos você a fabricantes e distribuidores validados com os melhores produtos do mercado.</p>
+            <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+              <a href="/cotacao/" class="btn btn-primary">&#128176; Solicitar Cotação</a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-ghost" target="_blank" rel="noopener noreferrer">&#128241; Falar no WhatsApp</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="sidebar" aria-label="Informações relacionadas">
+          <div class="sidebar-alerta">
+            <h5>🔴 Risco Alto Praga de risco alto</h5>
+            <p>Inspecione flores e brotos semanalmente com lupa. Ao detectar os primeiros sintomas de ponteado prateado, inicie o programa preventivo imediatamente.</p>
+          </div>
+          <div class="sidebar-widget">
+            <h4>&#128506;&#65039; Navegar entre pragas</h4>
+            <div class="nav-pragas"><a href="/pragas/" class="nav-praga-link">← Todas as pragas</a>
+<a href="/pragas/pulgao/" class="nav-praga-link">🐝 Pulgão →</a>
+<a href="/pragas/traca-tomateiro/" class="nav-praga-link">🐛 Traça do Tomateiro →</a>
+<a href="/pragas/lagarta-cartucho/" class="nav-praga-link">🐛 Lagarta do Cartucho →</a>
+</div>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128176; Precisa de neem?</h4>
+            <p>Solicite cotação com nossos parceiros validados.</p>
+            <a href="/cotacao/" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">Solicitar Cotação</a>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128241; Dúvidas?</h4>
+            <p>Fale com um especialista pelo WhatsApp.</p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center">Chamar no WhatsApp</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Portal do Neem">
+          <span class="logo-icon" aria-hidden="true">&#127807;</span>
+          <span class="logo-text">Portal do <strong>Neem</strong></span>
+        </a>
+        <p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.<br>Do dono de horta à grande propriedade rural.</p>
+        <p style="margin-top:.5rem"><a href="https://wa.me/5511999999999" style="color:rgba(255,255,255,.45);font-size:.8rem">&#128241; WhatsApp: (11) 99999-9999</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Aprenda</h4>
+        <a href="/o-que-e-o-neem/">O que é o Neem</a>
+        <a href="/como-aplicar/">Como Aplicar</a>
+        <a href="/pragas/">Controle por Praga</a>
+        <a href="/culturas/">Por Cultura</a>
+        <a href="/neem-vs-quimicos/">Neem vs Químicos</a>
+        <a href="/blog/">Blog &amp; Artigos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pragas</h4>
+        <a href="/pragas/mosca-branca/">Mosca Branca</a>
+        <a href="/pragas/pulgao/">Pulgão</a>
+        <a href="/pragas/tripes/">Tripes</a>
+        <a href="/pragas/traca-tomateiro/">Traça do Tomateiro</a>
+        <a href="/pragas/lagarta-cartucho/">Lagarta do Cartucho</a>
+        <a href="/pragas/acaro-rajado/">Ácaro-Rajado</a>
+      </div>
+      <div class="footer-col">
+        <h4>Portal</h4>
+        <a href="/faq/">Perguntas Frequentes</a>
+        <a href="/contato/">Contato</a>
+        <a href="/seja-parceiro/">Seja Parceiro</a>
+        <a href="/sobre/">Sobre o Portal</a>
+        <a href="/privacidade/">Política de Privacidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Portal do Neem &mdash; Todos os direitos reservados.</p>
+      <div class="footer-seal"><span>&#127807;</span> Conteúdo orgânico, sem agrotóxicos na informação</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+
+<script>
+  function toggleMenu(e){
+    var n=document.getElementById("nav-menu"),t=n.classList.toggle("open");
+    e.setAttribute("aria-expanded",t);
+    e.setAttribute("aria-label",t?"Fechar menu":"Abrir menu");
+    document.body.style.overflow=t?"hidden":"";
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    document.querySelectorAll("#nav-menu a").forEach(function(e){
+      e.addEventListener("click",function(){
+        var n=document.getElementById("nav-menu"),t=document.querySelector(".menu-toggle");
+        if(n.classList.contains("open")){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.setAttribute("aria-label","Abrir menu");document.body.style.overflow="";}
+      });
+    });
+  });
+  function toggleAcc(btn){
+    var p=btn.nextElementSibling,x=btn.getAttribute("aria-expanded")==="true";
+    btn.setAttribute("aria-expanded",!x);p.classList.toggle("open",!x);
+  }
+</script>
+</body>
+</html>
