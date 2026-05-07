@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cochonilha — Identificação, Danos e Controle com Neem | Portal do Neem</title>
+  <meta name="description" content="Guia completo sobre Cochonilha (Planococcus citri): como identificar, ciclo de vida e protocolo de controle com óleo de neem em citros, café, uva e ornamentais.">
+  <meta name="author" content="Portal do Neem">
+  <link rel="canonical" href="https://portaldoneem.com.br/pragas/cochonilha/">
+  <meta property="og:title" content="Cochonilha — Controle com Neem">
+  <meta property="og:description" content="Guia completo sobre Cochonilha (Planococcus citri): como identificar, ciclo de vida e protocolo de controle com óleo de neem em citros, café, uva e ornamentais.">
+  <meta property="og:url" content="https://portaldoneem.com.br/pragas/cochonilha/">
+  <meta property="og:site_name" content="Portal do Neem">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://portaldoneem.com.br/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .page-content{min-width:0;}.sec{min-width:0;}
+    .page-header{background:linear-gradient(135deg,var(--musgo-900) 0%,#0d2e1a 100%);padding:40px 0 48px;position:relative;overflow:hidden;}
+    .page-header::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(74,140,92,.18) 0%,transparent 70%);}
+    .page-header .container{position:relative;z-index:1;}
+    .hero-inner{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center;margin-top:20px;}
+    .hero-text{min-width:0;}
+    .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .badge-risco-alto{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(200,40,40,.22);color:#ffaaaa;border:1px solid rgba(200,40,40,.3);}
+    .badge-risco-medio{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(180,120,8,.22);color:#f5d08a;border:1px solid rgba(180,120,8,.3);}
+    .badge-ordem{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);}
+    .page-header h1{font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;line-height:1.1;margin-bottom:.2rem;}
+    .hero-cientifico{font-family:var(--font-heading);font-style:italic;font-size:.9rem;color:var(--musgo-300);margin-bottom:1rem;}
+    .hero-lead{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:1.5rem;}
+    .hero-stats{display:flex;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden;}
+    .hero-stat{flex:1;text-align:center;padding:11px 10px;border-right:1px solid rgba(255,255,255,.1);}
+    .hero-stat:last-child{border-right:none;}
+    .hs-val{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:#e8a824;line-height:1;margin-bottom:3px;}
+    .hs-lbl{font-size:.62rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em;}
+    .hero-img-wrap{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 32px rgba(0,0,0,.45);}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:none;}
+    .hero-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,rgba(26,58,42,.9) 0%,rgba(13,46,26,.95) 100%);border:2px dashed rgba(141,184,122,.3);}
+    .hero-img-ph-icon{font-size:3rem;opacity:.6;}
+    .hero-img-ph-label{font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.05em;}
+    .sec{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);overflow:hidden;margin-bottom:1.25rem;}
+    .sec-head{padding:.9rem 1.2rem;border-bottom:1px solid var(--color-border-light);display:flex;align-items:center;gap:.6rem;}
+    .sec-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0;}
+    .sn-verde{background:var(--musgo-100);color:var(--musgo-700);}
+    .sn-ambar{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .sn-risco{background:#fff4f4;color:#8b1a1a;}
+    .sec-title{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--terra-900);}
+    .sec-subtitle{font-size:.75rem;color:var(--grafite);margin-top:1px;}
+    .sec-body{padding:1.1rem 1.2rem 1.3rem;}
+    .fi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.6rem;margin-bottom:1.1rem;}
+    .fi-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.75rem .85rem;}
+    .fi-l{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grafite);margin-bottom:.25rem;}
+    .fi-v{font-size:.82rem;font-weight:600;color:var(--terra-900);line-height:1.4;}
+    .culturas-pill-label{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--grafite);margin-bottom:.5rem;}
+    .culturas-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .cultura-pill{display:inline-flex;align-items:center;gap:5px;padding:.25rem .7rem;border-radius:20px;font-size:.75rem;font-weight:600;border:1.5px solid;text-decoration:none;transition:transform .12s;}
+    .cultura-pill:hover{transform:translateY(-1px);text-decoration:none;}
+    .cp-alta{background:var(--musgo-100);color:var(--musgo-700);border-color:var(--musgo-300);}
+    .cp-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);border-color:#f5cc6a;}
+    .cp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+    .cp-alta .cp-dot{background:var(--musgo-500);}
+    .cp-media .cp-dot{background:#e8a824;}
+    .id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem;}
+    .id-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .id-icon{font-size:1.4rem;margin-bottom:.4rem;}
+    .id-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.4rem;}
+    .id-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .sintomas-list{list-style:none;}
+    .sintomas-list li{display:flex;gap:7px;align-items:flex-start;font-size:.82rem;color:var(--grafite);padding:5px 0;border-bottom:1px solid var(--color-border-light);line-height:1.55;}
+    .sintomas-list li:last-child{border-bottom:none;}
+    .sintomas-list li::before{content:'⚠';font-size:.75rem;color:#e8a824;flex-shrink:0;margin-top:2px;}
+    .tip-box{background:var(--ambar-100,#fdf2d4);border-left:3px solid #e8a824;border-radius:0 var(--radius) var(--radius) 0;padding:.65rem .9rem;font-size:.81rem;color:var(--ambar-800);line-height:1.6;margin-top:.9rem;}
+    .tip-box strong{color:var(--terra-900);}
+    .mon-divider{display:flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--musgo-700);margin:1.1rem 0 .6rem;}
+    .mon-divider::before,.mon-divider::after{content:'';flex:1;height:1px;background:var(--color-border-light);}
+    .mon-intro{font-size:.82rem;color:var(--grafite);line-height:1.75;margin-bottom:.75rem;}
+    .mon-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.75rem;}
+    .mon-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .mon-card-icon{font-size:1.2rem;margin-bottom:.35rem;}
+    .mon-card-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.3rem;}
+    .mon-card-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .ciclo-wrap{overflow-x:auto;padding-bottom:6px;}
+    .ciclo-track{display:flex;min-width:580px;position:relative;}
+    .ciclo-track::before{content:'';position:absolute;top:30px;left:0;right:0;height:2px;background:var(--color-border-light);z-index:0;}
+    .ciclo-estagio{flex:1;text-align:center;padding:0 6px;position:relative;z-index:1;}
+    .ciclo-bubble{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;border:2px solid;position:relative;z-index:2;font-size:1.2rem;}
+    .cb-alta{background:var(--musgo-100);border-color:var(--musgo-300);}
+    .cb-media{background:var(--ambar-100,#fdf2d4);border-color:#f5cc6a;}
+    .cb-baixa{background:#f5f5f5;border-color:#ddd;}
+    .ciclo-nome{font-size:.7rem;font-weight:700;color:var(--terra-900);margin-bottom:2px;}
+    .ciclo-dias{font-size:.6rem;color:var(--grafite);margin-bottom:4px;}
+    .ciclo-ef{display:inline-block;padding:1px 7px;border-radius:8px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;}
+    .ce-alta{background:var(--musgo-100);color:var(--musgo-700);}
+    .ce-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .ce-baixa{background:#eee;color:#888;}
+    .ciclo-nota{font-size:.7rem;color:var(--grafite);margin-top:5px;line-height:1.5;}
+    .ciclo-legenda{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1rem;padding:.65rem .85rem;background:var(--color-bg,#faf6ee);border-radius:var(--radius);font-size:.75rem;}
+    .cl-item{display:flex;align-items:center;gap:5px;}
+    .cl-dot{width:9px;height:9px;border-radius:50%;}
+    .cl-dot-alta{background:var(--musgo-500);}
+    .cl-dot-media{background:#e8a824;}
+    .cl-dot-baixa{background:#bbb;}
+    .danos-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1rem;}
+    .dano-col{background:var(--color-bg,#faf6ee);border-radius:var(--radius);padding:.9rem;}
+    .dano-col-title{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--grafite);margin-bottom:.65rem;display:flex;align-items:center;gap:6px;}
+    .dano-list{list-style:none;}
+    .dano-list li{font-size:.81rem;color:var(--grafite);padding:4px 0;border-bottom:1px solid var(--color-border-light);line-height:1.55;display:flex;gap:6px;align-items:flex-start;}
+    .dano-list li:last-child{border-bottom:none;}
+    .dano-list li::before{content:'–';color:var(--musgo-300);flex-shrink:0;}
+    .dano-alerta{background:#fff9e6;border:1px solid #f5d06a;border-radius:var(--radius);padding:.75rem .9rem;font-size:.81rem;color:#7a5500;line-height:1.65;}
+    .mec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem;}
+    .mec-card{background:var(--musgo-100);border:1px solid var(--musgo-300,#8db87a);border-radius:var(--radius);padding:1rem;}
+    .mec-icon{font-size:1.4rem;margin-bottom:.5rem;}
+    .mec-title{font-size:.84rem;font-weight:700;color:var(--musgo-900);margin-bottom:.35rem;}
+    .mec-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .selet-box{background:var(--musgo-100);border:1.5px solid var(--musgo-300,#8db87a);border-radius:var(--radius);padding:.85rem 1rem;display:flex;gap:.75rem;align-items:flex-start;}
+    .selet-icon{font-size:1.5rem;flex-shrink:0;}
+    .selet-title{font-size:.82rem;font-weight:700;color:var(--musgo-700);margin-bottom:.25rem;}
+    .selet-text{font-size:.81rem;color:var(--grafite);line-height:1.65;}
+    .proto-intro{background:var(--ambar-100,#fdf2d4);border-radius:var(--radius);padding:.75rem .9rem;margin-bottom:1rem;font-size:.81rem;color:var(--ambar-800);line-height:1.65;}
+    .proto-intro strong{color:var(--terra-900);}
+    .proto-table-wrap{overflow-x:auto;}
+    .proto-table{width:100%;border-collapse:collapse;font-size:.8rem;}
+    .proto-table th{text-align:left;padding:.5rem .75rem;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grafite);background:var(--color-bg,#faf6ee);border-bottom:2px solid var(--color-border-light);}
+    .proto-table td{padding:.55rem .75rem;border-bottom:1px solid var(--color-border-light);vertical-align:top;}
+    .proto-table tr:last-child td{border-bottom:none;}
+    .proto-table tr:hover td{background:var(--color-bg,#faf6ee);}
+    .ef-badge{display:inline-block;padding:1px 8px;border-radius:8px;font-size:.72rem;font-weight:600;}
+    .ef-alta{background:var(--musgo-100);color:var(--musgo-700);}
+    .ef-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .proto-obs{font-size:.72rem;color:var(--grafite);line-height:1.5;}
+    .bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;}
+    .bp-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .bp-icon{font-size:1.2rem;margin-bottom:.4rem;}
+    .bp-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.25rem;}
+    .bp-text{font-size:.76rem;color:var(--grafite);line-height:1.6;}
+    .pq-sec{background:var(--musgo-900);border-radius:var(--radius);padding:1.5rem 1.2rem;margin-bottom:1.25rem;}
+    .pq-head{text-align:center;margin-bottom:1.1rem;}
+    .pq-head h2{font-size:1.1rem;color:#fff;margin-bottom:.3rem;}
+    .pq-head p{font-size:.78rem;color:rgba(255,255,255,.55);}
+    .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;}
+    .pq-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:.85rem;}
+    .pq-icon{font-size:1.2rem;margin-bottom:.4rem;}
+    .pq-title{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.25rem;}
+    .pq-text{font-size:.75rem;color:rgba(255,255,255,.6);line-height:1.6;}
+    .acc-item{border-bottom:1px solid var(--color-border-light);}
+    .acc-item:last-child{border-bottom:none;}
+    .acc-btn{width:100%;background:none;border:none;display:flex;align-items:center;gap:.65rem;padding:.85rem 0;cursor:pointer;text-align:left;}
+    .acc-num{width:26px;height:26px;border-radius:50%;background:var(--musgo-100);color:var(--musgo-700);font-size:.75rem;font-weight:700;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+    .acc-q{font-size:.86rem;font-weight:600;color:var(--terra-900);flex:1;}
+    .acc-arrow{font-size:.75rem;color:var(--grafite);transition:transform .2s;}
+    .acc-btn[aria-expanded="true"] .acc-arrow{transform:rotate(180deg);}
+    .acc-panel{display:none;padding:0 0 .85rem 2.2rem;}
+    .acc-panel.open{display:block;}
+    .acc-panel p{font-size:.84rem;color:var(--grafite);line-height:1.75;}
+    .sidebar-alerta-alto{background:#fff4f4;border:1px solid #f5c0c0;border-radius:var(--radius);padding:.85rem 1rem;margin-bottom:.85rem;}
+    .sidebar-alerta-alto h5{font-size:.78rem;font-weight:700;color:#8b1a1a;margin-bottom:.3rem;}
+    .sidebar-alerta-alto p{font-size:.78rem;color:#a03030;line-height:1.6;}
+    .sidebar-alerta-medio{background:#fff9e6;border:1px solid #f5d06a;border-radius:var(--radius);padding:.85rem 1rem;margin-bottom:.85rem;}
+    .sidebar-alerta-medio h5{font-size:.78rem;font-weight:700;color:#7a5500;margin-bottom:.3rem;}
+    .sidebar-alerta-medio p{font-size:.78rem;color:#8a6200;line-height:1.6;}
+    .nav-pragas{display:flex;flex-direction:column;gap:.3rem;}
+    .nav-praga-link{display:flex;align-items:center;gap:.5rem;padding:.5rem .65rem;border-radius:var(--radius-sm,4px);background:var(--color-bg,#faf6ee);color:var(--musgo-700);font-size:.8rem;font-weight:600;border:1px solid var(--color-border-light);text-decoration:none;transition:background .15s;}
+    .nav-praga-link:hover{background:var(--musgo-100);text-decoration:none;}
+    .nav-praga-link .dir{margin-left:auto;color:var(--grafite);font-size:.65rem;}
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr;gap:1rem;}
+      .hero-img-wrap{aspect-ratio:16/8;}
+      .mec-grid{grid-template-columns:1fr 1fr;}
+      .pq-grid{grid-template-columns:1fr 1fr;}
+      .danos-grid{grid-template-columns:1fr;}
+      .mon-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width:600px){
+      html{overflow-x:hidden;}
+      .page-content,.sec,.sec-head,.sec-body{max-width:100%;box-sizing:border-box;}
+      .sec{overflow:clip;}
+      .page-header{padding:24px 0 30px;}
+      .sec-head{padding:.7rem .85rem;}
+      .sec-body{padding:.8rem .85rem 1rem;}
+      .hero-img-wrap{aspect-ratio:16/9;max-height:200px;}
+      .hero-lead{font-size:.85rem;margin-bottom:1rem;}
+      .hero-stats{flex-wrap:wrap;}
+      .hero-stat{flex:1 1 50%;min-width:0;}
+      .hero-stat:nth-child(2){border-right:none;}
+      .hero-stat:nth-child(3),.hero-stat:nth-child(4){border-top:1px solid rgba(255,255,255,.1);}
+      .hero-stat:nth-child(4){border-right:none;}
+      .fi-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.4rem;}
+      .fi-card{padding:.55rem .65rem;}
+      .cultura-pill{font-size:.7rem;padding:.2rem .55rem;}
+      .id-grid{grid-template-columns:1fr;}
+      .mon-grid{grid-template-columns:1fr;}
+      .ciclo-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .ciclo-bubble{width:46px;height:46px;font-size:.9rem;}
+      .ciclo-estagio{padding:0 4px;}
+      .ciclo-nome{font-size:.63rem;}
+      .ciclo-dias{font-size:.58rem;}
+      .ciclo-ef{font-size:.55rem;padding:1px 5px;}
+      .ciclo-nota{display:none;}
+      .ciclo-legenda{font-size:.72rem;gap:.65rem;}
+      .danos-grid{grid-template-columns:1fr;}
+      .mec-grid{grid-template-columns:1fr;}
+      .proto-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .proto-table th:last-child,.proto-table td:last-child{display:none;}
+      .proto-table{font-size:.76rem;min-width:340px;}
+      .proto-table th,.proto-table td{padding:.4rem .5rem;white-space:nowrap;}
+      .proto-table td:first-child{white-space:normal;min-width:90px;}
+      .bp-grid{grid-template-columns:1fr 1fr;gap:.5rem;}
+      .bp-card{padding:.75rem;}
+      .pq-sec{padding:1rem .85rem;}
+      .pq-grid{grid-template-columns:1fr 1fr;gap:.5rem;}
+      .pq-card{padding:.75rem;}
+      .acc-q{font-size:.82rem;}
+      .acc-panel{padding:0 0 .75rem 1.5rem;}
+    }
+    @media (max-width:390px){
+      .fi-grid{grid-template-columns:1fr 1fr;}
+      .bp-grid,.pq-grid{grid-template-columns:1fr;}
+      .hero-stat{flex:1 1 100%;border-right:none !important;}
+      .hero-stat:nth-child(n+2){border-top:1px solid rgba(255,255,255,.1);}
+    }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo" aria-label="Portal do Neem — página inicial">
+      <span class="logo-icon" aria-hidden="true">&#127807;</span>
+      <span class="logo-text">Portal do <strong>Neem</strong></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" aria-label="Menu principal">
+      <a href="/">Início</a><a href="/o-que-e-o-neem/">O que é o Neem</a>
+      <a href="/como-aplicar/">Como Aplicar</a><a href="/pragas/" aria-current="page">Pragas</a>
+      <a href="/culturas/">Culturas</a><a href="/parceiros/">Parceiros</a>
+      <a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/contato/">Contato</a>
+      <a href="/produto/" class="nav-cta">Adquira o Produto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Você está em">
+        <a href="/">Início</a><span aria-hidden="true">›</span>
+        <a href="/pragas/">Pragas</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Cochonilha</span>
+      </nav>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badges">
+            <span class="badge-risco-medio">🟡 Risco Médio</span>
+            <span class="badge-ordem">Hemiptera · Pseudococcidae</span>
+          </div>
+          <h1>Cochonilha</h1>
+          <p class="hero-cientifico">Planococcus citri / Pseudococcus spp.</p>
+          <p class="hero-lead">Inseto sugador coberto por cera protetora branca, comum em citros, café, uva e ornamentais. A cera que protege o adulto é o principal desafio do controle — mas as ninfas jovens (crawlers), antes de formarem essa camada, são altamente vulneráveis ao neem.</p>
+          <div class="hero-stats"><div class="hero-stat"><div class="hs-val">+100</div><div class="hs-lbl">espécies hospedeiras</div></div>
+<div class="hero-stat"><div class="hs-val">30–45 d</div><div class="hs-lbl">ciclo completo</div></div>
+<div class="hero-stat"><div class="hs-val">4–8</div><div class="hs-lbl">gerações/ano</div></div>
+<div class="hero-stat"><div class="hs-val">Médio</div><div class="hs-lbl">risco econômico</div></div>
+</div>
+        </div>
+        <div class="hero-img-wrap">
+          <div class="hero-img-ph" id="hero-img-ph">
+            <span class="hero-img-ph-icon">&#128030;</span>
+            <span class="hero-img-ph-label">cochonilha.webp · 800 × 600 px</span>
+          </div>
+          <picture>
+            <source srcset="/pragas/img/cochonilha.webp" type="image/webp">
+            <img src="/pragas/img/cochonilha.jpg" alt="Cochonilha (Planococcus citri / Pseudococcus spp.)"
+                 style="display:none;width:100%;height:100%;object-fit:cover;object-position:center"
+                 onload="this.style.display='block';document.getElementById('hero-img-ph').style.display='none'"
+                 onerror="this.closest('picture').remove()">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <article class="page-content">
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">1</span>
+              <div><div class="sec-title">Ficha Técnica</div><div class="sec-subtitle">Classificação e características biológicas</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="fi-grid"><div class="fi-card"><div class="fi-l">Ordem</div><div class="fi-v">Hemiptera</div></div>
+<div class="fi-card"><div class="fi-l">Família</div><div class="fi-v">Pseudococcidae</div></div>
+<div class="fi-card"><div class="fi-l">Espécies no BR</div><div class="fi-v">Planococcus citri · Pseudococcus spp.</div></div>
+<div class="fi-card"><div class="fi-l">Tamanho adulto</div><div class="fi-v">3–5 mm (fêmea)</div></div>
+<div class="fi-card"><div class="fi-l">Modo de dano</div><div class="fi-v">Sugador + honeydew + fumagina</div></div>
+<div class="fi-card"><div class="fi-l">Hospedeiros</div><div class="fi-v">+100 espécies (citros, café, uva, mandioca...)</div></div>
+<div class="fi-card"><div class="fi-l">Ciclo de vida</div><div class="fi-v">30–45 dias</div></div>
+<div class="fi-card"><div class="fi-l">Gerações/ano</div><div class="fi-v">4–8</div></div>
+<div class="fi-card"><div class="fi-l">Cond. favoráveis</div><div class="fi-v">20–28°C · alta umidade</div></div>
+<div class="fi-card"><div class="fi-l">Monitoramento</div><div class="fi-v">Inspeção visual de ramos e frutos + armadilha amarela</div></div>
+<div class="fi-card"><div class="fi-l">Estágio crítico</div><div class="fi-v">Ninfa 1º instar (crawler) — sem cera protetora</div></div>
+<div class="fi-card"><div class="fi-l">Risco resistência</div><div class="fi-v">Baixo ao neem · Médio a organofosforados</div></div>
+</div>
+              <div class="culturas-pill-label">Culturas afetadas e eficácia do neem</div>
+              <div class="culturas-pills"><a href="/culturas/citros/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Citros</a>
+<a href="/culturas/cafe/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Café</a>
+<a href="/culturas/uva/" class="cultura-pill cp-media"><span class="cp-dot"></span>Uva</a>
+<a href="/culturas/mandioca/" class="cultura-pill cp-media"><span class="cp-dot"></span>Mandioca</a>
+<a href="/culturas/abacaxi/" class="cultura-pill cp-media"><span class="cp-dot"></span>Abacaxi</a>
+<a href="/culturas/ornamentais/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Ornamentais</a>
+</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">2</span>
+              <div><div class="sec-title">Como Identificar</div><div class="sec-subtitle">Adultos, ninfas/larvas e sintomas na planta</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="id-grid"><div class="id-card"><div class="id-icon">🔬</div><div class="id-title">Fêmea adulta</div><div class="id-text">3–5 mm, oval, corpo mole coberto por cera branca farinosa em filamentos laterais. Imóvel ou de movimento muito lento. Agrupa-se em colônias nos ramos, axila das folhas e na base dos frutos.</div></div>
+<div class="id-card"><div class="id-icon">🌱</div><div class="id-title">Ninfa (crawler)</div><div class="id-text">Recém-eclodida, minúscula (0,3 mm), amarelada, com pernas funcionais e sem cera. Único estágio que se dispersa ativamente pela planta — e a janela de máxima eficácia do neem.</div></div>
+<div class="id-card"><div class="id-icon">🌿</div><div class="id-title">Sintomas</div><div class="id-text">Massa branca e farinosa em ramos, axila das folhas e frutos. Honeydew → fumagina negra. Murchamento e queda de frutos em infestação severa. Formigas pastoreando são sinal clássico.</div></div>
+</div>
+              <ul class="sintomas-list"><li>Massa branca e farinosa nos ramos e axilas das folhas — colônia densa visível a olho nu</li>
+<li>Fumagina negra sobre folhas e frutos — causada pelo honeydew que a cochonilha excreta</li>
+<li>Frutos com manchas brancas farinosas na base ou calombo — perda total do valor comercial</li>
+<li>Formigas em movimento constante pelos ramos — sinal de colônia ativa sendo pastoreada</li>
+</ul>
+              <div class="tip-box"><strong>Como confirmar a identidade:</strong> esmague uma cochonilha branca entre os dedos — se liberar líquido avermelhado, é cochonilha de São José (<em>Comstock</em>, diferente grupo). Se liberar líquido esbranquiçado, é cochonilha farinosa (<em>Planococcus</em> ou <em>Pseudococcus</em>) — o grupo mais responsivo ao neem.</div>
+              <div class="mon-divider">Como monitorar a presença na lavoura</div>
+              <p class="mon-intro">A inspeção visual direta é o método primário — as colônias de cochonilha são visíveis a olho nu assim que atingem densidade relevante. Inspecione semanalmente ramos, axilas de folhas e frutos. Para detectar os crawlers (ninfas jovens) antes da colônia se estabelecer, use <strong>armadilha amarela adesiva</strong> próxima às plantas — os crawlers alados (quando existem) são capturados.</p>
+              <div class="mon-grid"><div class="mon-card"><div class="mon-card-icon">📌</div><div class="mon-card-title">Como inspecionar</div><div class="mon-card-text">Examinar ramos, axilas de folhas e base dos frutos semanalmente. Usar lupa de 10x para detectar crawlers. Focar em plantas com presença de formigas — são o indicador mais visível.</div></div>
+<div class="mon-card"><div class="mon-card-icon">⚡</div><div class="mon-card-title">Quando aplicar o neem</div><div class="mon-card-text">Ao detectar os primeiros crawlers (ninfas sem cera) ou no início da formação de colônias. Esperar colônias estabelecidas reduz muito a eficácia — a cera espessa dos adultos bloqueia o produto.</div></div>
+</div>
+              <div class="tip-box"><strong>Controlar as formigas é parte do manejo.</strong> Formigas protegem cochonilhas de predadores naturais (<em>Cryptolaemus montrouzieri</em> — joaninha predadora de cochonilha). Aplicar pó de terra de diatomáceas ou gel formicida no caule elimina essa proteção e potencializa o controle.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">3</span>
+              <div><div class="sec-title">Ciclo de Vida</div><div class="sec-subtitle">Onde e quando o neem é mais eficaz em cada estágio</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="ciclo-wrap"><div class="ciclo-track"><div class="ciclo-estagio"><div class="ciclo-bubble cb-alta">🥚</div><div class="ciclo-nome">Ovo</div><div class="ciclo-dias">5–10 dias</div><span class="ciclo-ef ce-alta">Neem: Alta</span><div class="ciclo-nota">Em saco de cera (ovisaco). Azadiractina reduz viabilidade dos ovos</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-alta">🟢</div><div class="ciclo-nome">Crawler (N1)</div><div class="ciclo-dias">2–5 dias</div><span class="ciclo-ef ce-alta">Neem: Alta</span><div class="ciclo-nota">Único estágio móvel e sem cera — máxima vulnerabilidade ao neem</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-media">🟡</div><div class="ciclo-nome">Ninfa 2º</div><div class="ciclo-dias">8–12 dias</div><span class="ciclo-ef ce-media">Neem: Média</span><div class="ciclo-nota">Começa a secretar cera — eficácia reduz progressivamente</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-baixa">🟠</div><div class="ciclo-nome">Ninfa 3º (fêm.)</div><div class="ciclo-dias">10–15 dias</div><span class="ciclo-ef ce-baixa">Neem: Baixa</span><div class="ciclo-nota">Cera espessa consolidada — acesso do neem muito limitado</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-baixa">⚫</div><div class="ciclo-nome">Pré-adulta</div><div class="ciclo-dias">5–8 dias</div><span class="ciclo-ef ce-baixa">Neem: Baixa</span><div class="ciclo-nota">Sem alimentação. Sem resposta relevante ao neem</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-media">🦋</div><div class="ciclo-nome">Adulta</div><div class="ciclo-dias">30–60 dias</div><span class="ciclo-ef ce-media">Neem: Média</span><div class="ciclo-nota">Óleo de neem dissolve parcialmente a cera + deterrência de oviposição</div></div>
+</div></div>
+              <div class="ciclo-legenda">
+                <div class="cl-item"><div class="cl-dot cl-dot-alta"></div><span><strong>Alta</strong> — janela preventiva principal</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-media"></div><span><strong>Média</strong> — manter para conter dano</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-baixa"></div><span><strong>Baixa</strong> — sem resposta relevante</span></div>
+              </div>
+              <div class="tip-box" style="margin-top:.75rem"><strong>A janela eficaz é o crawler.</strong> O 1º instar (crawler) é o único estágio completamente exposto — sem cera, com pernas, dispersando-se pela planta. Após fixar e começar a secretar cera, cada instar reduz a eficácia do neem. Detectar o crawler exige lupa — mas é o investimento que garante o controle.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-risco">4</span>
+              <div><div class="sec-title">Danos e Impacto Econômico</div><div class="sec-subtitle">Prejuízos diretos e indiretos</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="danos-grid">
+                <div class="dano-col"><div class="dano-col-title"><span>&#127807;</span> Danos Diretos</div><ul class="dano-list"><li>Sucção de seiva do floema causando murchamento e queda de frutos</li>
+<li>Honeydew → fumagina negra que bloqueia a fotossíntese</li>
+<li>Deformação e desvalorização de frutos em citros e uva</li>
+<li>Morte de ramos jovens em infestações severas</li>
+</ul></div>
+                <div class="dano-col"><div class="dano-col-title"><span>&#9888;&#65039;</span> Danos Indiretos</div><ul class="dano-list"><li>Transmissão de vírus do enrolamento foliar da videira (GLRaV)</li>
+<li>Transmissão de fitoplasmas em alguns hospedeiros</li>
+<li>Abertura de feridas que facilitam entrada de fungos</li>
+<li>Redução da qualidade pós-colheita mesmo em frutos aparentemente sadios</li>
+</ul></div>
+              </div>
+              <div class="dano-alerta"><strong>🟡 Atenção em cultivos protegidos e irrigados:</strong> cochonilhas prosperam em ambientes sem chuva e com alta fertilidade nitrogenada — condições comuns em estufas e lavouras irrigadas. O controle biológico com <em>Cryptolaemus montrouzieri</em> (joaninha predadora) é altamente eficaz e deve ser preservado pelo uso correto do neem.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">5</span>
+              <div><div class="sec-title">Como o Neem Controla</div><div class="sec-subtitle">Mecanismos de ação da azadiractina nesta praga</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="mec-grid"><div class="mec-card"><div class="mec-icon">🔬</div><div class="mec-title">Ação sobre crawlers</div><div class="mec-text">Ninfas de 1º instar sem cera protetora absorvem a azadiractina diretamente — a inibição de ecdisona impede a progressão para o 2º instar e a formação da capa cerosa. Morrendo antes de se fixar.</div></div>
+<div class="mec-card"><div class="mec-icon">🛢️</div><div class="mec-title">Óleo dissolve a cera</div><div class="mec-text">O óleo de neem emulsificado dissolve parcialmente a cera protetora das adultas, aumentando o acesso da azadiractina ao corpo do inseto. Por isso, combinar extrato + óleo de neem é mais eficaz que usar apenas o extrato.</div></div>
+<div class="mec-card"><div class="mec-icon">🥚</div><div class="mec-title">Antioviposição</div><div class="mec-text">Fêmeas em contato com plantas tratadas reduzem a postura de ovos. Isso limita o tamanho da próxima geração de crawlers — o estágio mais vulnerável.</div></div>
+</div>
+              <div class="selet-box" style="margin-top:.75rem">
+                <span class="selet-icon">&#128029;</span>
+                <div><div class="selet-title">Preserva Cryptolaemus montrouzieri — o predador natural mais eficaz</div><div class="selet-text"><em>Cryptolaemus montrouzieri</em> (joaninha australiana) é o principal inimigo natural da cochonilha farinosa — suas larvas são especialmente eficazes, consumindo ovos e ninfas. O neem, aplicado corretamente, não elimina esse aliado. Inseticidas de amplo espectro como organofosforados e piretroides destroem as populações de <em>Cryptolaemus</em>, criando picos de reinfestação piores que a infestação original.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-ambar">6</span>
+              <div><div class="sec-title">Protocolo por Cultura</div><div class="sec-subtitle">Dosagem, frequência e observações</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="proto-intro">Usar sempre a combinação: <strong>extrato de neem 5 mL/L + óleo de neem emulsificável 3 mL/L</strong> na mesma calda. O óleo dissolve a cera, o extrato age hormonalmente. Adicionar <strong>espalhante adesivo 0,5 mL/L</strong>. Em colônias estabelecidas, fazer escovação mecânica com escova macia antes da aplicação.</div>
+              <div class="proto-table-wrap">
+                <table class="proto-table">
+                  <thead><tr><th>Cultura</th><th>Dosagem</th><th>Frequência</th><th>Eficácia</th><th>Observação</th></tr></thead>
+                  <tbody><tr><td><a href="/culturas/citros/">🍊 Citros</a></td><td>5+3 mL/L</td><td>10 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Escovação dos ramos antes da aplicação. Controlar formigas.</td></tr>
+<tr><td><a href="/culturas/cafe/">☕ Café</a></td><td>5+3 mL/L</td><td>14 dias</td><td><span class="ef-badge ef-alta">Alta</span></td><td class="proto-obs">Atenção ao período de granação — maior pressão.</td></tr>
+<tr><td><a href="/culturas/uva/">🍇 Uva</a></td><td>5+3 mL/L</td><td>14 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Transmite vírus do enrolamento. Liberar Cryptolaemus junto.</td></tr>
+<tr><td><a href="/culturas/mandioca/">🌾 Mandioca</a></td><td>4 mL/L</td><td>14 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Ramificações e pecíolos — inspecionar mensalmente.</td></tr>
+<tr><td><a href="/culturas/abacaxi/">🍍 Abacaxi</a></td><td>4 mL/L</td><td>14 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Base das folhas e fruto — zona de maior concentração.</td></tr>
+<tr><td><a href="/culturas/ornamentais/">🌸 Ornamentais</a></td><td>4 mL/L</td><td>7 dias</td><td><span class="ef-badge ef-alta">Alta</span></td><td class="proto-obs">Crawlers mais acessíveis — controle precoce muito eficaz.</td></tr>
+</tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec"><div class="sec-head"><span class="sec-num sn-verde">7</span><div><div class="sec-title">Boas Práticas de Aplicação</div><div class="sec-subtitle">O que faz a diferença na eficácia do programa</div></div></div><div class="sec-body"><div class="bp-grid"><div class="bp-card"><div class="bp-icon">&#9200;</div><div class="bp-title">Horário certo</div><div class="bp-text">Final da tarde (16h–18h) ou início da manhã (6h–8h). A azadiractina degrada em até 6h de luz UV direta.</div></div><div class="bp-card"><div class="bp-icon">&#127811;</div><div class="bp-title">Cobertura completa</div><div class="bp-text">Cobrir tanto a face superior quanto a inferior das folhas — e brotos apicais quando pertinente. Cada praga tem um microhabitat preferido na planta.</div></div><div class="bp-card"><div class="bp-icon">&#129380;</div><div class="bp-title">Espalhante adesivo</div><div class="bp-text">Sempre 0,5 mL/L. Superfícies cerosas e tecidos jovens repelem caldas sem surfactante.</div></div><div class="bp-card"><div class="bp-icon">&#128197;</div><div class="bp-title">Preventivo, não curativo</div><div class="bp-text">O neem não reverte danos já causados. Age impedindo novos danos — aplicação antes dos primeiros sintomas é sempre mais eficaz.</div></div><div class="bp-card"><div class="bp-icon">&#128260;</div><div class="bp-title">Alterne produtos</div><div class="bp-text">A cada 3 aplicações de neem, 1 de sabão potássico (1%). Sinergismo e prevenção de adaptação comportamental.</div></div><div class="bp-card"><div class="bp-icon">&#128029;</div><div class="bp-title">Preserve os aliados</div><div class="bp-text">Aplique fora do horário de atividade dos principais inimigos naturais de cada praga — parasitóides, predadores e polinizadores.</div></div></div></div></div>
+          <div class="pq-sec"><div class="pq-head"><h2>Por que escolher o Neem?</h2><p>6 razões que valem para qualquer praga e qualquer cultura</p></div><div class="pq-grid"><div class="pq-card"><div class="pq-icon">&#128260;</div><div class="pq-title">Sem resistência</div><div class="pq-text">Mais de 40 anos de uso sem relatos documentados. Age por múltiplos mecanismos simultâneos.</div></div><div class="pq-card"><div class="pq-icon">&#128029;</div><div class="pq-title">Seletivo</div><div class="pq-text">Preserva polinizadores, parasitóides e predadores naturais quando aplicado corretamente.</div></div><div class="pq-card"><div class="pq-icon">&#128737;</div><div class="pq-title">Seguro</div><div class="pq-text">Baixa toxicidade para mamíferos. Sem carência relevante. EPI simplificado.</div></div><div class="pq-card"><div class="pq-icon">&#9989;</div><div class="pq-title">Aceito no orgânico</div><div class="pq-text">Aprovado pelo MAPA para produção orgânica certificada. Não compromete a certificação.</div></div><div class="pq-card"><div class="pq-icon">&#128200;</div><div class="pq-title">Tendência regulatória</div><div class="pq-text">Restrições crescentes a neonicotinóides no Brasil e Europa. O neem é a alternativa regulamentada.</div></div><div class="pq-card"><div class="pq-icon">&#128279;</div><div class="pq-title">Compatível com MIP</div><div class="pq-text">Integra com controle biológico, armadilhas e feromônios. Pilar do Manejo Integrado de Pragas.</div></div></div></div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">9</span>
+              <div><div class="sec-title">Curiosidades</div><div class="sec-subtitle">O que poucos sabem sobre cochonilha</div></div>
+            </div>
+            <div class="sec-body"><div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">1</span><span class="acc-q">A cera é feita de compostos similares à queratina</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>As escamas cerosas das cochonilhas são secretadas por glândulas tegumentares especializadas, produzindo cera de composição similar à queratina animal. O óleo de neem emulsificável, por ser um solvente lipídico, dissolve parcialmente essa barreira física — razão pela qual a combinação óleo + extrato aquoso é significativamente mais eficaz do que o extrato aquoso isolado.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">2</span><span class="acc-q">Machos de cochonilha existem — mas são raros e alados</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>Na maioria das espécies de cochonilha farinosa, machos são raros e, quando existem, são alados e de vida curtíssima (1–2 dias) — sem aparelho bucal funcional, voam apenas para fertilizar as fêmeas. As fêmeas dominam o ciclo e se reproduzem em grande parte por partenogênese (sem macho) em regiões tropicais.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">3</span><span class="acc-q">Formigas como guarda-costas profissionais</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>A relação entre formigas e cochonilhas é tão especializada que formigas afastam ativamente predadores naturais como o <em>Cryptolaemus montrouzieri</em>. Estudos mostram que lavouras com controle eficaz de formigas têm infestações de cochonilha de 60–70% menores, mesmo sem aplicação de inseticidas — apenas pela restauração do controle biológico natural.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">4</span><span class="acc-q">Cochonilha de São José vs. cochonilha farinosa — dois grupos distintos</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>Existem dois grandes grupos de cochonilha no Brasil: as de carapaça dura (Diaspididae, como a cochonilha de São José) e as farinosas (Pseudococcidae, como Planococcus e Pseudococcus). O neem é mais eficaz nas farinosas — a carapaça quitinosa dura das diaspidídeas oferece proteção adicional. Para distinguir: espremer a cochonilha — líquido avermelhado = diaspidídea; esbranquiçado = pseudococcídea.</p></div></div>
+</div>
+          </div>
+
+          <div class="cta-box">
+            <h3>Precisa de neem para controle de Cochonilha?</h3>
+            <p>Conectamos você a fabricantes e distribuidores validados com os melhores produtos do mercado.</p>
+            <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+              <a href="/cotacao/" class="btn btn-primary">&#128176; Solicitar Cotação</a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-ghost" target="_blank" rel="noopener noreferrer">&#128241; Falar no WhatsApp</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="sidebar" aria-label="Informações relacionadas">
+          <div class="sidebar-alerta-medio">
+            <h5>🟡 Risco Médio Praga de risco médio</h5>
+            <p>Inspecione ramos e frutos semanalmente. Ao detectar os primeiros crawlers ou colônias jovens, aplique imediatamente a combinação extrato + óleo de neem.</p>
+          </div>
+          <div class="sidebar-widget">
+            <h4>&#128506;&#65039; Navegar entre pragas</h4>
+            <div class="nav-pragas"><a href="/pragas/" class="nav-praga-link">← Todas as pragas</a>
+<a href="/pragas/pulgao/" class="nav-praga-link">🐝 Pulgão →</a>
+<a href="/pragas/mosca-branca/" class="nav-praga-link">🦟 Mosca Branca →</a>
+<a href="/pragas/acaro-rajado/" class="nav-praga-link">🕷️ Ácaro-Rajado →</a>
+</div>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128176; Precisa de neem?</h4>
+            <p>Solicite cotação com nossos parceiros validados.</p>
+            <a href="/cotacao/" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">Solicitar Cotação</a>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128241; Dúvidas?</h4>
+            <p>Fale com um especialista pelo WhatsApp.</p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center">Chamar no WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="logo" aria-label="Portal do Neem"><span class="logo-icon" aria-hidden="true">&#127807;</span><span class="logo-text">Portal do <strong>Neem</strong></span></a><p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.<br>Do dono de horta à grande propriedade rural.</p><p style="margin-top:.5rem"><a href="https://wa.me/5511999999999" style="color:rgba(255,255,255,.45);font-size:.8rem">&#128241; WhatsApp: (11) 99999-9999</a></p></div><div class="footer-col"><h4>Aprenda</h4><a href="/o-que-e-o-neem/">O que é o Neem</a><a href="/como-aplicar/">Como Aplicar</a><a href="/pragas/">Controle por Praga</a><a href="/culturas/">Por Cultura</a><a href="/neem-vs-quimicos/">Neem vs Químicos</a><a href="/blog/">Blog &amp; Artigos</a></div><div class="footer-col"><h4>Pragas</h4><a href="/pragas/mosca-branca/">Mosca Branca</a><a href="/pragas/pulgao/">Pulgão</a><a href="/pragas/tripes/">Tripes</a><a href="/pragas/cochonilha/">Cochonilha</a><a href="/pragas/acaro-branco/">Ácaro Branco</a><a href="/pragas/broca-cafe/">Broca do Café</a></div><div class="footer-col"><h4>Portal</h4><a href="/faq/">Perguntas Frequentes</a><a href="/contato/">Contato</a><a href="/seja-parceiro/">Seja Parceiro</a><a href="/sobre/">Sobre o Portal</a><a href="/privacidade/">Política de Privacidade</a></div></div><div class="footer-bottom"><p>&copy; 2026 Portal do Neem &mdash; Todos os direitos reservados.</p><div class="footer-seal"><span>&#127807;</span> Conteúdo orgânico, sem agrotóxicos na informação</div></div></div></footer>
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>
+  function toggleMenu(e){var n=document.getElementById("nav-menu"),t=n.classList.toggle("open");e.setAttribute("aria-expanded",t);e.setAttribute("aria-label",t?"Fechar menu":"Abrir menu");document.body.style.overflow=t?"hidden":"";}
+  document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("#nav-menu a").forEach(function(e){e.addEventListener("click",function(){var n=document.getElementById("nav-menu"),t=document.querySelector(".menu-toggle");if(n.classList.contains("open")){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.setAttribute("aria-label","Abrir menu");document.body.style.overflow="";}});});});
+  function toggleAcc(btn){var p=btn.nextElementSibling,x=btn.getAttribute("aria-expanded")==="true";btn.setAttribute("aria-expanded",!x);p.classList.toggle("open",!x);}
+</script>
+</body>
+</html>
