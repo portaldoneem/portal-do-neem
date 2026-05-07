@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lagarta Falsa-Medideira — Identificação, Danos e Controle com Neem | Portal do Neem</title>
+  <meta name="description" content="Guia completo sobre a Lagarta Falsa-Medideira (Chrysodeixis includens): identificação pelo modo de andar, ciclo de vida e protocolo de controle com neem em soja e algodão.">
+  <meta name="author" content="Portal do Neem">
+  <link rel="canonical" href="https://portaldoneem.com.br/pragas/falsa-medideira/">
+  <meta property="og:title" content="Lagarta Falsa-Medideira — Controle com Neem">
+  <meta property="og:description" content="Guia completo sobre a Lagarta Falsa-Medideira (Chrysodeixis includens): identificação pelo modo de andar, ciclo de vida e protocolo de controle com neem em soja e algodão.">
+  <meta property="og:url" content="https://portaldoneem.com.br/pragas/falsa-medideira/">
+  <meta property="og:site_name" content="Portal do Neem">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://portaldoneem.com.br/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .page-content{min-width:0;}.sec{min-width:0;}
+    .page-header{background:linear-gradient(135deg,var(--musgo-900) 0%,#0d2e1a 100%);padding:40px 0 48px;position:relative;overflow:hidden;}
+    .page-header::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(74,140,92,.18) 0%,transparent 70%);}
+    .page-header .container{position:relative;z-index:1;}
+    .hero-inner{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center;margin-top:20px;}
+    .hero-text{min-width:0;}
+    .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+    .badge-risco-alto{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(200,40,40,.22);color:#ffaaaa;border:1px solid rgba(200,40,40,.3);}
+    .badge-risco-medio{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(180,120,8,.22);color:#f5d08a;border:1px solid rgba(180,120,8,.3);}
+    .badge-ordem{display:inline-flex;align-items:center;gap:5px;padding:3px 11px;border-radius:20px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);}
+    .page-header h1{font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;line-height:1.1;margin-bottom:.2rem;}
+    .hero-cientifico{font-family:var(--font-heading);font-style:italic;font-size:.9rem;color:var(--musgo-300);margin-bottom:1rem;}
+    .hero-lead{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:1.5rem;}
+    .hero-stats{display:flex;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden;}
+    .hero-stat{flex:1;text-align:center;padding:11px 10px;border-right:1px solid rgba(255,255,255,.1);}
+    .hero-stat:last-child{border-right:none;}
+    .hs-val{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:#e8a824;line-height:1;margin-bottom:3px;}
+    .hs-lbl{font-size:.62rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em;}
+    .hero-img-wrap{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 32px rgba(0,0,0,.45);}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:none;}
+    .hero-img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,rgba(26,58,42,.9) 0%,rgba(13,46,26,.95) 100%);border:2px dashed rgba(141,184,122,.3);}
+    .hero-img-ph-icon{font-size:3rem;opacity:.6;}
+    .hero-img-ph-label{font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.05em;}
+    .sec{background:var(--color-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);overflow:hidden;margin-bottom:1.25rem;}
+    .sec-head{padding:.9rem 1.2rem;border-bottom:1px solid var(--color-border-light);display:flex;align-items:center;gap:.6rem;}
+    .sec-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0;}
+    .sn-verde{background:var(--musgo-100);color:var(--musgo-700);}
+    .sn-ambar{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .sn-risco{background:#fff4f4;color:#8b1a1a;}
+    .sec-title{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--terra-900);}
+    .sec-subtitle{font-size:.75rem;color:var(--grafite);margin-top:1px;}
+    .sec-body{padding:1.1rem 1.2rem 1.3rem;}
+    .fi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.6rem;margin-bottom:1.1rem;}
+    .fi-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.75rem .85rem;}
+    .fi-l{font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grafite);margin-bottom:.25rem;}
+    .fi-v{font-size:.82rem;font-weight:600;color:var(--terra-900);line-height:1.4;}
+    .culturas-pill-label{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--grafite);margin-bottom:.5rem;}
+    .culturas-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
+    .cultura-pill{display:inline-flex;align-items:center;gap:5px;padding:.25rem .7rem;border-radius:20px;font-size:.75rem;font-weight:600;border:1.5px solid;text-decoration:none;transition:transform .12s;}
+    .cultura-pill:hover{transform:translateY(-1px);text-decoration:none;}
+    .cp-alta{background:var(--musgo-100);color:var(--musgo-700);border-color:var(--musgo-300);}
+    .cp-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);border-color:#f5cc6a;}
+    .cp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+    .cp-alta .cp-dot{background:var(--musgo-500);}
+    .cp-media .cp-dot{background:#e8a824;}
+    .id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem;}
+    .id-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .id-icon{font-size:1.4rem;margin-bottom:.4rem;}
+    .id-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.4rem;}
+    .id-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .sintomas-list{list-style:none;}
+    .sintomas-list li{display:flex;gap:7px;align-items:flex-start;font-size:.82rem;color:var(--grafite);padding:5px 0;border-bottom:1px solid var(--color-border-light);line-height:1.55;}
+    .sintomas-list li:last-child{border-bottom:none;}
+    .sintomas-list li::before{content:'⚠';font-size:.75rem;color:#e8a824;flex-shrink:0;margin-top:2px;}
+    .tip-box{background:var(--ambar-100,#fdf2d4);border-left:3px solid #e8a824;border-radius:0 var(--radius) var(--radius) 0;padding:.65rem .9rem;font-size:.81rem;color:var(--ambar-800);line-height:1.6;margin-top:.9rem;}
+    .tip-box strong{color:var(--terra-900);}
+    .mon-divider{display:flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--musgo-700);margin:1.1rem 0 .6rem;}
+    .mon-divider::before,.mon-divider::after{content:'';flex:1;height:1px;background:var(--color-border-light);}
+    .mon-intro{font-size:.82rem;color:var(--grafite);line-height:1.75;margin-bottom:.75rem;}
+    .mon-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.75rem;}
+    .mon-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .mon-card-icon{font-size:1.2rem;margin-bottom:.35rem;}
+    .mon-card-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.3rem;}
+    .mon-card-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .ciclo-wrap{overflow-x:auto;padding-bottom:6px;}
+    .ciclo-track{display:flex;min-width:580px;position:relative;}
+    .ciclo-track::before{content:'';position:absolute;top:30px;left:0;right:0;height:2px;background:var(--color-border-light);z-index:0;}
+    .ciclo-estagio{flex:1;text-align:center;padding:0 6px;position:relative;z-index:1;}
+    .ciclo-bubble{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;border:2px solid;position:relative;z-index:2;font-size:1.2rem;}
+    .cb-alta{background:var(--musgo-100);border-color:var(--musgo-300);}
+    .cb-media{background:var(--ambar-100,#fdf2d4);border-color:#f5cc6a;}
+    .cb-baixa{background:#f5f5f5;border-color:#ddd;}
+    .ciclo-nome{font-size:.7rem;font-weight:700;color:var(--terra-900);margin-bottom:2px;}
+    .ciclo-dias{font-size:.6rem;color:var(--grafite);margin-bottom:4px;}
+    .ciclo-ef{display:inline-block;padding:1px 7px;border-radius:8px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;}
+    .ce-alta{background:var(--musgo-100);color:var(--musgo-700);}
+    .ce-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .ce-baixa{background:#eee;color:#888;}
+    .ciclo-nota{font-size:.7rem;color:var(--grafite);margin-top:5px;line-height:1.5;}
+    .ciclo-legenda{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1rem;padding:.65rem .85rem;background:var(--color-bg,#faf6ee);border-radius:var(--radius);font-size:.75rem;}
+    .cl-item{display:flex;align-items:center;gap:5px;}
+    .cl-dot{width:9px;height:9px;border-radius:50%;}
+    .cl-dot-alta{background:var(--musgo-500);}
+    .cl-dot-media{background:#e8a824;}
+    .cl-dot-baixa{background:#bbb;}
+    .danos-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1rem;}
+    .dano-col{background:var(--color-bg,#faf6ee);border-radius:var(--radius);padding:.9rem;}
+    .dano-col-title{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--grafite);margin-bottom:.65rem;display:flex;align-items:center;gap:6px;}
+    .dano-list{list-style:none;}
+    .dano-list li{font-size:.81rem;color:var(--grafite);padding:4px 0;border-bottom:1px solid var(--color-border-light);line-height:1.55;display:flex;gap:6px;align-items:flex-start;}
+    .dano-list li:last-child{border-bottom:none;}
+    .dano-list li::before{content:'–';color:var(--musgo-300);flex-shrink:0;}
+    .dano-alerta{background:#fff9e6;border:1px solid #f5d06a;border-radius:var(--radius);padding:.75rem .9rem;font-size:.81rem;color:#7a5500;line-height:1.65;}
+    .mec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem;}
+    .mec-card{background:var(--musgo-100);border:1px solid var(--musgo-300,#8db87a);border-radius:var(--radius);padding:1rem;}
+    .mec-icon{font-size:1.4rem;margin-bottom:.5rem;}
+    .mec-title{font-size:.84rem;font-weight:700;color:var(--musgo-900);margin-bottom:.35rem;}
+    .mec-text{font-size:.78rem;color:var(--grafite);line-height:1.65;}
+    .selet-box{background:var(--musgo-100);border:1.5px solid var(--musgo-300,#8db87a);border-radius:var(--radius);padding:.85rem 1rem;display:flex;gap:.75rem;align-items:flex-start;}
+    .selet-icon{font-size:1.5rem;flex-shrink:0;}
+    .selet-title{font-size:.82rem;font-weight:700;color:var(--musgo-700);margin-bottom:.25rem;}
+    .selet-text{font-size:.81rem;color:var(--grafite);line-height:1.65;}
+    .proto-intro{background:var(--ambar-100,#fdf2d4);border-radius:var(--radius);padding:.75rem .9rem;margin-bottom:1rem;font-size:.81rem;color:var(--ambar-800);line-height:1.65;}
+    .proto-intro strong{color:var(--terra-900);}
+    .proto-table-wrap{overflow-x:auto;}
+    .proto-table{width:100%;border-collapse:collapse;font-size:.8rem;}
+    .proto-table th{text-align:left;padding:.5rem .75rem;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grafite);background:var(--color-bg,#faf6ee);border-bottom:2px solid var(--color-border-light);}
+    .proto-table td{padding:.55rem .75rem;border-bottom:1px solid var(--color-border-light);vertical-align:top;}
+    .proto-table tr:last-child td{border-bottom:none;}
+    .proto-table tr:hover td{background:var(--color-bg,#faf6ee);}
+    .ef-badge{display:inline-block;padding:1px 8px;border-radius:8px;font-size:.72rem;font-weight:600;}
+    .ef-alta{background:var(--musgo-100);color:var(--musgo-700);}
+    .ef-media{background:var(--ambar-100,#fdf2d4);color:var(--ambar-800);}
+    .proto-obs{font-size:.72rem;color:var(--grafite);line-height:1.5;}
+    .bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;}
+    .bp-card{background:var(--color-bg,#faf6ee);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:.85rem;}
+    .bp-icon{font-size:1.2rem;margin-bottom:.4rem;}
+    .bp-title{font-size:.82rem;font-weight:700;color:var(--terra-900);margin-bottom:.25rem;}
+    .bp-text{font-size:.76rem;color:var(--grafite);line-height:1.6;}
+    .pq-sec{background:var(--musgo-900);border-radius:var(--radius);padding:1.5rem 1.2rem;margin-bottom:1.25rem;}
+    .pq-head{text-align:center;margin-bottom:1.1rem;}
+    .pq-head h2{font-size:1.1rem;color:#fff;margin-bottom:.3rem;}
+    .pq-head p{font-size:.78rem;color:rgba(255,255,255,.55);}
+    .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;}
+    .pq-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:.85rem;}
+    .pq-icon{font-size:1.2rem;margin-bottom:.4rem;}
+    .pq-title{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.25rem;}
+    .pq-text{font-size:.75rem;color:rgba(255,255,255,.6);line-height:1.6;}
+    .acc-item{border-bottom:1px solid var(--color-border-light);}
+    .acc-item:last-child{border-bottom:none;}
+    .acc-btn{width:100%;background:none;border:none;display:flex;align-items:center;gap:.65rem;padding:.85rem 0;cursor:pointer;text-align:left;}
+    .acc-num{width:26px;height:26px;border-radius:50%;background:var(--musgo-100);color:var(--musgo-700);font-size:.75rem;font-weight:700;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+    .acc-q{font-size:.86rem;font-weight:600;color:var(--terra-900);flex:1;}
+    .acc-arrow{font-size:.75rem;color:var(--grafite);transition:transform .2s;}
+    .acc-btn[aria-expanded="true"] .acc-arrow{transform:rotate(180deg);}
+    .acc-panel{display:none;padding:0 0 .85rem 2.2rem;}
+    .acc-panel.open{display:block;}
+    .acc-panel p{font-size:.84rem;color:var(--grafite);line-height:1.75;}
+    .sidebar-alerta-alto{background:#fff4f4;border:1px solid #f5c0c0;border-radius:var(--radius);padding:.85rem 1rem;margin-bottom:.85rem;}
+    .sidebar-alerta-alto h5{font-size:.78rem;font-weight:700;color:#8b1a1a;margin-bottom:.3rem;}
+    .sidebar-alerta-alto p{font-size:.78rem;color:#a03030;line-height:1.6;}
+    .sidebar-alerta-medio{background:#fff9e6;border:1px solid #f5d06a;border-radius:var(--radius);padding:.85rem 1rem;margin-bottom:.85rem;}
+    .sidebar-alerta-medio h5{font-size:.78rem;font-weight:700;color:#7a5500;margin-bottom:.3rem;}
+    .sidebar-alerta-medio p{font-size:.78rem;color:#8a6200;line-height:1.6;}
+    .nav-pragas{display:flex;flex-direction:column;gap:.3rem;}
+    .nav-praga-link{display:flex;align-items:center;gap:.5rem;padding:.5rem .65rem;border-radius:var(--radius-sm,4px);background:var(--color-bg,#faf6ee);color:var(--musgo-700);font-size:.8rem;font-weight:600;border:1px solid var(--color-border-light);text-decoration:none;transition:background .15s;}
+    .nav-praga-link:hover{background:var(--musgo-100);text-decoration:none;}
+    .nav-praga-link .dir{margin-left:auto;color:var(--grafite);font-size:.65rem;}
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr;gap:1rem;}
+      .hero-img-wrap{aspect-ratio:16/8;}
+      .mec-grid{grid-template-columns:1fr 1fr;}
+      .pq-grid{grid-template-columns:1fr 1fr;}
+      .danos-grid{grid-template-columns:1fr;}
+      .mon-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width:600px){
+      html{overflow-x:hidden;}
+      .page-content,.sec,.sec-head,.sec-body{max-width:100%;box-sizing:border-box;}
+      .sec{overflow:clip;}
+      .page-header{padding:24px 0 30px;}
+      .sec-head{padding:.7rem .85rem;}
+      .sec-body{padding:.8rem .85rem 1rem;}
+      .hero-img-wrap{aspect-ratio:16/9;max-height:200px;}
+      .hero-lead{font-size:.85rem;margin-bottom:1rem;}
+      .hero-stats{flex-wrap:wrap;}
+      .hero-stat{flex:1 1 50%;min-width:0;}
+      .hero-stat:nth-child(2){border-right:none;}
+      .hero-stat:nth-child(3),.hero-stat:nth-child(4){border-top:1px solid rgba(255,255,255,.1);}
+      .hero-stat:nth-child(4){border-right:none;}
+      .fi-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.4rem;}
+      .fi-card{padding:.55rem .65rem;}
+      .cultura-pill{font-size:.7rem;padding:.2rem .55rem;}
+      .id-grid{grid-template-columns:1fr;}
+      .mon-grid{grid-template-columns:1fr;}
+      .ciclo-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .ciclo-bubble{width:46px;height:46px;font-size:.9rem;}
+      .ciclo-estagio{padding:0 4px;}
+      .ciclo-nome{font-size:.63rem;}
+      .ciclo-dias{font-size:.58rem;}
+      .ciclo-ef{font-size:.55rem;padding:1px 5px;}
+      .ciclo-nota{display:none;}
+      .ciclo-legenda{font-size:.72rem;gap:.65rem;}
+      .danos-grid{grid-template-columns:1fr;}
+      .mec-grid{grid-template-columns:1fr;}
+      .proto-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .proto-table th:last-child,.proto-table td:last-child{display:none;}
+      .proto-table{font-size:.76rem;min-width:340px;}
+      .proto-table th,.proto-table td{padding:.4rem .5rem;white-space:nowrap;}
+      .proto-table td:first-child{white-space:normal;min-width:90px;}
+      .bp-grid{grid-template-columns:1fr 1fr;gap:.5rem;}
+      .bp-card{padding:.75rem;}
+      .pq-sec{padding:1rem .85rem;}
+      .pq-grid{grid-template-columns:1fr 1fr;gap:.5rem;}
+      .pq-card{padding:.75rem;}
+      .acc-q{font-size:.82rem;}
+      .acc-panel{padding:0 0 .75rem 1.5rem;}
+    }
+    @media (max-width:390px){
+      .fi-grid{grid-template-columns:1fr 1fr;}
+      .bp-grid,.pq-grid{grid-template-columns:1fr;}
+      .hero-stat{flex:1 1 100%;border-right:none !important;}
+      .hero-stat:nth-child(n+2){border-top:1px solid rgba(255,255,255,.1);}
+    }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo" aria-label="Portal do Neem — página inicial">
+      <span class="logo-icon" aria-hidden="true">&#127807;</span>
+      <span class="logo-text">Portal do <strong>Neem</strong></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" aria-label="Menu principal">
+      <a href="/">Início</a><a href="/o-que-e-o-neem/">O que é o Neem</a>
+      <a href="/como-aplicar/">Como Aplicar</a><a href="/pragas/" aria-current="page">Pragas</a>
+      <a href="/culturas/">Culturas</a><a href="/parceiros/">Parceiros</a>
+      <a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/contato/">Contato</a>
+      <a href="/produto/" class="nav-cta">Adquira o Produto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Você está em">
+        <a href="/">Início</a><span aria-hidden="true">›</span>
+        <a href="/pragas/">Pragas</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Lagarta Falsa-Medideira</span>
+      </nav>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badges">
+            <span class="badge-risco-medio">🟡 Risco Médio</span>
+            <span class="badge-ordem">Lepidoptera · Noctuidae</span>
+          </div>
+          <h1>Lagarta Falsa-Medideira</h1>
+          <p class="hero-cientifico">Chrysodeixis includens / Rachiplusia nu</p>
+          <p class="hero-lead">Lagarta desfolhadora de soja e algodão que anda arqueando o corpo — movimento que deu o nome popular. A eficácia do neem é alta até o 3º instar (lagartas com até 1,5 cm), caindo drasticamente após esse ponto. Monitoramento precoce e ação rápida são o diferencial do controle.</p>
+          <div class="hero-stats"><div class="hero-stat"><div class="hs-val">Alta</div><div class="hs-lbl">eficácia até 1,5 cm</div></div>
+<div class="hero-stat"><div class="hs-val">25–35 d</div><div class="hs-lbl">ciclo completo</div></div>
+<div class="hero-stat"><div class="hs-val">5–7</div><div class="hs-lbl">gerações/ano</div></div>
+<div class="hero-stat"><div class="hs-val">Médio</div><div class="hs-lbl">risco em soja</div></div>
+</div>
+        </div>
+        <div class="hero-img-wrap">
+          <div class="hero-img-ph" id="hero-img-ph">
+            <span class="hero-img-ph-icon">&#128027;</span>
+            <span class="hero-img-ph-label">falsa-medideira.webp · 800 × 600 px</span>
+          </div>
+          <picture>
+            <source srcset="/pragas/img/falsa-medideira.webp" type="image/webp">
+            <img src="/pragas/img/falsa-medideira.jpg" alt="Lagarta Falsa-Medideira (Chrysodeixis includens / Rachiplusia nu)"
+                 style="display:none;width:100%;height:100%;object-fit:cover;object-position:center"
+                 onload="this.style.display='block';document.getElementById('hero-img-ph').style.display='none'"
+                 onerror="this.closest('picture').remove()">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="page-layout">
+        <article class="page-content">
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">1</span>
+              <div><div class="sec-title">Ficha Técnica</div><div class="sec-subtitle">Classificação e características biológicas</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="fi-grid"><div class="fi-card"><div class="fi-l">Ordem</div><div class="fi-v">Lepidoptera</div></div>
+<div class="fi-card"><div class="fi-l">Família</div><div class="fi-v">Noctuidae</div></div>
+<div class="fi-card"><div class="fi-l">Espécies no BR</div><div class="fi-v">Chrysodeixis includens (principal) · Rachiplusia nu</div></div>
+<div class="fi-card"><div class="fi-l">Tamanho lagarta</div><div class="fi-v">Até 3,5 cm (5º instar)</div></div>
+<div class="fi-card"><div class="fi-l">Modo de dano</div><div class="fi-v">Desfolhadora</div></div>
+<div class="fi-card"><div class="fi-l">Hospedeiros</div><div class="fi-v">Soja, algodão, feijão, tomate, ornamentais</div></div>
+<div class="fi-card"><div class="fi-l">Ciclo de vida</div><div class="fi-v">25–35 dias</div></div>
+<div class="fi-card"><div class="fi-l">Gerações/ano</div><div class="fi-v">5–7</div></div>
+<div class="fi-card"><div class="fi-l">Cond. favoráveis</div><div class="fi-v">25–30°C · seca relativa</div></div>
+<div class="fi-card"><div class="fi-l">Monitoramento</div><div class="fi-v">Pano de batida (1 m) + armadilha luminosa</div></div>
+<div class="fi-card"><div class="fi-l">Estágio crítico</div><div class="fi-v">Lagarta 1º a 3º instar — até 1,5 cm</div></div>
+<div class="fi-card"><div class="fi-l">Risco resistência</div><div class="fi-v">Baixo ao neem · Médio a diamidas</div></div>
+</div>
+              <div class="culturas-pill-label">Culturas afetadas e eficácia do neem</div>
+              <div class="culturas-pills"><a href="/culturas/soja/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Soja</a>
+<a href="/culturas/algodao/" class="cultura-pill cp-alta"><span class="cp-dot"></span>Algodão</a>
+<a href="/culturas/feijao/" class="cultura-pill cp-media"><span class="cp-dot"></span>Feijão</a>
+<a href="/culturas/tomate/" class="cultura-pill cp-media"><span class="cp-dot"></span>Tomate</a>
+<a href="/culturas/ornamentais/" class="cultura-pill cp-media"><span class="cp-dot"></span>Ornamentais</a>
+</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">2</span>
+              <div><div class="sec-title">Como Identificar</div><div class="sec-subtitle">Adultos, ninfas/larvas e sintomas na planta</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="id-grid"><div class="id-card"><div class="id-icon">🐛</div><div class="id-title">Lagarta</div><div class="id-text">Verde clara, com listras longitudinais brancas e 2 pares de pernas abdominais (em vez dos 4 pares das lagartas típicas). Anda arqueando o corpo — movimento característico que a distingue de outras espécies.</div></div>
+<div class="id-card"><div class="id-icon">🦋</div><div class="id-title">Adulto (mariposa)</div><div class="id-text">30–35 mm de envergadura, asas marrons com mancha prateada brilhante em forma de gota no centro — característica diagnóstica da espécie. Voo noturno.</div></div>
+<div class="id-card"><div class="id-icon">🌿</div><div class="id-title">Sintomas</div><div class="id-text">Desfolhamento a partir das folhas do terço médio da planta. Folhas com orifícios irregulares ou completamente consumidas, deixando apenas nervuras. Fezes escuras cilíndricas abaixo das plantas.</div></div>
+</div>
+              <ul class="sintomas-list"><li>Folhas com orifícios irregulares no terço médio da soja — início do desfolhamento</li>
+<li>Fezes cilíndricas escuras no solo abaixo das plantas — sinal de lagarta grande ativa</li>
+<li>Lagartas visíveis nas folhas ao sacudir o dossel — inspecionar ao amanhecer (mais ativas)</li>
+<li>Desfolhamento progredindo de baixo para cima — padrão característico da espécie</li>
+</ul>
+              <div class="tip-box"><strong>Como medir a eficácia do neem:</strong> o neem tem alta eficácia em lagartas de até <strong>1,5 cm</strong>. Lagartas maiores têm resposta progressivamente menor. Em campo, estimar o tamanho das lagartas encontradas no pano de batida — se mais de 30% já passaram de 1,5 cm, considerar produto alternativo ou combinação com Bt.</div>
+              <div class="mon-divider">Como monitorar a presença na lavoura</div>
+              <p class="mon-intro">O método padrão é o <strong>pano de batida</strong>: estender um pano de 1 m entre duas fileiras de soja e sacudir as plantas para contar as lagartas que caem. Realizar em 5 pontos distribuídos na lavoura. Para monitorar adultos, usar <strong>armadilha luminosa</strong> ou <strong>armadilha de feromônio</strong> (quando disponível).</p>
+              <div class="mon-grid"><div class="mon-card"><div class="mon-card-icon">📌</div><div class="mon-card-title">Pano de batida</div><div class="mon-card-text">Estender pano de 1 m entre 2 fileiras. Sacudir as plantas sobre o pano. Contar lagartas e estimar tamanho. Repetir em 5 pontos por talhão. O limiar de ação é 20 lagartas/m (pequenas) ou 10 lagartas/m (grandes).</div></div>
+<div class="mon-card"><div class="mon-card-icon">⚡</div><div class="mon-card-title">Quando aplicar o neem</div><div class="mon-card-text">Ao atingir o limiar de 20 lagartas pequenas por metro de pano de batida OU ao verificar que a maioria das lagartas tem menos de 1,5 cm. Não espere as lagartas crescerem — a janela eficaz fecha rápido.</div></div>
+</div>
+              <div class="tip-box"><strong>A mariposa tem mancha prateada — confirme antes de agir.</strong> Armadilhas luminosas capturam muitas espécies de noctuídeos. Confirme se a espécie dominante é realmente <em>Chrysodeixis includens</em> pela mancha prateada em gota nas asas — isso evita tratamentos desnecessários quando a população dominante é de outra espécie com menor impacto econômico.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">3</span>
+              <div><div class="sec-title">Ciclo de Vida</div><div class="sec-subtitle">Onde e quando o neem é mais eficaz em cada estágio</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="ciclo-wrap"><div class="ciclo-track"><div class="ciclo-estagio"><div class="ciclo-bubble cb-alta">🥚</div><div class="ciclo-nome">Ovo</div><div class="ciclo-dias">3–4 dias</div><span class="ciclo-ef ce-alta">Neem: Alta</span><div class="ciclo-nota">Massa de ovos esféricos na face superior das folhas. Azadiractina reduz eclosão</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-alta">🟢</div><div class="ciclo-nome">Lagarta 1º–2º</div><div class="ciclo-dias">4–5 dias</div><span class="ciclo-ef ce-alta">Neem: Alta</span><div class="ciclo-nota">Até 0,8 cm — raspagem superficial foliar. Máxima vulnerabilidade ao neem</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-alta">🟡</div><div class="ciclo-nome">Lagarta 3º</div><div class="ciclo-dias">3–4 dias</div><span class="ciclo-ef ce-alta">Neem: Alta</span><div class="ciclo-nota">Até 1,5 cm — janela de eficácia ainda alta. Limiar crítico de tamanho</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-baixa">🟠</div><div class="ciclo-nome">Lagarta 4º</div><div class="ciclo-dias">5–7 dias</div><span class="ciclo-ef ce-baixa">Neem: Baixa</span><div class="ciclo-nota">Até 2,5 cm — eficácia reduz drasticamente. Maior consumo foliar</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-baixa">⚫</div><div class="ciclo-nome">Lagarta 5º</div><div class="ciclo-dias">5–8 dias</div><span class="ciclo-ef ce-baixa">Neem: Baixa</span><div class="ciclo-nota">Até 3,5 cm — máximo dano. Neem praticamente ineficaz neste estágio</div></div>
+<div class="ciclo-estagio"><div class="ciclo-bubble cb-media">🦋</div><div class="ciclo-nome">Adulto</div><div class="ciclo-dias">10–15 dias</div><span class="ciclo-ef ce-media">Neem: Média</span><div class="ciclo-nota">Deterrência de oviposição — mariposas evitam plantas tratadas</div></div>
+</div></div>
+              <div class="ciclo-legenda">
+                <div class="cl-item"><div class="cl-dot cl-dot-alta"></div><span><strong>Alta</strong> — janela preventiva principal</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-media"></div><span><strong>Média</strong> — manter para conter dano</span></div>
+                <div class="cl-item"><div class="cl-dot cl-dot-baixa"></div><span><strong>Baixa</strong> — sem resposta relevante</span></div>
+              </div>
+              <div class="tip-box" style="margin-top:.75rem"><strong>1,5 cm é o divisor de águas.</strong> Abaixo desse tamanho, o neem tem alta eficácia. Acima, a cutícula mais espessa e o maior volume corporal reduzem significativamente o efeito. O pano de batida semanal serve precisamente para agir dentro dessa janela — não espere ver o dano para inspecionar.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-risco">4</span>
+              <div><div class="sec-title">Danos e Impacto Econômico</div><div class="sec-subtitle">Prejuízos diretos e indiretos</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="danos-grid">
+                <div class="dano-col"><div class="dano-col-title"><span>&#127807;</span> Danos Diretos</div><ul class="dano-list"><li>Desfolhamento que reduz a área fotossintética da soja</li>
+<li>Perdas de produtividade de 10–30% em surtos não controlados</li>
+<li>Desfolhamento acima de 30% na floração impacta diretamente a formação de vagens</li>
+<li>Lagartas grandes consomem folha inteira — apenas nervuras restam</li>
+</ul></div>
+                <div class="dano-col"><div class="dano-col-title"><span>&#9888;&#65039;</span> Danos Indiretos</div><ul class="dano-list"><li>Plantas desfolhadas têm menor tolerância a veranicos e estresse hídrico</li>
+<li>Abertura de feridas que facilitam entrada de fungos secundários</li>
+<li>Enfraquecimento geral que reduz a resposta a outros estresses no ciclo</li>
+</ul></div>
+              </div>
+              <div class="dano-alerta"><strong>🟡 Limiar de dano econômico:</strong> em soja, o limiar de ação é 20 lagartas pequenas (≤ 1,5 cm) por metro de pano de batida, ou 30% de desfolhamento na fase vegetativa e 15% na fase reprodutiva (floração/enchimento de grãos). Fora desses limiares, o controle pode não compensar economicamente.</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">5</span>
+              <div><div class="sec-title">Como o Neem Controla</div><div class="sec-subtitle">Mecanismos de ação da azadiractina nesta praga</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="mec-grid"><div class="mec-card"><div class="mec-icon">🔬</div><div class="mec-title">Inibição de muda (instares jovens)</div><div class="mec-text">Azadiractina bloqueia a ecdisona em lagartas de 1º a 3º instar (até 1,5 cm), impedindo a transição para o próximo instar. Lagartas pequenas morrem antes de atingir o tamanho de maior consumo foliar.</div></div>
+<div class="mec-card"><div class="mec-icon">🚫</div><div class="mec-title">Deterrência alimentar</div><div class="mec-text">Lagartas expostas ao neem reduzem o consumo foliar significativamente, mesmo quando não morrem imediatamente. Isso limita o dano enquanto o efeito hormonal se manifesta.</div></div>
+<div class="mec-card"><div class="mec-icon">🥚</div><div class="mec-title">Antioviposição</div><div class="mec-text">Mariposas adultas evitam depositar ovos em plantas tratadas com neem, reduzindo a densidade da próxima geração antes que ela comece a se alimentar.</div></div>
+</div>
+              <div class="selet-box" style="margin-top:.75rem">
+                <span class="selet-icon">&#128029;</span>
+                <div><div class="selet-title">Compatível com Bacillus thuringiensis (Bt) e parasitóides</div><div class="selet-text">O neem e o Bt (<em>Bacillus thuringiensis</em> var. <em>kurstaki</em>) têm mecanismos complementares: o neem age por inibição hormonal (contato), o Bt age por ingestão (proteínas Cry). Alternados, cobrem lagartas de diferentes tamanhos e evitam pressão de seleção para resistência. Parasitóides como <em>Meteorus laphygmae</em> e <em>Cotesia marginiventris</em> também são preservados com o uso correto do neem.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-ambar">6</span>
+              <div><div class="sec-title">Protocolo por Cultura</div><div class="sec-subtitle">Dosagem, frequência e observações</div></div>
+            </div>
+            <div class="sec-body">
+              <div class="proto-intro">Produto com 1.000 ppm de azadiractina: <strong>5 mL/L</strong>. Aplicar quando lagartas estiverem abaixo de 1,5 cm. Frequência de 7 dias. Combinar com Bt a cada 2 aplicações de neem para sinergismo. Adicionar espalhante adesivo (0,5 mL/L).</div>
+              <div class="proto-table-wrap">
+                <table class="proto-table">
+                  <thead><tr><th>Cultura</th><th>Dosagem</th><th>Frequência</th><th>Eficácia</th><th>Observação</th></tr></thead>
+                  <tbody><tr><td><a href="/culturas/soja/">🫘 Soja</a></td><td>5 mL/L</td><td>7 dias</td><td><span class="ef-badge ef-alta">Alta (1º-3º)</span></td><td class="proto-obs">Limiar: 20 lagartas pequenas/m de pano. Combinar com Bt.</td></tr>
+<tr><td><a href="/culturas/algodao/">🧶 Algodão</a></td><td>5 mL/L</td><td>7 dias</td><td><span class="ef-badge ef-alta">Alta (1º-3º)</span></td><td class="proto-obs">Monitorar com pano de batida semanal</td></tr>
+<tr><td><a href="/culturas/feijao/">🫘 Feijão</a></td><td>4 mL/L</td><td>7 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Fase vegetativa — menor pressão que em soja</td></tr>
+<tr><td><a href="/culturas/tomate/">🍅 Tomate</a></td><td>4 mL/L</td><td>10 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Monitorar com armadilha luminosa</td></tr>
+<tr><td><a href="/culturas/ornamentais/">🌸 Ornamentais</a></td><td>4 mL/L</td><td>7 dias</td><td><span class="ef-badge ef-media">Média</span></td><td class="proto-obs">Alto impacto estético — agir precocemente</td></tr>
+</tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec"><div class="sec-head"><span class="sec-num sn-verde">7</span><div><div class="sec-title">Boas Práticas de Aplicação</div><div class="sec-subtitle">O que faz a diferença na eficácia do programa</div></div></div><div class="sec-body"><div class="bp-grid"><div class="bp-card"><div class="bp-icon">&#9200;</div><div class="bp-title">Horário certo</div><div class="bp-text">Final da tarde (16h–18h) ou início da manhã (6h–8h). A azadiractina degrada em até 6h de luz UV direta.</div></div><div class="bp-card"><div class="bp-icon">&#127811;</div><div class="bp-title">Cobertura completa</div><div class="bp-text">Cobrir tanto a face superior quanto a inferior das folhas — e brotos apicais quando pertinente. Cada praga tem um microhabitat preferido na planta.</div></div><div class="bp-card"><div class="bp-icon">&#129380;</div><div class="bp-title">Espalhante adesivo</div><div class="bp-text">Sempre 0,5 mL/L. Superfícies cerosas e tecidos jovens repelem caldas sem surfactante.</div></div><div class="bp-card"><div class="bp-icon">&#128197;</div><div class="bp-title">Preventivo, não curativo</div><div class="bp-text">O neem não reverte danos já causados. Age impedindo novos danos — aplicação antes dos primeiros sintomas é sempre mais eficaz.</div></div><div class="bp-card"><div class="bp-icon">&#128260;</div><div class="bp-title">Alterne produtos</div><div class="bp-text">A cada 3 aplicações de neem, 1 de sabão potássico (1%). Sinergismo e prevenção de adaptação comportamental.</div></div><div class="bp-card"><div class="bp-icon">&#128029;</div><div class="bp-title">Preserve os aliados</div><div class="bp-text">Aplique fora do horário de atividade dos principais inimigos naturais de cada praga — parasitóides, predadores e polinizadores.</div></div></div></div></div>
+          <div class="pq-sec"><div class="pq-head"><h2>Por que escolher o Neem?</h2><p>6 razões que valem para qualquer praga e qualquer cultura</p></div><div class="pq-grid"><div class="pq-card"><div class="pq-icon">&#128260;</div><div class="pq-title">Sem resistência</div><div class="pq-text">Mais de 40 anos de uso sem relatos documentados. Age por múltiplos mecanismos simultâneos.</div></div><div class="pq-card"><div class="pq-icon">&#128029;</div><div class="pq-title">Seletivo</div><div class="pq-text">Preserva polinizadores, parasitóides e predadores naturais quando aplicado corretamente.</div></div><div class="pq-card"><div class="pq-icon">&#128737;</div><div class="pq-title">Seguro</div><div class="pq-text">Baixa toxicidade para mamíferos. Sem carência relevante. EPI simplificado.</div></div><div class="pq-card"><div class="pq-icon">&#9989;</div><div class="pq-title">Aceito no orgânico</div><div class="pq-text">Aprovado pelo MAPA para produção orgânica certificada. Não compromete a certificação.</div></div><div class="pq-card"><div class="pq-icon">&#128200;</div><div class="pq-title">Tendência regulatória</div><div class="pq-text">Restrições crescentes a neonicotinóides no Brasil e Europa. O neem é a alternativa regulamentada.</div></div><div class="pq-card"><div class="pq-icon">&#128279;</div><div class="pq-title">Compatível com MIP</div><div class="pq-text">Integra com controle biológico, armadilhas e feromônios. Pilar do Manejo Integrado de Pragas.</div></div></div></div>
+
+          <div class="sec">
+            <div class="sec-head"><span class="sec-num sn-verde">9</span>
+              <div><div class="sec-title">Curiosidades</div><div class="sec-subtitle">O que poucos sabem sobre lagarta falsa-medideira</div></div>
+            </div>
+            <div class="sec-body"><div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">1</span><span class="acc-q">O andar medidor — por que ela se move assim</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>A lagarta falsa-medideira tem apenas 2 pares de pernas abdominais (prolegs), em vez dos 4 pares das lagartas típicas. Para se locomover, ela fixa as pernas traseiras, arqueia o corpo formando um semicírculo, avança as pernas dianteiras e repete o movimento — exatamente como uma fita métrica sendo esticada. Esse movimento é o que deu o nome popular à praga.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">2</span><span class="acc-q">A mancha prateada que identifica a mariposa</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>A mariposa adulta de Chrysodeixis includens tem uma mancha prateada em forma de gota no centro das asas anteriores. Essa mancha é visível a olho nu e é o caráter diagnóstico mais rápido para identificar a espécie em campo — importante para diferenciar de outras mariposas da mesma família (Noctuidae) capturadas em armadilhas luminosas.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">3</span><span class="acc-q">Chrysodeixis includens resistente a diamidas no Brasil</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>Populações de C. includens com resistência confirmada a inseticidas diamidas (clorantraniliprole, flubendiamida) foram documentadas em lavouras de soja do Centro-Oeste e Nordeste do Brasil. Isso torna o neem, com mecanismo de ação completamente diferente, uma ferramenta estratégica de rotação dentro do MIP para preservar a eficácia das diamidas nas poucas situações em que são necessárias.</p></div></div>
+<div class="acc-item"><button class="acc-btn" aria-expanded="false" onclick="toggleAcc(this)"><span class="acc-num">4</span><span class="acc-q">Falsa-medideira vs. lagarta-da-soja — diferença importante</span><span class="acc-arrow">&#9662;</span></button><div class="acc-panel"><p>A lagarta-da-soja (Anticarsia gemmatalis) é a principal desfolhadora histórica da soja no Brasil, mas o uso de baculovírus (Baculovirus anticarsia) a controla com alta eficácia. A falsa-medideira (C. includens) não responde ao baculovírus — daí a importância de identificar corretamente qual espécie está dominando para escolher o produto certo.</p></div></div>
+</div>
+          </div>
+
+          <div class="cta-box">
+            <h3>Precisa de neem para controle de Lagarta Falsa-Medideira?</h3>
+            <p>Conectamos você a fabricantes e distribuidores validados com os melhores produtos do mercado.</p>
+            <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+              <a href="/cotacao/" class="btn btn-primary">&#128176; Solicitar Cotação</a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-ghost" target="_blank" rel="noopener noreferrer">&#128241; Falar no WhatsApp</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="sidebar" aria-label="Informações relacionadas">
+          <div class="sidebar-alerta-medio">
+            <h5>🟡 Risco Médio Praga de risco médio</h5>
+            <p>Faça pano de batida semanal. Ao encontrar lagartas menores que 1,5 cm acima do limiar de ação, aplique imediatamente.</p>
+          </div>
+          <div class="sidebar-widget">
+            <h4>&#128506;&#65039; Navegar entre pragas</h4>
+            <div class="nav-pragas"><a href="/pragas/" class="nav-praga-link">← Todas as pragas</a>
+<a href="/pragas/lagarta-cartucho/" class="nav-praga-link">🐛 Lagarta do Cartucho →</a>
+<a href="/pragas/traca-tomateiro/" class="nav-praga-link">🐛 Traça do Tomateiro →</a>
+<a href="/pragas/pulgao/" class="nav-praga-link">🐝 Pulgão →</a>
+</div>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128176; Precisa de neem?</h4>
+            <p>Solicite cotação com nossos parceiros validados.</p>
+            <a href="/cotacao/" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">Solicitar Cotação</a>
+          </div>
+          <div class="sidebar-cta">
+            <h4>&#128241; Dúvidas?</h4>
+            <p>Fale com um especialista pelo WhatsApp.</p>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center">Chamar no WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="logo" aria-label="Portal do Neem"><span class="logo-icon" aria-hidden="true">&#127807;</span><span class="logo-text">Portal do <strong>Neem</strong></span></a><p>O maior hub de conteúdo e parcerias sobre óleo de neem do Brasil.<br>Do dono de horta à grande propriedade rural.</p><p style="margin-top:.5rem"><a href="https://wa.me/5511999999999" style="color:rgba(255,255,255,.45);font-size:.8rem">&#128241; WhatsApp: (11) 99999-9999</a></p></div><div class="footer-col"><h4>Aprenda</h4><a href="/o-que-e-o-neem/">O que é o Neem</a><a href="/como-aplicar/">Como Aplicar</a><a href="/pragas/">Controle por Praga</a><a href="/culturas/">Por Cultura</a><a href="/neem-vs-quimicos/">Neem vs Químicos</a><a href="/blog/">Blog &amp; Artigos</a></div><div class="footer-col"><h4>Pragas</h4><a href="/pragas/mosca-branca/">Mosca Branca</a><a href="/pragas/pulgao/">Pulgão</a><a href="/pragas/tripes/">Tripes</a><a href="/pragas/cochonilha/">Cochonilha</a><a href="/pragas/acaro-branco/">Ácaro Branco</a><a href="/pragas/broca-cafe/">Broca do Café</a></div><div class="footer-col"><h4>Portal</h4><a href="/faq/">Perguntas Frequentes</a><a href="/contato/">Contato</a><a href="/seja-parceiro/">Seja Parceiro</a><a href="/sobre/">Sobre o Portal</a><a href="/privacidade/">Política de Privacidade</a></div></div><div class="footer-bottom"><p>&copy; 2026 Portal do Neem &mdash; Todos os direitos reservados.</p><div class="footer-seal"><span>&#127807;</span> Conteúdo orgânico, sem agrotóxicos na informação</div></div></div></footer>
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Vim+pelo+Portal+do+Neem+e+gostaria+de+mais+informa%C3%A7%C3%B5es." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" data-tip="Falar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>
+  function toggleMenu(e){var n=document.getElementById("nav-menu"),t=n.classList.toggle("open");e.setAttribute("aria-expanded",t);e.setAttribute("aria-label",t?"Fechar menu":"Abrir menu");document.body.style.overflow=t?"hidden":"";}
+  document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("#nav-menu a").forEach(function(e){e.addEventListener("click",function(){var n=document.getElementById("nav-menu"),t=document.querySelector(".menu-toggle");if(n.classList.contains("open")){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.setAttribute("aria-label","Abrir menu");document.body.style.overflow="";}});});});
+  function toggleAcc(btn){var p=btn.nextElementSibling,x=btn.getAttribute("aria-expanded")==="true";btn.setAttribute("aria-expanded",!x);p.classList.toggle("open",!x);}
+</script>
+</body>
+</html>
